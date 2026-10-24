@@ -1,0 +1,35 @@
+name: tests
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  python:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Compile scripts
+        run: |
+          python -m py_compile \
+            skills/deepwhy/scripts/build_page.py \
+            skills/deepwhy/scripts/validate_content.py \
+            skills/deepwhy/scripts/manim_runtime.py \
+            skills/deepwhy/scripts/manim_render.py
+
+      - name: Validate example content
+        run: |
+          python skills/deepwhy/scripts/validate_content.py \
+            skills/deepwhy/assets/apple-gravity.example.json
+
+      - name: Run unit tests
+        run: |
+          python -m unittest discover \
+            -s skills/deepwhy/tests \
+            -p 'test_*.py' \
+            -v

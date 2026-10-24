@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500" role="img">
+  <rect width="900" height="500" rx="28" fill="#f7f8fc"/>
+  <text x="450" y="66" text-anchor="middle" font-family="system-ui,sans-serif" font-size="28" font-weight="700" fill="#1f2937">同样的拉力</text>
+  <circle cx="250" cy="260" r="112" fill="#e7e7ff" stroke="#5b5bd6" stroke-width="4"/>
+  <text x="250" y="270" text-anchor="middle" font-family="system-ui,sans-serif" font-size="25" font-weight="700" fill="#1f2937">地球</text>
+  <circle cx="620" cy="260" r="38" fill="#ffe2dd" stroke="#d95c4b" stroke-width="4"/>
+  <text x="620" y="270" text-anchor="middle" font-family="system-ui,sans-serif" font-size="20" font-weight="700" fill="#1f2937">苹果</text>
+  <path d="M362 260 L582 260" stroke="#7c8cf8" stroke-width="6"/>
+  <path d="M362 260 L410 242 L410 278 Z" fill="#5b5bd6"/>
+  <path d="M582 260 L534 242 L534 278 Z" fill="#d95c4b"/>
+  <text x="250" y="414" text-anchor="middle" font-family="system-ui,sans-serif" font-size="21" fill="#4b5563">质量大：移动很少</text>
+  <text x="620" y="354" text-anchor="middle" font-family="system-ui,sans-serif" font-size="21" fill="#b4493c">质量小：移动更多</text>
+</svg>

@@ -1,0 +1,4370 @@
+<!doctype html>
+<html lang="zh-CN" data-style="__DEEPWHY_STYLE__" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="description" content="DeepWhy interactive knowledge chain">
+  <title>__DEEPWHY_TITLE__</title>
+  <style>
+    :root {
+      --bg: #f7f7fc;
+      --bg-2: #eef0f8;
+      --surface: rgba(255, 255, 255, 0.9);
+      --surface-solid: #ffffff;
+      --surface-hover: #f6f3ff;
+      --surface-soft: rgba(105, 80, 190, 0.055);
+      --line: rgba(43, 38, 74, 0.12);
+      --line-strong: rgba(43, 38, 74, 0.24);
+      --text: #202036;
+      --muted: #62637a;
+      --faint: #9293a8;
+      --accent: #7a4cf4;
+      --accent-2: #5a55cc;
+      --accent-3: #d3912f;
+      --danger: #d24b66;
+      --success: #2e9b77;
+      --radius-xl: 24px;
+      --radius-lg: 18px;
+      --radius-md: 12px;
+      --control-radius: 10px;
+      --control-height: 36px;
+      --display: "Avenir Next", "Noto Sans SC", "PingFang SC", sans-serif;
+      --body: "Avenir Next", "Noto Sans SC", "PingFang SC", sans-serif;
+      --mono: "SFMono-Regular", "Cascadia Code", monospace;
+      --shadow: 0 18px 42px rgba(48, 40, 94, 0.1);
+      --pattern:
+        radial-gradient(circle, rgba(92, 78, 190, 0.14) 1px, transparent 1.15px);
+    }
+
+    html[data-style="deepwhy"][data-theme="light"] {
+      --bg: #f7f7fc;
+      --bg-2: #eef0f8;
+      --surface: rgba(255, 255, 255, 0.9);
+      --surface-solid: #ffffff;
+      --surface-hover: #f6f3ff;
+      --surface-soft: rgba(105, 80, 190, 0.055);
+      --line: rgba(43, 38, 74, 0.12);
+      --line-strong: rgba(43, 38, 74, 0.24);
+      --text: #202036;
+      --muted: #62637a;
+      --faint: #9293a8;
+      --accent: #7a4cf4;
+      --accent-2: #5a55cc;
+      --accent-3: #d3912f;
+      --danger: #d24b66;
+      --success: #2e9b77;
+      --shadow: 0 18px 42px rgba(48, 40, 94, 0.1);
+    }
+
+    html[data-style="deepwhy"][data-theme="dark"] {
+      --bg: #11111a;
+      --bg-2: #191927;
+      --surface: rgba(29, 29, 44, 0.94);
+      --surface-solid: #20202f;
+      --surface-hover: #29283b;
+      --surface-soft: rgba(167, 143, 255, 0.08);
+      --line: rgba(221, 216, 255, 0.12);
+      --line-strong: rgba(221, 216, 255, 0.24);
+      --text: #f1f0fb;
+      --muted: #b6b4c9;
+      --faint: #85839c;
+      --accent: #a78bfa;
+      --accent-2: #8f88f4;
+      --accent-3: #e6b35c;
+      --danger: #f08aa0;
+      --success: #70d6b4;
+      --shadow: 0 22px 56px rgba(0, 0, 0, 0.32);
+    }
+
+    html[data-style="atlas"] {
+      --bg: #f2efe4;
+      --bg-2: #e5ecdf;
+      --surface: rgba(255, 253, 246, 0.9);
+      --surface-solid: #fffdf6;
+      --surface-hover: #f8f5e9;
+      --surface-soft: rgba(45, 76, 64, 0.055);
+      --line: rgba(44, 70, 60, 0.18);
+      --line-strong: rgba(44, 70, 60, 0.36);
+      --text: #1e2925;
+      --muted: #53645c;
+      --faint: #79867f;
+      --accent: #187d68;
+      --accent-2: #d45e47;
+      --accent-3: #9b7711;
+      --danger: #a63237;
+      --success: #25704d;
+      --radius-xl: 8px;
+      --radius-lg: 5px;
+      --radius-md: 3px;
+      --display: "Iowan Old Style", "Songti SC", "Noto Serif SC", serif;
+      --body: "Avenir Next", "Noto Sans SC", "PingFang SC", sans-serif;
+      --shadow: 0 18px 42px rgba(45, 62, 50, 0.12);
+      --pattern:
+        linear-gradient(rgba(34, 94, 76, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(34, 94, 76, 0.05) 1px, transparent 1px);
+    }
+
+    html[data-style="atlas"][data-theme="dark"] {
+      --bg: #1d211d;
+      --bg-2: #292c25;
+      --surface: rgba(43, 45, 38, 0.96);
+      --surface-solid: #303229;
+      --surface-hover: #393a30;
+      --surface-soft: rgba(230, 244, 231, 0.045);
+      --line: rgba(190, 218, 197, 0.17);
+      --line-strong: rgba(190, 218, 197, 0.36);
+      --text: #f2eee2;
+      --muted: #c4c0b3;
+      --faint: #96978a;
+      --accent: #8ac7b6;
+      --accent-2: #ff997c;
+      --accent-3: #e1be68;
+      --danger: #ff9a9d;
+      --success: #8bddb1;
+      --shadow: 0 10px 28px rgba(0, 0, 0, 0.14);
+    }
+
+    html[data-style="chronicle"] {
+      --bg: #e9dfcc;
+      --bg-2: #d9cfbc;
+      --surface: rgba(249, 244, 232, 0.94);
+      --surface-solid: #fbf6ea;
+      --surface-hover: #f3ead7;
+      --surface-soft: rgba(91, 49, 38, 0.06);
+      --line: rgba(82, 53, 44, 0.2);
+      --line-strong: rgba(82, 53, 44, 0.38);
+      --text: #241b18;
+      --muted: #66554f;
+      --faint: #8a7770;
+      --accent: #8a2f2b;
+      --accent-2: #315e60;
+      --accent-3: #9a6b18;
+      --danger: #9d242b;
+      --success: #356c4a;
+      --radius-xl: 3px;
+      --radius-lg: 2px;
+      --radius-md: 2px;
+      --display: "Baskerville", "Songti SC", "Noto Serif SC", serif;
+      --body: "Avenir Next", "Noto Sans SC", "PingFang SC", sans-serif;
+      --shadow: 0 12px 30px rgba(69, 45, 33, 0.15);
+      --pattern:
+        repeating-linear-gradient(0deg, transparent 0 31px, rgba(95, 60, 44, 0.06) 31px 32px);
+    }
+
+    html[data-style="chronicle"][data-theme="dark"] {
+      --bg: #211b18;
+      --bg-2: #2e2521;
+      --surface: rgba(49, 39, 34, 0.96);
+      --surface-solid: #392e29;
+      --surface-hover: #43352f;
+      --surface-soft: rgba(255, 237, 211, 0.045);
+      --line: rgba(237, 208, 175, 0.19);
+      --line-strong: rgba(237, 208, 175, 0.38);
+      --text: #f6ead8;
+      --muted: #c7b5a2;
+      --faint: #99887a;
+      --accent: #e28b75;
+      --accent-2: #78b8b3;
+      --accent-3: #d9b45f;
+      --danger: #ff9aa0;
+      --success: #93d4a8;
+      --shadow: 0 10px 28px rgba(0, 0, 0, 0.16);
+    }
+
+    html[data-style="fieldnotes"] {
+      --bg: #f4f1e7;
+      --bg-2: #e6efe4;
+      --surface: rgba(255, 254, 248, 0.9);
+      --surface-solid: #fffdf7;
+      --surface-hover: #f8f6ec;
+      --surface-soft: rgba(48, 79, 70, 0.055);
+      --line: rgba(53, 79, 69, 0.18);
+      --line-strong: rgba(53, 79, 69, 0.36);
+      --text: #1c2a26;
+      --muted: #52665e;
+      --faint: #7c8c84;
+      --accent: #197568;
+      --accent-2: #d06b42;
+      --accent-3: #b88b12;
+      --danger: #a7363d;
+      --success: #2d7650;
+      --radius-xl: 22px;
+      --radius-lg: 16px;
+      --radius-md: 10px;
+      --display: "Avenir Next", "Noto Sans SC", "PingFang SC", sans-serif;
+      --body: "Avenir Next", "Noto Sans SC", "PingFang SC", sans-serif;
+      --shadow: 0 16px 40px rgba(50, 70, 59, 0.11);
+      --pattern:
+        radial-gradient(circle, rgba(44, 96, 83, 0.13) 1px, transparent 1.2px);
+    }
+
+    html[data-style="fieldnotes"][data-theme="dark"] {
+      --bg: #1e231f;
+      --bg-2: #292e28;
+      --surface: rgba(43, 48, 41, 0.96);
+      --surface-solid: #30362f;
+      --surface-hover: #3b4038;
+      --surface-soft: rgba(234, 248, 236, 0.045);
+      --line: rgba(199, 229, 207, 0.17);
+      --line-strong: rgba(199, 229, 207, 0.35);
+      --text: #f1f6ee;
+      --muted: #b5c7bc;
+      --faint: #81958a;
+      --accent: #6fd4c0;
+      --accent-2: #f09a73;
+      --accent-3: #e0c16d;
+      --danger: #ff9da2;
+      --success: #8cdab0;
+      --shadow: 0 10px 28px rgba(0, 0, 0, 0.15);
+    }
+
+    * { box-sizing: border-box; }
+    html {
+      scroll-behavior: smooth;
+      background: var(--bg);
+    }
+    body {
+      min-width: 320px;
+      margin: 0;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 88% 4%, color-mix(in srgb, var(--accent) 9%, transparent), transparent 28%),
+        radial-gradient(circle at 8% 96%, color-mix(in srgb, #6ec8e8 7%, transparent), transparent 24%),
+        var(--bg);
+      font-family: var(--body);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    body::before {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      content: "";
+      pointer-events: none;
+      background-image: var(--pattern);
+      background-size: 18px 18px;
+      opacity: 0.5;
+    }
+    a { color: var(--accent-2); text-underline-offset: 0.18em; }
+    a:hover { color: var(--text); }
+    button, input, textarea { font: inherit; }
+    :focus-visible { outline: 3px solid var(--accent-2); outline-offset: 3px; }
+    [hidden] { display: none !important; }
+
+    .skip-link {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      z-index: 200;
+      padding: 9px 13px;
+      color: var(--bg);
+      background: var(--accent-2);
+      border-radius: 8px;
+      transform: translateY(-160%);
+    }
+    .skip-link:focus { transform: translateY(0); }
+
+    .app-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 16px;
+      align-items: center;
+      min-height: 64px;
+      padding: 0 20px;
+      background: color-mix(in srgb, var(--surface-solid) 82%, transparent);
+      backdrop-filter: blur(18px) saturate(130%);
+      -webkit-backdrop-filter: blur(18px) saturate(130%);
+      border-bottom: 1px solid var(--line);
+      box-shadow: 0 8px 28px color-mix(in srgb, var(--accent) 5%, transparent);
+    }
+    html[data-style="chronicle"] .app-header {
+      border-top: 5px solid var(--accent);
+      border-bottom-width: 2px;
+    }
+    .brand {
+      display: inline-flex;
+      gap: 9px;
+      align-items: center;
+      justify-self: start;
+      color: var(--text);
+      font-weight: 760;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+    }
+    .brand-mark {
+      display: grid;
+      width: 32px;
+      height: 32px;
+      place-items: center;
+      color: #fff;
+      background: linear-gradient(135deg, #8d62ff, #6040d8);
+      border-radius: 10px;
+      box-shadow: 0 8px 18px rgba(100, 68, 220, 0.22);
+    }
+    html[data-style="atlas"] .brand-mark,
+    html[data-style="chronicle"] .brand-mark { border-radius: 2px; }
+    .chain-progress {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+      font-size: 11px;
+      letter-spacing: 0.04em;
+    }
+    .progress-track {
+      width: 130px;
+      height: 4px;
+      overflow: hidden;
+      background: var(--surface-soft);
+      border-radius: 99px;
+    }
+    .progress-fill {
+      width: 0;
+      height: 100%;
+      background: var(--accent-2);
+      border-radius: inherit;
+      transition: width 180ms ease;
+    }
+    .button {
+      min-height: var(--control-height);
+      padding: 7px 13px;
+      color: var(--text);
+      background: color-mix(in srgb, var(--surface-solid) 88%, transparent);
+      border: 1px solid var(--line);
+      border-radius: var(--control-radius);
+      cursor: pointer;
+      transition: background 140ms ease, border-color 140ms ease, transform 140ms ease;
+    }
+    .button:hover {
+      background: var(--surface-hover);
+      border-color: var(--line-strong);
+    }
+    .button:active { transform: translateY(1px); }
+    .button.primary {
+      color: #fff;
+      font-weight: 730;
+      background: linear-gradient(135deg, #8458ff, #5a52d8);
+      border-color: transparent;
+      box-shadow: 0 9px 22px rgba(90, 72, 210, 0.25);
+    }
+    .button.quiet {
+      min-height: var(--control-height);
+      padding: 7px 12px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+    .tab-button,
+    .branch-toggle,
+    .branch-button,
+    .close-button,
+    .manim-replay,
+    .interaction-option {
+      min-height: var(--control-height);
+      border-radius: var(--control-radius);
+    }
+
+    .workspace {
+      display: grid;
+      grid-template-columns: minmax(560px, 44fr) minmax(620px, 56fr);
+      gap: 16px;
+      width: 100%;
+      height: calc(100dvh - 64px);
+      min-height: 0;
+      margin: 0;
+      padding: 16px 20px 20px;
+      overflow: hidden;
+      align-items: stretch;
+    }
+    @media (min-width: 881px) {
+      body { overflow: hidden; }
+    }
+    .chain-stage {
+      min-width: 0;
+      height: 100%;
+      padding: 16px 18px 28px;
+      overflow: auto;
+      background-color: color-mix(in srgb, var(--surface-solid) 88%, transparent);
+      background-image: radial-gradient(
+        circle,
+        color-mix(in srgb, var(--accent) 14%, transparent) 1px,
+        transparent 1.1px
+      );
+      background-size: 22px 22px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      scrollbar-width: thin;
+    }
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 17px;
+      background: transparent;
+      border: 0;
+      border-bottom: 1px solid var(--line);
+      border-radius: 0;
+      box-shadow: none;
+    }
+    html[data-style="atlas"] .hero { border-top: 4px solid var(--accent); }
+    html[data-style="chronicle"] .hero {
+      border-top: 8px double var(--accent);
+      background: var(--surface);
+    }
+    html[data-style="fieldnotes"] .hero {
+      border-left: 5px solid var(--accent);
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 15px;
+      align-items: start;
+    }
+    .hero-copy { min-width: 0; }
+    .opening-figure-placeholder {
+      min-height: 150px;
+      margin: 0;
+      background: color-mix(in srgb, var(--surface-soft) 55%, transparent);
+      border: 1px solid var(--line);
+    }
+    .opening-visual {
+      min-width: 0;
+      margin: 0;
+      overflow: hidden;
+      background: color-mix(in srgb, var(--surface-soft) 55%, var(--surface-solid));
+      border: 1px solid var(--line);
+    }
+    .hero .opening-visual svg,
+    .hero .opening-visual img {
+      display: block;
+      width: 100%;
+      height: 124px;
+      max-height: 124px;
+      object-fit: contain;
+    }
+    .hero .opening-visual figcaption {
+      max-height: 48px;
+      overflow: hidden;
+      padding: 7px 9px;
+      color: var(--faint);
+      font-size: 9px;
+      line-height: 1.55;
+      border-top: 1px solid var(--line);
+    }
+    .hero .motion-replay {
+      min-height: 28px;
+      margin: 6px 9px 8px;
+      padding: 4px 8px;
+      font-size: 10px;
+    }
+    .eyebrow, .node-type, .card-kicker, .tab-button, .mini-label {
+      color: var(--accent);
+      font-size: 10px;
+      font-weight: 760;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+    }
+    .eyebrow {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      margin: 0 0 12px;
+    }
+    .eyebrow::before {
+      display: none;
+    }
+    h1 {
+      max-width: 330px;
+      margin: 0;
+      font-family: var(--display);
+      font-size: clamp(27px, 2.15vw, 36px);
+      font-weight: 760;
+      letter-spacing: -0.035em;
+      line-height: 1.08;
+      text-wrap: balance;
+    }
+    html[data-style="chronicle"] h1 {
+      font-weight: 600;
+      letter-spacing: -0.025em;
+    }
+    html[data-style="atlas"] h1 {
+      font-weight: 650;
+      letter-spacing: -0.035em;
+    }
+    .opening {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      align-items: start;
+      margin-top: 13px;
+    }
+    .opening p {
+      max-width: 330px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.65;
+    }
+    .opening strong {
+      display: block;
+      margin-top: 5px;
+      color: var(--text);
+      font-weight: 660;
+    }
+    .key-insight {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      gap: 14px;
+      align-items: baseline;
+      max-width: 860px;
+      margin: 12px 0 0;
+      padding: 9px 0;
+      color: var(--text);
+      font-size: 12px;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+    .key-insight span {
+      color: var(--accent-2);
+      font-family: var(--mono);
+      font-size: 9px;
+      font-weight: 760;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .key-insight strong { font-weight: 620; line-height: 1.55; }
+    .journey-actions {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 8px 10px;
+      align-items: center;
+      margin-top: 10px;
+      color: var(--faint);
+      font-size: 11px;
+    }
+    #journey-position {
+      grid-column: 1 / -1;
+      color: var(--accent);
+      font-family: var(--mono);
+      font-size: 10px;
+      white-space: nowrap;
+    }
+    #next-action-copy {
+      min-width: 0;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+    .journey-actions .button {
+      grid-column: 2;
+      grid-row: 2;
+      align-self: center;
+    }
+    .chain-count {
+      display: inline-flex;
+      gap: 6px;
+      align-items: center;
+      padding: 5px 8px;
+      color: var(--accent);
+      font-family: var(--mono);
+      font-size: 10px;
+      white-space: nowrap;
+      background: color-mix(in srgb, var(--accent) 8%, transparent);
+      border: 1px solid color-mix(in srgb, var(--accent) 22%, var(--line));
+      border-radius: 2px;
+    }
+    .premise-notice {
+      margin-top: 16px;
+      padding: 11px 13px;
+      color: var(--muted);
+      font-size: 12px;
+      background: color-mix(in srgb, var(--accent-3) 9%, transparent);
+      border-left: 3px solid var(--accent-3);
+    }
+    .premise-notice strong { color: var(--text); }
+    .evidence-button {
+      padding: 0;
+      color: var(--accent-3);
+      font-size: 12px;
+      background: transparent;
+      border: 0;
+      border-bottom: 1px dotted currentColor;
+      cursor: pointer;
+    }
+
+    .chain-toolbar {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      justify-content: space-between;
+      margin: 15px 2px 8px;
+      color: var(--faint);
+      font-size: 11px;
+    }
+    html[data-style="chronicle"] .chain-toolbar {
+      border-bottom: 1px solid var(--line-strong);
+      padding-bottom: 7px;
+    }
+    .chain-toolbar strong { color: var(--muted); font-weight: 680; }
+    .chain-legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px 12px;
+      margin: 0 2px 11px;
+      color: var(--faint);
+      font-size: 9px;
+    }
+    .chain-legend-item {
+      display: inline-flex;
+      gap: 5px;
+      align-items: center;
+    }
+    .chain-legend-dot {
+      width: 7px;
+      height: 7px;
+      flex: 0 0 auto;
+      border-radius: 50%;
+      background: var(--legend-color, var(--accent));
+    }
+    .global-switcher {
+      display: flex;
+      gap: 5px;
+      align-items: center;
+      justify-self: end;
+      min-width: 0;
+      padding: 5px;
+      overflow-x: auto;
+      background: color-mix(in srgb, var(--accent) 6%, var(--surface-solid));
+      border: 1px solid color-mix(in srgb, var(--accent) 24%, var(--line));
+      border-radius: 12px;
+      box-shadow: 0 6px 18px color-mix(in srgb, var(--accent) 6%, transparent);
+      scrollbar-width: none;
+    }
+    .global-switcher::-webkit-scrollbar { display: none; }
+    .global-switcher > span {
+      flex: none;
+      padding: 5px 8px;
+      color: var(--accent);
+      font-family: var(--mono);
+      font-size: 9px;
+      font-weight: 760;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      background: color-mix(in srgb, var(--accent) 10%, var(--surface-solid));
+      border-radius: 8px;
+    }
+    .global-switcher button {
+      flex: none;
+      min-height: 32px;
+      padding: 5px 10px;
+      color: var(--text);
+      font-size: 11px;
+      font-weight: 620;
+      background: var(--surface-solid);
+      border: 1px solid var(--line);
+      border-radius: var(--control-radius);
+      cursor: pointer;
+      transition: color 140ms ease, background 140ms ease, border-color 140ms ease;
+    }
+    .global-switcher button:hover {
+      color: var(--accent);
+      background: color-mix(in srgb, var(--accent) 8%, var(--surface-solid));
+      border-color: color-mix(in srgb, var(--accent) 42%, var(--line));
+    }
+    .global-switcher button[aria-pressed="true"] {
+      color: #fff;
+      background: var(--accent);
+      border-color: var(--accent);
+      box-shadow: 0 5px 14px color-mix(in srgb, var(--accent) 28%, transparent);
+    }
+
+    .knowledge-chain {
+      position: relative;
+      display: grid;
+      gap: 0;
+      padding: 4px 0 2px;
+    }
+    .chain-row {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(300px, 356px) minmax(0, 1fr);
+      gap: 10px;
+      align-items: center;
+    }
+    .chain-row::before {
+      display: none;
+    }
+    .node-stack {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      min-width: 0;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      grid-column: 2;
+    }
+    .node-card {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      min-height: 0;
+      padding: 11px 13px;
+      color: var(--text);
+      text-align: left;
+      background: color-mix(in srgb, var(--surface-solid) 92%, transparent);
+      border: 1px solid color-mix(in srgb, var(--node-color, var(--accent)) 34%, var(--line));
+      border-radius: 14px;
+      box-shadow: 0 5px 16px rgba(45, 38, 92, 0.045);
+      cursor: pointer;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      transition:
+        border-color 180ms ease,
+        background 180ms ease,
+        box-shadow 180ms ease,
+        transform 180ms ease;
+    }
+    html[data-style="atlas"] .node-card {
+      border-left-width: 5px;
+    }
+    html[data-style="chronicle"] .node-card {
+      border-left: 0;
+      border-top: 3px solid var(--accent);
+    }
+    html[data-style="fieldnotes"] .node-card {
+      border-left: 4px solid var(--accent-2);
+    }
+    .node-card:hover {
+      border-color: color-mix(in srgb, var(--node-color, var(--accent)) 64%, var(--line));
+      background: var(--surface-hover);
+      transform: translateY(-1px);
+    }
+    .node-card[aria-current="true"] {
+      padding: 13px 15px;
+      border-color: var(--node-color, var(--accent));
+      background: color-mix(in srgb, var(--node-color, var(--accent)) 7%, var(--surface-solid));
+      box-shadow:
+        0 0 0 2px color-mix(in srgb, var(--node-color, var(--accent)) 30%, transparent),
+        0 12px 30px color-mix(in srgb, var(--node-color, var(--accent)) 14%, transparent);
+      transform: none;
+      z-index: 3;
+    }
+    .node-card[aria-current="true"]::before {
+      position: absolute;
+      top: 14px;
+      bottom: 14px;
+      left: -1px;
+      width: 4px;
+      content: "";
+      background: var(--node-color, var(--accent));
+      border-radius: 4px;
+    }
+    .node-head {
+      display: flex;
+      gap: 9px;
+      align-items: center;
+      margin-bottom: 9px;
+    }
+    .node-index {
+      display: grid;
+      width: 29px;
+      height: 29px;
+      place-items: center;
+      color: #fff;
+      font-family: var(--mono);
+      font-size: 10px;
+      font-weight: 800;
+      background: var(--node-color, var(--accent));
+      border-radius: 10px;
+      box-shadow: 0 5px 12px color-mix(in srgb, var(--node-color, var(--accent)) 24%, transparent);
+    }
+    html[data-style="atlas"] .node-index,
+    html[data-style="chronicle"] .node-index {
+      border-radius: 2px;
+      background: var(--accent);
+      color: var(--surface-solid);
+    }
+    .node-track {
+      color: var(--faint);
+      font-size: 10px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .node-status {
+      margin-left: auto;
+      padding: 2px 7px;
+      color: var(--faint);
+      font-family: var(--mono);
+      font-size: 9px;
+      background: var(--surface-soft);
+      border-radius: 999px;
+    }
+    .node-status[data-status="partial"],
+    .node-status[data-status="insufficient"] { color: var(--accent-3); }
+    .node-concept {
+      margin: 0 0 3px;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 680;
+    }
+    .node-question {
+      margin: 0;
+      font-family: var(--display);
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.4;
+    }
+    .node-answer {
+      display: -webkit-box;
+      margin: 8px 0 0;
+      overflow: hidden;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.55;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+    }
+    .node-mini-visual {
+      height: auto;
+      max-height: none;
+      margin: 8px 0 0;
+      overflow: visible;
+      background: color-mix(in srgb, var(--surface-soft) 60%, var(--surface-solid));
+      border: 1px solid var(--line);
+    }
+    .node-mini-visual svg,
+    .node-mini-visual img {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-height: none;
+      object-fit: contain;
+    }
+    .node-mini-visual figcaption { display: none; }
+    .node-card[data-visual-kind="equation"] .node-concept,
+    .node-card[data-visual-kind="equation"] .node-question {
+      color: var(--node-color, var(--accent));
+    }
+    .node-card[data-visual-kind="comparison"] {
+      border-top: 4px double var(--accent-2);
+    }
+    .node-card[data-visual-kind="timeline"] {
+      border-left: 5px solid var(--accent-3);
+    }
+    .node-footer {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 9px;
+      color: var(--faint);
+      font-size: 10px;
+    }
+    .chain-row:not([data-selected="true"]) .node-card {
+      padding: 9px 11px;
+      background: color-mix(in srgb, var(--surface-solid) 78%, transparent);
+      box-shadow: none;
+    }
+    .chain-row:not([data-selected="true"]) .node-answer {
+      display: none;
+    }
+    .chain-row:not([data-selected="true"]) .node-mini-visual {
+      display: none;
+    }
+    .chain-row:not([data-selected="true"]) .node-head {
+      margin-bottom: 6px;
+    }
+    .chain-row:not([data-selected="true"]) .node-index {
+      width: 24px;
+      height: 24px;
+      border-radius: 8px;
+      font-size: 9px;
+      box-shadow: none;
+    }
+    .chain-row:not([data-selected="true"]) .node-track {
+      font-size: 9px;
+    }
+    .chain-row:not([data-selected="true"]) .node-concept {
+      margin-bottom: 1px;
+      font-size: 10px;
+    }
+    .chain-row:not([data-selected="true"]) .node-question {
+      display: -webkit-box;
+      overflow: hidden;
+      font-size: 13px;
+      line-height: 1.35;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+    }
+    .chain-row:not([data-selected="true"]) .node-status,
+    .chain-row:not([data-selected="true"]) .node-footer {
+      display: none;
+    }
+    .branch-rail {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      padding: 0 4px;
+      opacity: 1;
+      pointer-events: auto;
+      transition: opacity 140ms ease;
+    }
+    .chain-row:not([data-selected="true"]) .branch-rail { display: none; }
+    .branch-rail.left {
+      grid-column: 1;
+      align-items: flex-end;
+    }
+    .branch-rail.right {
+      grid-column: 3;
+      align-items: flex-start;
+    }
+    .branch-rail:empty { display: none; }
+    .branch-toggle {
+      min-height: var(--control-height);
+      margin-top: 6px;
+      padding: 4px 9px;
+      color: var(--faint);
+      font-size: 9px;
+      background: var(--surface-solid);
+      border: 1px solid var(--line);
+      border-radius: var(--control-radius);
+      cursor: pointer;
+    }
+    .branch-toggle:hover {
+      color: var(--text);
+      border-color: var(--line-strong);
+    }
+    .branch-button {
+      position: relative;
+      max-width: 190px;
+      width: 100%;
+      min-height: var(--control-height);
+      padding: 8px 10px;
+      color: var(--muted);
+      font-size: 10px;
+      line-height: 1.35;
+      text-align: left;
+      background: color-mix(in srgb, var(--surface-solid) 68%, transparent);
+      border: 1px dashed color-mix(in srgb, var(--accent) 34%, var(--line));
+      border-radius: var(--control-radius);
+      cursor: pointer;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+    .branch-button::after { display: none; }
+    .branch-button:hover {
+      color: var(--text);
+      background: var(--surface-hover);
+      border-style: solid;
+    }
+    .chain-connector {
+      position: relative;
+      width: 100%;
+      height: 19px;
+    }
+    .chain-connector::before {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 1.5px;
+      content: "";
+      background: linear-gradient(var(--node-color, var(--accent)), var(--next-node-color, var(--accent)));
+      transform: translateX(-50%);
+    }
+    .chain-connector::after {
+      position: absolute;
+      bottom: 3px;
+      left: 50%;
+      width: 7px;
+      height: 7px;
+      content: "";
+      border-right: 2px solid var(--next-node-color, var(--accent));
+      border-bottom: 2px solid var(--next-node-color, var(--accent));
+      transform: translateX(-50%) rotate(45deg);
+    }
+    .chain-next-placeholder {
+      width: min(320px, calc(100% - 16px));
+      margin: 0 auto;
+      padding: 11px 13px;
+      color: var(--accent);
+      font-size: 11px;
+      font-weight: 650;
+      text-align: center;
+      background: color-mix(in srgb, var(--accent) 3%, transparent);
+      border: 1.5px dashed color-mix(in srgb, var(--accent) 38%, var(--line));
+      border-radius: 14px;
+      cursor: pointer;
+      transition: background 160ms ease, border-color 160ms ease;
+    }
+    .chain-next-placeholder:hover {
+      background: color-mix(in srgb, var(--accent) 8%, transparent);
+      border-color: color-mix(in srgb, var(--accent) 65%, var(--line));
+    }
+
+    .chain-completion {
+      margin-top: 14px;
+      padding: 16px;
+      background: var(--surface);
+      border: 1px solid color-mix(in srgb, var(--accent) 32%, var(--line));
+      border-radius: 20px;
+    }
+    .chain-completion h2 {
+      margin: 0;
+      font-family: var(--display);
+      font-size: 20px;
+      letter-spacing: -0.025em;
+    }
+    .chain-completion > p {
+      max-width: 760px;
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .completion-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+      margin-top: 15px;
+    }
+    .next-drawer {
+      margin-top: 13px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+    .next-drawer summary {
+      cursor: pointer;
+      color: var(--accent);
+      font-weight: 650;
+    }
+    .next-drawer ul {
+      margin: 10px 0 0;
+      padding-left: 18px;
+    }
+    .next-drawer li + li { margin-top: 6px; }
+    .next-question-link {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      justify-content: space-between;
+      padding: 8px 9px;
+      color: var(--text);
+      text-decoration: none;
+      background: color-mix(in srgb, var(--surface-solid) 78%, transparent);
+      border: 1px solid var(--line);
+      border-radius: var(--control-radius);
+    }
+    .next-question-link:hover {
+      color: var(--text);
+      background: var(--surface-hover);
+      border-color: var(--line-strong);
+    }
+    .next-question-copy {
+      display: grid;
+      gap: 2px;
+    }
+    .next-question-copy span {
+      color: var(--muted);
+      font-size: 10px;
+    }
+    .next-question-arrow {
+      flex: none;
+      color: var(--accent);
+      font-family: var(--mono);
+    }
+
+    .inspector {
+      position: relative;
+      top: 0;
+      grid-column: 2;
+      width: 100%;
+      height: 100%;
+      min-height: 0;
+      max-height: none;
+      overflow: auto;
+      background: color-mix(in srgb, var(--surface-solid) 90%, transparent);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      scrollbar-width: thin;
+    }
+    html[data-style="atlas"] .inspector { border-top: 6px solid var(--accent); }
+    html[data-style="chronicle"] .inspector { border-top: 8px double var(--accent); }
+    html[data-style="fieldnotes"] .inspector {
+      border-left: 5px solid var(--accent);
+    }
+    .inspector-head {
+      position: sticky;
+      top: 0;
+      z-index: 4;
+      padding: 26px clamp(24px, 4vw, 58px) 18px;
+      background: var(--surface-solid);
+      border-bottom: 1px solid var(--line);
+    }
+    .inspector-topline {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 8px;
+    }
+    .inspector-type {
+      color: var(--accent);
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+    }
+    .close-button {
+      display: none;
+      min-height: var(--control-height);
+      padding: 7px 12px;
+      color: var(--muted);
+      background: transparent;
+      border: 1px solid var(--line);
+      border-radius: var(--control-radius);
+      cursor: pointer;
+    }
+    .inspector h2 {
+      margin: 0;
+      font-family: var(--display);
+      max-width: 980px;
+      font-size: clamp(26px, 3vw, 41px);
+      letter-spacing: -0.03em;
+      line-height: 1.28;
+    }
+    .inspector-answer {
+      max-width: 900px;
+      margin: 9px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.65;
+    }
+    .branch-origin {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      margin-bottom: 9px;
+      color: var(--faint);
+      font-size: 11px;
+    }
+    .back-branch {
+      padding: 0;
+      color: var(--accent);
+      background: transparent;
+      border: 0;
+      border-bottom: 1px dotted currentColor;
+      cursor: pointer;
+    }
+    .tabs {
+      display: flex;
+      gap: 3px;
+      padding: 10px clamp(24px, 4vw, 58px) 0;
+      overflow-x: auto;
+      background: var(--surface-solid);
+      scrollbar-width: none;
+    }
+    .tabs::-webkit-scrollbar { display: none; }
+    .tabs > .tab-button {
+      flex: 0 0 auto;
+      padding: 8px 14px;
+      border-bottom: 0;
+      white-space: nowrap;
+    }
+    .tabs > .tab-button[aria-selected="true"] {
+      background: color-mix(in srgb, var(--accent) 11%, var(--surface-solid));
+      color: var(--accent);
+      box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--accent) 20%, transparent);
+    }
+    .tab-button {
+      min-height: var(--control-height);
+      padding: 8px 12px;
+      color: var(--faint);
+      background: transparent;
+      border: 0;
+      border-bottom: 2px solid transparent;
+      cursor: pointer;
+      letter-spacing: 0.04em;
+    }
+    .tab-button[aria-selected="true"] {
+      color: var(--text);
+      border-bottom-color: var(--accent);
+    }
+    .inspector-body {
+      width: min(100%, 1120px);
+      margin: 0 auto;
+      padding: 22px clamp(24px, 4vw, 58px) 30px;
+    }
+    .inspector-nav {
+      display: flex;
+      gap: 8px;
+      justify-content: space-between;
+      padding: 13px 20px 18px;
+      border-top: 1px solid var(--line);
+    }
+    .inspector-nav .button:disabled {
+      opacity: 0.35;
+      cursor: default;
+    }
+
+    .detail-lead {
+      margin: 0 0 14px;
+      padding: 12px 14px;
+      color: var(--text);
+      font-size: 13px;
+      background: color-mix(in srgb, var(--accent) 7%, transparent);
+      border-left: 3px solid var(--accent-2);
+    }
+    .lesson-bridge {
+      margin: 0 0 12px;
+      padding: 0 0 11px;
+      color: var(--muted);
+      border-bottom: 1px solid var(--line);
+    }
+    .lesson-bridge p,
+    .plain-language p {
+      margin: 4px 0 0;
+      font-size: 12px;
+      line-height: 1.7;
+    }
+    .plain-language {
+      margin: 0 0 12px;
+      padding: 12px 13px;
+      background: var(--surface-solid);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+    }
+    .lesson-steps {
+      display: grid;
+      gap: 7px;
+      margin: 0 0 13px;
+      padding: 0 0 0 24px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.65;
+    }
+    .lesson-steps li::marker {
+      color: var(--accent);
+      font-family: var(--mono);
+      font-weight: 700;
+    }
+    .micro-check {
+      margin: 0 0 13px;
+      padding: 12px 13px;
+      background: color-mix(in srgb, var(--accent) 5%, var(--surface-solid));
+      border-left: 3px solid var(--accent);
+      border-radius: 14px;
+    }
+    .micro-check strong {
+      display: block;
+      font-size: 12px;
+    }
+    .micro-check p {
+      margin: 5px 0 8px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+    .micro-check .micro-answer {
+      margin-bottom: 0;
+      padding-top: 8px;
+      color: var(--text);
+      border-top: 1px solid var(--line);
+    }
+    .video-bridge {
+      width: 100%;
+      justify-content: space-between;
+      margin: 0 0 13px;
+      text-align: left;
+    }
+    .research-section {
+      margin-top: 18px;
+    }
+    .research-section:first-of-type {
+      margin-top: 0;
+    }
+    .research-section-head {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 8px;
+    }
+    .research-section-head h3 {
+      margin: 0;
+      font-size: 14px;
+    }
+    .research-section-count {
+      color: var(--faint);
+      font-family: var(--mono);
+      font-size: 10px;
+    }
+    .research-timeline {
+      display: grid;
+      gap: 8px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .research-timeline .background-card {
+      margin-top: 0;
+    }
+    .research-timeline time {
+      color: var(--accent);
+      font-family: var(--mono);
+      font-size: 10px;
+    }
+    .industry-section .research-section-head h3 {
+      color: var(--accent-2);
+    }
+    .industry-section .background-card {
+      border-left: 3px solid color-mix(in srgb, var(--accent-3) 62%, var(--line));
+    }
+    .detail-kicker {
+      display: block;
+      margin-bottom: 2px;
+      color: var(--accent);
+      font-size: 9px;
+      font-weight: 760;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .figure-frame {
+      overflow: hidden;
+      margin: 0 0 14px;
+      background: color-mix(in srgb, var(--surface-soft) 70%, var(--surface-solid));
+      border: 1px solid var(--line);
+      border-radius: 18px;
+    }
+    .figure-frame svg,
+    .figure-frame img {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-height: 310px;
+      object-fit: contain;
+    }
+    .figure-frame figcaption {
+      padding: 8px 11px;
+      color: var(--faint);
+      font-size: 10px;
+      border-top: 1px solid var(--line);
+    }
+    .manim-feature {
+      margin: 0 0 14px;
+      overflow: hidden;
+      background: color-mix(in srgb, var(--surface-soft) 62%, var(--surface-solid));
+      border: 1px solid var(--line);
+      border-radius: 18px;
+    }
+    .manim-head {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 14px;
+    }
+    .manim-head strong {
+      display: block;
+      margin-top: 2px;
+      font-size: 13px;
+    }
+    .manim-media {
+      position: relative;
+      display: grid;
+      place-items: center;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      background: #12162a;
+      border-block: 1px solid color-mix(in srgb, var(--line) 70%, transparent);
+    }
+    .manim-media video,
+    .manim-media img,
+    .manim-media svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+    .manim-caption {
+      margin: 0;
+      padding: 10px 14px 0;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.65;
+    }
+    .manim-transcript {
+      margin: 10px 14px 13px;
+      padding-top: 9px;
+      border-top: 1px solid var(--line);
+    }
+    .manim-transcript summary {
+      cursor: pointer;
+      color: var(--accent);
+      font-size: 11px;
+      font-weight: 720;
+    }
+    .manim-transcript ol {
+      display: grid;
+      gap: 5px;
+      margin: 8px 0 0;
+      padding-left: 34px;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.55;
+    }
+    .manim-transcript time {
+      color: var(--faint);
+      font-family: var(--mono);
+      font-size: 9px;
+    }
+    .manim-replay {
+      min-height: var(--control-height);
+      padding: 6px 11px;
+      color: var(--accent);
+      background: transparent;
+      border: 1px solid var(--line);
+      border-radius: var(--control-radius);
+      cursor: pointer;
+    }
+    .visual-formula {
+      padding: 9px 12px;
+      overflow-x: auto;
+      color: var(--text);
+      font-family: var(--mono);
+      font-size: 12px;
+      white-space: nowrap;
+      border-top: 1px solid var(--line);
+      background: var(--surface-soft);
+    }
+    .visual-interaction {
+      padding: 12px;
+      border-top: 1px solid var(--line);
+      background: color-mix(in srgb, var(--accent) 5%, var(--surface-solid));
+    }
+    .visual-interaction strong {
+      display: block;
+      margin-bottom: 7px;
+      font-size: 12px;
+    }
+    .visual-interaction label {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      justify-content: space-between;
+      color: var(--muted);
+      font-size: 11px;
+    }
+    .visual-interaction output {
+      color: var(--accent);
+      font-family: var(--mono);
+      font-size: 11px;
+    }
+    .visual-interaction input[type="range"] {
+      width: 100%;
+      margin-top: 9px;
+      accent-color: var(--accent);
+    }
+    .interaction-options {
+      display: grid;
+      gap: 7px;
+      margin-top: 10px;
+    }
+    .interaction-option {
+      width: 100%;
+      min-height: var(--control-height);
+      padding: 9px 11px;
+      color: var(--text);
+      font: inherit;
+      font-size: 11px;
+      line-height: 1.55;
+      text-align: left;
+      background: var(--surface-solid);
+      border: 1px solid var(--line);
+      border-radius: var(--control-radius);
+      cursor: pointer;
+    }
+    .interaction-option:hover,
+    .interaction-option[aria-pressed="true"] {
+      border-color: var(--accent);
+      background: color-mix(in srgb, var(--accent) 7%, var(--surface-solid));
+    }
+    .interaction-feedback {
+      margin: 9px 0 0;
+      padding-top: 9px;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.65;
+      border-top: 1px solid var(--line);
+    }
+    .interaction-feedback[data-correct="true"] { color: var(--text); }
+    .interaction-feedback[data-correct="false"] { color: var(--accent-3); }
+    .visual-interaction .interaction-toggle {
+      display: grid;
+      grid-template-columns: 1fr auto auto;
+      align-items: center;
+      gap: 9px;
+      cursor: pointer;
+    }
+    .visual-interaction .interaction-toggle input[type="checkbox"] {
+      width: 16px;
+      height: 16px;
+      margin: 0;
+      accent-color: var(--accent);
+    }
+    .toggle-state {
+      min-width: 2.5em;
+      color: var(--accent);
+      font-family: var(--mono);
+      text-align: right;
+    }
+    .motion-replay {
+      margin: 9px 12px 0;
+    }
+    .lab-shell {
+      margin: 0 0 14px;
+      background: color-mix(in srgb, var(--surface-soft) 70%, var(--surface-solid));
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      box-shadow: 0 12px 30px color-mix(in srgb, var(--accent) 7%, transparent);
+      overflow: hidden;
+    }
+    .lab-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 13px 14px 11px;
+      border-bottom: 1px solid var(--line);
+    }
+    .lab-head h3 {
+      margin: 3px 0 0;
+      color: var(--text);
+      font-family: var(--display);
+      font-size: 17px;
+      line-height: 1.35;
+    }
+    .lab-goal {
+      margin: 5px 0 0;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.65;
+    }
+    .lab-expand {
+      flex: 0 0 auto;
+      min-height: 36px;
+    }
+    .lab-frame-wrap {
+      height: var(--lab-height, 420px);
+      min-height: 320px;
+      background: #f7f2e8;
+    }
+    .lab-frame {
+      display: block;
+      width: 100%;
+      height: 100%;
+      border: 0;
+      background: #f7f2e8;
+    }
+    .lab-status {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      padding: 10px 14px;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.6;
+      border-top: 1px solid var(--line);
+    }
+    .lab-status-dot {
+      width: 7px;
+      height: 7px;
+      margin-top: 5px;
+      flex: 0 0 auto;
+      border-radius: 50%;
+      background: var(--accent-3);
+    }
+    .lab-shell[data-complete="true"] .lab-status-dot {
+      background: var(--accent-2);
+    }
+    .lab-result,
+    .lab-reflection {
+      padding: 12px 14px;
+      border-top: 1px solid var(--line);
+    }
+    .lab-result p,
+    .lab-reflection p {
+      margin: 4px 0 0;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.7;
+    }
+    .lab-reflection textarea {
+      display: block;
+      width: 100%;
+      min-height: 76px;
+      margin-top: 8px;
+      padding: 9px 10px;
+      resize: vertical;
+      color: var(--text);
+      font: inherit;
+      font-size: 12px;
+      line-height: 1.6;
+      background: var(--surface-solid);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+    }
+    .lab-reflection-actions {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 8px;
+    }
+    .lab-fallback {
+      padding: 0 14px 12px;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.65;
+    }
+    .lab-fallback summary {
+      cursor: pointer;
+      color: var(--accent);
+    }
+    .lab-shell.is-expanded {
+      position: fixed;
+      inset: 18px;
+      z-index: 90;
+      display: flex;
+      flex-direction: column;
+      margin: 0;
+      max-height: none;
+      background: var(--surface-solid);
+      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.32);
+    }
+    .lab-shell.is-expanded .lab-frame-wrap {
+      flex: 1 1 auto;
+      height: auto;
+      min-height: 0;
+    }
+    body.lab-expanded { overflow: hidden; }
+    .disclosure {
+      margin-top: 9px;
+      color: var(--muted);
+      background: var(--surface-solid);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+    }
+    .disclosure summary {
+      padding: 11px 13px;
+      color: var(--text);
+      font-size: 12px;
+      font-weight: 680;
+      cursor: pointer;
+    }
+    .disclosure-body {
+      padding: 0 13px 13px;
+      font-size: 12px;
+      line-height: 1.7;
+    }
+    .disclosure-body p { margin: 0; }
+    .resource-card,
+    .background-card,
+    .quiz-card {
+      margin-top: 10px;
+      padding: 14px;
+      background: var(--surface-solid);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+    }
+    .resource-card h3,
+    .background-card h3,
+    .quiz-card h3 {
+      margin: 0 0 5px;
+      font-size: 14px;
+      line-height: 1.4;
+    }
+    .resource-card p,
+    .background-card p,
+    .quiz-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 11px;
+    }
+    .resource-card p + p,
+    .background-card p + p,
+    .quiz-card p + p { margin-top: 6px; }
+    .video-embed {
+      position: relative;
+      margin-top: 10px;
+      overflow: hidden;
+      aspect-ratio: 16 / 9;
+      background: #000;
+      border: 1px solid var(--line-strong);
+      border-radius: 2px;
+    }
+    .video-embed iframe {
+      display: block;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+    .video-meta {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      align-items: center;
+      color: var(--faint);
+      font-size: 10px;
+    }
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+    .video-grid .resource-card {
+      min-width: 0;
+      margin-top: 0;
+    }
+    .video-playlist {
+      display: grid;
+      gap: 8px;
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px solid var(--line);
+    }
+    .video-experience {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      align-items: start;
+    }
+    .video-playlist-label {
+      color: var(--faint);
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+    }
+    .video-thumbnails {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+    }
+    .video-thumbnail-button {
+      display: grid;
+      gap: 7px;
+      width: 100%;
+      min-height: 0;
+      padding: 0;
+      overflow: hidden;
+      color: var(--muted);
+      text-align: left;
+      background: var(--surface-solid);
+      border: 1px solid var(--line);
+      border-radius: var(--control-radius);
+      cursor: pointer;
+      transition: border-color 140ms ease, transform 140ms ease;
+    }
+    .video-thumbnail-button:hover {
+      color: var(--text);
+      background: var(--surface-soft);
+      border-color: var(--line-strong);
+      transform: translateY(-1px);
+    }
+    .video-thumbnail-media {
+      position: relative;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      background:
+        linear-gradient(135deg, color-mix(in srgb, var(--accent) 12%, var(--surface-solid)), var(--surface-soft));
+    }
+    .video-thumbnail-media img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .video-thumbnail-media.is-broken img { display: none; }
+    .video-thumbnail-media.is-broken::after {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      color: var(--muted);
+      font-size: 11px;
+      content: attr(data-fallback);
+    }
+    .video-thumbnail-duration {
+      position: absolute;
+      right: 6px;
+      bottom: 6px;
+      padding: 2px 5px;
+      color: #fff;
+      font-family: var(--mono);
+      font-size: 9px;
+      background: rgba(18, 20, 34, 0.78);
+      border-radius: 4px;
+    }
+    .video-thumbnail-copy {
+      display: grid;
+      gap: 3px;
+      padding: 0 8px 9px;
+    }
+    .video-thumbnail-copy strong {
+      overflow: hidden;
+      font-size: 11px;
+      font-weight: 620;
+      line-height: 1.35;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+    }
+    .video-thumbnail-copy span {
+      color: var(--faint);
+      font-size: 9px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+    .global-video-library {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+    .global-video-library-card {
+      display: grid;
+      overflow: hidden;
+      color: var(--text);
+      text-decoration: none;
+      background: var(--surface-solid);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      transition: border-color 140ms ease, transform 140ms ease;
+    }
+    .global-video-library-card:hover {
+      color: var(--text);
+      border-color: var(--line-strong);
+      transform: translateY(-1px);
+    }
+    .global-video-library-card .video-thumbnail-media {
+      border-radius: 0;
+    }
+    .global-video-library-copy {
+      display: grid;
+      gap: 4px;
+      padding: 9px 10px 10px;
+    }
+    .global-video-library-copy strong {
+      display: -webkit-box;
+      overflow: hidden;
+      font-size: 12px;
+      line-height: 1.4;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+    }
+    .global-video-library-copy span {
+      color: var(--faint);
+      font-size: 10px;
+    }
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 5px;
+      margin: 10px 0 0;
+    }
+    .metric {
+      padding: 7px;
+      background: var(--surface-soft);
+      border-radius: 2px;
+    }
+    .metric dt { color: var(--faint); font-size: 9px; }
+    .metric dd { margin: 1px 0 0; font-family: var(--mono); font-size: 10px; }
+    .inline-link {
+      display: inline-flex;
+      margin-top: 8px;
+      font-size: 11px;
+      font-weight: 650;
+    }
+    .empty-state {
+      padding: 18px;
+      color: var(--faint);
+      font-size: 12px;
+      text-align: center;
+      border: 1px dashed var(--line-strong);
+      border-radius: var(--radius-md);
+    }
+
+    .quiz-topline {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 8px;
+      color: var(--faint);
+      font-size: 10px;
+    }
+    .quiz-card fieldset { margin: 0; padding: 0; border: 0; }
+    .quiz-card legend {
+      margin-bottom: 10px;
+      color: var(--text);
+      font-size: 14px;
+      font-weight: 680;
+    }
+    .option {
+      display: flex;
+      gap: 8px;
+      align-items: flex-start;
+      margin: 6px 0;
+      padding: 9px 10px;
+      color: var(--muted);
+      font-size: 12px;
+      background: var(--surface-soft);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      cursor: pointer;
+    }
+    .option input { margin-top: 4px; accent-color: var(--accent); }
+    .option[data-result="correct"] {
+      color: color-mix(in srgb, var(--success) 68%, var(--text));
+      background: color-mix(in srgb, var(--success) 11%, var(--surface-solid));
+      border-color: var(--success);
+    }
+    .option[data-result="incorrect"] {
+      color: color-mix(in srgb, var(--danger) 72%, var(--text));
+      background: color-mix(in srgb, var(--danger) 10%, var(--surface-solid));
+      border-color: var(--danger);
+    }
+    textarea {
+      width: 100%;
+      min-height: 95px;
+      padding: 10px;
+      color: var(--text);
+      background: var(--surface-soft);
+      border: 1px solid var(--line-strong);
+      border-radius: 2px;
+      resize: vertical;
+    }
+    .quiz-actions {
+      display: flex;
+      gap: 7px;
+      align-items: center;
+      margin-top: 10px;
+    }
+    .quiz-feedback {
+      margin-top: 10px;
+      padding: 10px;
+      color: var(--muted);
+      font-size: 11px;
+      background: var(--surface-soft);
+      border: 1px solid var(--line);
+      border-radius: 2px;
+    }
+    .quiz-feedback:empty { display: none; }
+    .quiz-feedback[data-result="incorrect"] {
+      color: color-mix(in srgb, var(--danger) 76%, var(--text));
+      background: color-mix(in srgb, var(--danger) 8%, var(--surface-solid));
+      border-color: var(--danger);
+    }
+    .quiz-feedback[data-result="correct"] {
+      color: color-mix(in srgb, var(--success) 72%, var(--text));
+      background: color-mix(in srgb, var(--success) 9%, var(--surface-solid));
+      border-color: var(--success);
+    }
+    .answer-card {
+      margin-top: 14px;
+      padding: 12px;
+      background: var(--surface-solid);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+    }
+    .answer-card-head {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 9px;
+    }
+    .answer-card-head strong {
+      font-size: 12px;
+    }
+    .answer-card-head span {
+      color: var(--muted);
+      font-size: 10px;
+    }
+    .answer-card-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 7px;
+    }
+    .answer-card-button {
+      display: grid;
+      gap: 2px;
+      place-items: center;
+      min-height: 48px;
+      padding: 5px;
+      color: var(--muted);
+      background: var(--surface-soft);
+      border: 1px solid var(--line);
+      border-radius: var(--control-radius);
+      cursor: pointer;
+    }
+    .answer-card-button strong {
+      font-family: var(--mono);
+      font-size: 12px;
+    }
+    .answer-card-button span {
+      font-size: 9px;
+    }
+    .answer-card-button[data-result="correct"] {
+      color: color-mix(in srgb, var(--success) 76%, var(--text));
+      background: color-mix(in srgb, var(--success) 11%, var(--surface-solid));
+      border-color: var(--success);
+    }
+    .answer-card-button[data-result="incorrect"] {
+      color: color-mix(in srgb, var(--danger) 76%, var(--text));
+      background: color-mix(in srgb, var(--danger) 10%, var(--surface-solid));
+      border-color: var(--danger);
+    }
+    .answer-card-button[aria-current="true"] {
+      box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent) 24%, transparent);
+    }
+    .rubric { margin: 7px 0; padding-left: 18px; }
+    .rubric li { margin: 3px 0; }
+
+    dialog {
+      width: min(980px, calc(100% - 24px));
+      max-height: min(860px, calc(100vh - 30px));
+      padding: 0;
+      color: var(--text);
+      background: var(--surface-solid);
+      border: 1px solid var(--line-strong);
+      border-radius: 24px;
+      box-shadow: 0 18px 50px rgba(24, 25, 20, 0.22);
+    }
+    dialog::backdrop {
+      background: rgba(24, 25, 20, 0.62);
+    }
+    .dialog-shell {
+      display: flex;
+      flex-direction: column;
+      max-height: min(860px, calc(100vh - 30px));
+    }
+    .dialog-head {
+      display: flex;
+      gap: 18px;
+      align-items: start;
+      justify-content: space-between;
+      padding: 20px 22px 14px;
+      border-bottom: 1px solid var(--line);
+    }
+    .dialog-head h2 {
+      margin: 0;
+      font-family: var(--display);
+      font-size: 24px;
+      letter-spacing: -0.03em;
+    }
+    .dialog-head p {
+      max-width: 680px;
+      margin: 5px 0 0;
+      color: var(--muted);
+      font-size: 12px;
+    }
+    .dialog-close {
+      flex: none;
+      min-height: var(--control-height);
+      padding: 6px 11px;
+      color: var(--muted);
+      background: transparent;
+      border: 1px solid var(--line);
+      border-radius: var(--control-radius);
+      cursor: pointer;
+    }
+    .dialog-tabs {
+      display: flex;
+      gap: 4px;
+      padding: 10px 18px 0;
+      overflow-x: auto;
+      border-bottom: 1px solid var(--line);
+    }
+    .dialog-tab {
+      flex: 0 0 auto;
+      min-height: var(--control-height);
+      padding: 7px 10px;
+      color: var(--faint);
+      font-size: 11px;
+      background: transparent;
+      border: 0;
+      border-bottom: 2px solid transparent;
+      border-radius: var(--control-radius);
+      cursor: pointer;
+    }
+    .dialog-tab[aria-selected="true"] {
+      color: var(--text);
+      border-bottom-color: var(--accent);
+    }
+    .dialog-body {
+      min-height: 300px;
+      padding: 17px 22px;
+      overflow: auto;
+    }
+    .dialog-footer {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      padding: 13px 22px 18px;
+      border-top: 1px solid var(--line);
+    }
+    .dialog-footer p {
+      max-width: 540px;
+      margin: 0;
+      color: var(--faint);
+      font-size: 10px;
+    }
+    .dialog-footer-actions { display: flex; gap: 7px; flex-wrap: wrap; }
+    .timeline-controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 12px;
+    }
+    .filter-button {
+      min-height: var(--control-height);
+      padding: 4px 8px;
+      color: var(--muted);
+      font-size: 10px;
+      background: transparent;
+      border: 1px solid var(--line);
+      border-radius: var(--control-radius);
+      cursor: pointer;
+    }
+    .filter-button[aria-pressed="true"] {
+      color: var(--bg);
+      background: var(--accent-2);
+      border-color: var(--accent-2);
+    }
+    .timeline {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .timeline li {
+      position: relative;
+      padding: 0 0 13px 19px;
+    }
+    .timeline li::before {
+      position: absolute;
+      top: 5px;
+      left: 1px;
+      width: 8px;
+      height: 8px;
+      content: "";
+      background: var(--surface-solid);
+      border: 2px solid var(--accent);
+      border-radius: 50%;
+    }
+    .timeline li::after {
+      position: absolute;
+      top: 15px;
+      bottom: 0;
+      left: 4px;
+      width: 1px;
+      content: "";
+      background: var(--line-strong);
+    }
+    .timeline li:last-child::after { display: none; }
+    .timeline button {
+      width: 100%;
+      padding: 0;
+      color: var(--text);
+      text-align: left;
+      background: transparent;
+      border: 0;
+      cursor: pointer;
+    }
+    .timeline time {
+      margin-right: 8px;
+      color: var(--accent);
+      font-family: var(--mono);
+      font-size: 10px;
+    }
+    .timeline strong { font-size: 12px; }
+    .timeline .timeline-detail {
+      display: none;
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 11px;
+    }
+    .timeline li.is-open .timeline-detail { display: block; }
+    .claim-status {
+      display: inline-block;
+      margin-bottom: 5px;
+      color: var(--accent);
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .claim-status[data-claim="research"] { color: var(--accent-3); }
+    .claim-status[data-claim="speculative"] { color: var(--danger); }
+    .source-list { margin: 0; padding: 0; list-style: none; }
+    .source-item {
+      padding: 11px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .source-item h3 { margin: 0; font-size: 12px; }
+    .source-item p {
+      margin: 3px 0 0;
+      color: var(--faint);
+      font-size: 10px;
+    }
+    .gap-list {
+      margin: 0 0 12px;
+      padding: 10px 12px;
+      color: var(--muted);
+      font-size: 11px;
+      background: color-mix(in srgb, var(--accent-3) 8%, transparent);
+      border-left: 3px solid var(--accent-3);
+    }
+
+    .toast {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 100;
+      max-width: 340px;
+      padding: 10px 13px;
+      color: var(--text);
+      font-size: 12px;
+      background: var(--surface-solid);
+      border: 1px solid var(--line-strong);
+      border-radius: 2px;
+      box-shadow: var(--shadow);
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(10px);
+      transition: opacity 150ms ease, transform 150ms ease;
+    }
+    .toast.is-visible { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 1200px) {
+      .workspace {
+        grid-template-columns: minmax(410px, 44fr) minmax(0, 56fr);
+        gap: 12px;
+        padding: 12px;
+      }
+      .chain-row { grid-template-columns: 1fr; }
+      .node-stack,
+      .branch-rail.left,
+      .branch-rail.right { grid-column: auto; }
+      .branch-rail {
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 0 8px;
+      }
+      .branch-rail.left,
+      .branch-rail.right { align-items: stretch; justify-content: flex-start; }
+      .branch-button { max-width: none; flex: 1 1 150px; }
+    }
+
+    @media (max-width: 880px) {
+      .app-header {
+        grid-template-columns: 1fr;
+        gap: 6px;
+        padding: 8px 14px;
+      }
+      .chain-progress { display: none; }
+      .global-switcher {
+        width: 100%;
+        justify-self: stretch;
+      }
+      .workspace {
+        display: block;
+        width: min(100% - 20px, 760px);
+        height: auto;
+        min-height: 0;
+        margin: 0 auto;
+        padding-top: 14px;
+        overflow: visible;
+      }
+      .chain-stage {
+        height: auto;
+        padding: 0 0 24px;
+        overflow: visible;
+        background: transparent;
+        border-right: 0;
+      }
+      .hero-grid { grid-template-columns: 1fr; }
+      .opening-figure-placeholder { min-height: 0; }
+      .journey-actions { grid-template-columns: 1fr; align-items: start; }
+      #journey-position { grid-column: auto; }
+      .journey-actions .button {
+        grid-column: auto;
+        grid-row: auto;
+        justify-self: start;
+      }
+      .inspector {
+        position: fixed;
+        right: 8px;
+        bottom: 8px;
+        left: 8px;
+        z-index: 80;
+        top: auto;
+        height: auto;
+        max-height: 78vh;
+        border-radius: 4px;
+        transform: translateY(calc(100% + 20px));
+        visibility: hidden;
+        transition: transform 180ms ease, visibility 180ms ease;
+      }
+      .inspector.is-open {
+        transform: translateY(0);
+        visibility: visible;
+      }
+      .close-button { display: inline-flex; }
+      .chain-row {
+        grid-template-columns: 1fr;
+        gap: 7px;
+      }
+      .chain-row::before { display: none; }
+      .node-card { min-height: 0; }
+      .branch-rail {
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 0 8px;
+        opacity: 1;
+        pointer-events: auto;
+      }
+      .branch-rail.left,
+      .branch-rail.right { align-items: stretch; justify-content: flex-start; }
+      .chain-row:not([data-selected="true"]) .branch-rail { display: none; }
+      .branch-rail:empty { display: none; }
+      .branch-button { max-width: none; flex: 1 1 140px; }
+      .branch-button::after { display: none; }
+      .chain-connector { height: 25px; }
+      body.inspector-open { overflow: hidden; }
+      .lab-shell.is-expanded { inset: 0; border-radius: 0; }
+      .lab-head { flex-wrap: wrap; }
+      .lab-frame-wrap { min-height: 300px; }
+      .opening { grid-template-columns: 1fr; align-items: start; }
+      .chain-count { justify-self: start; }
+    }
+
+    @media (max-width: 520px) {
+      .brand span:last-child { display: none; }
+      .hero { padding: 21px 17px; }
+      .hero .opening-visual figcaption { display: none; }
+      .chain-completion { padding: 16px; }
+      .node-card { padding: 14px; }
+      .node-question { font-size: 16px; }
+      .dialog-head { padding: 17px 17px 12px; }
+      .dialog-tabs { padding-left: 12px; padding-right: 12px; }
+      .dialog-body { padding: 15px 17px; }
+      .dialog-footer { padding: 12px 17px 16px; }
+      .inspector-head { padding: 15px 16px 12px; }
+      .tabs { padding-left: 10px; padding-right: 10px; }
+      .inspector-body { padding: 15px 16px 18px; }
+      .inspector-nav { padding: 11px 16px 15px; }
+      .metrics { grid-template-columns: 1fr; }
+      .video-grid { grid-template-columns: 1fr; }
+      .video-thumbnails { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .global-video-library { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .key-insight { grid-template-columns: 1fr; gap: 4px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+      }
+    }
+
+    @media print {
+      .app-header, .branch-rail, .inspector-nav, .tabs, .completion-actions, .toast, dialog { display: none !important; }
+      body { color: #111; background: #fff; }
+      body::before { display: none; }
+      .workspace { display: block; width: 100%; }
+      .hero, .node-card, .chain-completion, .inspector { color: #111; background: #fff; box-shadow: none; border-color: #bbb; }
+      .inspector { position: static; max-height: none; }
+      .disclosure[open] .disclosure-body { display: block; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#chain-start">跳到知识链</a>
+  <header class="app-header">
+    <a class="brand" href="#top" aria-label="回到页面顶部">
+      <span class="brand-mark" aria-hidden="true">W</span>
+      <span>DeepWhy</span>
+    </a>
+    <div class="chain-progress" aria-label="知识链进度">
+      <span id="progress-label">知识链</span>
+      <span class="progress-track"><span class="progress-fill" id="progress-fill"></span></span>
+    </div>
+    <div class="global-switcher" role="group" aria-label="全局视图">
+      <span>全局视图</span>
+      <button data-global-view="development" type="button">发展</button>
+      <button data-global-view="people" type="button">人物</button>
+      <button data-global-view="stage" type="button">当前</button>
+      <button data-global-view="videos" type="button">视频</button>
+      <button data-global-view="quiz" type="button">测验</button>
+    </div>
+  </header>
+
+  <main class="workspace" id="top">
+    <section class="chain-stage">
+      <header class="hero" aria-labelledby="page-title">
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Why First · Knowledge Chain</p>
+            <h1 id="page-title">正在载入知识链…</h1>
+          </div>
+          <figure class="opening-figure-placeholder" id="opening-visual"></figure>
+        </div>
+        <div class="opening">
+          <p id="opening-copy"></p>
+          <span class="chain-count" id="chain-count"></span>
+        </div>
+        <p class="key-insight"><span>关键洞见</span><strong id="key-insight"></strong></p>
+        <div class="journey-actions">
+          <span id="journey-position">当前位置</span>
+          <span id="next-action-copy"></span>
+          <button class="button primary" id="hero-next-action" type="button">查看当前解释</button>
+        </div>
+        <div id="premise-notice"></div>
+        <p id="gap-link-wrap" hidden><button class="evidence-button" id="gap-link" type="button"></button></p>
+      </header>
+
+      <div class="chain-toolbar">
+        <strong id="chain-title">知识链</strong>
+        <span id="depth-label">点击节点查看证据与解释</span>
+      </div>
+      <div class="chain-legend" id="chain-legend" aria-label="知识链节点类型图例"></div>
+      <div class="knowledge-chain" id="chain-start" aria-label="知识探索主链"></div>
+
+      <section class="chain-completion" aria-labelledby="completion-title">
+        <h2 id="completion-title">走到这里，你已经把问题拆成了什么？</h2>
+        <p id="takeaway"></p>
+        <details class="next-drawer">
+          <summary id="next-summary">继续追问</summary>
+          <ul id="next-question-list"></ul>
+        </details>
+      </section>
+    </section>
+
+    <aside class="inspector" id="inspector" aria-label="节点详情" aria-live="polite">
+      <div class="inspector-head">
+        <div class="inspector-topline">
+          <span class="inspector-type" id="inspector-type">节点</span>
+          <button class="close-button" id="inspector-close" type="button" aria-label="关闭节点详情">关闭</button>
+        </div>
+        <div id="branch-origin-wrap"></div>
+        <h2 id="inspector-title">选择一个节点</h2>
+        <p class="inspector-answer" id="inspector-answer"></p>
+      </div>
+      <div class="tabs" role="tablist" aria-label="节点详情分类">
+        <button class="tab-button" type="button" role="tab" data-tab="understand" aria-selected="true">理解</button>
+        <button class="tab-button" type="button" role="tab" data-tab="video" aria-selected="false">视频</button>
+        <button class="tab-button" type="button" role="tab" data-tab="research" aria-selected="false">研究背景</button>
+        <button class="tab-button" type="button" role="tab" data-tab="industry" aria-selected="false">行业发展</button>
+        <button class="tab-button" type="button" role="tab" data-tab="quiz" aria-selected="false">检查理解</button>
+      </div>
+      <div class="inspector-body" id="inspector-body"></div>
+      <div class="inspector-nav">
+        <button class="button quiet" id="prev-node" type="button">← 上一层</button>
+        <button class="button quiet" id="next-node" type="button">下一层 →</button>
+      </div>
+    </aside>
+  </main>
+
+  <dialog id="background-dialog" aria-labelledby="background-title">
+    <div class="dialog-shell">
+      <header class="dialog-head">
+        <div>
+          <h2 id="background-title">研究背景</h2>
+          <p id="background-summary"></p>
+        </div>
+        <button class="dialog-close" id="background-close" type="button">关闭</button>
+      </header>
+      <div class="dialog-tabs" role="tablist" aria-label="研究背景分类">
+        <button class="dialog-tab" type="button" data-background-tab="videos" aria-selected="false">视频</button>
+        <button class="dialog-tab" type="button" data-background-tab="people" aria-selected="true">人物</button>
+        <button class="dialog-tab" type="button" data-background-tab="institutions" aria-selected="false">机构</button>
+        <button class="dialog-tab" type="button" data-background-tab="applications" aria-selected="false">应用</button>
+        <button class="dialog-tab" type="button" data-background-tab="timeline" aria-selected="false">时间线</button>
+        <button class="dialog-tab" type="button" data-background-tab="frontier" aria-selected="false">前沿</button>
+        <button class="dialog-tab" type="button" data-background-tab="sources" aria-selected="false">来源与边界</button>
+      </div>
+      <div class="dialog-body" id="background-body"></div>
+      <footer class="dialog-footer">
+        <p id="background-footer-note">所有讲解、动画与交互都保存在这一份 HTML 中。</p>
+        <div class="dialog-footer-actions">
+          <button class="button" id="export-data" type="button">导出 JSON</button>
+        </div>
+      </footer>
+    </div>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <noscript><p style="padding:20px">这个知识链页面需要启用 JavaScript 才能切换节点和答题。</p></noscript>
+  <script id="deepwhy-data" type="application/json">__DEEPWHY_DATA__</script>
+  <script>
+    (() => {
+      "use strict";
+
+      const TYPE_META = {
+        phenomenon: { label: "现象", short: "Phenomenon", color: "#22c55e" },
+        mechanism: { label: "机制", short: "Mechanism", color: "#3b82f6" },
+        principle: { label: "原理", short: "Principle", color: "#8b5cf6" },
+        theory: { label: "理论", short: "Theory", color: "#f59e0b" },
+        frontier: { label: "前沿", short: "Frontier", color: "#ef4444" },
+        boundary: { label: "边界", short: "Boundary", color: "#94a3b8" }
+      };
+      const STATUS_LABELS = {
+        complete: "已核验",
+        partial: "部分核验",
+        insufficient: "资料不足"
+      };
+      const CLAIM_LABELS = {
+        verified: "已验证",
+        research: "研究中",
+        speculative: "推测"
+      };
+      const EVENT_LABELS = {
+        background: "背景",
+        paper: "论文 / 发表",
+        proposal: "提出 / 方案",
+        prototype: "原型 / 实验",
+        operational: "投入运行",
+        adoption: "广泛采用",
+        boundary: "边界 / 转折"
+      };
+      const BG_TABS = ["videos", "people", "institutions", "applications", "timeline", "frontier", "sources"];
+
+      let data;
+      try {
+        data = JSON.parse(document.getElementById("deepwhy-data").textContent);
+      } catch (error) {
+        document.body.innerHTML = "<main style='padding:2rem'><h1>内容数据无法解析</h1><p>请重新运行构建脚本并检查 JSON。</p></main>";
+        console.error(error);
+        return;
+      }
+
+      const videoMap = new Map(data.videos.items.map(video => [video.id, video]));
+      const nodeMap = new Map(data.chain.nodes.map(node => [node.id, node]));
+      const branchMap = new Map();
+      data.chain.nodes.forEach(node => {
+        node.branches.forEach(branch => branchMap.set(branch.id, { ...branch, parentId: node.id }));
+      });
+
+      const state = {
+        selectedNodeId: data.chain.nodes[0].id,
+        selectedBranchId: null,
+        openBranchNodeId: null,
+        tab: "understand",
+        globalView: null,
+        quizScope: "node",
+        quizIndex: 0,
+        activeVideoId: data.videos.items[0]?.id || null,
+        backgroundTab: "people",
+        backgroundNodeId: null,
+        backgroundOnLoad: null,
+        timelineFilter: "all",
+        quizAnswers: {}
+      };
+      let scrollToInitialNode = false;
+
+      const byId = id => document.getElementById(id);
+
+      function el(tag, className, text) {
+        const node = document.createElement(tag);
+        if (className) node.className = className;
+        if (text !== undefined && text !== null) node.textContent = String(text);
+        return node;
+      }
+
+      function link(url, text, className = "") {
+        const anchor = el("a", className, text);
+        anchor.href = url;
+        anchor.target = "_blank";
+        anchor.rel = "noopener noreferrer";
+        return anchor;
+      }
+
+      function formatNumber(value) {
+        return Number.isInteger(value) ? new Intl.NumberFormat("zh-CN").format(value) : "未获取";
+      }
+
+      function sanitizeSvg(raw) {
+        if (typeof raw !== "string" || !raw.trim()) return null;
+        const doc = new DOMParser().parseFromString(raw, "image/svg+xml");
+        if (doc.querySelector("parsererror")) return null;
+        const root = doc.documentElement;
+        if (!root || root.localName.toLowerCase() !== "svg") return null;
+        const blocked = new Set(["script", "foreignobject", "iframe", "object", "embed"]);
+        [root, ...root.querySelectorAll("*")].forEach(node => {
+          if (blocked.has(node.localName.toLowerCase())) {
+            node.remove();
+            return;
+          }
+          [...node.attributes].forEach(attribute => {
+            const name = attribute.name.toLowerCase();
+            const value = attribute.value.trim();
+            if (name.startsWith("on") || name === "style" || /^javascript:/i.test(value)) {
+              node.removeAttribute(attribute.name);
+            }
+            if ((name === "href" || name.endsWith(":href")) && !value.startsWith("#")) {
+              node.removeAttribute(attribute.name);
+            }
+          });
+        });
+        return new XMLSerializer().serializeToString(root);
+      }
+
+      let interactionCounter = 0;
+
+      function formatInteractionValue(value) {
+        const rounded = Math.round(value * 100) / 100;
+        return Number.isInteger(rounded) ? String(rounded) : rounded.toFixed(2);
+      }
+
+      function renderInteraction(interaction) {
+        if (!interaction) return null;
+        const wrap = el("div", "visual-interaction");
+        wrap.append(el("strong", "", interaction.prompt));
+        if (interaction.kind === "inverse-square" || interaction.kind === "range") {
+          const label = el("label");
+          label.append(el("span", "", interaction.label));
+          const output = el("output");
+          output.setAttribute("aria-live", "polite");
+          const input = el("input");
+          input.type = "range";
+          input.min = String(interaction.min);
+          input.max = String(interaction.max);
+          input.step = String(interaction.step);
+          input.value = String(interaction.initial);
+          input.id = `interaction-${++interactionCounter}`;
+          label.htmlFor = input.id;
+          const update = () => {
+            const value = Number(input.value);
+            const formatted = formatInteractionValue(value);
+            output.textContent = interaction.resultTemplate
+              .replaceAll("{value}", formatted)
+              .replaceAll("{inverseSquare}", (1 / (value * value)).toFixed(3));
+          };
+          input.addEventListener("input", update);
+          update();
+          label.append(output);
+          wrap.append(label, input);
+          return wrap;
+        }
+        if (interaction.kind === "prediction") {
+          const options = el("div", "interaction-options");
+          const feedback = el("p", "interaction-feedback");
+          feedback.hidden = true;
+          feedback.setAttribute("aria-live", "polite");
+          interaction.options.forEach((option, index) => {
+            const button = el("button", "interaction-option", option.label);
+            button.type = "button";
+            button.setAttribute("aria-pressed", "false");
+            button.addEventListener("click", () => {
+              options.querySelectorAll(".interaction-option").forEach(item => {
+                item.setAttribute("aria-pressed", String(item === button));
+              });
+              feedback.hidden = false;
+              feedback.dataset.correct = String(index === interaction.correctIndex);
+              feedback.textContent = option.feedback;
+            });
+            options.append(button);
+          });
+          wrap.append(options, feedback);
+          return wrap;
+        }
+        if (interaction.kind === "toggle") {
+          const label = el("label", "interaction-toggle");
+          label.append(el("span", "", interaction.label));
+          const input = el("input");
+          input.type = "checkbox";
+          input.checked = Boolean(interaction.initial);
+          input.id = `interaction-${++interactionCounter}`;
+          label.htmlFor = input.id;
+          const state = el("span", "toggle-state");
+          const feedback = el("p", "interaction-feedback");
+          feedback.setAttribute("aria-live", "polite");
+          const update = () => {
+            state.textContent = input.checked ? interaction.onLabel : interaction.offLabel;
+            feedback.textContent = input.checked
+              ? interaction.onFeedback
+              : interaction.offFeedback;
+          };
+          input.addEventListener("change", update);
+          update();
+          label.append(input, state);
+          wrap.append(label, feedback);
+          return wrap;
+        }
+        return null;
+      }
+
+      function renderMotionReplay(media) {
+        if (!media || media.tagName.toLowerCase() !== "svg") return null;
+        if (!media.querySelector("animate, animateTransform, animateMotion")) return null;
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return null;
+        const replay = el("button", "button quiet motion-replay", "重播动画");
+        replay.type = "button";
+        replay.addEventListener("click", () => {
+          try {
+            media.setCurrentTime(0);
+            media.unpauseAnimations();
+          } catch (error) {
+            // Static labels remain available if SVG animation APIs are unavailable.
+          }
+        });
+        return replay;
+      }
+
+      const LAB_LABELS = {
+        simulation: "模拟实验",
+        diagram: "探索图解",
+        code: "代码运行",
+        game: "决策游戏",
+        spatial3d: "空间观察",
+        procedural: "流程练习",
+      };
+      const labFrameContexts = new WeakMap();
+
+      function labBaseStyle() {
+        const styles = getComputedStyle(document.documentElement);
+        const token = name => styles.getPropertyValue(name).trim();
+        return `<style>
+          :root {
+            color-scheme: light;
+            --lab-bg: ${token("--surface-soft") || "#f7f2e8"};
+            --lab-surface: ${token("--surface-solid") || "#fffaf0"};
+            --lab-text: ${token("--text") || "#26332e"};
+            --lab-muted: ${token("--muted") || "#6c756d"};
+            --lab-accent: ${token("--accent") || "#1d6d67"};
+            --lab-accent-2: ${token("--accent-2") || "#9b4d36"};
+            --lab-border: ${token("--line") || "#c8bda9"};
+            --lab-display: ${token("--display") || "Georgia,serif"};
+            --lab-sans: ${token("--sans") || "system-ui,sans-serif"};
+            --lab-mono: ${token("--mono") || "ui-monospace,monospace"};
+          }
+          *, *::before, *::after { box-sizing: border-box; }
+          html, body {
+            margin: 0;
+            min-height: 100%;
+            background: var(--lab-bg);
+            color: var(--lab-text);
+            font-family: var(--lab-sans);
+          }
+          button, input, select, textarea { font: inherit; }
+          button { min-height: 44px; touch-action: manipulation; }
+          :focus-visible { outline: 3px solid color-mix(in srgb, var(--lab-accent) 55%, transparent); outline-offset: 2px; }
+          @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+              animation-duration: 0.01ms !important;
+              animation-iteration-count: 1 !important;
+              scroll-behavior: auto !important;
+              transition-duration: 0.01ms !important;
+            }
+          }
+        </style>`;
+      }
+
+      function decorateLabDocument(raw) {
+        const csp = '<meta http-equiv="Content-Security-Policy" content="default-src \'none\'; style-src \'unsafe-inline\'; script-src \'unsafe-inline\' \'unsafe-eval\' https://cdn.jsdelivr.net/npm/three@0.160.0/; img-src data: blob:; font-src data:; media-src data: blob:; connect-src \'none\'; worker-src blob:; frame-src \'none\'">';
+        const injection = `${csp}${labBaseStyle()}`;
+        if (/<head[^>]*>/i.test(raw)) {
+          return raw.replace(/<head[^>]*>/i, match => `${match}\n${injection}`);
+        }
+        return raw.replace(
+          /<html[^>]*>/i,
+          match => `${match}<head>${injection}</head>`
+        );
+      }
+
+      function closeExpandedLab() {
+        document.querySelectorAll(".lab-shell.is-expanded").forEach(shell => {
+          shell.classList.remove("is-expanded");
+          const button = shell.querySelector(".lab-expand");
+          if (button) button.textContent = "放大实验";
+        });
+        document.body.classList.remove("lab-expanded");
+      }
+
+      function renderLab(lab) {
+        if (!lab) return null;
+        const shell = el("section", "lab-shell");
+        shell.dataset.labKind = lab.kind;
+        shell.dataset.complete = "false";
+        shell.style.setProperty("--lab-height", `${lab.height}px`);
+
+        const head = el("div", "lab-head");
+        const heading = el("div");
+        heading.append(
+          el("span", "detail-kicker", `交互实验室 · ${LAB_LABELS[lab.kind] || lab.kind}`),
+          el("h3", "", lab.title),
+          el("p", "lab-goal", lab.goal)
+        );
+        const expand = el("button", "button quiet lab-expand", "放大实验");
+        expand.type = "button";
+        expand.setAttribute("aria-expanded", "false");
+        expand.addEventListener("click", () => {
+          const next = !shell.classList.contains("is-expanded");
+          closeExpandedLab();
+          if (next) {
+            shell.classList.add("is-expanded");
+            document.body.classList.add("lab-expanded");
+            expand.textContent = "关闭放大";
+            expand.setAttribute("aria-expanded", "true");
+          }
+        });
+        head.append(heading, expand);
+
+        const frameWrap = el("div", "lab-frame-wrap");
+        const frame = el("iframe", "lab-frame");
+        frame.title = `交互实验室：${lab.title}`;
+        frame.setAttribute("sandbox", "allow-scripts");
+        frame.setAttribute("referrerpolicy", "no-referrer");
+        frame.loading = "lazy";
+        const statusSummary = el("span", "", "实验加载中…");
+        const result = el("div", "lab-result");
+        result.hidden = true;
+        result.append(
+          el("span", "detail-kicker", "实验后的结论"),
+          el("p", "", lab.completionText)
+        );
+        const reflection = el("div", "lab-reflection");
+        reflection.hidden = true;
+        reflection.append(
+          el("span", "detail-kicker", "用自己的话说一遍"),
+          el("p", "", lab.reflectionPrompt)
+        );
+        const reflectionInput = el("textarea");
+        reflectionInput.setAttribute("aria-label", lab.reflectionPrompt);
+        reflectionInput.placeholder = "先写下你的解释，再查看参考思路。";
+        const reflectActions = el("div", "lab-reflection-actions");
+        const reveal = el("button", "button quiet", "查看参考思路");
+        reveal.type = "button";
+        reveal.disabled = true;
+        const reference = el("p", "", lab.completionText);
+        reference.hidden = true;
+        reflectionInput.addEventListener("input", () => {
+          reveal.disabled = !reflectionInput.value.trim();
+        });
+        reveal.addEventListener("click", () => {
+          reference.hidden = false;
+          reveal.disabled = true;
+          reveal.textContent = "参考思路已展开";
+        });
+        reflectActions.append(reveal);
+        reflection.append(reflectionInput, reflectActions, reference);
+
+        const fallback = el("details", "lab-fallback");
+        fallback.append(
+          el("summary", "", "实验无法运行时查看等价说明"),
+          el("p", "", lab.fallbackText)
+        );
+
+        const status = el("div", "lab-status");
+        status.append(
+          el("span", "lab-status-dot"),
+          statusSummary
+        );
+        status.setAttribute("aria-live", "polite");
+        frameWrap.append(frame);
+        shell.append(head, frameWrap, status, result, reflection, fallback);
+
+        const context = {
+          shell,
+          statusSummary,
+          result,
+          reflection,
+          completed: false,
+        };
+        const contentWindow = frame.contentWindow;
+        if (contentWindow) labFrameContexts.set(contentWindow, context);
+        frame.addEventListener("load", () => {
+          if (frame.contentWindow) labFrameContexts.set(frame.contentWindow, context);
+          if (!context.completed) {
+            statusSummary.textContent = "实验已加载，请按目标开始操作。";
+          }
+        });
+        frame.srcdoc = decorateLabDocument(lab.html);
+        return shell;
+      }
+
+      function handleLabMessage(event) {
+        const context = labFrameContexts.get(event.source);
+        const payload = event.data;
+        if (
+          !context ||
+          !payload ||
+          payload.source !== "deepwhy-lab" ||
+          payload.type !== "state"
+        ) {
+          return;
+        }
+        const summary =
+          typeof payload.summary === "string"
+            ? payload.summary.slice(0, 500)
+            : "实验状态已更新。";
+        context.statusSummary.textContent = summary;
+        context.completed = payload.complete === true;
+        context.shell.dataset.complete = String(context.completed);
+        context.result.hidden = !context.completed;
+        context.reflection.hidden = !context.completed;
+      }
+
+      function settleReducedMotion(svg) {
+        if (!svg) return;
+        const animations = svg.querySelectorAll(
+          "animate, animateTransform, animateMotion"
+        );
+        if (!animations.length) return;
+        if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+        animations.forEach(animation => {
+          try {
+            animation.endElement();
+          } catch (error) {
+            // A static fallback in the SVG still remains available.
+          }
+        });
+        svg.dataset.reducedMotion = "true";
+      }
+
+      function renderDiagram(diagram, { compact = false, className = "" } = {}) {
+        if (!diagram) return null;
+        const figure = el("figure", `figure-frame ${className}`.trim());
+        figure.dataset.visualKind = diagram.kind;
+        let media = null;
+        if (diagram.mode === "svg") {
+          const safeSvg = sanitizeSvg(diagram.svg);
+          if (safeSvg) {
+            const holder = el("div");
+            holder.innerHTML = safeSvg;
+            media = holder.firstElementChild;
+            if (media) {
+              media.setAttribute("role", "img");
+              media.setAttribute("aria-label", diagram.alt);
+              settleReducedMotion(media);
+            }
+          }
+        } else if (/^https?:\/\//.test(diagram.src || "")) {
+          media = el("img");
+          media.src = diagram.src;
+          media.alt = diagram.alt;
+          media.loading = "lazy";
+          media.referrerPolicy = "no-referrer";
+        }
+        if (!media) return null;
+        const interaction = compact ? null : renderInteraction(diagram.interaction);
+        if (interaction && diagram.interaction.kind === "prediction") {
+          figure.append(interaction);
+        }
+        figure.append(media);
+        const replay = compact ? null : renderMotionReplay(media);
+        if (replay) figure.append(replay);
+        if (!compact && diagram.formula) {
+          figure.append(el("div", "visual-formula", diagram.formula));
+        }
+        if (!compact) {
+          figure.append(el("figcaption", "", diagram.caption));
+          if (interaction && diagram.interaction.kind !== "prediction") {
+            figure.append(interaction);
+          }
+        }
+        return figure;
+      }
+
+      function renderManim(manim) {
+        if (!manim) return null;
+        const feature = el("section", "manim-feature");
+        feature.dataset.manim = "true";
+        feature.setAttribute("aria-label", `动画图解：${manim.alt}`);
+        const head = el("div", "manim-head");
+        const heading = el("div");
+        heading.append(
+          el("span", "detail-kicker", "动画图解"),
+          el("strong", "", manim.alt)
+        );
+        const replay = el("button", "manim-replay", "重播");
+        replay.type = "button";
+        head.append(heading, replay);
+
+        const media = el("div", "manim-media");
+        const reducedMotion = window.matchMedia(
+          "(prefers-reduced-motion: reduce)"
+        ).matches;
+        feature.dataset.autoplay = String(!reducedMotion);
+        const video = el("video");
+        video.muted = true;
+        video.loop = true;
+        video.controls = true;
+        video.playsInline = true;
+        video.preload = "metadata";
+        video.poster = manim.posterSrc;
+        video.src = manim.videoSrc;
+        video.setAttribute("aria-label", manim.alt);
+        if (!reducedMotion) video.autoplay = true;
+
+        const showFallback = () => {
+          const safeSvg = sanitizeSvg(manim.fallbackSvg);
+          if (!safeSvg) {
+            media.replaceChildren(
+              el("p", "empty-state", "动画不可用，请阅读下方文字说明。")
+            );
+            return;
+          }
+          const holder = el("div");
+          holder.innerHTML = safeSvg;
+          const svg = holder.firstElementChild;
+          if (!svg) return;
+          svg.setAttribute("role", "img");
+          svg.setAttribute("aria-label", manim.alt);
+          settleReducedMotion(svg);
+          media.replaceChildren(svg);
+        };
+
+        video.addEventListener("error", showFallback, { once: true });
+        replay.addEventListener("click", () => {
+          if (!media.contains(video)) {
+            media.replaceChildren(video);
+          }
+          try {
+            video.currentTime = 0;
+            const playback = video.play();
+            if (playback && typeof playback.catch === "function") {
+              playback.catch(showFallback);
+            }
+          } catch (error) {
+            showFallback();
+          }
+        });
+        media.append(video);
+        feature.append(head, media, el("p", "manim-caption", manim.caption));
+
+        if (manim.transcript && manim.transcript.length) {
+          const transcript = el("details", "manim-transcript");
+          transcript.append(el("summary", "", "查看动画文字说明"));
+          const cues = el("ol");
+          manim.transcript.forEach(cue => {
+            const item = el("li");
+            item.append(
+              el("time", "", `${formatDuration(cue.start)}–${formatDuration(cue.end)}`),
+              document.createTextNode(` ${cue.text}`)
+            );
+            cues.append(item);
+          });
+          transcript.append(cues);
+          feature.append(transcript);
+        }
+        return feature;
+      }
+
+      function disclosure(label, text) {
+        if (!text) return null;
+        const details = el("details", "disclosure");
+        details.append(el("summary", "", label));
+        const body = el("div", "disclosure-body");
+        body.append(el("p", "", text));
+        details.append(body);
+        return details;
+      }
+
+      function renderHero() {
+        document.documentElement.lang = data.meta.language || "zh-CN";
+        document.title = `${data.meta.topic} · DeepWhy`;
+        byId("page-title").textContent = data.meta.topic;
+        const opening = byId("opening-copy");
+        opening.append(document.createTextNode(data.chain.openingScenario));
+        opening.append(el("strong", "", data.chain.openingQuestion));
+        byId("chain-count").textContent = `${data.chain.nodes.length} 层知识链`;
+        byId("chain-title").textContent = data.chain.title;
+        byId("key-insight").textContent = data.presentation.centralInsight;
+        byId("takeaway").textContent = data.chain.takeaway;
+        const openingVisual = renderDiagram(data.chain.openingVisual, { className: "opening-visual" });
+        const placeholder = byId("opening-visual");
+        if (openingVisual) placeholder.replaceWith(openingVisual);
+        else placeholder.remove();
+
+        if (data.meta.premiseCheck.status !== "confirmed") {
+          const notice = el("div", "premise-notice");
+          notice.append(
+            el("strong", "", data.meta.premiseCheck.status === "corrected" ? "前提已校正：" : "前提待核验："),
+            document.createTextNode(data.meta.premiseCheck.note)
+          );
+          byId("premise-notice").append(notice);
+        }
+        if (data.meta.evidenceGaps.length) {
+          byId("gap-link-wrap").hidden = false;
+          const button = byId("gap-link");
+          button.textContent = `证据边界 · ${data.meta.evidenceGaps.length} 项`;
+          button.addEventListener("click", () => openBackground("sources"));
+        }
+
+        byId("next-summary").textContent = `继续追问 · ${data.nextQuestions.length} 个方向`;
+        const nextList = byId("next-question-list");
+        data.nextQuestions.forEach(item => {
+          const li = el("li");
+          const anchor = el("a", "next-question-link");
+          anchor.href = deepwhyQuestionUrl(item.question);
+          anchor.target = "_blank";
+          anchor.rel = "noopener noreferrer";
+          const copy = el("span", "next-question-copy");
+          copy.append(
+            el("strong", "", item.question),
+            el("span", "", item.why)
+          );
+          anchor.append(copy, el("span", "next-question-arrow", "继续探索 ↗"));
+          li.append(anchor);
+          nextList.append(li);
+        });
+      }
+
+      function deepwhyQuestionUrl(question) {
+        const url = new URL("https://deepwhy.cn/");
+        url.searchParams.set("topic", data.meta.topic);
+        url.searchParams.set("question", question);
+        return url.href;
+      }
+
+      function backgroundItemsFor(tab, nodeOverride = null) {
+        const items = data.background[tab] || [];
+        const node = nodeOverride || (
+          state.backgroundNodeId ? nodeMap.get(state.backgroundNodeId) : null
+        );
+        if (!node) return items;
+        const nodeSources = new Set(node.sourceIds || []);
+        return items.filter(item =>
+          (item.sourceIds || []).some(sourceId => nodeSources.has(sourceId))
+        );
+      }
+
+      function renderChain() {
+        const root = byId("chain-start");
+        root.replaceChildren();
+        const legend = byId("chain-legend");
+        legend.replaceChildren();
+        [...new Set(data.chain.nodes.map(node => node.type))].forEach(type => {
+          const item = el("span", "chain-legend-item");
+          const dot = el("span", "chain-legend-dot");
+          dot.style.setProperty("--legend-color", TYPE_META[type].color);
+          item.append(dot, document.createTextNode(TYPE_META[type].label));
+          legend.append(item);
+        });
+        data.chain.nodes.forEach((node, index) => {
+          const row = el("div", "chain-row");
+          row.dataset.nodeId = node.id;
+          row.dataset.selected = String(node.id === state.selectedNodeId);
+          const nodeColor = TYPE_META[node.type].color;
+          const nextNode = data.chain.nodes[index + 1];
+          row.style.setProperty("--node-color", nodeColor);
+          row.style.setProperty(
+            "--next-node-color",
+            nextNode ? TYPE_META[nextNode.type].color : nodeColor
+          );
+
+          const left = el("div", "branch-rail left");
+          const right = el("div", "branch-rail right");
+          const branchesOpen = state.openBranchNodeId === node.id;
+          if (branchesOpen) {
+            node.branches.forEach((branch, branchIndex) => {
+              const button = el("button", "branch-button", `↳ ${branch.question}`);
+              button.type = "button";
+              button.dataset.branchId = branch.id;
+              button.addEventListener("click", event => {
+                event.stopPropagation();
+                selectBranch(node.id, branch.id);
+              });
+              (branchIndex % 2 === 0 ? left : right).append(button);
+            });
+          }
+
+          const card = el("button", "node-card");
+          card.type = "button";
+          card.dataset.nodeId = node.id;
+          card.dataset.nodeType = node.type;
+          card.style.setProperty("--node-color", nodeColor);
+          card.setAttribute("aria-current", String(node.id === state.selectedNodeId));
+          const head = el("div", "node-head");
+          head.append(
+            el("span", "node-index", String(index + 1).padStart(2, "0")),
+            el("span", "node-track", `${TYPE_META[node.type].label} · ${TYPE_META[node.type].short}`),
+            el("span", "node-status", STATUS_LABELS[node.status])
+          );
+          head.lastElementChild.dataset.status = node.status;
+          card.append(head);
+          card.append(el("p", "node-concept", node.concept));
+          card.append(el("h2", "node-question", node.question));
+          card.append(el("p", "node-answer", node.answer));
+          if (node.diagram) {
+            card.dataset.visualKind = node.diagram.kind;
+            const mini = renderDiagram(node.diagram, {
+              compact: true,
+              className: "node-mini-visual",
+            });
+            if (mini) card.append(mini);
+          } else {
+            card.dataset.visualKind = "text";
+          }
+          const footer = el("div", "node-footer");
+          footer.append(
+            el("span", "", node.diagram ? "含原理图" : "查看解释"),
+            el("span", "", node.branches.length ? `${node.branches.length} 个分支` : "主链")
+          );
+          card.append(footer);
+          card.addEventListener("click", () => selectNode(node.id));
+          const stack = el("div", "node-stack");
+          stack.append(card);
+          if (node.id === state.selectedNodeId && node.branches.length) {
+            const branchToggle = el(
+              "button",
+              "branch-toggle",
+              branchesOpen ? "收起分支" : `展开 ${node.branches.length} 个分支`
+            );
+            branchToggle.type = "button";
+            branchToggle.setAttribute("aria-expanded", String(branchesOpen));
+            branchToggle.addEventListener("click", () => {
+              state.openBranchNodeId = branchesOpen ? null : node.id;
+              if (!branchesOpen) state.selectedBranchId = null;
+              renderChain();
+              renderInspector();
+            });
+            stack.append(branchToggle);
+          }
+          row.append(left, stack, right);
+          root.append(row);
+          if (index < data.chain.nodes.length - 1) {
+            const connector = el("div", "chain-connector");
+            connector.style.setProperty("--node-color", nodeColor);
+            connector.style.setProperty(
+              "--next-node-color",
+              TYPE_META[data.chain.nodes[index + 1].type].color
+            );
+            root.append(connector);
+          }
+        });
+        const finalColor = TYPE_META[data.chain.nodes.at(-1).type].color;
+        const endConnector = el("div", "chain-connector");
+        endConnector.style.setProperty("--node-color", finalColor);
+        endConnector.style.setProperty("--next-node-color", "#7a4cf4");
+        const nextPlaceholder = el(
+          "button",
+          "chain-next-placeholder",
+          "回到第一层，逐节点检查理解"
+        );
+        nextPlaceholder.type = "button";
+        nextPlaceholder.addEventListener("click", () =>
+          selectNode(data.chain.nodes[0].id)
+        );
+        root.append(endConnector, nextPlaceholder);
+      }
+
+      function selectedNode() {
+        return nodeMap.get(state.selectedNodeId);
+      }
+
+      function selectedBranch() {
+        return state.selectedBranchId ? branchMap.get(state.selectedBranchId) : null;
+      }
+
+      function updateProgress() {
+        const index = data.chain.nodes.findIndex(node => node.id === state.selectedNodeId);
+        const percent = ((index + 1) / data.chain.nodes.length) * 100;
+        const branch = selectedBranch();
+        const nextNode = data.chain.nodes[index + 1];
+        byId("progress-fill").style.width = `${percent}%`;
+        byId("progress-label").textContent = `第 ${index + 1} / ${data.chain.nodes.length} 层`;
+        byId("depth-label").textContent = `${TYPE_META[selectedNode().type].label} · 当前节点已高亮`;
+        byId("journey-position").textContent = branch
+          ? `分支 · 来自第 ${index + 1} / ${data.chain.nodes.length} 层`
+          : `当前位置 · 第 ${index + 1} / ${data.chain.nodes.length} 层 · ${TYPE_META[selectedNode().type].label}`;
+        if (nextNode) {
+          byId("next-action-copy").textContent = `下一问：${nextNode.question}`;
+          byId("hero-next-action").textContent = `进入第 ${index + 2} 层`;
+        } else {
+          byId("next-action-copy").textContent = "主链已到边界，检查当前节点的理解。";
+          byId("hero-next-action").textContent = "检查本节点";
+        }
+      }
+
+      function selectNode(nodeId, { open = true, updateHash = true } = {}) {
+        if (!nodeMap.has(nodeId)) return;
+        state.selectedNodeId = nodeId;
+        state.selectedBranchId = null;
+        state.openBranchNodeId = null;
+        state.globalView = null;
+        state.quizScope = "node";
+        state.quizIndex = 0;
+        renderChain();
+        updateProgress();
+        renderInspector();
+        if (open && window.innerWidth <= 880) openInspector();
+        if (updateHash && history.replaceState) {
+          history.replaceState(null, "", `#node-${nodeId}`);
+        }
+      }
+
+      function selectBranch(parentId, branchId, { open = true } = {}) {
+        state.selectedNodeId = parentId;
+        state.selectedBranchId = branchId;
+        state.openBranchNodeId = parentId;
+        state.tab = "understand";
+        state.globalView = null;
+        state.quizScope = "node";
+        renderChain();
+        updateProgress();
+        renderInspector();
+        if (open && window.innerWidth <= 880) openInspector();
+        if (history.replaceState) history.replaceState(null, "", `#branch-${branchId}`);
+      }
+
+      function setGlobalView(view) {
+        state.globalView = view;
+        state.selectedBranchId = null;
+        state.quizScope = view === "quiz" ? "all" : "node";
+        state.quizIndex = 0;
+        if (view === "quiz") state.tab = "quiz";
+        renderInspector();
+        openInspector();
+      }
+
+      function renderInspector() {
+        const node = selectedNode();
+        const branch = selectedBranch();
+        const item = branch || node;
+        const globalTitles = {
+          development: "从起点到当前",
+          people: "相关人物",
+          stage: "当前阶段与研究边界",
+          videos: "视频资料库",
+          quiz: "全局测验"
+        };
+        const globalSummaries = {
+          development: "回看知识形成、验证与今天所处的位置。",
+          people: "查看推动这项知识发展的关键人物与协作背景。",
+          stage: "了解最近的研究、部署状态与仍未解决的问题。",
+          videos: `浏览全部 ${data.videos.items.length} 条外站视频。`,
+          quiz: `完成覆盖 ${data.chain.nodes.length} 个知识点的 ${data.assessment.items.length} 道题。`
+        };
+        document.querySelectorAll("[data-global-view]").forEach(button => {
+          button.setAttribute(
+            "aria-pressed",
+            String(button.dataset.globalView === state.globalView)
+          );
+        });
+        document.querySelector(".tabs").hidden = Boolean(state.globalView);
+        document.querySelector(".inspector-nav").hidden = Boolean(state.globalView);
+        if (state.globalView) {
+          byId("inspector-type").textContent = "全局视图 · GLOBAL";
+          byId("inspector-title").textContent =
+            globalTitles[state.globalView] || "全局视图";
+          byId("inspector-answer").textContent =
+            globalSummaries[state.globalView] || data.background.summary;
+          byId("branch-origin-wrap").replaceChildren();
+          const globalBody = byId("inspector-body");
+          globalBody.replaceChildren();
+          if (state.globalView === "development") {
+            renderGlobalDevelopment(globalBody);
+          } else if (state.globalView === "people") {
+            renderGlobalPeople(globalBody);
+          } else if (state.globalView === "stage") {
+            renderGlobalStage(globalBody);
+          } else if (state.globalView === "videos") {
+            renderGlobalVideoLibrary(globalBody);
+          } else {
+            renderQuiz(globalBody, node);
+          }
+          return;
+        }
+        byId("inspector-type").textContent = `${TYPE_META[item.type].label} · ${TYPE_META[item.type].short}`;
+        byId("inspector-title").textContent = branch ? `分支：${branch.question}` : node.question;
+        byId("inspector-answer").textContent = item.answer;
+        const originWrap = byId("branch-origin-wrap");
+        originWrap.replaceChildren();
+        if (branch) {
+          const origin = el("div", "branch-origin");
+          origin.append(el("span", "", `从「${node.concept}」分叉`));
+          const back = el("button", "back-branch", "返回主链");
+          back.type = "button";
+          back.addEventListener("click", () => selectNode(node.id));
+          origin.append(back);
+          originWrap.append(origin);
+        }
+        document.querySelectorAll(".tab-button").forEach(button => {
+          button.setAttribute("aria-selected", String(button.dataset.tab === state.tab));
+        });
+        const body = byId("inspector-body");
+        body.replaceChildren();
+        if (branch) {
+          renderBranchBody(body, node, branch);
+        } else if (state.tab === "understand") {
+          renderUnderstand(body, node);
+        } else if (state.tab === "video") {
+          renderVideo(body, node);
+        } else if (state.tab === "research") {
+          renderResearch(body, node);
+        } else if (state.tab === "industry") {
+          renderIndustry(body, node);
+        } else {
+          renderQuiz(body, node);
+        }
+        const index = data.chain.nodes.findIndex(n => n.id === node.id);
+        byId("prev-node").disabled = index === 0;
+        byId("next-node").disabled = index === data.chain.nodes.length - 1;
+      }
+
+      function renderBranchBody(root, parent, branch) {
+        const lead = el("p", "detail-lead");
+        lead.append(el("span", "detail-kicker", "分支答案"), document.createTextNode(branch.answer));
+        root.append(lead);
+        const explanation = disclosure(
+          "这条分支如何回到主线",
+          `它从「${parent.concept}」横向展开，不替代主链中的下一层。`
+        );
+        if (explanation) root.append(explanation);
+      }
+
+      function renderUnderstand(root, node) {
+        const bridge = el("div", "lesson-bridge");
+        bridge.append(
+          el("span", "detail-kicker", "接着上一层"),
+          el("p", "", node.guide.bridge)
+        );
+        root.append(bridge);
+        if (node.analogy) {
+          const analogy = el("div", "plain-language");
+          analogy.append(
+            el("span", "detail-kicker", "先想象这个场景"),
+            el("p", "", node.analogy)
+          );
+          root.append(analogy);
+        }
+        const manim = renderManim(node.manim);
+        if (manim) root.append(manim);
+        const lab = renderLab(node.lab);
+        if (lab) root.append(lab);
+        const diagram = renderDiagram(node.diagram);
+        if (diagram) root.append(diagram);
+        const plain = el("div", "plain-language");
+        plain.append(
+          el("span", "detail-kicker", "把比喻对应到知识"),
+          el("p", "", node.guide.plainLanguage)
+        );
+        root.append(plain);
+        const steps = el("ol", "lesson-steps");
+        node.guide.steps.forEach(step => steps.append(el("li", "", step)));
+        root.append(steps);
+        const microCheck = el("div", "micro-check");
+        microCheck.append(el("strong", "", "先猜一猜"));
+        microCheck.append(el("p", "", node.guide.check.prompt));
+        const reveal = el("button", "button quiet", "揭晓答案");
+        reveal.type = "button";
+        const answer = el("p", "micro-answer", node.guide.check.answer);
+        answer.hidden = true;
+        reveal.addEventListener("click", () => {
+          const opening = answer.hidden;
+          answer.hidden = !opening;
+          reveal.textContent = opening ? "收起答案" : "揭晓答案";
+          reveal.setAttribute("aria-expanded", String(opening));
+        });
+        reveal.setAttribute("aria-expanded", "false");
+        microCheck.append(reveal, answer);
+        root.append(microCheck);
+        if (node.videoIds && node.videoIds.length) {
+          const videoBridge = el(
+            "button",
+            "button quiet video-bridge",
+            "看视频里的同一现象  →"
+          );
+          videoBridge.type = "button";
+          videoBridge.addEventListener("click", () => {
+            state.tab = "video";
+            renderInspector();
+          });
+          root.append(videoBridge);
+        }
+        const deep = disclosure("展开机制解释", node.detail.deepDive);
+        if (deep) root.append(deep);
+        const matters = disclosure("为什么这层重要", node.detail.whyItMatters);
+        if (matters) root.append(matters);
+        const proof = disclosure("实验、证据与推导", node.detail.experimentOrProof);
+        if (proof) root.append(proof);
+        const frontier = disclosure("当前前沿与未解边界", node.detail.frontier);
+        if (frontier) root.append(frontier);
+      }
+
+      function renderVideo(root, node) {
+        const videoIds = node.videoIds || [];
+        const note = el("p", "detail-lead");
+        note.append(
+          el("span", "detail-kicker", "带着比喻看"),
+          document.createTextNode(
+            `看视频时，重点找它怎样演示「${node.concept}」；看完用自己的比喻复述一遍。`
+          )
+        );
+        root.append(note);
+        renderVideoExperience(root, videoIds, "inspector");
+      }
+
+      function renderResearchCard(tab, item) {
+        const card = el("article", "background-card");
+        if (tab === "people") {
+          card.append(
+            el("h3", "", item.name),
+            el("p", "", item.contribution),
+            el("p", "", `协作与背景：${item.context}`),
+            el("p", "", `贡献边界：${item.limits}`),
+            link(item.profileUrl, "可靠人物资料 ↗", "inline-link")
+          );
+        } else if (tab === "institutions") {
+          card.append(
+            el("h3", "", item.name),
+            el("p", "", item.role),
+            el("p", "", `代表性工作：${item.representativeWork}`),
+            link(item.homepage, "官方主页 ↗", "inline-link")
+          );
+        } else if (tab === "applications") {
+          card.append(
+            el("h3", "", item.name),
+            el("p", "", item.case),
+            el("p", "", `价值：${item.value}`),
+            el("p", "", `限制：${item.limitations}`)
+          );
+        } else if (tab === "frontier") {
+          const status = el("span", "claim-status", CLAIM_LABELS[item.status]);
+          status.dataset.claim = item.status;
+          card.append(
+            status,
+            el("h3", "", item.title),
+            el("p", "", `发布：${item.publishedAt} · 路线：${item.route}`),
+            el("p", "", `当前证据：${item.finding}`),
+            el("p", "", `仍未解决：${item.unresolved}`)
+          );
+        }
+        return card;
+      }
+
+      function renderResearchGroup(group) {
+        const section = el("section", "research-section");
+        const head = el("div", "research-section-head");
+        head.append(
+          el("h3", "", group.label),
+          el("span", "research-section-count", `${group.items.length} 项`)
+        );
+        section.append(head);
+        if (group.tab === "timeline") {
+          const list = el("ol", "research-timeline");
+          group.items
+            .slice()
+            .sort((a, b) => a.sortDate.localeCompare(b.sortDate))
+            .forEach(item => {
+              const li = el("li", "background-card");
+              li.append(
+                el("time", "", item.date),
+                el("h3", "", item.title),
+                el("p", "", item.description),
+                el("p", "", `影响：${item.impact}`)
+              );
+              list.append(li);
+            });
+          section.append(list);
+        } else {
+          group.items.forEach(item => {
+            section.append(renderResearchCard(group.tab, item));
+          });
+        }
+        return section;
+      }
+
+      function renderResearch(root, node) {
+        const groups = [
+          { tab: "people", label: "人物与贡献" },
+          { tab: "institutions", label: "机构与角色" }
+        ]
+          .map(group => ({
+            ...group,
+            items: backgroundItemsFor(group.tab, node)
+          }))
+          .filter(group => group.items.length);
+
+        const lead = el("p", "detail-lead");
+        lead.append(
+          el("span", "detail-kicker", `研究背景 · ${node.concept}`),
+          document.createTextNode("这里只显示与本节点共享来源的人物与机构资料。")
+        );
+        root.append(lead);
+
+        if (!groups.length) {
+          root.append(el("p", "empty-state", "这个节点暂未关联可核验的研究背景条目。"));
+        }
+        groups.forEach(group => {
+          root.append(renderResearchGroup(group));
+        });
+
+        if (data.meta.evidenceGaps.length) {
+          const gaps = el("div", "gap-list");
+          gaps.append(el("strong", "", "本页证据边界"));
+          const list = el("ul", "rubric");
+          data.meta.evidenceGaps.forEach(gap => list.append(el("li", "", gap)));
+          gaps.append(list);
+          root.append(gaps);
+        }
+      }
+
+      function renderIndustry(root, node) {
+        const groups = [
+          { tab: "applications", label: "应用与产业" },
+          { tab: "timeline", label: "发展时间线" },
+          { tab: "frontier", label: "前沿与部署" }
+        ]
+          .map(group => ({
+            ...group,
+            items: backgroundItemsFor(group.tab, node)
+          }))
+          .filter(group => group.items.length);
+
+        const lead = el("p", "detail-lead");
+        lead.append(
+          el("span", "detail-kicker", `行业发展 · ${node.concept}`),
+          document.createTextNode("从应用、时间线和前沿状态看这项知识怎样进入真实世界。")
+        );
+        root.append(lead);
+        if (!groups.length) {
+          root.append(el("p", "empty-state", "这个节点暂未关联可核验的行业发展资料。"));
+          return;
+        }
+        groups.forEach(group => {
+          const section = renderResearchGroup(group);
+          section.classList.add("industry-section");
+          root.append(section);
+        });
+      }
+
+      function renderGlobalDevelopment(root) {
+        const lead = el("p", "detail-lead");
+        lead.append(
+          el("span", "detail-kicker", `全局发展 · ${data.meta.topic}`),
+          document.createTextNode(
+            "按时间顺序回看知识怎样形成、被验证，以及今天发展到哪个阶段。"
+          )
+        );
+        root.append(lead);
+        state.timelineFilter = "all";
+        if (data.background.timeline.length) {
+          renderTimeline(root);
+        } else {
+          root.append(el("p", "empty-state", "暂未收录可核验的发展时间线。"));
+        }
+        if (data.background.frontier.length) {
+          root.append(
+            renderResearchGroup({
+              tab: "frontier",
+              label: "当前阶段",
+              items: data.background.frontier
+            })
+          );
+        }
+        if (data.background.applications.length) {
+          root.append(
+            renderResearchGroup({
+              tab: "applications",
+              label: "应用图景",
+              items: data.background.applications
+            })
+          );
+        }
+        if (data.background.gap) {
+          root.append(el("p", "gap-list", data.background.gap));
+        }
+      }
+
+      function renderGlobalPeople(root) {
+        if (!data.background.people.length) {
+          root.append(el("p", "empty-state", "暂未收录可核验的相关人物。"));
+          return;
+        }
+        root.append(
+          renderResearchGroup({
+            tab: "people",
+            label: "相关人物",
+            items: data.background.people
+          })
+        );
+      }
+
+      function renderGlobalStage(root) {
+        if (!data.background.frontier.length) {
+          root.append(el("p", "empty-state", "暂未收录可核验的当前阶段资料。"));
+          return;
+        }
+        root.append(
+          renderResearchGroup({
+            tab: "frontier",
+            label: "当前阶段",
+            items: data.background.frontier
+          })
+        );
+        if (data.background.gap) {
+          root.append(el("p", "gap-list", data.background.gap));
+        }
+      }
+
+      function renderVideoExperience(root, videoIds, context) {
+        const videos = videoIds.map(id => videoMap.get(id)).filter(Boolean);
+        if (!videos.length) {
+          root.append(el("p", "empty-state", "这个节点没有指定视频，可以从全部视频中选择。"));
+          const browse = el("button", "button quiet", `浏览全部 ${data.videos.items.length} 个视频`);
+          browse.type = "button";
+          browse.addEventListener("click", () => openBackground("videos"));
+          root.append(browse);
+          return;
+        }
+        const active =
+          videos.find(video => video.id === state.activeVideoId) ||
+          videos[0];
+        state.activeVideoId = active.id;
+        const experience = el("div", "video-experience");
+        experience.append(renderVideoCard(active));
+
+        const remainingVideos = videos.filter(video => video.id !== active.id);
+        const playlist = el("div", "video-playlist");
+        playlist.append(
+          el("span", "video-playlist-label", `更多视频 · ${remainingVideos.length}`)
+        );
+        const thumbnails = el("div", "video-thumbnails");
+        remainingVideos.forEach(video => {
+          const button = el("button", "video-thumbnail-button");
+          button.type = "button";
+          button.setAttribute("aria-label", `播放：${video.title}`);
+          const media = el("div", "video-thumbnail-media");
+          media.dataset.fallback = video.platform === "bilibili" ? "Bilibili" : "YouTube";
+          const image = el("img");
+          image.src = video.thumbnailUrl;
+          image.alt = "";
+          image.loading = "lazy";
+          image.referrerPolicy = "no-referrer";
+          image.addEventListener("error", () => media.classList.add("is-broken"), {
+            once: true
+          });
+          const duration = el(
+            "span",
+            "video-thumbnail-duration",
+            formatDuration(video.durationSeconds)
+          );
+          media.append(image, duration);
+          const copy = el("span", "video-thumbnail-copy");
+          const title = el("strong", "", video.title);
+          title.title = video.title;
+          copy.append(title, el("span", "", video.author));
+          button.append(media, copy);
+          button.addEventListener("click", () => {
+            state.activeVideoId = video.id;
+            if (context === "background") renderBackgroundTab();
+            else renderInspector();
+          });
+          thumbnails.append(button);
+        });
+        playlist.append(thumbnails);
+        experience.append(playlist);
+        root.append(experience);
+      }
+
+      function renderGlobalVideoLibrary(root) {
+        const intro = el("p", "detail-lead");
+        intro.append(
+          el("span", "detail-kicker", "全局视频"),
+          document.createTextNode(
+            `共 ${data.videos.items.length} 条外站视频，汇总全部知识点的独立片单。`
+          )
+        );
+        root.append(intro);
+        const library = el("div", "global-video-library");
+        data.videos.items.forEach(video => {
+          const card = el("a", "global-video-library-card");
+          card.href = video.url;
+          card.target = "_blank";
+          card.rel = "noopener noreferrer";
+          card.setAttribute("aria-label", `在视频平台打开：${video.title}`);
+          const media = el("div", "video-thumbnail-media");
+          media.dataset.fallback = video.platform === "bilibili" ? "Bilibili" : "YouTube";
+          const image = el("img");
+          image.src = video.thumbnailUrl;
+          image.alt = "";
+          image.loading = "lazy";
+          image.referrerPolicy = "no-referrer";
+          image.addEventListener("error", () => media.classList.add("is-broken"), {
+            once: true
+          });
+          media.append(
+            image,
+            el(
+              "span",
+              "video-thumbnail-duration",
+              formatDuration(video.durationSeconds)
+            )
+          );
+          const copy = el("span", "global-video-library-copy");
+          copy.append(
+            el("strong", "", video.title),
+            el("span", "", `${video.platform} · ${video.author}`)
+          );
+          card.append(media, copy);
+          library.append(card);
+        });
+        root.append(library);
+      }
+
+      function formatDuration(seconds) {
+        const hours = Math.floor(seconds / 3600);
+        const minutes = Math.floor((seconds % 3600) / 60);
+        const rest = seconds % 60;
+        return hours
+          ? `${hours}:${String(minutes).padStart(2, "0")}:${String(rest).padStart(2, "0")}`
+          : `${minutes}:${String(rest).padStart(2, "0")}`;
+      }
+
+      function renderVideoCard(video) {
+        const card = el("article", "resource-card video-card");
+        const meta = el("div", "video-meta");
+        meta.append(
+          el("span", "card-kicker", video.platform),
+          el("span", "", formatDuration(video.durationSeconds)),
+          el("span", "", video.publishedAt || "发布日期未获取")
+        );
+        card.append(meta);
+        card.append(el("h3", "", video.title));
+        card.append(el("p", "", `${video.author} · ${video.selectionRationale}`));
+
+        const frameWrap = el("div", "video-embed");
+        const frame = document.createElement("iframe");
+        frame.src = video.embedUrl;
+        frame.title = `播放：${video.title}`;
+        frame.loading = "lazy";
+        frame.allow = "fullscreen; picture-in-picture; encrypted-media";
+        frame.allowFullscreen = true;
+        frame.referrerPolicy = "strict-origin-when-cross-origin";
+        frameWrap.append(frame);
+        card.append(frameWrap);
+
+        const metrics = el("dl", "metrics");
+        [["播放", video.metrics.views], ["点赞", video.metrics.likes], ["评论", video.metrics.comments]].forEach(([label, value]) => {
+          const metric = el("div", "metric");
+          metric.append(el("dt", "", label), el("dd", "", formatNumber(value)));
+          metrics.append(metric);
+        });
+        card.append(metrics);
+        card.append(el("p", "", `指标查询日期：${video.queryDate}`));
+        card.append(link(video.url, "在视频平台打开 ↗", "inline-link"));
+        return card;
+      }
+
+      function quizzesForCurrent() {
+        if (state.quizScope === "all") return data.assessment.items;
+        return data.assessment.items.filter(item => item.nodeId === state.selectedNodeId);
+      }
+
+      function startGlobalQuiz() {
+        setGlobalView("quiz");
+      }
+
+      function renderQuiz(root, node) {
+        const questions = quizzesForCurrent();
+        if (!questions.length) {
+          root.append(el("p", "empty-state", "这个节点还没有生成题目。"));
+          return;
+        }
+        const index = Math.min(state.quizIndex, questions.length - 1);
+        const question = questions[index];
+        const currentAnswer = state.quizAnswers[question.id];
+        const top = el("div", "quiz-topline");
+        top.append(
+          el("span", "", state.quizScope === "all" ? "全局测验" : "节点小测")
+        );
+        top.append(el("span", "", `${index + 1} / ${questions.length}`));
+        root.append(top);
+        root.append(renderQuizQuestion(question));
+        if (questions.length > 1) {
+          const nav = el("div", "quiz-actions");
+          const prev = el("button", "button quiet", "上一题");
+          prev.type = "button";
+          prev.disabled = index === 0;
+          prev.addEventListener("click", () => {
+            state.quizIndex = Math.max(0, index - 1);
+            renderInspector();
+          });
+          nav.append(prev);
+          if (!(index === questions.length - 1 && currentAnswer)) {
+            const next = el("button", "button quiet", "下一题");
+            next.type = "button";
+            next.disabled = index === questions.length - 1;
+            next.addEventListener("click", () => {
+              state.quizIndex = Math.min(questions.length - 1, index + 1);
+              renderInspector();
+            });
+            nav.append(next);
+          }
+          root.append(nav);
+        }
+        const answerCard = renderAnswerCard(questions, index);
+        if (answerCard) root.append(answerCard);
+      }
+
+      function renderAnswerCard(questions, currentIndex) {
+        const answered = questions
+          .map(question => state.quizAnswers[question.id])
+          .filter(Boolean);
+        if (!answered.length) return null;
+        const card = el("section", "answer-card");
+        card.setAttribute("aria-label", "答题卡");
+        const head = el("div", "answer-card-head");
+        const correct = answered.filter(answer => answer.result === "correct").length;
+        const incorrect = answered.length - correct;
+        head.append(
+          el("strong", "", "答题卡"),
+          el(
+            "span",
+            "",
+            `已答 ${answered.length}/${questions.length} · 正确 ${correct} · 错误 ${incorrect}`
+          )
+        );
+        const grid = el("div", "answer-card-grid");
+        questions.forEach((question, index) => {
+          const answer = state.quizAnswers[question.id];
+          const button = el("button", "answer-card-button");
+          button.type = "button";
+          button.dataset.result = answer
+            ? answer.result
+            : "unanswered";
+          button.setAttribute("aria-current", String(index === currentIndex));
+          button.setAttribute(
+            "aria-label",
+            `第 ${index + 1} 题，${
+              answer
+                ? answer.result === "correct"
+                  ? "回答正确"
+                  : "回答错误"
+                : "未作答"
+            }`
+          );
+          button.append(
+            el("strong", "", String(index + 1)),
+            el(
+              "span",
+              "",
+              answer
+                ? answer.result === "correct"
+                  ? "正确"
+                  : "错误"
+                : "未答"
+            )
+          );
+          button.addEventListener("click", () => {
+            state.quizIndex = index;
+            renderInspector();
+          });
+          grid.append(button);
+        });
+        card.append(head, grid);
+        return card;
+      }
+
+      function renderQuizQuestion(item) {
+        const card = el("article", "quiz-card");
+        const form = el("form");
+        form.dataset.quizId = item.id;
+        const fieldset = el("fieldset");
+        const legend = el("legend", "", item.prompt);
+        fieldset.append(legend);
+        const optionLabels = [];
+        item.options.forEach((option, index) => {
+          const label = el("label", "option");
+          const input = el("input");
+          input.type = "radio";
+          input.name = `answer-${item.id}`;
+          input.value = String(index);
+          label.append(input, el("span", "", option));
+          fieldset.append(label);
+          optionLabels.push(label);
+        });
+        form.append(fieldset);
+        const feedback = el("div", "quiz-feedback");
+        feedback.setAttribute("aria-live", "polite");
+        form.append(feedback);
+
+        const markAnswer = selectedIndex => {
+          optionLabels.forEach((label, index) => {
+            delete label.dataset.result;
+            if (index === item.correctIndex) label.dataset.result = "correct";
+            if (index === selectedIndex && index !== item.correctIndex) {
+              label.dataset.result = "incorrect";
+            }
+          });
+        };
+
+        fieldset.addEventListener("change", event => {
+          if (!(event.target instanceof HTMLInputElement)) return;
+          const selectedIndex = Number(event.target.value);
+          const correct = selectedIndex === item.correctIndex;
+          state.quizAnswers[item.id] = {
+            id: item.id,
+            result: correct ? "correct" : "incorrect",
+            answer: String(selectedIndex)
+          };
+          renderInspector();
+        });
+        const savedAnswer = state.quizAnswers[item.id];
+        if (savedAnswer) {
+          const selectedInput = form.querySelector(
+            `input[value="${savedAnswer.answer}"]`
+          );
+          if (selectedInput) selectedInput.checked = true;
+          markAnswer(Number(savedAnswer.answer));
+          renderQuizFeedback(feedback, item, savedAnswer);
+        }
+        card.append(form);
+        return card;
+      }
+
+      function renderQuizFeedback(container, item, feedbackState) {
+        container.dataset.result = feedbackState.result;
+        if (feedbackState.result === "correct") {
+          container.append(
+            el("strong", "", "回答正确"),
+            el("p", "", item.explanation)
+          );
+        } else {
+          container.append(
+            el("strong", "", "回答错误"),
+            el("p", "", `正确答案：${item.options[item.correctIndex]}`),
+            el("p", "", item.explanation)
+          );
+        }
+      }
+
+      function openInspector() {
+        byId("inspector").classList.add("is-open");
+        document.body.classList.add("inspector-open");
+      }
+
+      function closeInspector() {
+        byId("inspector").classList.remove("is-open");
+        document.body.classList.remove("inspector-open");
+      }
+
+      function renderBackgroundTab() {
+        const root = byId("background-body");
+        root.replaceChildren();
+        const tab = state.backgroundTab;
+        const contextNode = state.backgroundNodeId
+          ? nodeMap.get(state.backgroundNodeId)
+          : null;
+        const isGlobalVideoLibrary = tab === "videos" && !contextNode;
+        byId("background-title").textContent = isGlobalVideoLibrary
+          ? "视频资料库"
+          : "研究背景";
+        byId("background-summary").textContent = isGlobalVideoLibrary
+          ? `共 ${data.videos.items.length} 条外站视频，点击封面可前往对应平台。`
+          : contextNode
+            ? `从「${contextNode.concept}」延伸的背景资料。${data.background.summary}`
+            : data.background.summary;
+        if (tab === "videos") {
+          if (!contextNode) {
+            renderGlobalVideoLibrary(root);
+            return;
+          }
+          const videoIds = contextNode.videoIds || [];
+          if (!videoIds.length) {
+            root.append(el("p", "empty-state", "这个节点没有指定视频。"));
+          } else {
+            renderVideoExperience(
+              root,
+              videoIds,
+              "background"
+            );
+          }
+          return;
+        }
+        if (tab === "timeline") {
+          renderTimeline(root);
+          return;
+        }
+        if (tab === "frontier") {
+          const items = backgroundItemsFor("frontier");
+          if (!items.length) root.append(el("p", "empty-state", "未找到可核验的前沿资料。"));
+          items.forEach(item => {
+            const card = el("article", "background-card");
+            const status = el("span", "claim-status", CLAIM_LABELS[item.status]);
+            status.dataset.claim = item.status;
+            card.append(status, el("h3", "", item.title));
+            card.append(el("p", "", `发布：${item.publishedAt} · 路线：${item.route}`));
+            card.append(el("p", "", `当前证据：${item.finding}`));
+            card.append(el("p", "", `仍未解决：${item.unresolved}`));
+            root.append(card);
+          });
+          if (data.background.gap) root.append(el("p", "gap-list", data.background.gap));
+          return;
+        }
+        if (tab === "sources") {
+          if (data.meta.evidenceGaps.length) {
+            const gaps = el("div", "gap-list");
+            gaps.append(el("strong", "", "证据边界"));
+            const list = el("ul", "rubric");
+            data.meta.evidenceGaps.forEach(gap => list.append(el("li", "", gap)));
+            gaps.append(list);
+            root.append(gaps);
+          }
+          const list = el("ol", "source-list");
+          const node = state.backgroundNodeId ? nodeMap.get(state.backgroundNodeId) : null;
+          const nodeSources = node ? new Set(node.sourceIds || []) : null;
+          const sources = nodeSources
+            ? data.sources.filter(source => nodeSources.has(source.id))
+            : data.sources;
+          sources.forEach(source => {
+            const item = el("li", "source-item");
+            item.id = `source-${source.id}`;
+            item.append(el("h3", "", source.title));
+            item.append(el("p", "", `${source.publisher} · ${source.kind}${source.publishedAt ? ` · 发布 ${source.publishedAt}` : ""} · 核验 ${source.accessedAt}`));
+            if (source.notes) item.append(el("p", "", source.notes));
+            item.append(link(source.url, "打开来源 ↗"));
+            list.append(item);
+          });
+          root.append(list);
+          return;
+        }
+        const items = backgroundItemsFor(tab);
+        if (!items.length) {
+          root.append(el("p", "empty-state", "这一维度暂无可核验内容。"));
+        }
+        items.forEach(item => {
+          const card = el("article", "background-card");
+          if (tab === "people") {
+            card.append(el("h3", "", item.name));
+            card.append(el("p", "", item.contribution));
+            card.append(el("p", "", `协作与背景：${item.context}`));
+            card.append(el("p", "", `贡献边界：${item.limits}`));
+            card.append(link(item.profileUrl, "可靠人物资料 ↗", "inline-link"));
+          } else if (tab === "institutions") {
+            card.append(el("h3", "", item.name));
+            card.append(el("p", "", item.role));
+            card.append(el("p", "", `代表性工作：${item.representativeWork}`));
+            card.append(link(item.homepage, "官方主页 ↗", "inline-link"));
+          } else {
+            card.append(el("h3", "", item.name));
+            card.append(el("p", "", item.case));
+            card.append(el("p", "", `价值：${item.value}`));
+            card.append(el("p", "", `限制：${item.limitations}`));
+          }
+          root.append(card);
+        });
+      }
+
+      function renderTimeline(root) {
+        const timelineItems = backgroundItemsFor("timeline");
+        const controls = el("div", "timeline-controls");
+        const types = ["all", ...new Set(timelineItems.map(item => item.eventType))];
+        types.forEach(type => {
+          const button = el("button", "filter-button", type === "all" ? "全部" : EVENT_LABELS[type] || type);
+          button.type = "button";
+          button.dataset.timelineFilter = type;
+          button.setAttribute("aria-pressed", String(type === state.timelineFilter));
+          controls.append(button);
+        });
+        root.append(controls);
+        const list = el("ol", "timeline");
+        [...timelineItems]
+          .sort((a, b) => a.sortDate.localeCompare(b.sortDate))
+          .filter(item => state.timelineFilter === "all" || item.eventType === state.timelineFilter)
+          .forEach(item => {
+            const li = el("li");
+            li.dataset.eventType = item.eventType;
+            const button = el("button");
+            button.type = "button";
+            button.append(
+              el("time", "", item.date),
+              el("strong", "", item.title)
+            );
+            const detail = el("div", "timeline-detail");
+            detail.append(el("p", "", item.description), el("p", "", `影响：${item.impact}`));
+            button.addEventListener("click", () => li.classList.toggle("is-open"));
+            li.append(button, detail);
+            list.append(li);
+          });
+        if (!list.childElementCount) root.append(el("p", "empty-state", "这一筛选下没有事件。"));
+        else root.append(list);
+        controls.addEventListener("click", event => {
+          const button = event.target.closest("[data-timeline-filter]");
+          if (!button) return;
+          state.timelineFilter = button.dataset.timelineFilter;
+          renderBackgroundTab();
+        });
+      }
+
+      function openBackground(tab = "people", focusId = null, nodeId = null) {
+        state.backgroundTab = BG_TABS.includes(tab) ? tab : "people";
+        const nextNodeId = nodeId && nodeMap.has(nodeId) ? nodeId : null;
+        if (state.backgroundNodeId !== nextNodeId) state.timelineFilter = "all";
+        state.backgroundNodeId = nextNodeId;
+        document.querySelectorAll("[data-background-tab]").forEach(button => {
+          button.setAttribute("aria-selected", String(button.dataset.backgroundTab === state.backgroundTab));
+        });
+        byId("background-dialog").dataset.nodeId = state.backgroundNodeId || "";
+        renderBackgroundTab();
+        const dialog = byId("background-dialog");
+        if (!dialog.open) {
+          if (typeof dialog.showModal === "function") dialog.showModal();
+          else dialog.setAttribute("open", "");
+        }
+        if (focusId) {
+          requestAnimationFrame(() => document.getElementById(focusId)?.scrollIntoView({ block: "center" }));
+        }
+      }
+
+      function closeBackground() {
+        const dialog = byId("background-dialog");
+        if (typeof dialog.close === "function") dialog.close();
+        else dialog.removeAttribute("open");
+      }
+
+      function setupExport() {
+        byId("export-data").addEventListener("click", () => {
+          const blob = new Blob([JSON.stringify(data, null, 2)], { type: "application/json;charset=utf-8" });
+          const url = URL.createObjectURL(blob);
+          const anchor = document.createElement("a");
+          anchor.href = url;
+          anchor.download = `${data.meta.slug}.json`;
+          document.body.append(anchor);
+          anchor.click();
+          anchor.remove();
+          setTimeout(() => URL.revokeObjectURL(url), 1000);
+          showToast("内容 JSON 已导出。");
+        });
+      }
+
+      let toastTimer;
+      function showToast(message) {
+        const toast = byId("toast");
+        toast.textContent = message;
+        toast.classList.add("is-visible");
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(() => toast.classList.remove("is-visible"), 2200);
+      }
+
+      function setupEvents() {
+        document.querySelectorAll(".tab-button").forEach(button => {
+          button.addEventListener("click", () => {
+            state.globalView = null;
+            state.tab = button.dataset.tab;
+            renderInspector();
+          });
+        });
+        document.querySelectorAll("[data-background-tab]").forEach(button => {
+          button.addEventListener("click", () => {
+            state.backgroundTab = button.dataset.backgroundTab;
+            document.querySelectorAll("[data-background-tab]").forEach(tab => {
+              tab.setAttribute("aria-selected", String(tab === button));
+            });
+            renderBackgroundTab();
+          });
+        });
+        byId("prev-node").addEventListener("click", () => {
+          const index = data.chain.nodes.findIndex(node => node.id === state.selectedNodeId);
+          if (index > 0) selectNode(data.chain.nodes[index - 1].id);
+        });
+        byId("next-node").addEventListener("click", () => {
+          const index = data.chain.nodes.findIndex(node => node.id === state.selectedNodeId);
+          if (index < data.chain.nodes.length - 1) selectNode(data.chain.nodes[index + 1].id);
+        });
+        byId("hero-next-action").addEventListener("click", () => {
+          const index = data.chain.nodes.findIndex(node => node.id === state.selectedNodeId);
+          const nextNode = data.chain.nodes[index + 1];
+          if (nextNode) selectNode(nextNode.id);
+          else {
+            state.globalView = null;
+            state.quizScope = "node";
+            state.quizIndex = 0;
+            state.tab = "quiz";
+            renderInspector();
+            openInspector();
+          }
+        });
+        document.querySelectorAll("[data-global-view]").forEach(button => {
+          button.addEventListener("click", () => {
+            setGlobalView(button.dataset.globalView);
+          });
+        });
+        byId("background-close").addEventListener("click", closeBackground);
+        byId("inspector-close").addEventListener("click", closeInspector);
+        byId("background-dialog").addEventListener("click", event => {
+          if (event.target === byId("background-dialog")) closeBackground();
+        });
+        document.addEventListener("keydown", event => {
+          if (event.key === "Escape" && document.querySelector(".lab-shell.is-expanded")) {
+            closeExpandedLab();
+            return;
+          }
+          if (event.key === "Escape" && byId("inspector").classList.contains("is-open")) {
+            closeInspector();
+            return;
+          }
+          const dialog = byId("background-dialog");
+          if (dialog.open) return;
+          const tag = event.target.tagName;
+          if (["INPUT", "TEXTAREA", "SELECT", "BUTTON", "A"].includes(tag)) return;
+          const index = data.chain.nodes.findIndex(node => node.id === state.selectedNodeId);
+          if (event.key === "ArrowLeft" && index > 0) selectNode(data.chain.nodes[index - 1].id);
+          if (event.key === "ArrowRight" && index < data.chain.nodes.length - 1) selectNode(data.chain.nodes[index + 1].id);
+        });
+      }
+
+      function initialSelection() {
+        const hash = decodeURIComponent(window.location.hash.replace(/^#/, ""));
+        if (hash === "videos") {
+          state.backgroundOnLoad = "videos";
+        } else if (hash.startsWith("branch-")) {
+          const branch = branchMap.get(hash.slice(7));
+          if (branch) {
+            state.selectedNodeId = branch.parentId;
+            state.selectedBranchId = branch.id;
+            state.openBranchNodeId = branch.parentId;
+            scrollToInitialNode = true;
+          }
+        } else if (hash.startsWith("node-")) {
+          const node = nodeMap.get(hash.slice(5));
+          if (node) {
+            state.selectedNodeId = node.id;
+            scrollToInitialNode = true;
+          }
+        }
+      }
+
+      window.addEventListener("message", handleLabMessage);
+      renderHero();
+      initialSelection();
+      renderChain();
+      updateProgress();
+      renderInspector();
+      if (scrollToInitialNode) {
+        requestAnimationFrame(() => {
+          document.querySelector(`.chain-row[data-node-id="${state.selectedNodeId}"]`)?.scrollIntoView({ block: "center" });
+        });
+      }
+      setupEvents();
+      setupExport();
+      if (state.backgroundOnLoad) openBackground(state.backgroundOnLoad);
+      if (window.innerWidth <= 880) closeInspector();
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,4 @@
+interface:
+  display_name: "DeepWhy Knowledge Explorer"
+  short_description: "Teach complex questions through animated, hands-on labs"
+  default_prompt: "Use $deepwhy to turn this question into a familiar-scene, metaphor-led knowledge chain with a sandboxed hands-on lab verifiable through reflection: <question>"

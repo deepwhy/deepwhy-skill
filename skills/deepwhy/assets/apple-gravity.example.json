@@ -1,0 +1,2421 @@
+{
+  "schemaVersion": "2.0",
+  "meta": {
+    "topic": "苹果为什么会落地？",
+    "question": "成熟的苹果为什么会朝地面落下，而不是停留在枝头或飞向天空？",
+    "slug": "apple-gravity",
+    "hook": "一枚苹果离开枝头后没有升空，它沿着一条明确而熟悉的路径落向地面。",
+    "asOf": "2026-10-23",
+    "language": "zh-CN",
+    "audience": {
+      "description": "知道苹果会落地、但说不清引力与时空关系的普通学习者",
+      "priorKnowledge": "知道地球、质量、速度和牛顿的名字",
+      "explanationLevel": "child",
+      "assumptions": [
+        "忽略空气阻力对主链的干扰",
+        "把地球和苹果先视为两个质量不同的物体",
+        "在极限附近选择远离地表的自由落体"
+      ]
+    },
+    "premiseCheck": {
+      "status": "confirmed",
+      "original": "苹果为什么会落地？",
+      "note": "现象和核心问题成立；“牛顿看到苹果后独自发现全部引力”是过度简化的故事，本页用资料区分历史叙事与物理规律。"
+    },
+    "scope": {
+      "included": [
+        "落体现象与地球—苹果相互作用",
+        "牛顿万有引力公式",
+        "广义相对论的时空解释",
+        "引力波实验与量子引力边界"
+      ],
+      "excluded": [
+        "空气阻力与苹果形变的完整流体模型",
+        "潮汐、轨道和宇宙学的全部数学推导",
+        "量子引力的具体候选理论细节"
+      ]
+    },
+    "evidenceGaps": [
+      "苹果故事的具体历史细节存在后世转述，不能当作实验记录。",
+      "广义相对论的苹果尺度效应极弱，本页不把示意图当作定量模拟。",
+      "量子引力尚无被实验确认的完整理论。"
+    ]
+  },
+  "presentation": {
+    "preset": "deepwhy",
+    "source": "auto",
+    "rationale": "采用 OpenMAIC 式互动课堂语言：近白点阵舞台、柔和的悬浮面板、紫色主操作和聚焦当前实验的中央学习区，同时保留 DeepWhy 的知识链。",
+    "archetype": "phenomenon_exploration",
+    "centralInsight": "苹果往下掉，是因为它和地球互相吸引；更深入的问题是，这种吸引到底从哪里来。",
+    "focalRepresentation": "用大幅落体轨迹图把苹果、地球中心、速度方向和时空网格放在同一视觉焦点。",
+    "hierarchy": [
+      "左侧路径轨保持全局位置",
+      "中央学习台承载比喻、动画与交互实验室",
+      "复述和证据留在当前节点工作台",
+      "背景档案承载人物、历史与前沿"
+    ],
+    "sectionRhythm": [
+      "课堂舞台",
+      "路径导航",
+      "交互实验",
+      "自由复述",
+      "规则与边界",
+      "验证"
+    ]
+  },
+  "sources": [
+    {
+      "id": "openstax-gravity",
+      "title": "Newton's Law of Universal Gravitation",
+      "publisher": "OpenStax, University Physics Volume 1",
+      "url": "https://openstax.org/books/university-physics-volume-1/pages/13-1-newtons-law-of-universal-gravitation",
+      "kind": "book",
+      "publishedAt": "2016-09-19",
+      "accessedAt": "2026-10-23",
+      "notes": "教材说明物体自然落向地面的问题，并给出牛顿万有引力定律、质量乘积和距离平方反比关系。"
+    },
+    {
+      "id": "sep-principia",
+      "title": "Newton's Philosophiae Naturalis Principia Mathematica",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "url": "https://plato.stanford.edu/entries/newton-principia/",
+      "kind": "reference",
+      "publishedAt": "2007-12-20",
+      "accessedAt": "2026-10-23",
+      "notes": "讨论 Principia 的历史、经验推理、月球与地球引力以及万有引力论证，可用于避免把复杂发展归于单一苹果事件。"
+    },
+    {
+      "id": "gutenberg-principia",
+      "title": "Philosophiae Naturalis Principia Mathematica",
+      "publisher": "Project Gutenberg",
+      "url": "https://www.gutenberg.org/ebooks/28233",
+      "kind": "book",
+      "publishedAt": null,
+      "accessedAt": "2026-10-23",
+      "notes": "1687 年初版著作的公开电子书目，用于核验牛顿著作和出版年代。"
+    },
+    {
+      "id": "einstein-online-gravity",
+      "title": "The gravity of gravity",
+      "publisher": "Einstein Online / Max Planck Institute for Gravitational Physics",
+      "url": "https://www.einstein-online.info/en/spotlight/gravity_of_gravity/",
+      "kind": "official",
+      "publishedAt": null,
+      "accessedAt": "2026-10-23",
+      "notes": "说明牛顿引力与广义相对论的区别、时空曲率、非线性以及引力波等概念；页面标注 2007 年系列。"
+    },
+    {
+      "id": "nobel-einstein",
+      "title": "Albert Einstein – Facts",
+      "publisher": "Nobel Prize Outreach",
+      "url": "https://www.nobelprize.org/prizes/physics/1921/einstein/facts/",
+      "kind": "reference",
+      "publishedAt": null,
+      "accessedAt": "2026-10-23",
+      "notes": "爱因斯坦官方诺奖人物资料；其诺奖理由为光电效应，不应误写成因广义相对论获奖。"
+    },
+    {
+      "id": "sep-quantum-gravity",
+      "title": "Quantum Gravity",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "url": "https://plato.stanford.edu/entries/quantum-gravity/",
+      "kind": "reference",
+      "publishedAt": "2024-02-26",
+      "accessedAt": "2026-10-23",
+      "notes": "2024 年实质修订版；说明量子引力尚不是完整且获实验确认的物理理论，实验检验极为困难。"
+    },
+    {
+      "id": "ligo-gw150914",
+      "title": "GW150914",
+      "publisher": "LIGO Scientific Collaboration",
+      "url": "https://ligo.org/detections/gw150914/",
+      "kind": "official",
+      "publishedAt": null,
+      "accessedAt": "2026-10-23",
+      "notes": "记录 2015-09-14 观测、2016-02-11 公布首次确认的引力波探测，并说明这是广义相对论的关键预测。"
+    },
+    {
+      "id": "ligo-gravity-waves",
+      "title": "Gravitational-Wave Science",
+      "publisher": "LIGO Scientific Collaboration",
+      "url": "https://ligo.org/gravitational-wave-science/",
+      "kind": "official",
+      "publishedAt": null,
+      "accessedAt": "2026-10-23",
+      "notes": "当前引力波科学、探测器、观测运行和未解决问题的官方概览。"
+    },
+    {
+      "id": "mpi-gravity",
+      "title": "Max Planck Institute for Gravitational Physics",
+      "publisher": "Max Planck Institute for Gravitational Physics",
+      "url": "https://www.aei.mpg.de/",
+      "kind": "official",
+      "publishedAt": null,
+      "accessedAt": "2026-10-23",
+      "notes": "研究所主页，研究方向覆盖相对论、量子引力、天体物理相对论和引力波天文学。"
+    },
+    {
+      "id": "bili-bv1dy4y177d5",
+      "title": "牛顿如何发现重力学说？苹果砸在头顶上，咬上一口突然开窍",
+      "publisher": "影视新番z / Bilibili",
+      "url": "https://www.bilibili.com/video/BV1DY4y177d5",
+      "kind": "video",
+      "publishedAt": "2022-07-15",
+      "accessedAt": "2026-10-24",
+      "notes": "用于 n1；时长 78 秒；封面与嵌入地址来自 B 站公开页面。"
+    },
+    {
+      "id": "bili-bv1ro5czpeqn",
+      "title": "重力到底是什么？从亚里士多德到牛顿，10分钟了解重力的历史｜【慢聊科普】大鹏和桃",
+      "publisher": "慢聊科普_大鹏和桃 / Bilibili",
+      "url": "https://www.bilibili.com/video/BV1Ro5CzPEQN",
+      "kind": "video",
+      "publishedAt": "2025-04-21",
+      "accessedAt": "2026-10-24",
+      "notes": "用于 n1；时长 697 秒；封面与嵌入地址来自 B 站公开页面。"
+    },
+    {
+      "id": "bili-bv1z94y1f7jg",
+      "title": "牛顿与苹果的故事",
+      "publisher": "征服宇宙zfyz / Bilibili",
+      "url": "https://www.bilibili.com/video/BV1z94y1f7jg",
+      "kind": "video",
+      "publishedAt": "2022-03-28",
+      "accessedAt": "2026-10-24",
+      "notes": "用于 n1；时长 512 秒；封面与嵌入地址来自 B 站公开页面。"
+    },
+    {
+      "id": "bili-bv1q8411e7br",
+      "title": "科普动画-牛顿发现万有引力",
+      "publisher": "丢羊の凹拉哈 / Bilibili",
+      "url": "https://www.bilibili.com/video/BV1Q8411e7BR",
+      "kind": "video",
+      "publishedAt": "2022-10-27",
+      "accessedAt": "2026-10-24",
+      "notes": "用于 n1；时长 134 秒；封面与嵌入地址来自 B 站公开页面。"
+    },
+    {
+      "id": "bili-bv1dom46tes1",
+      "title": "牛顿万有引力公式，是怎么一步步推导出来的？",
+      "publisher": "物理思考者 / Bilibili",
+      "url": "https://www.bilibili.com/video/BV1doM46tES1",
+      "kind": "video",
+      "publishedAt": "2026-07-07",
+      "accessedAt": "2026-10-24",
+      "notes": "用于 n1；时长 348 秒；封面与嵌入地址来自 B 站公开页面。"
+    },
+    {
+      "id": "bili-bv1qsxhyse6c",
+      "title": "[高中物理]轻松搞定万有引力！天才牛顿再次回归！保姆级教学，拯救你的必修二",
+      "publisher": "HE物理课堂 / Bilibili",
+      "url": "https://www.bilibili.com/video/BV1qSXhYsE6c",
+      "kind": "video",
+      "publishedAt": "2025-03-23",
+      "accessedAt": "2026-10-24",
+      "notes": "用于 n2；时长 696 秒；封面与嵌入地址来自 B 站公开页面。"
+    },
+    {
+      "id": "bili-bv1s3pbe9efa",
+      "title": "一己之力碾压整个科学界！物理天才牛顿，万有引力惊天下",
+      "publisher": "胡小闲 / Bilibili",
+      "url": "https://www.bilibili.com/video/BV1S3PBe9EFa",
+      "kind": "video",
+      "publishedAt": "2025-02-04",
+      "accessedAt": "2026-10-24",
+      "notes": "用于 n2；时长 129 秒；封面与嵌入地址来自 B 站公开页面。"
+    },
+    {
+      "id": "bili-bv1v8411m7dh",
+      "title": "发现万有引力全靠苹果",
+      "publisher": "学而思礼花蛋Pro / Bilibili",
+      "url": "https://www.bilibili.com/video/BV1V8411M7dH",
+      "kind": "video",
+      "publishedAt": "2023-02-13",
+      "accessedAt": "2026-10-24",
+      "notes": "用于 n2；时长 173 秒；封面与嵌入地址来自 B 站公开页面。"
+    },
+    {
+      "id": "bili-bv1et4y1k7rp",
+      "title": "3分钟解读牛顿的一生-他的万有引力和运动定律究竟有多么伟大",
+      "publisher": "未知解密 / Bilibili",
+      "url": "https://www.bilibili.com/video/BV1et4y1K7RP",
+      "kind": "video",
+      "publishedAt": "2022-11-04",
+      "accessedAt": "2026-10-24",
+      "notes": "用于 n2；时长 198 秒；封面与嵌入地址来自 B 站公开页面。"
+    },
+    {
+      "id": "bili-bv1th4y1c7tv",
+      "title": "一分钟看懂牛顿三大运动定律",
+      "publisher": "科学小视 / Bilibili",
+      "url": "https://www.bilibili.com/video/BV1th4y1C7tv",
+      "kind": "video",
+      "publishedAt": "2023-08-01",
+      "accessedAt": "2026-10-24",
+      "notes": "用于 n2；时长 80 秒；封面与嵌入地址来自 B 站公开页面。"
+    },
+    {
+      "id": "bili-bv1tx4y1g7cv",
+      "title": "【物理实验】测量万有引力常量 卡文迪什扭秤",
+      "publisher": "清圣祖玄烨Official / Bilibili",
+      "url": "https://www.bilibili.com/video/BV1TX4y1G7CV",
+      "kind": "video",
+      "publishedAt": "2021-03-19",
+      "accessedAt": "2026-10-24",
+      "notes": "用于 n3；时长 93 秒；封面与嵌入地址来自 B 站公开页面。"
+    },
+    {
+      "id": "bili-bv1ry411f7u4",
+      "title": "圆锥曲线和万有引力天体轨道（引力是什么二）",
+      "publisher": "科学启明星 / Bilibili",
+      "url": "https://www.bilibili.com/video/BV1RY411f7u4",
+      "kind": "video",
+      "publishedAt": "2022-11-01",
+      "accessedAt": "2026-10-24",
+      "notes": "用于 n3；时长 548 秒；封面与嵌入地址来自 B 站公开页面。"
+    },
+    {
+      "id": "bili-bv1ku4y1o7hw",
+      "title": "万有引力定律",
+      "publisher": "乐乐课堂-天天练APP / Bilibili",
+      "url": "https://www.bilibili.com/video/BV1Ku4y1o7hW",
+      "kind": "video",
+      "publishedAt": "2023-06-20",
+      "accessedAt": "2026-10-24",
+      "notes": "用于 n3；时长 169 秒；封面与嵌入地址来自 B 站公开页面。"
+    },
+    {
+      "id": "bili-bv1bz4y1n7tz",
+      "title": "理解万有引力定律！",
+      "publisher": "无限理论 / Bilibili",
+      "url": "https://www.bilibili.com/video/BV1Bz4y1N7Tz",
+      "kind": "video",
+      "publishedAt": "2023-11-02",
+      "accessedAt": "2026-10-24",
+      "notes": "用于 n3；时长 405 秒；封面与嵌入地址来自 B 站公开页面。"
+    },
+    {
+      "id": "bili-bv174411e7pj",
+      "title": "宇宙万物皆有引力，那么引力是如何产生的，引力的本质又是什么？",
+      "publisher": "太空科学站 / Bilibili",
+      "url": "https://www.bilibili.com/video/BV174411e7pj",
+      "kind": "video",
+      "publishedAt": "2019-05-11",
+      "accessedAt": "2026-10-24",
+      "notes": "用于 n3；时长 171 秒；封面与嵌入地址来自 B 站公开页面。"
+    },
+    {
+      "id": "bili-bv1xh9kb6efb",
+      "title": "广义相对论诞生史——爱因斯坦是如何发现时空弯曲？ #科普",
+      "publisher": "师兄揭秘 / Bilibili",
+      "url": "https://www.bilibili.com/video/BV1Xh9kB6EFB",
+      "kind": "video",
+      "publishedAt": "2026-04-28",
+      "accessedAt": "2026-10-24",
+      "notes": "用于 n4；时长 1306 秒；封面与嵌入地址来自 B 站公开页面。"
+    },
+    {
+      "id": "bili-bv19y4y1v7mg",
+      "title": "【宇宙峥相】弯曲吧！时空——爱因斯坦场方程的发现与求解",
+      "publisher": "赵峥讲物理 / Bilibili",
+      "url": "https://www.bilibili.com/video/BV19y4y1v7mg",
+      "kind": "video",
+      "publishedAt": "2020-12-21",
+      "accessedAt": "2026-10-24",
+      "notes": "用于 n4；时长 552 秒；封面与嵌入地址来自 B 站公开页面。"
+    },
+    {
+      "id": "bili-bv1n44y1k7x6",
+      "title": "广义相对论基本原理简单解释，时空弯曲和时间膨胀的推理过程",
+      "publisher": "异星探索 / Bilibili",
+      "url": "https://www.bilibili.com/video/BV1n44y1K7x6",
+      "kind": "video",
+      "publishedAt": "2022-03-12",
+      "accessedAt": "2026-10-24",
+      "notes": "用于 n4；时长 259 秒；封面与嵌入地址来自 B 站公开页面。"
+    },
+    {
+      "id": "bili-bv1a8uhykeyy",
+      "title": "爱因斯坦是如何一步步构建出广义相对论的？",
+      "publisher": "科学认识论 / Bilibili",
+      "url": "https://www.bilibili.com/video/BV1a8UHYkEyy",
+      "kind": "video",
+      "publishedAt": "2024-11-18",
+      "accessedAt": "2026-10-24",
+      "notes": "用于 n4；时长 503 秒；封面与嵌入地址来自 B 站公开页面。"
+    },
+    {
+      "id": "bili-bv1kp4y1s7nk",
+      "title": "【中英双字】广义相对论的数学(1)：时空与世界线",
+      "publisher": "Sooooft / Bilibili",
+      "url": "https://www.bilibili.com/video/BV1Kp4y1s7nK",
+      "kind": "video",
+      "publishedAt": "2021-02-03",
+      "accessedAt": "2026-10-24",
+      "notes": "用于 n4；时长 395 秒；封面与嵌入地址来自 B 站公开页面。"
+    },
+    {
+      "id": "bili-bv1xr4y1t7ft",
+      "title": "引力波到底是什么？爱因斯坦的预言被证实，宇宙中确实存在引力波",
+      "publisher": "宇宙天文馆 / Bilibili",
+      "url": "https://www.bilibili.com/video/BV1xr4y1T7fT",
+      "kind": "video",
+      "publishedAt": "2021-01-10",
+      "accessedAt": "2026-10-24",
+      "notes": "用于 n5；时长 310 秒；封面与嵌入地址来自 B 站公开页面。"
+    },
+    {
+      "id": "bili-bv1ks41197uc",
+      "title": "人类新纪元，引力波时代——引力波被证实",
+      "publisher": "只不过肚子有点软 / Bilibili",
+      "url": "https://www.bilibili.com/video/BV1Ks41197Uc",
+      "kind": "video",
+      "publishedAt": "2016-02-11",
+      "accessedAt": "2026-10-24",
+      "notes": "用于 n5；时长 326 秒；封面与嵌入地址来自 B 站公开页面。"
+    },
+    {
+      "id": "bili-bv1gu4y1x7hc",
+      "title": "如何证明广义相对论是对的？这三个实验神助攻！【宇宙峥相】",
+      "publisher": "赵峥讲物理 / Bilibili",
+      "url": "https://www.bilibili.com/video/BV1gU4y1x7HC",
+      "kind": "video",
+      "publishedAt": "2021-02-06",
+      "accessedAt": "2026-10-24",
+      "notes": "用于 n5；时长 593 秒；封面与嵌入地址来自 B 站公开页面。"
+    },
+    {
+      "id": "bili-bv1eh411v7dx",
+      "title": "爱因斯坦有多牛？引力波预言百年后被验证，4大理论推动科学进步",
+      "publisher": "宇宙天文馆 / Bilibili",
+      "url": "https://www.bilibili.com/video/BV1Eh411v7dx",
+      "kind": "video",
+      "publishedAt": "2021-05-23",
+      "accessedAt": "2026-10-24",
+      "notes": "用于 n5；时长 477 秒；封面与嵌入地址来自 B 站公开页面。"
+    },
+    {
+      "id": "bili-bv1hd4y1e7ku",
+      "title": "爱因斯坦的相对论是如何被验证的？到现在全部获得验证了吗？",
+      "publisher": "宇宙探索cosmos / Bilibili",
+      "url": "https://www.bilibili.com/video/BV1hD4y1E7kU",
+      "kind": "video",
+      "publishedAt": "2023-01-26",
+      "accessedAt": "2026-10-24",
+      "notes": "用于 n5；时长 878 秒；封面与嵌入地址来自 B 站公开页面。"
+    },
+    {
+      "id": "bili-bv1hucubxexb",
+      "title": "它俩为什么无法统一？这5个矛盾的共同根源是什么？人类有哪两种互相冲突的时空观？为什么说时间是人类了解最少的物理量？",
+      "publisher": "道可道Science-硬核科普 / Bilibili",
+      "url": "https://www.bilibili.com/video/BV1hUCuBXEXb",
+      "kind": "video",
+      "publishedAt": "2025-11-14",
+      "accessedAt": "2026-10-24",
+      "notes": "用于 n6；时长 663 秒；封面与嵌入地址来自 B 站公开页面。"
+    },
+    {
+      "id": "bili-bv1rv4y1b7ea",
+      "title": "宇宙中最大的禁区！为什么普朗克长度之下就是空间的禁区？",
+      "publisher": "科学认识论 / Bilibili",
+      "url": "https://www.bilibili.com/video/BV1rV4y1B7Ea",
+      "kind": "video",
+      "publishedAt": "2023-05-24",
+      "accessedAt": "2026-10-24",
+      "notes": "用于 n6；时长 955 秒；封面与嵌入地址来自 B 站公开页面。"
+    },
+    {
+      "id": "bili-bv1jk4y1s79k",
+      "title": "量子力学三大矛盾是什么？测量坍塌问题，意识与观察者效应，量子和引力理论的矛盾",
+      "publisher": "科学认识论 / Bilibili",
+      "url": "https://www.bilibili.com/video/BV1Jk4y1S79K",
+      "kind": "video",
+      "publishedAt": "2024-01-26",
+      "accessedAt": "2026-10-24",
+      "notes": "用于 n6；时长 2206 秒；封面与嵌入地址来自 B 站公开页面。"
+    },
+    {
+      "id": "bili-bv1rv4y1m7jv",
+      "title": "硬核科普：物理学终极理论的两个方向，大统一和量子理论引力",
+      "publisher": "科学认识论 / Bilibili",
+      "url": "https://www.bilibili.com/video/BV1rV4y1M7jv",
+      "kind": "video",
+      "publishedAt": "2022-09-17",
+      "accessedAt": "2026-10-24",
+      "notes": "用于 n6；时长 664 秒；封面与嵌入地址来自 B 站公开页面。"
+    },
+    {
+      "id": "bili-bv199qhbtels",
+      "title": "弦理论，是科学的巅峰，还是数学的幻觉？",
+      "publisher": "科学视界面 / Bilibili",
+      "url": "https://www.bilibili.com/video/BV199qhBTELs",
+      "kind": "video",
+      "publishedAt": "2025-12-16",
+      "accessedAt": "2026-10-24",
+      "notes": "用于 n6；时长 1150 秒；封面与嵌入地址来自 B 站公开页面。"
+    }
+  ],
+  "chain": {
+    "title": "从一枚下落的苹果，走到引力的边界",
+    "openingScenario": "树枝松开苹果，苹果没有迟疑，也没有向上飞走，而是明确地朝地面加速。",
+    "openingQuestion": "是什么把这段熟悉的运动连接到地球、月球和整个宇宙？",
+    "openingVisual": {
+      "mode": "svg",
+      "kind": "motion",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 620 390\"><rect width=\"620\" height=\"390\" fill=\"#f4efe4\"/><path d=\"M0 318 Q310 260 620 318 L620 390 L0 390Z\" fill=\"#ded4c2\"/><path d=\"M174 326 C174 264 185 195 200 126\" stroke=\"#6f4934\" stroke-width=\"16\" fill=\"none\" stroke-linecap=\"round\"/><path d=\"M199 165 C154 131 129 107 102 101 M199 145 C234 101 272 91 298 70\" stroke=\"#6f4934\" stroke-width=\"8\" fill=\"none\" stroke-linecap=\"round\"/><g fill=\"#7e8f65\"><circle cx=\"103\" cy=\"98\" r=\"38\"/><circle cx=\"151\" cy=\"121\" r=\"31\"/><circle cx=\"270\" cy=\"82\" r=\"45\"/><circle cx=\"313\" cy=\"70\" r=\"29\"/><circle cx=\"201\" cy=\"118\" r=\"35\"/></g><g fill=\"#a64537\"><circle cx=\"135\" cy=\"135\" r=\"13\"/><circle cx=\"229\" cy=\"126\" r=\"14\"/><circle cx=\"286\" cy=\"106\" r=\"12\"/></g><g><circle cx=\"355\" cy=\"138\" r=\"18\" fill=\"#b44c3d\"/><animateTransform attributeName=\"transform\" type=\"translate\" values=\"0 0;0 145;0 145\" keyTimes=\"0;0.72;1\" dur=\"3s\" repeatCount=\"indefinite\" fill=\"freeze\"/></g><path d=\"M355 160 Q349 210 354 285\" stroke=\"#8b3a32\" stroke-width=\"3\" stroke-dasharray=\"8 7\" fill=\"none\"/><path d=\"M348 275 L354 288 L362 276\" fill=\"none\" stroke=\"#8b3a32\" stroke-width=\"3\"/><ellipse cx=\"354\" cy=\"319\" rx=\"91\" ry=\"20\" fill=\"#b9ab8d\"/><circle cx=\"354\" cy=\"319\" r=\"6\" fill=\"#7a2f2a\"/><path d=\"M354 319 L354 377\" stroke=\"#7a2f2a\" stroke-width=\"2\"/><circle cx=\"354\" cy=\"377\" r=\"4\" fill=\"#7a2f2a\"/><text x=\"381\" y=\"221\" font-family=\"serif\" font-size=\"19\" fill=\"#26332e\">速度向下增加</text><text x=\"378\" y=\"365\" font-family=\"serif\" font-size=\"17\" fill=\"#26332e\">地心方向</text><text x=\"79\" y=\"60\" font-family=\"serif\" font-size=\"15\" fill=\"#6c756d\">同一棵树上，苹果曾经静止</text></svg>",
+      "src": null,
+      "alt": "苹果从树枝脱落后沿向下弯曲的轨迹落下，箭头指向地心，画面建立落体现象。",
+      "caption": "主视觉只表达可观察运动与方向；引力为什么存在，由后续节点展开。",
+      "formula": null,
+      "sourceIds": [
+        "openstax-gravity",
+        "sep-principia"
+      ],
+      "interaction": null
+    },
+    "nodes": [
+      {
+        "id": "n1",
+        "parentId": null,
+        "type": "phenomenon",
+        "concept": "自由下落",
+        "question": "成熟的苹果为什么会朝地面落下，而不是飞向天空？",
+        "answer": "地球一直在把苹果往地面拉，松开树枝后苹果就落下去。",
+        "analogy": "松手的水杯也会落向地面，方向和速度变化比“苹果”这个例子更普遍。",
+        "guide": {
+          "bridge": "先只看你亲眼见到的部分：苹果本来是静止的，松开树枝以后才向下走。",
+          "plainLanguage": "想象你手里托着一个苹果。手托住它时，它不会掉；手一松开，它就向下跑，而且越跑越快。",
+          "steps": [
+            "苹果挂在树上时，有树枝托着它。",
+            "树枝松开的瞬间，托住苹果的力消失了。",
+            "苹果开始向下运动，速度越变越快。",
+            "接下来要问：是什么一直把它往地面方向带？"
+          ],
+          "check": {
+            "prompt": "苹果刚离开树枝时速度很小，为什么很快就会落得更快？",
+            "answer": "因为地球的引力持续把苹果拉向地面，让它每过一会儿就获得更多向下速度。"
+          }
+        },
+        "status": "complete",
+        "sourceIds": [
+          "openstax-gravity",
+          "sep-principia"
+        ],
+        "detail": {
+          "deepDive": "苹果离枝前受到枝干支持，离枝后支持消失。地球对苹果的引力仍指向地心，于是苹果获得向下的加速度。空气阻力会改变实际运动，但不是“为什么向下”的首要原因。",
+          "whyItMatters": "现象层只回答发生了什么。若直接从现象跳到“时空弯曲”，会省略质量、距离和相互作用这些中间关系。",
+          "experimentOrProof": "OpenStax 从“物体为什么自然落向地面”开始引入万有引力；SEP 则把落体、月球运动与更广泛的引力论证放回历史语境。",
+          "frontier": ""
+        },
+        "diagram": null,
+        "videoIds": [
+          "n1-video-1",
+          "n1-video-2",
+          "n1-video-3",
+          "n1-video-4",
+          "n1-video-5"
+        ],
+        "branches": [
+          {
+            "id": "n1-b1",
+            "type": "mechanism",
+            "question": "没有空气时苹果会怎样下落？",
+            "answer": "空气阻力消失后，物体更接近只受引力控制的自由落体运动。",
+            "sourceIds": [
+              "openstax-gravity"
+            ]
+          },
+          {
+            "id": "n1-b2",
+            "type": "theory",
+            "question": "牛顿真的只因为看到苹果就发现了引力吗？",
+            "answer": "苹果故事是著名叙事，但万有引力来自长期观测、数学推导和多人工作的积累。",
+            "sourceIds": [
+              "sep-principia",
+              "openstax-gravity"
+            ]
+          }
+        ],
+        "lab": null
+      },
+      {
+        "id": "n2",
+        "parentId": null,
+        "type": "mechanism",
+        "concept": "相互吸引",
+        "question": "地球和苹果究竟是谁在拉谁？",
+        "answer": "地球和苹果互相拉；苹果动得明显，是因为地球比苹果重太多。",
+        "analogy": "地球像坐带轮椅子的大人，苹果像小孩；双方拉同一根绳，大人几乎不动，小孩明显移动。",
+        "guide": {
+          "bridge": "上一层看到苹果向下落。现在把地球和苹果换成大人和小孩，就能看见“互相拉”为什么会发生。",
+          "plainLanguage": "设想大人和小孩各坐在带轮子的椅子上，共同拉一根绳。绳子的拉力对双方一样大，但大人太重、小孩太轻，所以小孩更容易被拉过来；地球和苹果也是这样。",
+          "steps": [
+            "把地球想成坐在轮子上的大人，把苹果想成小孩。",
+            "双方拉的是同一根绳，因此受到的拉力大小相同、方向相反。",
+            "小孩更容易被拉动，大人只会移动极小的一点。",
+            "映射回真实世界：苹果明显下落，地球也受到苹果的拉力，却几乎不动。"
+          ],
+          "check": {
+            "prompt": "如果苹果也拉地球，为什么我们只看到苹果往下掉？",
+            "answer": "苹果很轻，同样的力能让它产生明显运动；地球太重，所以反向运动小到几乎无法察觉。"
+          }
+        },
+        "status": "complete",
+        "sourceIds": [
+          "openstax-gravity",
+          "einstein-online-gravity"
+        ],
+        "detail": {
+          "deepDive": "牛顿定律把引力看成两物体之间的相互作用：地球拉苹果，苹果也拉地球。在地球—苹果系统中，力的大小相等、方向相反；加速度还取决于质量，因此地球的反向加速度远小于苹果。绳子只是用来看见“共同拉、受力相等、轻重不同”的比喻，并不表示宇宙中真有一根绳。",
+          "whyItMatters": "把落地理解成“地球单方面拉东西”会遗漏相互性，也容易把重量和质量混为一谈。",
+          "experimentOrProof": "牛顿引力定律可应用于地球与月球、行星轨道和落体等不同尺度。OpenStax 强调从地球表面加速度连接到月球向心加速度。",
+          "frontier": ""
+        },
+        "diagram": {
+          "mode": "svg",
+          "kind": "force",
+          "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 620 300\"><rect width=\"620\" height=\"300\" fill=\"#f4efe4\"/><circle cx=\"180\" cy=\"156\" r=\"82\" fill=\"#d9cdb7\" stroke=\"#2c5d55\" stroke-width=\"2\"/><text x=\"180\" y=\"164\" text-anchor=\"middle\" font-family=\"serif\" font-size=\"18\" fill=\"#26332e\">地球</text><circle cx=\"430\" cy=\"112\" r=\"24\" fill=\"#ad4b3c\"/><path d=\"M207 150 L392 120\" stroke=\"#2c5d55\" stroke-width=\"3\" marker-end=\"url(#a)\"/><path d=\"M405 130 L220 160\" stroke=\"#965044\" stroke-width=\"2\" marker-end=\"url(#b)\"/><defs><marker id=\"a\" markerWidth=\"8\" markerHeight=\"8\" refX=\"7\" refY=\"4\" orient=\"auto\"><path d=\"M0,0 L8,4 L0,8Z\" fill=\"#2c5d55\"/></marker><marker id=\"b\" markerWidth=\"8\" markerHeight=\"8\" refX=\"7\" refY=\"4\" orient=\"auto\"><path d=\"M0,0 L8,4 L0,8Z\" fill=\"#965044\"/></marker></defs><text x=\"272\" y=\"89\" font-family=\"serif\" font-size=\"16\" fill=\"#26332e\">等大、反向的两个引力</text><text x=\"387\" y=\"184\" font-family=\"serif\" font-size=\"15\" fill=\"#59655f\">地球加速度极小</text></svg>",
+          "src": null,
+          "alt": "地球与苹果之间画出大小相同、方向相反的两个引力箭头；说明两者互相吸引。",
+          "caption": "箭头长度表达同一对相互作用；图未按质量比例绘制。",
+          "formula": "F地球→苹果 = −F苹果→地球",
+          "sourceIds": [
+            "openstax-gravity"
+          ],
+          "interaction": {
+            "kind": "prediction",
+            "prompt": "先猜：如果苹果也拉地球，松手后会怎样？",
+            "options": [
+              {
+                "label": "只有苹果向下移动",
+                "feedback": "这只看到了一半。苹果确实更明显，但地球也会受到方向相反、大小相同的拉力。"
+              },
+              {
+                "label": "两者相互靠近，苹果动得多、地球几乎不动",
+                "feedback": "正确。把双方想成拉同一根绳的大人和小孩：拉力相同，质量决定谁更容易被拉动。"
+              },
+              {
+                "label": "地球会向相反方向明显移动",
+                "feedback": "方向说对了，但地球质量极大，所以它的加速度小到日常几乎察觉不到。"
+              }
+            ],
+            "correctIndex": 1
+          }
+        },
+        "videoIds": [
+          "n2-video-1",
+          "n2-video-2",
+          "n2-video-3",
+          "n2-video-4",
+          "n2-video-5"
+        ],
+        "branches": [
+          {
+            "id": "n2-b1",
+            "type": "mechanism",
+            "question": "为什么苹果不会把地球拉得明显移动？",
+            "answer": "因为地球质量极大，在相同作用力下产生的加速度极小。",
+            "sourceIds": [
+              "openstax-gravity"
+            ]
+          }
+        ],
+        "lab": {
+          "kind": "simulation",
+          "title": "拖动质量，观察谁被拉得更明显",
+          "goal": "比较相同拉力下大人和小孩的运动差异，再映射到地球与苹果。",
+          "html": "<!doctype html>\n<html lang=\"zh-CN\">\n<head>\n<meta charset=\"utf-8\">\n<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">\n<style>\nbody{margin:0;padding:16px;background:var(--lab-bg);color:var(--lab-text);font-family:var(--lab-sans)}\n#lab-root{display:grid;gap:12px}\n.stage{position:relative;min-height:190px;overflow:hidden;border:1px solid var(--lab-border);border-radius:14px;background:linear-gradient(var(--lab-surface),color-mix(in srgb,var(--lab-accent) 7%,var(--lab-bg)))}\n.chair{position:absolute;bottom:42px;display:grid;place-items:center;border:2px solid var(--lab-accent);border-radius:50% 50% 42% 42%;background:color-mix(in srgb,var(--lab-accent) 8%,#fff);color:var(--lab-text);font-weight:700}\n#giant{left:17%;width:86px;height:86px}\n#tug{left:20%;right:20%;bottom:32px;height:2px;background:var(--lab-accent-2);position:absolute}\n#child{right:17%;width:46px;height:46px;background:var(--lab-accent-2);color:#fff}\n.labels{position:absolute;left:12px;right:12px;bottom:8px;display:flex;justify-content:space-between;color:var(--lab-muted);font-size:12px}\n.controls{display:grid;grid-template-columns:1fr 1fr;gap:12px}\nlabel{display:grid;gap:6px;font-size:12px;color:var(--lab-muted)}\ninput{width:100%;accent-color:var(--lab-accent)}\n.actions{display:flex;gap:8px;flex-wrap:wrap}\nbutton{min-height:44px;padding:9px 14px;border:1px solid var(--lab-border);border-radius:999px;background:var(--lab-surface);color:var(--lab-text);cursor:pointer}\nbutton.primary{background:var(--lab-accent);color:#fff;border-color:var(--lab-accent)}\n#lab-state,#lab-feedback{margin:0;padding:10px 12px;border-radius:10px;background:var(--lab-surface);font-size:13px;line-height:1.6}\n@media(max-width:520px){.controls{grid-template-columns:1fr}.stage{min-height:170px}}\n@media(prefers-reduced-motion:reduce){*{transition:none!important}}\n</style>\n</head>\n<body>\n<main id=\"lab-root\">\n  <section class=\"stage\" aria-label=\"坐在轮椅上的大人和小孩拉同一根绳\">\n    <div id=\"tug\"></div>\n    <div id=\"giant\" class=\"chair\">地球<br>大人</div>\n    <div id=\"child\" class=\"chair\">苹果<br>小孩</div>\n    <div class=\"labels\"><span>质量大，移动少</span><span>质量小，移动多</span></div>\n  </section>\n  <div class=\"controls\">\n    <label>大人相对质量 <strong id=\"giant-value\">6</strong><input id=\"giant-mass\" type=\"range\" min=\"1\" max=\"10\" value=\"6\"></label>\n    <label>小孩相对质量 <strong id=\"child-value\">1</strong><input id=\"child-mass\" type=\"range\" min=\"1\" max=\"10\" value=\"1\"></label>\n  </div>\n  <div class=\"actions\">\n    <button id=\"run\" class=\"primary\" type=\"button\">开始实验</button>\n    <button id=\"lab-reset\" type=\"button\">重新开始</button>\n  </div>\n  <p id=\"lab-state\" aria-live=\"polite\">设定两人的质量，然后开始拉绳。</p>\n  <p id=\"lab-feedback\" aria-live=\"polite\">同一根绳提供相同拉力；质量决定谁更容易被拉动。</p>\n</main>\n<script>\nconst giantInput=document.querySelector('#giant-mass');\nconst childInput=document.querySelector('#child-mass');\nconst giant=document.querySelector('#giant');\nconst child=document.querySelector('#child');\nconst run=document.querySelector('#run');\nlet state={giant:6,child:1,elapsed:0,running:false,complete:false};\nlet raf=0,last=0;\nfunction publish(){\n  window.parent.postMessage({source:'deepwhy-lab',type:'state',complete:state.complete,summary:state.complete?'实验完成：小孩移动得更明显。':'当前质量比为 '+state.giant+':'+state.child,state:{...state}}, '*');\n}\nfunction render(){\n  const ratio=state.elapsed/1.8;\n  const giantMove=Math.min(18,34*ratio/state.giant);\n  const childMove=Math.min(110,180*ratio/state.child);\n  giant.style.transform='translateX('+giantMove+'px)';\n  child.style.transform='translateX('+(-childMove)+'px)';\n  document.querySelector('#giant-value').textContent=state.giant;\n  document.querySelector('#child-value').textContent=state.child;\n  run.textContent=state.complete?'再做一次':state.running?'暂停实验':'继续实验';\n  document.querySelector('#lab-state').textContent=state.complete\n    ?'大人移动 '+(18/state.giant).toFixed(1)+' 格，小孩移动 '+(110/state.child).toFixed(1)+' 格。'\n    :state.running?'拉力相同，两人正一起向中间移动。':'设定质量并开始实验。';\n  document.querySelector('#lab-feedback').textContent=state.complete\n    ?'同样的拉力下，质量越小，加速度越大。把这一点映射回地球和苹果。'\n    :'比较质量差别，预测谁移动得更远。';\n}\nfunction tick(now){\n  if(!state.running)return;\n  if(!last)last=now;\n  state.elapsed=Math.min(1.8,state.elapsed+(now-last)/1000);\n  last=now;\n  if(state.elapsed>=1.8){\n    state.running=false;state.complete=true;raf=0;render();publish();return;\n  }\n  render();\n  raf=requestAnimationFrame(tick);\n}\nfunction reset(){\n  cancelAnimationFrame(raf);raf=0;last=0;\n  state={giant:Number(giantInput.value),child:Number(childInput.value),elapsed:0,running:false,complete:false};\n  render();publish();\n}\ngiantInput.addEventListener('input',()=>{state.giant=Number(giantInput.value);reset()});\nchildInput.addEventListener('input',()=>{state.child=Number(childInput.value);reset()});\nrun.addEventListener('click',()=>{\n  if(state.complete){state.elapsed=0;state.complete=false;}\n  state.running=!state.running;last=0;render();publish();\n  if(state.running)raf=requestAnimationFrame(tick);\n});\ndocument.querySelector('#lab-reset').addEventListener('click',reset);\nrender();publish();\n</script>\n</body>\n</html>",
+          "height": 470,
+          "fallbackText": "相同拉力下，质量越小，加速度越大；苹果因此比地球移动得明显。",
+          "completionText": "地球与苹果受到的拉力成对出现，但苹果更轻，所以运动更容易被看见。",
+          "reflectionPrompt": "用轮椅拉绳的比喻解释：为什么苹果下落明显，而地球几乎不动？"
+        }
+      },
+      {
+        "id": "n3",
+        "parentId": null,
+        "type": "principle",
+        "concept": "平方反比",
+        "question": "哪些东西会让苹果和地球的吸引力变大或变小？",
+        "answer": "东西越重、彼此越近，它们之间的引力就越强。",
+        "analogy": "把同一盏灯移远，亮度会迅速变暗；平方反比让距离变化被明显放大。",
+        "guide": {
+          "bridge": "我们已经知道苹果和地球互相拉。现在只找一个简单规律：什么时候拉得更强？",
+          "plainLanguage": "先不用记公式。你只需要知道两件事：质量越大，拉力越强；离得越远，拉力越弱，而且远一点会弱得很快。",
+          "steps": [
+            "苹果质量变大，它和地球之间的引力会变强。",
+            "地球质量变大，引力也会变强。",
+            "苹果离地心更远，引力会变弱。",
+            "把距离变成原来的 2 倍，引力只剩原来的四分之一；变成 3 倍，只剩九分之一。",
+            "牛顿用一个公式把这几条规律合在了一起。"
+          ],
+          "check": {
+            "prompt": "如果距离从原来的 1 倍变成 2 倍，其他条件不变，引力会变成原来的多少？",
+            "answer": "四分之一。因为引力随距离平方反比减小。"
+          }
+        },
+        "status": "complete",
+        "sourceIds": [
+          "openstax-gravity",
+          "einstein-online-gravity"
+        ],
+        "detail": {
+          "deepDive": "对两个球对称物体，F = G·m₁·m₂/r²。G 是引力常数；m₁、m₂ 是两个质量，r 是质心距离。距离变为两倍时，引力变为原来的四分之一。",
+          "whyItMatters": "这个公式把苹果和月球放进同一个可检验的数学框架，是“落地”走向“万有”的关键。",
+          "experimentOrProof": "OpenStax 给出万有引力定律并应用于地球表面和天体；Einstein Online 也把同一公式作为牛顿近似的基本积木。",
+          "frontier": ""
+        },
+        "diagram": {
+          "mode": "svg",
+          "kind": "equation",
+          "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 620 290\"><rect width=\"620\" height=\"290\" fill=\"#f4efe4\"/><circle cx=\"148\" cy=\"135\" r=\"70\" fill=\"#d8cbb5\" stroke=\"#2c5d55\" stroke-width=\"2\"/><circle cx=\"466\" cy=\"135\" r=\"28\" fill=\"#ad4b3c\"/><line x1=\"218\" y1=\"135\" x2=\"438\" y2=\"135\" stroke=\"#84745f\" stroke-width=\"2\" stroke-dasharray=\"6 5\"/><text x=\"148\" y=\"224\" text-anchor=\"middle\" font-family=\"serif\" font-size=\"16\" fill=\"#26332e\">质量 m₁</text><text x=\"466\" y=\"187\" text-anchor=\"middle\" font-family=\"serif\" font-size=\"16\" fill=\"#26332e\">质量 m₂</text><text x=\"326\" y=\"120\" text-anchor=\"middle\" font-family=\"serif\" font-size=\"17\" fill=\"#59655f\">距离 r</text></svg>",
+          "src": null,
+          "alt": "两个不同质量的物体相距 r，下方显示万有引力平方反比公式。",
+          "caption": "公式适用于理想的球对称质量；拖到地球半径倍数，观察相对引力平方反比变化。",
+          "formula": "F = G · m₁m₂ / r²",
+          "sourceIds": [
+            "openstax-gravity",
+            "einstein-online-gravity"
+          ],
+          "interaction": {
+            "kind": "inverse-square",
+            "prompt": "拖动距离，观察引力为何快速减弱",
+            "label": "距离 r（以当前距离为 1）",
+            "min": 1,
+            "max": 4,
+            "step": 0.25,
+            "initial": 1,
+            "resultTemplate": "r = {value} → 相对引力 {inverseSquare}"
+          }
+        },
+        "videoIds": [
+          "n3-video-1",
+          "n3-video-2",
+          "n3-video-3",
+          "n3-video-4",
+          "n3-video-5"
+        ],
+        "branches": [
+          {
+            "id": "n3-b1",
+            "type": "principle",
+            "question": "为什么是平方反比，而不是简单的反比？",
+            "answer": "在三维空间中，球对称影响随半径扩展，通常会按面积增长而衰减为平方反比。",
+            "sourceIds": [
+              "openstax-gravity"
+            ]
+          }
+        ],
+        "lab": {
+          "kind": "diagram",
+          "title": "沿曲线查看引力怎样随距离变化",
+          "goal": "比较近处和远处的曲线，发现距离翻倍时引力只剩四分之一。",
+          "html": "<!doctype html>\n<html lang=\"zh-CN\">\n<head>\n<meta charset=\"utf-8\">\n<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">\n<style>\nbody{margin:0;padding:16px;background:var(--lab-bg);color:var(--lab-text);font-family:var(--lab-sans)}\n#lab-root{display:grid;gap:12px}\n.chart{border:1px solid var(--lab-border);border-radius:14px;background:var(--lab-surface);padding:8px}\nsvg{display:block;width:100%;height:210px}\n.controls{display:grid;gap:8px}\nlabel{font-size:12px;color:var(--lab-muted)}\ninput{width:100%;accent-color:var(--lab-accent)}\n.actions{display:flex;gap:8px;flex-wrap:wrap}\nbutton{min-height:44px;padding:9px 14px;border:1px solid var(--lab-border);border-radius:999px;background:var(--lab-surface);color:var(--lab-text)}\n#lab-reset{background:var(--lab-accent);color:#fff;border-color:var(--lab-accent)}\n#lab-state,#lab-feedback{margin:0;padding:10px 12px;border-radius:10px;background:var(--lab-surface);font-size:13px;line-height:1.6}\n</style>\n</head>\n<body>\n<main id=\"lab-root\">\n  <section class=\"chart\" aria-label=\"距离与相对引力的关系图\">\n    <svg viewBox=\"0 0 600 260\" role=\"img\">\n      <line x1=\"52\" y1=\"220\" x2=\"570\" y2=\"220\" stroke=\"var(--lab-border)\"/>\n      <line x1=\"52\" y1=\"24\" x2=\"52\" y2=\"220\" stroke=\"var(--lab-border)\"/>\n      <path id=\"curve\" fill=\"none\" stroke=\"var(--lab-accent)\" stroke-width=\"4\"/>\n      <circle id=\"marker\" cx=\"184\" cy=\"130\" r=\"9\" fill=\"var(--lab-accent-2)\"/>\n      <text x=\"310\" y=\"252\" text-anchor=\"middle\" font-size=\"14\" fill=\"var(--lab-muted)\">距离 r（相对值）</text>\n      <text x=\"16\" y=\"124\" transform=\"rotate(-90 16 124)\" text-anchor=\"middle\" font-size=\"14\" fill=\"var(--lab-muted)\">相对引力</text>\n    </svg>\n  </section>\n  <div class=\"controls\">\n    <label for=\"distance\">沿曲线移动距离：<strong id=\"distance-value\">1.0</strong> 倍</label>\n    <input id=\"distance\" type=\"range\" min=\"1\" max=\"4\" step=\"0.1\" value=\"1\">\n  </div>\n  <p id=\"lab-state\" aria-live=\"polite\">当前距离 1.0 倍，相对引力 1.00。</p>\n  <p id=\"lab-feedback\" aria-live=\"polite\">查看近处和远处两个位置，比较引力下降的速度。</p>\n  <div class=\"actions\"><button id=\"lab-reset\" type=\"button\">回到最近距离</button></div>\n</main>\n<script>\nconst input=document.querySelector('#distance');\nconst curve=document.querySelector('#curve');\nconst marker=document.querySelector('#marker');\nconst seen={near:false,far:false};\nlet complete=false;\nfunction point(r){return {x:52+(r-1)/3*500,y:220-190/(r*r)}}\nfunction buildCurve(){\n  let d='';\n  for(let i=0;i<=80;i++){const r=1+i/20;const p=point(r);d+=(i?' L ':'M ')+p.x+' '+p.y;}\n  curve.setAttribute('d',d);\n}\nfunction publish(){\n  const r=Number(input.value);\n  window.parent.postMessage({source:'deepwhy-lab',type:'state',complete,summary:'距离 '+r.toFixed(1)+' 倍，相对引力 '+(1/(r*r)).toFixed(2),state:{distance:r,relativeForce:1/(r*r)}},'*');\n}\nfunction render(){\n  const r=Number(input.value);const p=point(r);\n  marker.setAttribute('cx',p.x);marker.setAttribute('cy',p.y);\n  document.querySelector('#distance-value').textContent=r.toFixed(1);\n  document.querySelector('#lab-state').textContent='当前距离 '+r.toFixed(1)+' 倍，相对引力 '+(1/(r*r)).toFixed(2)+'。';\n  if(r<=1.2)seen.near=true;if(r>=2)seen.far=true;\n  complete=seen.near&&seen.far;\n  document.querySelector('#lab-feedback').textContent=complete\n    ?'距离变大时，引力下降得比距离本身快得多；距离翻倍时只剩四分之一。'\n    :'继续移动：近处和远处的曲线斜率有什么不同？';\n  publish();\n}\nfunction reset(){input.value='1';seen.near=false;seen.far=false;complete=false;render();}\ninput.addEventListener('input',render);\ndocument.querySelector('#lab-reset').addEventListener('click',reset);\nbuildCurve();render();\n</script>\n</body>\n</html>",
+          "height": 420,
+          "fallbackText": "距离变为 2 倍时，平方反比关系会让引力变为原来的四分之一。",
+          "completionText": "引力随距离平方反比下降，所以距离变化会被显著放大。",
+          "reflectionPrompt": "用同一盏灯移远后变暗的比喻，解释距离翻倍时为什么不是只减弱一半。"
+        }
+      },
+      {
+        "id": "n4",
+        "parentId": null,
+        "type": "theory",
+        "concept": "弯曲时空",
+        "question": "如果不用“被拉”，还能怎样理解苹果下落？",
+        "answer": "爱因斯坦说，地球让周围的时空变弯，苹果只是在沿最自然的路运动。",
+        "analogy": "球在地球仪表面沿最短路径滚动，看似有人推它，实际受表面几何约束。",
+        "guide": {
+          "bridge": "牛顿的规律能算出力有多大，却没有解释为什么有质量就会产生吸引。爱因斯坦换了一张“地图”来描述这件事。",
+          "plainLanguage": "把时空想成一张很有弹性的床单。放上很重的地球，床单会凹下去；苹果经过时，就沿着凹下去的形状走，看起来像被拉向地球。",
+          "steps": [
+            "质量会改变它周围的时空形状。",
+            "地球让附近的时空出现弯曲。",
+            "没有别的力推苹果时，苹果沿着弯曲时空中最自然的路线运动。",
+            "在苹果落地这种很弱的重力环境里，这个描述和牛顿的结果几乎一样。"
+          ],
+          "check": {
+            "prompt": "“苹果沿弯曲时空运动”是否说明牛顿公式完全错误？",
+            "answer": "不是。在地球附近这种弱重力环境里，两种描述给出的运动非常接近，只是解释方式不同。"
+          }
+        },
+        "status": "complete",
+        "sourceIds": [
+          "einstein-online-gravity",
+          "ligo-gw150914"
+        ],
+        "detail": {
+          "deepDive": "在广义相对论中，质量与能量影响时空几何；没有其他外力的物体沿时空中的测地线运动。地球附近的苹果因此表现成下落，而弱的静态引力通常与牛顿描述在极高精度上相近。",
+          "whyItMatters": "牛顿公式是极好的近似，但“力”不是所有尺度下唯一的描述方式。",
+          "experimentOrProof": "LIGO 说明引力波是引力理论的真实可观测结果，首次确认探测验证了广义相对论的关键预测；本页不把苹果尺度直接等同黑洞合并。",
+          "frontier": "苹果落地本身不能直接验证引力波；后者需要极端天体和极高灵敏度探测器。"
+        },
+        "diagram": {
+          "mode": "svg",
+          "kind": "comparison",
+          "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 620 320\"><rect width=\"620\" height=\"320\" fill=\"#f4efe4\"/><g transform=\"translate(10 0)\"><rect width=\"290\" height=\"280\" x=\"0\" y=\"18\" fill=\"none\" stroke=\"#8b8477\"/><text x=\"145\" y=\"50\" text-anchor=\"middle\" font-family=\"serif\" font-size=\"18\" fill=\"#26332e\">牛顿：力</text><circle cx=\"145\" cy=\"130\" r=\"55\" fill=\"#d8cbb5\" stroke=\"#2c5d55\" stroke-width=\"2\"/><circle cx=\"145\" cy=\"79\" r=\"13\" fill=\"#ad4b3c\"/><path d=\"M145 94 L145 178\" stroke=\"#2c5d55\" stroke-width=\"3\" marker-end=\"url(#c)\"/><text x=\"145\" y=\"245\" text-anchor=\"middle\" font-family=\"serif\" font-size=\"16\" fill=\"#59655f\">向心方向的作用力</text></g><g transform=\"translate(320 0)\"><rect x=\"0\" y=\"18\" width=\"290\" height=\"280\" fill=\"none\" stroke=\"#8b8477\"/><text x=\"145\" y=\"50\" text-anchor=\"middle\" font-family=\"serif\" font-size=\"18\" fill=\"#26332e\">爱因斯坦：几何</text><g transform=\"translate(20 75)\"><path d=\"M0 20 Q145 0 250 20 M0 60 Q145 38 250 60 M0 100 Q145 78 250 100 M0 140 Q145 118 250 140\" fill=\"none\" stroke=\"#b19d7e\" stroke-width=\"1.2\"/><path d=\"M35 8 Q145 52 215 8 M35 48 Q145 92 215 48 M35 88 Q145 132 215 88 M35 128 Q145 172 215 128\" fill=\"none\" stroke=\"#b19d7e\" stroke-width=\"1.2\"/><circle cx=\"145\" cy=\"90\" r=\"31\" fill=\"#d8cbb5\" stroke=\"#2c5d55\" stroke-width=\"2\"/><circle cx=\"205\" cy=\"58\" r=\"8\" fill=\"#ad4b3c\"/><path d=\"M196 64 Q178 88 166 102\" fill=\"none\" stroke=\"#ad4b3c\" stroke-width=\"2\" stroke-dasharray=\"5 4\"/></g><text x=\"145\" y=\"245\" text-anchor=\"middle\" font-family=\"serif\" font-size=\"16\" fill=\"#59655f\">沿弯曲时空自由运动</text></g><defs><marker id=\"c\" markerWidth=\"8\" markerHeight=\"8\" refX=\"7\" refY=\"4\" orient=\"auto\"><path d=\"M0,0 L8,4 L0,8Z\" fill=\"#2c5d55\"/></marker></defs></svg>",
+          "src": null,
+          "alt": "左侧以力箭头解释苹果下落，右侧用弯曲网格和轨迹表示时空几何描述。",
+          "caption": "对照图强调解释框架不同；比喻网格不是三维时空的精确比例图。",
+          "formula": null,
+          "sourceIds": [
+            "einstein-online-gravity"
+          ],
+          "interaction": null
+        },
+        "videoIds": [
+          "n4-video-1",
+          "n4-video-2",
+          "n4-video-3",
+          "n4-video-4",
+          "n4-video-5"
+        ],
+        "branches": [
+          {
+            "id": "n4-b1",
+            "type": "theory",
+            "question": "自由落体为什么感觉像失重？",
+            "answer": "自由下落时观察者与周围物体一起加速，局部表现为接近失重。",
+            "sourceIds": [
+              "einstein-online-gravity"
+            ]
+          }
+        ],
+        "lab": null
+      },
+      {
+        "id": "n5",
+        "parentId": null,
+        "type": "frontier",
+        "concept": "引力波检验",
+        "question": "这个关于弯曲时空的想法能被实验证明吗？",
+        "answer": "能。巨大的天体相撞会发出时空涟漪，LIGO 已经测到过极微小的变化。",
+        "analogy": "苹果落地是日常尺度的小线索，引力波是宇宙尺度的大线索。",
+        "guide": {
+          "bridge": "如果时空真的会像有弹性的床单一样变化，那么剧烈的宇宙事件应该能让时空荡起波纹。",
+          "plainLanguage": "两个很重很重的黑洞绕在一起并相撞时，会把时空弄出像水波一样的涟漪。LIGO 用两条很长的测量臂去听这种极小的伸缩。",
+          "steps": [
+            "巨大的加速度会改变周围的时空。",
+            "两个黑洞相撞时，这种变化会以光速向外传播。",
+            "引力波经过地球时，会让物体的长度发生极其微小的变化。",
+            "LIGO 用激光测长，确认两台探测器都听到了同一个信号。"
+          ],
+          "check": {
+            "prompt": "为什么科学家要用两台相距很远的 LIGO 探测器，而不是只用一个？",
+            "answer": "同一个宇宙事件应该先后经过两台探测器；同时看到相同信号能排除许多本地噪声。"
+          }
+        },
+        "status": "complete",
+        "sourceIds": [
+          "ligo-gw150914",
+          "ligo-gravity-waves"
+        ],
+        "detail": {
+          "deepDive": "双黑洞并合发出引力波，波经过地球时会让空间中的距离发生极微小变化。LIGO 用长臂干涉仪测量这种变化；2015 年 9 月 14 日观测到的信号在 2016 年 2 月 11 日公布。",
+          "whyItMatters": "日常落体与极端宇宙事件都指向同一理论，但证据来自完全不同的尺度和实验。",
+          "experimentOrProof": "LIGO 官方事件页记录 GW150914 的观测与公布日期，并说明它是广义相对论预测的直接证据。",
+          "frontier": "LIGO 仍持续观测并寻找连续、爆发和随机引力波，当前观测运行的能力需要以官方状态页为准。"
+        },
+        "diagram": {
+          "mode": "svg",
+          "kind": "evidence",
+          "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 620 280\"><rect width=\"620\" height=\"280\" fill=\"#f4efe4\"/><text x=\"40\" y=\"45\" font-family=\"serif\" font-size=\"18\" fill=\"#26332e\">2015-09-14 · 两个探测器看到的同一事件</text><g stroke=\"#b3aa98\" stroke-width=\"1\"><path d=\"M40 210 H580 M40 160 H580\"/></g><g fill=\"none\" stroke=\"#2c5d55\" stroke-width=\"2\"><path d=\"M40 176 C110 176 130 116 190 116 S260 224 330 224 S400 116 460 116 S530 176 580 176\"/></g><g fill=\"none\" stroke=\"#9b5445\" stroke-width=\"1.5\" opacity=\"0.8\"><path d=\"M40 181 C110 181 135 126 195 126 S265 216 335 216 S405 126 465 126 S535 181 580 181\"/></g><text x=\"40\" y=\"250\" font-family=\"serif\" font-size=\"14\" fill=\"#59655f\">示意图只表达两台探测器的信号形状对照，不是原始数据。</text></svg>",
+          "src": null,
+          "alt": "两条相似的引力波波形曲线，用来表示两个 LIGO 探测器观测到同一事件。",
+          "caption": "根据官方对 GW150914 的描述重绘的简化示意；未用于定量分析。",
+          "formula": null,
+          "sourceIds": [
+            "ligo-gw150914"
+          ],
+          "interaction": null
+        },
+        "videoIds": [
+          "n5-video-1",
+          "n5-video-2",
+          "n5-video-3",
+          "n5-video-4",
+          "n5-video-5"
+        ],
+        "branches": [
+          {
+            "id": "n5-b1",
+            "type": "frontier",
+            "question": "为什么引力波能提供独立于光的观测？",
+            "answer": "引力波几乎不被物质吸收或散射，因此能带来光学观测无法获得的信息。",
+            "sourceIds": [
+              "ligo-gravity-waves"
+            ]
+          }
+        ],
+        "lab": null
+      },
+      {
+        "id": "n6",
+        "parentId": null,
+        "type": "boundary",
+        "concept": "量子引力",
+        "question": "那关于引力，还有完全不知道的地方吗？",
+        "answer": "有。在极小极小的尺度上，现有的引力规则和量子规则还很难放在一起。",
+        "analogy": "一条地图路线足够你走完旅程，却不等于你已经知道整张宇宙地图。",
+        "guide": {
+          "bridge": "现在我们已经能用两套好方法解释苹果怎样落地。最后要看看，这套解释在哪里会遇到麻烦。",
+          "plainLanguage": "对于苹果、行星这些不太小也不太快的东西，现有理论很好用。但到了电子、原子那样极小的世界，量子规则上场，现有引力理论和它还没有合成一张完整的地图。",
+          "steps": [
+            "日常尺度：牛顿规律和广义相对论都能很好描述苹果下落。",
+            "宇宙大尺度：广义相对论可以描述恒星、黑洞和引力波。",
+            "极小尺度：量子理论描述微观粒子。",
+            "当极强引力和极小尺度同时出现时，我们还没有一套实验确认的完整量子引力理论。"
+          ],
+          "check": {
+            "prompt": "“苹果落地已经有公式”是否等于“引力已经被完全解释”？",
+            "answer": "不等于。公式能很好描述现象，但量子尺度与引力的统一仍是开放问题。"
+          }
+        },
+        "status": "complete",
+        "sourceIds": [
+          "einstein-online-gravity",
+          "sep-quantum-gravity",
+          "mpi-gravity"
+        ],
+        "detail": {
+          "deepDive": "牛顿和广义相对论都能在各自适用范围内描述苹果附近的重力。真正的边界出现在极小尺度与极强引力交汇处：量子效应需要纳入，但完整的量子引力理论尚未被实验确认。",
+          "whyItMatters": "“有公式”不等于“已经解释一切”。理解适用范围比记住结论更重要。",
+          "experimentOrProof": "Max Planck 引力物理研究所把量子引力列为核心研究方向；Einstein Online 明确讨论量子引力的开放性质。",
+          "frontier": "候选路线包括弦理论、圈量子引力等，但它们不应被呈现为已经完成的统一理论。"
+        },
+        "diagram": null,
+        "videoIds": [
+          "n6-video-1",
+          "n6-video-2",
+          "n6-video-3",
+          "n6-video-4",
+          "n6-video-5"
+        ],
+        "branches": [
+          {
+            "id": "n6-b1",
+            "type": "boundary",
+            "question": "为什么强引力和极小尺度会让理论失效？",
+            "answer": "广义相对论与量子理论在这一区域都试图控制几何与微观涨落，尚缺完整一致的描述。",
+            "sourceIds": [
+              "einstein-online-gravity",
+              "sep-quantum-gravity",
+              "mpi-gravity"
+            ]
+          }
+        ],
+        "lab": null
+      }
+    ],
+    "takeaway": "苹果落地不是单个事实，而是一条从相互作用走向方程、弯曲时空、实验检验和理论边界的知识链。"
+  },
+  "videos": {
+    "platformsSearched": [
+      "youtube",
+      "bilibili"
+    ],
+    "items": [
+      {
+        "id": "n1-video-1",
+        "title": "牛顿如何发现重力学说？苹果砸在头顶上，咬上一口突然开窍",
+        "author": "影视新番z",
+        "platform": "bilibili",
+        "url": "https://www.bilibili.com/video/BV1DY4y177d5",
+        "embedUrl": "https://player.bilibili.com/player.html?bvid=BV1DY4y177d5&page=1&high_quality=1&danmaku=0&autoplay=0",
+        "thumbnailUrl": "https://i2.hdslb.com/bfs/archive/d5bdd670f2d83337453c14ea26817f50f200c86b.jpg",
+        "durationSeconds": 78,
+        "publishedAt": "2022-07-15",
+        "queryDate": "2026-10-24",
+        "metricsStatus": "captured",
+        "metrics": {
+          "views": 11038,
+          "likes": 56,
+          "comments": 6
+        },
+        "selectionRationale": "从苹果下落、牛顿故事或重力历史建立可观察现象。",
+        "sourceIds": [
+          "bili-bv1dy4y177d5"
+        ]
+      },
+      {
+        "id": "n1-video-2",
+        "title": "重力到底是什么？从亚里士多德到牛顿，10分钟了解重力的历史｜【慢聊科普】大鹏和桃",
+        "author": "慢聊科普_大鹏和桃",
+        "platform": "bilibili",
+        "url": "https://www.bilibili.com/video/BV1Ro5CzPEQN",
+        "embedUrl": "https://player.bilibili.com/player.html?bvid=BV1Ro5CzPEQN&page=1&high_quality=1&danmaku=0&autoplay=0",
+        "thumbnailUrl": "https://i0.hdslb.com/bfs/archive/927775bbcf3a07323bcb91a212769ffaf859ef20.jpg",
+        "durationSeconds": 697,
+        "publishedAt": "2025-04-21",
+        "queryDate": "2026-10-24",
+        "metricsStatus": "captured",
+        "metrics": {
+          "views": 14719,
+          "likes": 234,
+          "comments": 26
+        },
+        "selectionRationale": "从苹果下落、牛顿故事或重力历史建立可观察现象。",
+        "sourceIds": [
+          "bili-bv1ro5czpeqn"
+        ]
+      },
+      {
+        "id": "n1-video-3",
+        "title": "牛顿与苹果的故事",
+        "author": "征服宇宙zfyz",
+        "platform": "bilibili",
+        "url": "https://www.bilibili.com/video/BV1z94y1f7jg",
+        "embedUrl": "https://player.bilibili.com/player.html?bvid=BV1z94y1f7jg&page=1&high_quality=1&danmaku=0&autoplay=0",
+        "thumbnailUrl": "https://i2.hdslb.com/bfs/archive/48c71e8c405e2c2b7d5e8337a8d65ea8b40e5f4f.jpg",
+        "durationSeconds": 512,
+        "publishedAt": "2022-03-28",
+        "queryDate": "2026-10-24",
+        "metricsStatus": "captured",
+        "metrics": {
+          "views": 12538,
+          "likes": 30,
+          "comments": 4
+        },
+        "selectionRationale": "从苹果下落、牛顿故事或重力历史建立可观察现象。",
+        "sourceIds": [
+          "bili-bv1z94y1f7jg"
+        ]
+      },
+      {
+        "id": "n1-video-4",
+        "title": "科普动画-牛顿发现万有引力",
+        "author": "丢羊の凹拉哈",
+        "platform": "bilibili",
+        "url": "https://www.bilibili.com/video/BV1Q8411e7BR",
+        "embedUrl": "https://player.bilibili.com/player.html?bvid=BV1Q8411e7BR&page=1&high_quality=1&danmaku=0&autoplay=0",
+        "thumbnailUrl": "https://i2.hdslb.com/bfs/archive/5ddc35171746201f4e5e472f5ab49a9c1394be2e.jpg",
+        "durationSeconds": 134,
+        "publishedAt": "2022-10-27",
+        "queryDate": "2026-10-24",
+        "metricsStatus": "captured",
+        "metrics": {
+          "views": 2682,
+          "likes": 19,
+          "comments": 1
+        },
+        "selectionRationale": "从苹果下落、牛顿故事或重力历史建立可观察现象。",
+        "sourceIds": [
+          "bili-bv1q8411e7br"
+        ]
+      },
+      {
+        "id": "n1-video-5",
+        "title": "牛顿万有引力公式，是怎么一步步推导出来的？",
+        "author": "物理思考者",
+        "platform": "bilibili",
+        "url": "https://www.bilibili.com/video/BV1doM46tES1",
+        "embedUrl": "https://player.bilibili.com/player.html?bvid=BV1doM46tES1&page=1&high_quality=1&danmaku=0&autoplay=0",
+        "thumbnailUrl": "https://i0.hdslb.com/bfs/archive/14b48147ec51ce64032b1e63fde09a62d5ca685f.jpg",
+        "durationSeconds": 348,
+        "publishedAt": "2026-07-07",
+        "queryDate": "2026-10-24",
+        "metricsStatus": "captured",
+        "metrics": {
+          "views": 40812,
+          "likes": 1855,
+          "comments": 99
+        },
+        "selectionRationale": "从苹果下落、牛顿故事或重力历史建立可观察现象。",
+        "sourceIds": [
+          "bili-bv1dom46tes1"
+        ]
+      },
+      {
+        "id": "n2-video-1",
+        "title": "[高中物理]轻松搞定万有引力！天才牛顿再次回归！保姆级教学，拯救你的必修二",
+        "author": "HE物理课堂",
+        "platform": "bilibili",
+        "url": "https://www.bilibili.com/video/BV1qSXhYsE6c",
+        "embedUrl": "https://player.bilibili.com/player.html?bvid=BV1qSXhYsE6c&page=1&high_quality=1&danmaku=0&autoplay=0",
+        "thumbnailUrl": "https://i0.hdslb.com/bfs/archive/af6d096f530f17ab8529f04f9a3af9167890b59a.jpg",
+        "durationSeconds": 696,
+        "publishedAt": "2025-03-23",
+        "queryDate": "2026-10-24",
+        "metricsStatus": "captured",
+        "metrics": {
+          "views": 485743,
+          "likes": 15745,
+          "comments": 269
+        },
+        "selectionRationale": "解释牛顿万有引力与相互作用，支持“双方互相拉”的核心关系。",
+        "sourceIds": [
+          "bili-bv1qsxhyse6c"
+        ]
+      },
+      {
+        "id": "n2-video-2",
+        "title": "一己之力碾压整个科学界！物理天才牛顿，万有引力惊天下",
+        "author": "胡小闲",
+        "platform": "bilibili",
+        "url": "https://www.bilibili.com/video/BV1S3PBe9EFa",
+        "embedUrl": "https://player.bilibili.com/player.html?bvid=BV1S3PBe9EFa&page=1&high_quality=1&danmaku=0&autoplay=0",
+        "thumbnailUrl": "https://i1.hdslb.com/bfs/archive/9a903342c4b50850f10da04f4ba187ad1dc0d0f0.jpg",
+        "durationSeconds": 129,
+        "publishedAt": "2025-02-04",
+        "queryDate": "2026-10-24",
+        "metricsStatus": "captured",
+        "metrics": {
+          "views": 101957,
+          "likes": 1203,
+          "comments": 15
+        },
+        "selectionRationale": "解释牛顿万有引力与相互作用，支持“双方互相拉”的核心关系。",
+        "sourceIds": [
+          "bili-bv1s3pbe9efa"
+        ]
+      },
+      {
+        "id": "n2-video-3",
+        "title": "发现万有引力全靠苹果",
+        "author": "学而思礼花蛋Pro",
+        "platform": "bilibili",
+        "url": "https://www.bilibili.com/video/BV1V8411M7dH",
+        "embedUrl": "https://player.bilibili.com/player.html?bvid=BV1V8411M7dH&page=1&high_quality=1&danmaku=0&autoplay=0",
+        "thumbnailUrl": "https://i2.hdslb.com/bfs/archive/e2887b66825d13ced789fbef2d91b8b9e388b22b.jpg",
+        "durationSeconds": 173,
+        "publishedAt": "2023-02-13",
+        "queryDate": "2026-10-24",
+        "metricsStatus": "captured",
+        "metrics": {
+          "views": 10886,
+          "likes": 87,
+          "comments": 1
+        },
+        "selectionRationale": "解释牛顿万有引力与相互作用，支持“双方互相拉”的核心关系。",
+        "sourceIds": [
+          "bili-bv1v8411m7dh"
+        ]
+      },
+      {
+        "id": "n2-video-4",
+        "title": "3分钟解读牛顿的一生-他的万有引力和运动定律究竟有多么伟大",
+        "author": "未知解密",
+        "platform": "bilibili",
+        "url": "https://www.bilibili.com/video/BV1et4y1K7RP",
+        "embedUrl": "https://player.bilibili.com/player.html?bvid=BV1et4y1K7RP&page=1&high_quality=1&danmaku=0&autoplay=0",
+        "thumbnailUrl": "https://i0.hdslb.com/bfs/archive/6b9961990472d628b30aa7f55dff72ed48d8c8dc.jpg",
+        "durationSeconds": 198,
+        "publishedAt": "2022-11-04",
+        "queryDate": "2026-10-24",
+        "metricsStatus": "captured",
+        "metrics": {
+          "views": 3145,
+          "likes": 20,
+          "comments": 1
+        },
+        "selectionRationale": "解释牛顿万有引力与相互作用，支持“双方互相拉”的核心关系。",
+        "sourceIds": [
+          "bili-bv1et4y1k7rp"
+        ]
+      },
+      {
+        "id": "n2-video-5",
+        "title": "一分钟看懂牛顿三大运动定律",
+        "author": "科学小视",
+        "platform": "bilibili",
+        "url": "https://www.bilibili.com/video/BV1th4y1C7tv",
+        "embedUrl": "https://player.bilibili.com/player.html?bvid=BV1th4y1C7tv&page=1&high_quality=1&danmaku=0&autoplay=0",
+        "thumbnailUrl": "https://i1.hdslb.com/bfs/archive/e3dc3e9c3841ff737f31a5cbe4ec065d2c916884.jpg",
+        "durationSeconds": 80,
+        "publishedAt": "2023-08-01",
+        "queryDate": "2026-10-24",
+        "metricsStatus": "captured",
+        "metrics": {
+          "views": 84356,
+          "likes": 1957,
+          "comments": 74
+        },
+        "selectionRationale": "解释牛顿万有引力与相互作用，支持“双方互相拉”的核心关系。",
+        "sourceIds": [
+          "bili-bv1th4y1c7tv"
+        ]
+      },
+      {
+        "id": "n3-video-1",
+        "title": "【物理实验】测量万有引力常量 卡文迪什扭秤",
+        "author": "清圣祖玄烨Official",
+        "platform": "bilibili",
+        "url": "https://www.bilibili.com/video/BV1TX4y1G7CV",
+        "embedUrl": "https://player.bilibili.com/player.html?bvid=BV1TX4y1G7CV&page=1&high_quality=1&danmaku=0&autoplay=0",
+        "thumbnailUrl": "https://i0.hdslb.com/bfs/archive/6f36c44879258435ebc6872a191b956b5be43493.jpg",
+        "durationSeconds": 93,
+        "publishedAt": "2021-03-19",
+        "queryDate": "2026-10-24",
+        "metricsStatus": "captured",
+        "metrics": {
+          "views": 44284,
+          "likes": 314,
+          "comments": 30
+        },
+        "selectionRationale": "覆盖引力常量、距离、轨道或公式，帮助比较质量与距离的影响。",
+        "sourceIds": [
+          "bili-bv1tx4y1g7cv"
+        ]
+      },
+      {
+        "id": "n3-video-2",
+        "title": "圆锥曲线和万有引力天体轨道（引力是什么二）",
+        "author": "科学启明星",
+        "platform": "bilibili",
+        "url": "https://www.bilibili.com/video/BV1RY411f7u4",
+        "embedUrl": "https://player.bilibili.com/player.html?bvid=BV1RY411f7u4&page=1&high_quality=1&danmaku=0&autoplay=0",
+        "thumbnailUrl": "https://i0.hdslb.com/bfs/archive/b51eb6772e48d7fb0c257f837128336f17a719ab.jpg",
+        "durationSeconds": 548,
+        "publishedAt": "2022-11-01",
+        "queryDate": "2026-10-24",
+        "metricsStatus": "captured",
+        "metrics": {
+          "views": 59429,
+          "likes": 2826,
+          "comments": 168
+        },
+        "selectionRationale": "覆盖引力常量、距离、轨道或公式，帮助比较质量与距离的影响。",
+        "sourceIds": [
+          "bili-bv1ry411f7u4"
+        ]
+      },
+      {
+        "id": "n3-video-3",
+        "title": "万有引力定律",
+        "author": "乐乐课堂-天天练APP",
+        "platform": "bilibili",
+        "url": "https://www.bilibili.com/video/BV1Ku4y1o7hW",
+        "embedUrl": "https://player.bilibili.com/player.html?bvid=BV1Ku4y1o7hW&page=1&high_quality=1&danmaku=0&autoplay=0",
+        "thumbnailUrl": "https://i2.hdslb.com/bfs/archive/6d6ee7bb61a5d7711e63201efe19faee2fa2eb01.jpg",
+        "durationSeconds": 169,
+        "publishedAt": "2023-06-20",
+        "queryDate": "2026-10-24",
+        "metricsStatus": "captured",
+        "metrics": {
+          "views": 73016,
+          "likes": 1070,
+          "comments": 30
+        },
+        "selectionRationale": "覆盖引力常量、距离、轨道或公式，帮助比较质量与距离的影响。",
+        "sourceIds": [
+          "bili-bv1ku4y1o7hw"
+        ]
+      },
+      {
+        "id": "n3-video-4",
+        "title": "理解万有引力定律！",
+        "author": "无限理论",
+        "platform": "bilibili",
+        "url": "https://www.bilibili.com/video/BV1Bz4y1N7Tz",
+        "embedUrl": "https://player.bilibili.com/player.html?bvid=BV1Bz4y1N7Tz&page=1&high_quality=1&danmaku=0&autoplay=0",
+        "thumbnailUrl": "https://i1.hdslb.com/bfs/archive/e2cf953f14a62104239008aadd72bd9b66110254.jpg",
+        "durationSeconds": 405,
+        "publishedAt": "2023-11-02",
+        "queryDate": "2026-10-24",
+        "metricsStatus": "captured",
+        "metrics": {
+          "views": 33822,
+          "likes": 378,
+          "comments": 24
+        },
+        "selectionRationale": "覆盖引力常量、距离、轨道或公式，帮助比较质量与距离的影响。",
+        "sourceIds": [
+          "bili-bv1bz4y1n7tz"
+        ]
+      },
+      {
+        "id": "n3-video-5",
+        "title": "宇宙万物皆有引力，那么引力是如何产生的，引力的本质又是什么？",
+        "author": "太空科学站",
+        "platform": "bilibili",
+        "url": "https://www.bilibili.com/video/BV174411e7pj",
+        "embedUrl": "https://player.bilibili.com/player.html?bvid=BV174411e7pj&page=1&high_quality=1&danmaku=0&autoplay=0",
+        "thumbnailUrl": "https://i0.hdslb.com/bfs/archive/ca48532d7d732cb409891dd93b3816f1ef6926ce.jpg",
+        "durationSeconds": 171,
+        "publishedAt": "2019-05-11",
+        "queryDate": "2026-10-24",
+        "metricsStatus": "captured",
+        "metrics": {
+          "views": 94810,
+          "likes": 1108,
+          "comments": 284
+        },
+        "selectionRationale": "覆盖引力常量、距离、轨道或公式，帮助比较质量与距离的影响。",
+        "sourceIds": [
+          "bili-bv174411e7pj"
+        ]
+      },
+      {
+        "id": "n4-video-1",
+        "title": "广义相对论诞生史——爱因斯坦是如何发现时空弯曲？ #科普",
+        "author": "师兄揭秘",
+        "platform": "bilibili",
+        "url": "https://www.bilibili.com/video/BV1Xh9kB6EFB",
+        "embedUrl": "https://player.bilibili.com/player.html?bvid=BV1Xh9kB6EFB&page=1&high_quality=1&danmaku=0&autoplay=0",
+        "thumbnailUrl": "https://i1.hdslb.com/bfs/archive/4e996bc6247c40f86e1f8de03eed61d4c62661ca.jpg",
+        "durationSeconds": 1306,
+        "publishedAt": "2026-04-28",
+        "queryDate": "2026-10-24",
+        "metricsStatus": "captured",
+        "metrics": {
+          "views": 1554144,
+          "likes": 42182,
+          "comments": 117
+        },
+        "selectionRationale": "解释时空弯曲与广义相对论，对应从“力”到“几何”的转换。",
+        "sourceIds": [
+          "bili-bv1xh9kb6efb"
+        ]
+      },
+      {
+        "id": "n4-video-2",
+        "title": "【宇宙峥相】弯曲吧！时空——爱因斯坦场方程的发现与求解",
+        "author": "赵峥讲物理",
+        "platform": "bilibili",
+        "url": "https://www.bilibili.com/video/BV19y4y1v7mg",
+        "embedUrl": "https://player.bilibili.com/player.html?bvid=BV19y4y1v7mg&page=1&high_quality=1&danmaku=0&autoplay=0",
+        "thumbnailUrl": "https://i2.hdslb.com/bfs/archive/bc293301ed2f2af0bc844118e9c66cd848e71814.jpg",
+        "durationSeconds": 552,
+        "publishedAt": "2020-12-21",
+        "queryDate": "2026-10-24",
+        "metricsStatus": "captured",
+        "metrics": {
+          "views": 75452,
+          "likes": 3806,
+          "comments": 153
+        },
+        "selectionRationale": "解释时空弯曲与广义相对论，对应从“力”到“几何”的转换。",
+        "sourceIds": [
+          "bili-bv19y4y1v7mg"
+        ]
+      },
+      {
+        "id": "n4-video-3",
+        "title": "广义相对论基本原理简单解释，时空弯曲和时间膨胀的推理过程",
+        "author": "异星探索",
+        "platform": "bilibili",
+        "url": "https://www.bilibili.com/video/BV1n44y1K7x6",
+        "embedUrl": "https://player.bilibili.com/player.html?bvid=BV1n44y1K7x6&page=1&high_quality=1&danmaku=0&autoplay=0",
+        "thumbnailUrl": "https://i2.hdslb.com/bfs/archive/b81e2f759fac5f63eb51316bb24e2a7e044cd533.jpg",
+        "durationSeconds": 259,
+        "publishedAt": "2022-03-12",
+        "queryDate": "2026-10-24",
+        "metricsStatus": "captured",
+        "metrics": {
+          "views": 45659,
+          "likes": 964,
+          "comments": 79
+        },
+        "selectionRationale": "解释时空弯曲与广义相对论，对应从“力”到“几何”的转换。",
+        "sourceIds": [
+          "bili-bv1n44y1k7x6"
+        ]
+      },
+      {
+        "id": "n4-video-4",
+        "title": "爱因斯坦是如何一步步构建出广义相对论的？",
+        "author": "科学认识论",
+        "platform": "bilibili",
+        "url": "https://www.bilibili.com/video/BV1a8UHYkEyy",
+        "embedUrl": "https://player.bilibili.com/player.html?bvid=BV1a8UHYkEyy&page=1&high_quality=1&danmaku=0&autoplay=0",
+        "thumbnailUrl": "https://i0.hdslb.com/bfs/archive/3412a5c8b656b53fc66d4d33e1d48a16010e4b06.jpg",
+        "durationSeconds": 503,
+        "publishedAt": "2024-11-18",
+        "queryDate": "2026-10-24",
+        "metricsStatus": "captured",
+        "metrics": {
+          "views": 370229,
+          "likes": 10698,
+          "comments": 763
+        },
+        "selectionRationale": "解释时空弯曲与广义相对论，对应从“力”到“几何”的转换。",
+        "sourceIds": [
+          "bili-bv1a8uhykeyy"
+        ]
+      },
+      {
+        "id": "n4-video-5",
+        "title": "【中英双字】广义相对论的数学(1)：时空与世界线",
+        "author": "Sooooft",
+        "platform": "bilibili",
+        "url": "https://www.bilibili.com/video/BV1Kp4y1s7nK",
+        "embedUrl": "https://player.bilibili.com/player.html?bvid=BV1Kp4y1s7nK&page=1&high_quality=1&danmaku=0&autoplay=0",
+        "thumbnailUrl": "https://i2.hdslb.com/bfs/archive/06bac8f0a7ee0bc1755f01051737d8079288133f.jpg",
+        "durationSeconds": 395,
+        "publishedAt": "2021-02-03",
+        "queryDate": "2026-10-24",
+        "metricsStatus": "captured",
+        "metrics": {
+          "views": 68683,
+          "likes": 2609,
+          "comments": 71
+        },
+        "selectionRationale": "解释时空弯曲与广义相对论，对应从“力”到“几何”的转换。",
+        "sourceIds": [
+          "bili-bv1kp4y1s7nk"
+        ]
+      },
+      {
+        "id": "n5-video-1",
+        "title": "引力波到底是什么？爱因斯坦的预言被证实，宇宙中确实存在引力波",
+        "author": "宇宙天文馆",
+        "platform": "bilibili",
+        "url": "https://www.bilibili.com/video/BV1xr4y1T7fT",
+        "embedUrl": "https://player.bilibili.com/player.html?bvid=BV1xr4y1T7fT&page=1&high_quality=1&danmaku=0&autoplay=0",
+        "thumbnailUrl": "https://i2.hdslb.com/bfs/archive/12e52b9f674c945fef9306a5c6a4194a51d5bfcd.jpg",
+        "durationSeconds": 310,
+        "publishedAt": "2021-01-10",
+        "queryDate": "2026-10-24",
+        "metricsStatus": "captured",
+        "metrics": {
+          "views": 540726,
+          "likes": 9247,
+          "comments": 484
+        },
+        "selectionRationale": "展示引力波预言、验证或相关实验，对应时空涟漪证据。",
+        "sourceIds": [
+          "bili-bv1xr4y1t7ft"
+        ]
+      },
+      {
+        "id": "n5-video-2",
+        "title": "人类新纪元，引力波时代——引力波被证实",
+        "author": "只不过肚子有点软",
+        "platform": "bilibili",
+        "url": "https://www.bilibili.com/video/BV1Ks41197Uc",
+        "embedUrl": "https://player.bilibili.com/player.html?bvid=BV1Ks41197Uc&page=1&high_quality=1&danmaku=0&autoplay=0",
+        "thumbnailUrl": "https://i1.hdslb.com/bfs/archive/e7544117a7114fd68680ef66301f8351de01c735.jpg",
+        "durationSeconds": 326,
+        "publishedAt": "2016-02-11",
+        "queryDate": "2026-10-24",
+        "metricsStatus": "captured",
+        "metrics": {
+          "views": 967354,
+          "likes": 1212,
+          "comments": 10599
+        },
+        "selectionRationale": "展示引力波预言、验证或相关实验，对应时空涟漪证据。",
+        "sourceIds": [
+          "bili-bv1ks41197uc"
+        ]
+      },
+      {
+        "id": "n5-video-3",
+        "title": "如何证明广义相对论是对的？这三个实验神助攻！【宇宙峥相】",
+        "author": "赵峥讲物理",
+        "platform": "bilibili",
+        "url": "https://www.bilibili.com/video/BV1gU4y1x7HC",
+        "embedUrl": "https://player.bilibili.com/player.html?bvid=BV1gU4y1x7HC&page=1&high_quality=1&danmaku=0&autoplay=0",
+        "thumbnailUrl": "https://i2.hdslb.com/bfs/archive/65abd803abeb26d0bd97dfee4c0bbed883d31bbd.jpg",
+        "durationSeconds": 593,
+        "publishedAt": "2021-02-06",
+        "queryDate": "2026-10-24",
+        "metricsStatus": "captured",
+        "metrics": {
+          "views": 450826,
+          "likes": 14539,
+          "comments": 873
+        },
+        "selectionRationale": "展示引力波预言、验证或相关实验，对应时空涟漪证据。",
+        "sourceIds": [
+          "bili-bv1gu4y1x7hc"
+        ]
+      },
+      {
+        "id": "n5-video-4",
+        "title": "爱因斯坦有多牛？引力波预言百年后被验证，4大理论推动科学进步",
+        "author": "宇宙天文馆",
+        "platform": "bilibili",
+        "url": "https://www.bilibili.com/video/BV1Eh411v7dx",
+        "embedUrl": "https://player.bilibili.com/player.html?bvid=BV1Eh411v7dx&page=1&high_quality=1&danmaku=0&autoplay=0",
+        "thumbnailUrl": "https://i2.hdslb.com/bfs/archive/ed36b2dd590feaddec1aa283cf54b44252f6308d.jpg",
+        "durationSeconds": 477,
+        "publishedAt": "2021-05-23",
+        "queryDate": "2026-10-24",
+        "metricsStatus": "captured",
+        "metrics": {
+          "views": 112826,
+          "likes": 3030,
+          "comments": 225
+        },
+        "selectionRationale": "展示引力波预言、验证或相关实验，对应时空涟漪证据。",
+        "sourceIds": [
+          "bili-bv1eh411v7dx"
+        ]
+      },
+      {
+        "id": "n5-video-5",
+        "title": "爱因斯坦的相对论是如何被验证的？到现在全部获得验证了吗？",
+        "author": "宇宙探索cosmos",
+        "platform": "bilibili",
+        "url": "https://www.bilibili.com/video/BV1hD4y1E7kU",
+        "embedUrl": "https://player.bilibili.com/player.html?bvid=BV1hD4y1E7kU&page=1&high_quality=1&danmaku=0&autoplay=0",
+        "thumbnailUrl": "https://i0.hdslb.com/bfs/archive/b16de7829cdd7abdb0a5d490104ffbb7bb973a2f.jpg",
+        "durationSeconds": 878,
+        "publishedAt": "2023-01-26",
+        "queryDate": "2026-10-24",
+        "metricsStatus": "captured",
+        "metrics": {
+          "views": 32319,
+          "likes": 430,
+          "comments": 46
+        },
+        "selectionRationale": "展示引力波预言、验证或相关实验，对应时空涟漪证据。",
+        "sourceIds": [
+          "bili-bv1hd4y1e7ku"
+        ]
+      },
+      {
+        "id": "n6-video-1",
+        "title": "它俩为什么无法统一？这5个矛盾的共同根源是什么？人类有哪两种互相冲突的时空观？为什么说时间是人类了解最少的物理量？",
+        "author": "道可道Science-硬核科普",
+        "platform": "bilibili",
+        "url": "https://www.bilibili.com/video/BV1hUCuBXEXb",
+        "embedUrl": "https://player.bilibili.com/player.html?bvid=BV1hUCuBXEXb&page=1&high_quality=1&danmaku=0&autoplay=0",
+        "thumbnailUrl": "https://i0.hdslb.com/bfs/archive/a8104244ec36a04edcb501512c3652a102c28b2b.jpg",
+        "durationSeconds": 663,
+        "publishedAt": "2025-11-14",
+        "queryDate": "2026-10-24",
+        "metricsStatus": "captured",
+        "metrics": {
+          "views": 349271,
+          "likes": 15417,
+          "comments": 1128
+        },
+        "selectionRationale": "讨论量子引力、普朗克尺度或理论统一困难，对应当前知识边界。",
+        "sourceIds": [
+          "bili-bv1hucubxexb"
+        ]
+      },
+      {
+        "id": "n6-video-2",
+        "title": "宇宙中最大的禁区！为什么普朗克长度之下就是空间的禁区？",
+        "author": "科学认识论",
+        "platform": "bilibili",
+        "url": "https://www.bilibili.com/video/BV1rV4y1B7Ea",
+        "embedUrl": "https://player.bilibili.com/player.html?bvid=BV1rV4y1B7Ea&page=1&high_quality=1&danmaku=0&autoplay=0",
+        "thumbnailUrl": "https://i1.hdslb.com/bfs/archive/238767357ecd853a3b3d314afdf8c64fa92bdc4e.jpg",
+        "durationSeconds": 955,
+        "publishedAt": "2023-05-24",
+        "queryDate": "2026-10-24",
+        "metricsStatus": "captured",
+        "metrics": {
+          "views": 582867,
+          "likes": 13030,
+          "comments": 899
+        },
+        "selectionRationale": "讨论量子引力、普朗克尺度或理论统一困难，对应当前知识边界。",
+        "sourceIds": [
+          "bili-bv1rv4y1b7ea"
+        ]
+      },
+      {
+        "id": "n6-video-3",
+        "title": "量子力学三大矛盾是什么？测量坍塌问题，意识与观察者效应，量子和引力理论的矛盾",
+        "author": "科学认识论",
+        "platform": "bilibili",
+        "url": "https://www.bilibili.com/video/BV1Jk4y1S79K",
+        "embedUrl": "https://player.bilibili.com/player.html?bvid=BV1Jk4y1S79K&page=1&high_quality=1&danmaku=0&autoplay=0",
+        "thumbnailUrl": "https://i0.hdslb.com/bfs/archive/abd9295d664768ffc16c2eafe9f36aba8f1d3a10.jpg",
+        "durationSeconds": 2206,
+        "publishedAt": "2024-01-26",
+        "queryDate": "2026-10-24",
+        "metricsStatus": "captured",
+        "metrics": {
+          "views": 406131,
+          "likes": 12476,
+          "comments": 640
+        },
+        "selectionRationale": "讨论量子引力、普朗克尺度或理论统一困难，对应当前知识边界。",
+        "sourceIds": [
+          "bili-bv1jk4y1s79k"
+        ]
+      },
+      {
+        "id": "n6-video-4",
+        "title": "硬核科普：物理学终极理论的两个方向，大统一和量子理论引力",
+        "author": "科学认识论",
+        "platform": "bilibili",
+        "url": "https://www.bilibili.com/video/BV1rV4y1M7jv",
+        "embedUrl": "https://player.bilibili.com/player.html?bvid=BV1rV4y1M7jv&page=1&high_quality=1&danmaku=0&autoplay=0",
+        "thumbnailUrl": "https://i1.hdslb.com/bfs/archive/3b75e7307756c1b05a11ad8fe085c7aacd475cf3.jpg",
+        "durationSeconds": 664,
+        "publishedAt": "2022-09-17",
+        "queryDate": "2026-10-24",
+        "metricsStatus": "captured",
+        "metrics": {
+          "views": 401305,
+          "likes": 10442,
+          "comments": 749
+        },
+        "selectionRationale": "讨论量子引力、普朗克尺度或理论统一困难，对应当前知识边界。",
+        "sourceIds": [
+          "bili-bv1rv4y1m7jv"
+        ]
+      },
+      {
+        "id": "n6-video-5",
+        "title": "弦理论，是科学的巅峰，还是数学的幻觉？",
+        "author": "科学视界面",
+        "platform": "bilibili",
+        "url": "https://www.bilibili.com/video/BV199qhBTELs",
+        "embedUrl": "https://player.bilibili.com/player.html?bvid=BV199qhBTELs&page=1&high_quality=1&danmaku=0&autoplay=0",
+        "thumbnailUrl": "https://i2.hdslb.com/bfs/archive/59f14be377e55cd08c5da4c3a3640cf856828a60.jpg",
+        "durationSeconds": 1150,
+        "publishedAt": "2025-12-16",
+        "queryDate": "2026-10-24",
+        "metricsStatus": "captured",
+        "metrics": {
+          "views": 237606,
+          "likes": 3368,
+          "comments": 757
+        },
+        "selectionRationale": "讨论量子引力、普朗克尺度或理论统一困难，对应当前知识边界。",
+        "sourceIds": [
+          "bili-bv199qhbtels"
+        ]
+      }
+    ],
+    "gap": "YouTube 页面在当前网络环境下无法完成核验；本示例为每个知识点关联这 5 条已确认可嵌入的 B 站视频，不补写未验证内容。"
+  },
+  "background": {
+    "summary": "这条知识链连接了日常落体、牛顿力学、广义相对论和现代引力实验。",
+    "people": [
+      {
+        "name": "Isaac Newton",
+        "contribution": "1687 年出版《自然哲学的数学原理》，系统提出运动定律和万有引力定律。",
+        "context": "他的结论建立在开普勒、伽利略、惠更斯等前人和同时代研究之上。",
+        "limits": "苹果故事不能概括这条理论的形成过程，也不能把万有引力归为一次偶然灵感。",
+        "profileUrl": "https://www.gutenberg.org/ebooks/author/6288",
+        "sourceIds": [
+          "gutenberg-principia",
+          "sep-principia",
+          "openstax-gravity"
+        ]
+      },
+      {
+        "name": "Albert Einstein",
+        "contribution": "提出狭义与广义相对论，把引力重新解释为质量、能量与时空几何之间的关系。",
+        "context": "爱因斯坦因光电效应获得 1921 年诺贝尔物理学奖；广义相对论不是该奖的授奖理由。",
+        "limits": "相对论在弱场和低速下与牛顿引力高度一致；苹果尺度本身不能单独证明广义相对论。",
+        "profileUrl": "https://www.nobelprize.org/prizes/physics/1921/einstein/facts/",
+        "sourceIds": [
+          "nobel-einstein",
+          "einstein-online-gravity"
+        ]
+      }
+    ],
+    "institutions": [
+      {
+        "name": "LIGO Scientific Collaboration",
+        "role": "通过双探测器网络观测引力波，测试相对论并研究黑洞与中子星等天体。",
+        "homepage": "https://ligo.org/",
+        "representativeWork": "2015-09-14 对 GW150914 的观测和 2016 年首次确认公布。",
+        "sourceIds": [
+          "ligo-gw150914",
+          "ligo-gravity-waves"
+        ]
+      },
+      {
+        "name": "Max Planck Institute for Gravitational Physics",
+        "role": "研究相对论、量子引力、天体物理相对论和引力波科学。",
+        "homepage": "https://www.aei.mpg.de/",
+        "representativeWork": "相对论基础、引力波建模和相关计算研究。",
+        "sourceIds": [
+          "mpi-gravity",
+          "einstein-online-gravity"
+        ]
+      }
+    ],
+    "applications": [
+      {
+        "name": "天体轨道与航天",
+        "case": "引力定律用于预测行星、卫星和航天器运动。",
+        "value": "把地面落体与天体轨道放入同一个数学框架。",
+        "limitations": "极高精度场景需要广义相对论和数值模型。",
+        "sourceIds": [
+          "openstax-gravity",
+          "einstein-online-gravity"
+        ]
+      },
+      {
+        "name": "引力波天文学",
+        "case": "LIGO 等探测器测量双黑洞并合产生的时空变化。",
+        "value": "提供不依赖电磁波的宇宙观测通道。",
+        "limitations": "信号极弱，需要复杂隔振、真空和数据处理。",
+        "sourceIds": [
+          "ligo-gw150914",
+          "ligo-gravity-waves"
+        ]
+      }
+    ],
+    "timeline": [
+      {
+        "date": "1687",
+        "sortDate": "1687-01-01",
+        "eventType": "paper",
+        "title": "《自然哲学的数学原理》出版",
+        "description": "牛顿把运动定律和万有引力写进统一的理论体系。",
+        "impact": "落体和天体运动获得共同的数学语言。",
+        "sourceIds": [
+          "gutenberg-principia",
+          "sep-principia"
+        ]
+      },
+      {
+        "date": "2015-09-14",
+        "sortDate": "2015-09-14",
+        "eventType": "prototype",
+        "title": "LIGO 观测到 GW150914",
+        "description": "两个 LIGO 观测站记录到来自双黑洞并合的引力波信号。",
+        "impact": "广义相对论的关键预测获得直接观测证据。",
+        "sourceIds": [
+          "ligo-gw150914"
+        ]
+      },
+      {
+        "date": "2016-02-11",
+        "sortDate": "2016-02-11",
+        "eventType": "operational",
+        "title": "首次确认探测正式公布",
+        "description": "LIGO Scientific Collaboration 与 Virgo Collaboration 公布结果。",
+        "impact": "引力波天文学进入直接观测时代。",
+        "sourceIds": [
+          "ligo-gw150914"
+        ]
+      }
+    ],
+    "frontier": [
+      {
+        "title": "持续升级的引力波观测",
+        "publishedAt": "2016-02-11",
+        "status": "verified",
+        "route": "地面激光干涉仪与多探测器联合观测",
+        "finding": "GW150914 已确认引力波能以极高灵敏度被直接探测。",
+        "unresolved": "连续波、爆发源和随机背景仍需要更高灵敏度和更多观测数据。",
+        "sourceIds": [
+          "ligo-gw150914",
+          "ligo-gravity-waves"
+        ]
+      },
+      {
+        "title": "量子引力仍是开放问题",
+        "publishedAt": "2024-02-26",
+        "status": "research",
+        "route": "引力的量子描述与统一理论",
+        "finding": "引力在已有理论中尚无完整且实验确认的量子描述。",
+        "unresolved": "不同理论路线仍缺少决定性实验证据。",
+        "sourceIds": [
+          "sep-quantum-gravity",
+          "mpi-gravity"
+        ]
+      }
+    ],
+    "gap": "苹果历史的细节、量子引力的完整理论以及最新探测器状态仍有证据边界。"
+  },
+  "assessment": {
+    "instructions": "每个节点包含 5 道单选题。选择后立即显示对错、正确答案和解析。",
+    "items": [
+      {
+        "id": "n1-q1",
+        "nodeId": "n1",
+        "type": "concept",
+        "prompt": "苹果离开树枝后持续加速向下，最直接的原因是什么？",
+        "format": "choice",
+        "options": [
+          "树枝仍在托住苹果",
+          "地球持续吸引苹果",
+          "苹果主动寻找地面",
+          "空气把苹果向下推"
+        ],
+        "correctIndex": 1,
+        "modelAnswer": "地球持续吸引苹果。",
+        "rubric": [
+          "选出与该节点因果链一致的答案"
+        ],
+        "explanation": "树枝松开的瞬间支持力消失，但地球的吸引仍在作用，因此苹果持续获得向下速度。",
+        "sourceIds": [
+          "openstax-gravity",
+          "sep-principia"
+        ]
+      },
+      {
+        "id": "n1-q2",
+        "nodeId": "n1",
+        "type": "concept",
+        "prompt": "苹果挂在枝头时为什么没有立即下落？",
+        "format": "choice",
+        "options": [
+          "当时没有地球引力",
+          "苹果质量太小",
+          "树枝提供了支持作用",
+          "苹果速度为零所以没有力"
+        ],
+        "correctIndex": 2,
+        "modelAnswer": "树枝提供了支持作用，使苹果没有沿引力方向加速。",
+        "rubric": [
+          "选出与该节点因果链一致的答案"
+        ],
+        "explanation": "静止不等于不受力；枝头的支持作用与向下的引力共同决定了苹果当时的运动状态。",
+        "sourceIds": [
+          "openstax-gravity",
+          "sep-principia"
+        ]
+      },
+      {
+        "id": "n1-q3",
+        "nodeId": "n1",
+        "type": "prediction",
+        "prompt": "在这条问题链中，苹果落向地面的方向主要指向哪里？",
+        "format": "choice",
+        "options": [
+          "地心方向",
+          "太阳方向",
+          "苹果自己的重心",
+          "树冠方向"
+        ],
+        "correctIndex": 0,
+        "modelAnswer": "指向地心方向。",
+        "rubric": [
+          "选出与该节点因果链一致的答案"
+        ],
+        "explanation": "地球对苹果的吸引方向指向地球中心，所以苹果的加速度也朝这个方向。",
+        "sourceIds": [
+          "openstax-gravity",
+          "sep-principia"
+        ]
+      },
+      {
+        "id": "n1-q4",
+        "nodeId": "n1",
+        "type": "concept",
+        "prompt": "只看苹果下落这一现象，能够直接观察到什么？",
+        "format": "choice",
+        "options": [
+          "苹果与地球受到同一对引力",
+          "地球也被苹果拉动了同样距离",
+          "苹果向下且越来越快",
+          "时空一定发生了弯曲"
+        ],
+        "correctIndex": 2,
+        "modelAnswer": "可以直接观察到苹果向下运动并逐渐加速。",
+        "rubric": [
+          "选出与该节点因果链一致的答案"
+        ],
+        "explanation": "现象层只描述可见运动；相互吸引、时空几何和量子边界属于后续解释。",
+        "sourceIds": [
+          "openstax-gravity",
+          "sep-principia"
+        ]
+      },
+      {
+        "id": "n1-q5",
+        "nodeId": "n1",
+        "type": "counterexample",
+        "prompt": "如果实验中发现空气阻力明显，应该怎样修正本层结论？",
+        "format": "choice",
+        "options": [
+          "否认苹果受到引力",
+          "把阻力作为额外影响加入真实运动",
+          "认为苹果质量消失了",
+          "把方向改成向上"
+        ],
+        "correctIndex": 1,
+        "modelAnswer": "保留引力解释，同时把空气阻力作为额外影响。",
+        "rubric": [
+          "选出与该节点因果链一致的答案"
+        ],
+        "explanation": "空气阻力会改变加速度大小，但不会取消苹果与地球之间的引力关系。",
+        "sourceIds": [
+          "openstax-gravity",
+          "sep-principia"
+        ]
+      },
+      {
+        "id": "n2-q1",
+        "nodeId": "n2",
+        "type": "concept",
+        "prompt": "地球拉苹果时，苹果是否也拉地球？",
+        "format": "choice",
+        "options": [
+          "是，两者受到一对方向相反的引力",
+          "否，只有质量大的地球能施力",
+          "只有苹果下落时才存在",
+          "取决于苹果是否看得见地球"
+        ],
+        "correctIndex": 0,
+        "modelAnswer": "是，地球与苹果互相吸引。",
+        "rubric": [
+          "选出与该节点因果链一致的答案"
+        ],
+        "explanation": "这对引力大小相等、方向相反，同时作用在地球和苹果上。",
+        "sourceIds": [
+          "openstax-gravity",
+          "einstein-online-gravity"
+        ]
+      },
+      {
+        "id": "n2-q2",
+        "nodeId": "n2",
+        "type": "concept",
+        "prompt": "为什么我们通常只看见苹果明显移动？",
+        "format": "choice",
+        "options": [
+          "地球不受力",
+          "苹果受到的力更大",
+          "苹果质量小，同样作用力下加速度更大",
+          "地球被固定在空中"
+        ],
+        "correctIndex": 2,
+        "modelAnswer": "苹果质量小，所以同样作用力产生更明显的加速度。",
+        "rubric": [
+          "选出与该节点因果链一致的答案"
+        ],
+        "explanation": "加速度等于作用力除以质量；地球质量极大，因此反向加速度几乎无法察觉。",
+        "sourceIds": [
+          "openstax-gravity",
+          "einstein-online-gravity"
+        ]
+      },
+      {
+        "id": "n2-q3",
+        "nodeId": "n2",
+        "type": "transfer",
+        "prompt": "拉绳比喻中，“两人拉同一根绳”对应什么真实关系？",
+        "format": "choice",
+        "options": [
+          "只有地球对苹果的单向作用",
+          "地球与苹果之间的一对相互作用",
+          "空气对苹果的托力",
+          "苹果自身的内部运动"
+        ],
+        "correctIndex": 1,
+        "modelAnswer": "对应地球与苹果之间的一对相互作用。",
+        "rubric": [
+          "选出与该节点因果链一致的答案"
+        ],
+        "explanation": "同一根绳强调双方同时受力，而不是一方对另一方的单向命令。",
+        "sourceIds": [
+          "openstax-gravity",
+          "einstein-online-gravity"
+        ]
+      },
+      {
+        "id": "n2-q4",
+        "nodeId": "n2",
+        "type": "prediction",
+        "prompt": "如果苹果质量不变、地球质量变得更大，两者的引力会怎样？",
+        "format": "choice",
+        "options": [
+          "增大",
+          "减小",
+          "不变",
+          "变成零"
+        ],
+        "correctIndex": 0,
+        "modelAnswer": "引力会增大。",
+        "rubric": [
+          "选出与该节点因果链一致的答案"
+        ],
+        "explanation": "在其他条件相同时，增加任何一方的质量都会增强双方之间的引力。",
+        "sourceIds": [
+          "openstax-gravity",
+          "einstein-online-gravity"
+        ]
+      },
+      {
+        "id": "n2-q5",
+        "nodeId": "n2",
+        "type": "counterexample",
+        "prompt": "拉绳比喻不能直接解释下列哪一项？",
+        "format": "choice",
+        "options": [
+          "双方互相拉",
+          "质量不同导致移动不同",
+          "时空几何为什么会弯曲",
+          "作用力方向相反"
+        ],
+        "correctIndex": 2,
+        "modelAnswer": "拉绳本身不能解释时空几何为什么会弯曲。",
+        "rubric": [
+          "选出与该节点因果链一致的答案"
+        ],
+        "explanation": "拉绳能展示相互吸引和质量差，却暗示了真实宇宙中并不存在的绳子。",
+        "sourceIds": [
+          "openstax-gravity",
+          "einstein-online-gravity"
+        ]
+      },
+      {
+        "id": "n3-q1",
+        "nodeId": "n3",
+        "type": "derivation",
+        "prompt": "其他条件不变时，把其中一个物体的质量加倍，引力会怎样？",
+        "format": "choice",
+        "options": [
+          "增大",
+          "减半",
+          "变为四分之一",
+          "不受影响"
+        ],
+        "correctIndex": 0,
+        "modelAnswer": "引力会增大。",
+        "rubric": [
+          "选出与该节点因果链一致的答案"
+        ],
+        "explanation": "引力与两个质量的乘积有关，增加其中一个质量会增强整体吸引。",
+        "sourceIds": [
+          "openstax-gravity"
+        ]
+      },
+      {
+        "id": "n3-q2",
+        "nodeId": "n3",
+        "type": "derivation",
+        "prompt": "其他条件不变，把距离变成原来的 2 倍，引力大约变成原来的多少？",
+        "format": "choice",
+        "options": [
+          "1/2",
+          "1/3",
+          "1/4",
+          "2 倍"
+        ],
+        "correctIndex": 2,
+        "modelAnswer": "变成原来的 1/4。",
+        "rubric": [
+          "选出与该节点因果链一致的答案"
+        ],
+        "explanation": "距离在分母上并被平方，因此 2 的平方是 4，引力只剩四分之一。",
+        "sourceIds": [
+          "openstax-gravity"
+        ]
+      },
+      {
+        "id": "n3-q3",
+        "nodeId": "n3",
+        "type": "prediction",
+        "prompt": "距离从 1 倍变成 3 倍时，相对引力最接近哪一项？",
+        "format": "choice",
+        "options": [
+          "1/3",
+          "1/6",
+          "1/9",
+          "3 倍"
+        ],
+        "correctIndex": 2,
+        "modelAnswer": "接近 1/9。",
+        "rubric": [
+          "选出与该节点因果链一致的答案"
+        ],
+        "explanation": "平方反比关系给出 1 除以 3²，也就是 1/9。",
+        "sourceIds": [
+          "openstax-gravity"
+        ]
+      },
+      {
+        "id": "n3-q4",
+        "nodeId": "n3",
+        "type": "concept",
+        "prompt": "公式 F = G·m₁·m₂/r² 中，r 表示什么？",
+        "format": "choice",
+        "options": [
+          "两物体之间的距离",
+          "物体的半径之和",
+          "光速",
+          "物体运动的时间"
+        ],
+        "correctIndex": 0,
+        "modelAnswer": "两个物体之间的距离。",
+        "rubric": [
+          "选出与该节点因果链一致的答案"
+        ],
+        "explanation": "r 是引力关系中的距离变量，平方后放在分母上。",
+        "sourceIds": [
+          "openstax-gravity"
+        ]
+      },
+      {
+        "id": "n3-q5",
+        "nodeId": "n3",
+        "type": "counterexample",
+        "prompt": "为什么重物在真空中不因为“受到更大引力”就必然落得更快？",
+        "format": "choice",
+        "options": [
+          "重物不受引力",
+          "惯性也随质量增大，两种变化相互抵消",
+          "真空中的质量会变小",
+          "重物只受空气阻力"
+        ],
+        "correctIndex": 1,
+        "modelAnswer": "引力和惯性都随质量增大，自由落体加速度因此相同。",
+        "rubric": [
+          "选出与该节点因果链一致的答案"
+        ],
+        "explanation": "更大的引力需要推动更大的惯性；在忽略阻力时，两者抵消，所有物体加速度相同。",
+        "sourceIds": [
+          "openstax-gravity"
+        ]
+      },
+      {
+        "id": "n4-q1",
+        "nodeId": "n4",
+        "type": "concept",
+        "prompt": "广义相对论把自由下落主要解释为什么？",
+        "format": "choice",
+        "options": [
+          "沿被质量改变的时空路径运动",
+          "沿着看不见的绳子移动",
+          "被空气推动",
+          "物体主动寻找地面"
+        ],
+        "correctIndex": 0,
+        "modelAnswer": "物体沿被质量改变的时空几何运动。",
+        "rubric": [
+          "选出与该节点因果链一致的答案"
+        ],
+        "explanation": "广义相对论把引力描述为时空曲率，而不是传统意义上的拉绳。",
+        "sourceIds": [
+          "einstein-online-gravity"
+        ]
+      },
+      {
+        "id": "n4-q2",
+        "nodeId": "n4",
+        "type": "transfer",
+        "prompt": "为什么从拉绳切换到蹦床模型？",
+        "format": "choice",
+        "options": [
+          "拉绳太简单，所以完全错误",
+          "旧比喻无法说明路径和时空几何",
+          "蹦床是宇宙中的真实物体",
+          "苹果不再受地球影响"
+        ],
+        "correctIndex": 1,
+        "modelAnswer": "因为拉绳模型走到了解释时空几何的边界。",
+        "rubric": [
+          "选出与该节点因果链一致的答案"
+        ],
+        "explanation": "比喻切换不是否定旧模型，而是为了说明旧模型无法覆盖的新关系。",
+        "sourceIds": [
+          "einstein-online-gravity"
+        ]
+      },
+      {
+        "id": "n4-q3",
+        "nodeId": "n4",
+        "type": "prediction",
+        "prompt": "自由下落的人为什么会产生失重感？",
+        "format": "choice",
+        "options": [
+          "引力突然消失",
+          "人和周围物体一起自由下落，缺少支持力",
+          "人的质量变成零",
+          "空气完全不存在"
+        ],
+        "correctIndex": 1,
+        "modelAnswer": "人与周围物体一起下落，局部缺少支持力。",
+        "rubric": [
+          "选出与该节点因果链一致的答案"
+        ],
+        "explanation": "失重感来自局部参考系中的相对运动，不表示地球引力消失了。",
+        "sourceIds": [
+          "einstein-online-gravity"
+        ]
+      },
+      {
+        "id": "n4-q4",
+        "nodeId": "n4",
+        "type": "counterexample",
+        "prompt": "牛顿引力与广义相对论的关系，最准确的描述是？",
+        "format": "choice",
+        "options": [
+          "两者完全相同",
+          "广义相对论完全取代所有牛顿计算",
+          "牛顿模型在弱场低速下仍非常准确",
+          "牛顿模型只适用于量子尺度"
+        ],
+        "correctIndex": 2,
+        "modelAnswer": "牛顿模型在弱场低速条件下仍然非常准确。",
+        "rubric": [
+          "选出与该节点因果链一致的答案"
+        ],
+        "explanation": "新模型扩展了适用范围，并不会让旧模型在原本有效范围内立即失效。",
+        "sourceIds": [
+          "einstein-online-gravity"
+        ]
+      },
+      {
+        "id": "n4-q5",
+        "nodeId": "n4",
+        "type": "counterexample",
+        "prompt": "蹦床图景最主要的局限是什么？",
+        "format": "choice",
+        "options": [
+          "不能显示任何弯曲",
+          "只是二维视觉提示，不等于真实时空全貌",
+          "只能解释苹果颜色",
+          "会证明引力不存在"
+        ],
+        "correctIndex": 1,
+        "modelAnswer": "它只是二维提示，不能代表完整时空。",
+        "rubric": [
+          "选出与该节点因果链一致的答案"
+        ],
+        "explanation": "真实时空包含时间维度、非欧几何和动力学，橡皮膜只是帮助入门的类比。",
+        "sourceIds": [
+          "einstein-online-gravity"
+        ]
+      },
+      {
+        "id": "n5-q1",
+        "nodeId": "n5",
+        "type": "concept",
+        "prompt": "引力波通常由什么剧烈过程产生？",
+        "format": "choice",
+        "options": [
+          "苹果静止挂在树上",
+          "大质量天体加速运动或合并",
+          "手机屏幕点亮",
+          "空气缓慢流动"
+        ],
+        "correctIndex": 1,
+        "modelAnswer": "大质量天体的加速运动或合并。",
+        "rubric": [
+          "选出与该节点因果链一致的答案"
+        ],
+        "explanation": "巨大质量的高速变化会扰动时空，并把变化以引力波传播出去。",
+        "sourceIds": [
+          "ligo-gw150914",
+          "ligo-gravity-waves"
+        ]
+      },
+      {
+        "id": "n5-q2",
+        "nodeId": "n5",
+        "type": "concept",
+        "prompt": "LIGO 主要通过测量什么寻找引力波？",
+        "format": "choice",
+        "options": [
+          "苹果落地的声音",
+          "不同镜面之间的极微小长度变化",
+          "地球颜色变化",
+          "卫星电量的变化"
+        ],
+        "correctIndex": 1,
+        "modelAnswer": "测量长基线镜面间的极微小长度变化。",
+        "rubric": [
+          "选出与该节点因果链一致的答案"
+        ],
+        "explanation": "激光干涉装置能把时空经过时造成的微小尺度变化转换成可分析信号。",
+        "sourceIds": [
+          "ligo-gw150914",
+          "ligo-gravity-waves"
+        ]
+      },
+      {
+        "id": "n5-q3",
+        "nodeId": "n5",
+        "type": "counterexample",
+        "prompt": "如果只看一张手绘波浪图，能否算作引力波探测证据？",
+        "format": "choice",
+        "options": [
+          "能，图画越漂亮越可信",
+          "不能，还需要仪器数据和噪声排除",
+          "能，只要标注 LIGO",
+          "不能，因为引力波不存在"
+        ],
+        "correctIndex": 1,
+        "modelAnswer": "不能，必须有真实测量并与噪声区分的证据。",
+        "rubric": [
+          "选出与该节点因果链一致的答案"
+        ],
+        "explanation": "示意图帮助理解，但科学证据来自仪器记录、理论波形和排除其他解释。",
+        "sourceIds": [
+          "ligo-gw150914",
+          "ligo-gravity-waves"
+        ]
+      },
+      {
+        "id": "n5-q4",
+        "nodeId": "n5",
+        "type": "derivation",
+        "prompt": "为什么引力波探测需要排除地震等环境噪声？",
+        "format": "choice",
+        "options": [
+          "因为信号极其微弱，噪声可能伪装成信号",
+          "因为地震能改变光速为零",
+          "因为镜面不受振动影响",
+          "因为噪声会让引力消失"
+        ],
+        "correctIndex": 0,
+        "modelAnswer": "因为引力波造成的长度变化极小，必须与噪声区分。",
+        "rubric": [
+          "选出与该节点因果链一致的答案"
+        ],
+        "explanation": "探测器需要比较不同地点、不同仪器的响应，并排除局部振动等替代原因。",
+        "sourceIds": [
+          "ligo-gw150914",
+          "ligo-gravity-waves"
+        ]
+      },
+      {
+        "id": "n5-q5",
+        "nodeId": "n5",
+        "type": "transfer",
+        "prompt": "引力波观测对广义相对论最重要的补充是什么？",
+        "format": "choice",
+        "options": [
+          "让苹果不再落地",
+          "提供强场引力的直接观测窗口",
+          "证明空气不存在",
+          "替代所有天文观测"
+        ],
+        "correctIndex": 1,
+        "modelAnswer": "提供强场引力的直接观测窗口。",
+        "rubric": [
+          "选出与该节点因果链一致的答案"
+        ],
+        "explanation": "双黑洞等事件让科学家能在极强引力环境中检验理论预测。",
+        "sourceIds": [
+          "ligo-gw150914",
+          "ligo-gravity-waves"
+        ]
+      },
+      {
+        "id": "n6-q1",
+        "nodeId": "n6",
+        "type": "concept",
+        "prompt": "目前关于量子引力，最诚实的表述是什么？",
+        "format": "choice",
+        "options": [
+          "已有完整且实验确认的统一理论",
+          "尚没有完整且实验确认的统一理论",
+          "量子效应与引力完全无关",
+          "苹果落地已经证明量子引力"
+        ],
+        "correctIndex": 1,
+        "modelAnswer": "尚无完整且获实验确认的量子引力理论。",
+        "rubric": [
+          "选出与该节点因果链一致的答案"
+        ],
+        "explanation": "存在多种候选路线，但还没有形成经实验确认的最终答案。",
+        "sourceIds": [
+          "sep-quantum-gravity"
+        ]
+      },
+      {
+        "id": "n6-q2",
+        "nodeId": "n6",
+        "type": "counterexample",
+        "prompt": "为什么拉绳比喻不能直接推广到量子引力？",
+        "format": "choice",
+        "options": [
+          "拉绳只能解释宏观相互吸引，不能承担量子描述",
+          "拉绳的质量太大",
+          "苹果不喜欢量子",
+          "量子世界没有运动"
+        ],
+        "correctIndex": 0,
+        "modelAnswer": "拉绳只能解释宏观相互吸引，无法承担量子描述。",
+        "rubric": [
+          "选出与该节点因果链一致的答案"
+        ],
+        "explanation": "一个有效比喻只在对应尺度和关系内可靠，越过边界继续使用会误导。",
+        "sourceIds": [
+          "sep-quantum-gravity"
+        ]
+      },
+      {
+        "id": "n6-q3",
+        "nodeId": "n6",
+        "type": "transfer",
+        "prompt": "下面哪组尺度分别更对应广义相对论和量子理论？",
+        "format": "choice",
+        "options": [
+          "宏观大质量 / 微观粒子",
+          "微观粒子 / 宏观大质量",
+          "只对应时间 / 只对应温度",
+          "两者都没有尺度"
+        ],
+        "correctIndex": 0,
+        "modelAnswer": "广义相对论主要处理宏观引力，量子理论处理微观相互作用。",
+        "rubric": [
+          "选出与该节点因果链一致的答案"
+        ],
+        "explanation": "两个理论各自在擅长的尺度上极成功，困难出现在需要同时使用二者时。",
+        "sourceIds": [
+          "sep-quantum-gravity"
+        ]
+      },
+      {
+        "id": "n6-q4",
+        "nodeId": "n6",
+        "type": "counterexample",
+        "prompt": "候选量子引力理论尚未形成最终答案，意味着什么？",
+        "format": "choice",
+        "options": [
+          "所有相关研究都没有价值",
+          "研究仍活跃，但不能把候选路线写成已确认理论",
+          "苹果落地无法解释",
+          "可以直接编造实验结论"
+        ],
+        "correctIndex": 1,
+        "modelAnswer": "研究仍活跃，但不能把候选路线当作已经确认的结论。",
+        "rubric": [
+          "选出与该节点因果链一致的答案"
+        ],
+        "explanation": "科学表达需要区分候选模型、数学结果和经过实验确认的理论。",
+        "sourceIds": [
+          "sep-quantum-gravity"
+        ]
+      },
+      {
+        "id": "n6-q5",
+        "nodeId": "n6",
+        "type": "transfer",
+        "prompt": "理解引力模型边界对学习者最重要的价值是什么？",
+        "format": "choice",
+        "options": [
+          "背下更多术语",
+          "知道何时可以放心使用模型、何时需要继续追问",
+          "把所有比喻当成字面事实",
+          "停止使用牛顿模型"
+        ],
+        "correctIndex": 1,
+        "modelAnswer": "知道模型在哪里有效，以及何时需要继续追问。",
+        "rubric": [
+          "选出与该节点因果链一致的答案"
+        ],
+        "explanation": "边界意识能防止把一个好用的比喻误用到它无法解释的尺度。",
+        "sourceIds": [
+          "sep-quantum-gravity"
+        ]
+      }
+    ]
+  },
+  "nextQuestions": [
+    {
+      "question": "为什么月亮不会像苹果一样掉到地球上？",
+      "why": "把落体速度和轨道运动放进同一个引力框架。",
+      "sourceIds": [
+        "openstax-gravity",
+        "sep-principia"
+      ]
+    },
+    {
+      "question": "自由落体为什么会产生失重感？",
+      "why": "从牛顿力转向加速度与局部参考系。",
+      "sourceIds": [
+        "einstein-online-gravity"
+      ]
+    },
+    {
+      "question": "量子引力为什么还没有实验定论？",
+      "why": "从日常现象进入当前理论边界。",
+      "sourceIds": [
+        "einstein-online-gravity",
+        "mpi-gravity"
+      ]
+    }
+  ]
+}
