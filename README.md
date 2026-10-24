@@ -10,9 +10,13 @@ generated page works as one portable HTML file without the DeepWhy application.
 
 <p align="center">
   <a href="skills/deepwhy/examples/apple-gravity.html">
-    <img src="docs/assets/deepwhy-interactive-preview.gif"
-         alt="DeepWhy interactive preview: navigate the knowledge chain and adjust the gravity lab to see the inverse-square relationship"
-         width="100%">
+    <picture>
+      <source srcset="docs/assets/deepwhy-interactive-preview.webp"
+              type="image/webp">
+      <img src="docs/assets/deepwhy-interactive-preview.png"
+           alt="DeepWhy interactive preview: navigate the knowledge chain and adjust the gravity lab to see the inverse-square relationship"
+           width="1440" height="1000" style="max-width: 100%; height: auto;">
+    </picture>
   </a>
 </p>
 
