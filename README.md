@@ -8,6 +8,20 @@ scene, one usable metaphor, animated causal mapping, a hands-on lab, reflection,
 targeted videos, a five-question check, and a clearly stated boundary. The
 generated page works as one portable HTML file without the DeepWhy application.
 
+<p align="center">
+  <a href="skills/deepwhy/examples/apple-gravity.html">
+    <img src="docs/assets/deepwhy-interactive-preview.gif"
+         alt="DeepWhy interactive preview: navigate the knowledge chain and adjust the gravity lab to see the inverse-square relationship"
+         width="100%">
+  </a>
+</p>
+
+<p align="center">
+  <sub>Preview: navigate the knowledge chain, then move the distance slider to
+  see the curve and relative force update together.
+  <a href="skills/deepwhy/examples/apple-gravity.html">Open the full example</a>.</sub>
+</p>
+
 ## What it creates
 
 - A three-to-six-node knowledge chain from phenomenon to mechanism, principle,
