@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-labelledby="title desc">
+  <title id="title">一张地图在同一处印着两条路</title>
+  <desc id="desc">地图边缘出现两条互不相容的道路，代表现有两套理论无法在极端条件下统一描述。</desc>
+  <rect width="800" height="450" rx="28" fill="#f4fbf7"/>
+  <text x="50" y="64" fill="#285d4b" font-family="PingFang SC, sans-serif" font-size="28" font-weight="750">一张地图在同一处印着两条路</text>
+  <rect x="130" y="112" width="540" height="260" rx="22" fill="#fff" stroke="#b8addd" stroke-width="4"/>
+  <path d="M170 320c80-20 130-80 210-110" fill="none" stroke="#7055d9" stroke-width="12" stroke-linecap="round"/>
+  <path d="M455 155c58 52 74 116 50 190" fill="none" stroke="#4e9dda" stroke-width="9" stroke-dasharray="16 10" stroke-linecap="round"/>
+  <path d="M455 155c-80 48-115 108-119 192" fill="none" stroke="#e98545" stroke-width="9" stroke-dasharray="5 10" stroke-linecap="round"/>
+  <circle cx="455" cy="155" r="18" fill="#f0a24b"/>
+  <text x="455" y="132" text-anchor="middle" fill="#d96e2e" font-family="PingFang SC, sans-serif" font-size="18" font-weight="700">极端尺度</text>
+  <text x="240" y="350" fill="#7055d9" font-family="PingFang SC, sans-serif" font-size="18" font-weight="700">广义相对论</text>
+  <text x="585" y="350" fill="#357cae" font-family="PingFang SC, sans-serif" font-size="18" font-weight="700">量子场论</text>
+  <text x="400" y="414" text-anchor="middle" fill="#5c6b63" font-family="PingFang SC, sans-serif" font-size="18">地图冲突表示缺少统一描述，不是自然本身矛盾</text>
+</svg>

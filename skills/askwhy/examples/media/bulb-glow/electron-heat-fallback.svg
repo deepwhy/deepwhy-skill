@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-labelledby="title desc">
+  <title id="title">电子与晶格碰撞产生热</title>
+  <desc id="desc">蓝色电子在电场中移动，与晶格原子碰撞，把能量转化为原子的热振动。</desc>
+  <rect width="800" height="450" rx="28" fill="#f8f6ff"/>
+  <text x="52" y="68" fill="#28233d" font-family="PingFang SC, sans-serif" font-size="28" font-weight="750">电子碰撞把定向能量交给晶格</text>
+  <path d="M100 250H700" stroke="#ff9c47" stroke-width="9" stroke-linecap="round"/>
+  <g fill="#b8addd">
+    <circle cx="260" cy="250" r="22"/><circle cx="400" cy="250" r="22"/><circle cx="540" cy="250" r="22"/>
+  </g>
+  <circle cx="170" cy="250" r="13" fill="#3e8ef7"/>
+  <path d="M150 300h160" stroke="#7055d9" stroke-width="3"/>
+  <path d="m300 291 12 9-12 9" fill="none" stroke="#7055d9" stroke-width="3" stroke-linecap="round"/>
+  <text x="230" y="328" fill="#7055d9" font-family="PingFang SC, sans-serif" font-size="16">电子在电场中漂移</text>
+  <path d="M400 193v-48M376 134 400 96l24 38" fill="none" stroke="#e26652" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="400" y="82" text-anchor="middle" fill="#d45543" font-family="PingFang SC, sans-serif" font-size="16">碰撞后晶格振动增强</text>
+  <path d="M520 210c34 18 68 18 102 0M520 290c34-18 68-18 102 0" fill="none" stroke="#f0a24b" stroke-width="3" opacity=".8"/>
+  <text x="574" y="356" text-anchor="middle" fill="#9b6931" font-family="PingFang SC, sans-serif" font-size="16">宏观上表现为温度升高</text>
+</svg>

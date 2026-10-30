@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-labelledby="title desc">
+  <title id="title">电子热运动与定向漂移</title>
+  <desc id="desc">没有电场时电子运动方向随机；加入电场后，杂乱运动上叠加出整体向前的漂移。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fbfaff"/>
+      <stop offset="1" stop-color="#eee9ff"/>
+    </linearGradient>
+    <marker id="violet-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 10 5 0 10Z" fill="#7055d9"/>
+    </marker>
+    <marker id="blue-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 10 5 0 10Z" fill="#3e8ef7"/>
+    </marker>
+  </defs>
+  <rect width="800" height="450" rx="28" fill="url(#bg)"/>
+  <text x="52" y="66" fill="#26213a" font-family="PingFang SC, sans-serif" font-size="28" font-weight="750">电子漂移：随机运动上叠加整体方向</text>
+  <text x="52" y="94" fill="#77718b" font-family="PingFang SC, sans-serif" font-size="14">电子不是从电源“发射”出来，而是在原有热运动上获得很小的平均速度。</text>
+
+  <g transform="translate(54 128)">
+    <rect width="326" height="240" rx="22" fill="#fff" stroke="#e2dcf2"/>
+    <text x="24" y="35" fill="#3a3450" font-family="PingFang SC, sans-serif" font-size="17" font-weight="750">没有电场</text>
+    <path d="M54 162c30-70 57 52 88-18s53 62 83-15 43 45 66-7" fill="none" stroke="#8e7adf" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="54" cy="162" r="10" fill="#3e8ef7"/>
+    <text x="24" y="207" fill="#77718b" font-family="PingFang SC, sans-serif" font-size="13">方向不断改变，平均位移接近 0</text>
+  </g>
+
+  <g transform="translate(420 128)">
+    <rect width="326" height="240" rx="22" fill="#fff" stroke="#e2dcf2"/>
+    <text x="24" y="35" fill="#3a3450" font-family="PingFang SC, sans-serif" font-size="17" font-weight="750">有电场</text>
+    <path d="M54 162c30-55 57 42 88-12s53 49 83-10 43 35 66-4" fill="none" stroke="#b9a9e7" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M54 162c66 0 132 0 237-6" fill="none" stroke="#3e8ef7" stroke-width="4" stroke-linecap="round" marker-end="url(#blue-arrow)"/>
+    <path d="M52 91h230" stroke="#7055d9" stroke-width="2" marker-end="url(#violet-arrow)"/>
+    <text x="146" y="82" fill="#7055d9" font-family="PingFang SC, sans-serif" font-size="12">电场 E</text>
+    <text x="24" y="207" fill="#77718b" font-family="PingFang SC, sans-serif" font-size="13">随机热运动 + 缓慢漂移 = 电流</text>
+  </g>
+
+  <rect x="54" y="391" width="692" height="30" rx="15" fill="#ffffffc4" stroke="#e4def2"/>
+  <text x="400" y="411" text-anchor="middle" fill="#5d566e" font-family="PingFang SC, sans-serif" font-size="12">
+    电子的平均漂移速度很小，但电场变化能够迅速沿导线传播。
+  </text>
+</svg>

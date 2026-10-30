@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 420" role="img" aria-labelledby="title desc">
+  <title id="title">苹果落地背后的因果层级</title>
+  <desc id="desc">苹果失去支撑后向下运动，双方质量相互吸引，质量能量塑造时空，自由落体沿测地线运动。</desc>
+  <defs>
+    <radialGradient id="earth">
+      <stop offset="0" stop-color="#619bd7"/>
+      <stop offset="1" stop-color="#335f9d"/>
+    </radialGradient>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 10 5 0 10Z" fill="#7055d9"/>
+    </marker>
+  </defs>
+
+  <g transform="translate(20 44)">
+    <rect width="236" height="274" rx="24" fill="#fff" stroke="#ded6f3" stroke-width="2"/>
+    <path d="M48 58c15-13 38-9 42 11 19 2 23 28 5 37-10 20-39 17-46 1-20-2-23-29-1-49z" fill="#e85c5c"/>
+    <path d="M79 58c0-14 8-23 21-27" fill="none" stroke="#7a5b3f" stroke-width="4" stroke-linecap="round"/>
+    <path d="M99 43c14-10 28-7 35 2-11 8-25 8-35-2z" fill="#59a46f"/>
+    <text x="28" y="176" fill="#5b42c1" font-family="PingFang SC, sans-serif" font-size="24" font-weight="800">失去支撑</text>
+    <text x="28" y="208" fill="#5c556d" font-family="PingFang SC, sans-serif" font-size="18">支持力消失</text>
+    <text x="28" y="234" fill="#5c556d" font-family="PingFang SC, sans-serif" font-size="18">合力转为向下</text>
+  </g>
+
+  <path d="M264 182h24" stroke="#7055d9" stroke-width="4" marker-end="url(#arrow)"/>
+
+  <g transform="translate(296 44)">
+    <rect width="236" height="274" rx="24" fill="#fff" stroke="#ded6f3" stroke-width="2"/>
+    <circle cx="66" cy="82" r="38" fill="#7055d9"/>
+    <circle cx="154" cy="82" r="23" fill="#f0a24b"/>
+    <path d="M70 82h61" stroke="#7a5b3f" stroke-width="4"/>
+    <text x="28" y="176" fill="#5b42c1" font-family="PingFang SC, sans-serif" font-size="24" font-weight="800">质量相互吸引</text>
+    <text x="28" y="208" fill="#5c556d" font-family="PingFang SC, sans-serif" font-size="18">双方同时受力</text>
+    <text x="28" y="234" fill="#5c556d" font-family="PingFang SC, sans-serif" font-size="18">小质量加速更明显</text>
+  </g>
+
+  <path d="M540 182h24" stroke="#7055d9" stroke-width="4" marker-end="url(#arrow)"/>
+
+  <g transform="translate(572 44)">
+    <rect width="236" height="274" rx="24" fill="#fff" stroke="#ded6f3" stroke-width="2"/>
+    <path d="M34 92c44-66 114-66 168 0" fill="none" stroke="#b8addd" stroke-width="8"/>
+    <circle cx="118" cy="89" r="16" fill="#f0a24b"/>
+    <text x="28" y="176" fill="#5b42c1" font-family="PingFang SC, sans-serif" font-size="24" font-weight="800">时空被弯曲</text>
+    <text x="28" y="208" fill="#5c556d" font-family="PingFang SC, sans-serif" font-size="18">质量与能量</text>
+    <text x="28" y="234" fill="#5c556d" font-family="PingFang SC, sans-serif" font-size="18">塑造局部几何</text>
+  </g>
+
+  <path d="M816 182h24" stroke="#7055d9" stroke-width="4" marker-end="url(#arrow)"/>
+
+  <g transform="translate(848 44)">
+    <rect width="232" height="274" rx="24" fill="#252039"/>
+    <path d="M28 102c42-58 112-58 166 0" fill="none" stroke="#cfc5ea" stroke-width="2"/>
+    <path d="M20 122c50-70 132-70 182 0" fill="none" stroke="#cfc5ea" stroke-width="2"/>
+    <path d="M84 42c-25 34-31 72-24 116" fill="none" stroke="#e85c5c" stroke-width="5" stroke-dasharray="9 7"/>
+    <circle cx="84" cy="40" r="13" fill="#e85c5c"/>
+    <circle cx="68" cy="166" r="42" fill="url(#earth)"/>
+    <text x="26" y="230" fill="#fff" font-family="PingFang SC, sans-serif" font-size="24" font-weight="800">沿测地线运动</text>
+    <text x="26" y="260" fill="#ffffffb8" font-family="PingFang SC, sans-serif" font-size="18">自由落体像走</text>
+    <text x="26" y="286" fill="#ffffffb8" font-family="PingFang SC, sans-serif" font-size="18">弯曲空间中的直线</text>
+  </g>
+
+  <text x="550" y="373" text-anchor="middle" fill="#5c556d" font-family="PingFang SC, sans-serif" font-size="18">
+    失去支撑 → 质量相互吸引 → 时空弯曲 → 自由落体沿测地线
+  </text>
+</svg>

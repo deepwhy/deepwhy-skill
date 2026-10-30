@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-labelledby="title desc">
+  <title id="title">人群被推着挤过拥挤走廊</title>
+  <desc id="desc">人群被后方推力带着前进，不断撞到走廊立柱，向前的运动变成散乱振动和热。</desc>
+  <rect width="800" height="450" rx="28" fill="#f4fbf7"/>
+  <text x="50" y="64" fill="#285d4b" font-family="PingFang SC, sans-serif" font-size="28" font-weight="750">人群被推着挤过拥挤走廊</text>
+  <rect x="80" y="128" width="640" height="226" rx="28" fill="#fff" stroke="#d8e9e2"/>
+  <g fill="#b8addd">
+    <circle cx="250" cy="210" r="18"/><circle cx="370" cy="268" r="18"/><circle cx="490" cy="204" r="18"/>
+  </g>
+  <text x="250" y="266" text-anchor="middle" fill="#8878bd" font-family="PingFang SC, sans-serif" font-size="15">立柱</text>
+  <g fill="#7055d9">
+    <circle cx="150" cy="180" r="13"/><circle cx="185" cy="240" r="13"/><circle cx="220" cy="292" r="13"/>
+    <circle cx="310" cy="178" r="13"/><circle cx="345" cy="326" r="13"/>
+  </g>
+  <path d="M108 168h60" stroke="#4e9dda" stroke-width="4"/>
+  <path d="m168 159 12 9-12 9" fill="#4e9dda"/>
+  <text x="138" y="324" fill="#357cae" font-family="PingFang SC, sans-serif" font-size="18" font-weight="700">后方推力</text>
+  <path d="M416 226q18-26 36 0q18 26 36 0q18-26 36 0" fill="none" stroke="#e98545" stroke-width="4"/>
+  <text x="480" y="170" text-anchor="middle" fill="#d96e2e" font-family="PingFang SC, sans-serif" font-size="18" font-weight="700">反复碰撞</text>
+  <g fill="#f0a24b" opacity=".65">
+    <circle cx="568" cy="160" r="7"/><circle cx="620" cy="220" r="7"/><circle cx="574" cy="294" r="7"/>
+  </g>
+  <text x="615" y="330" text-anchor="middle" fill="#d96e2e" font-family="PingFang SC, sans-serif" font-size="18" font-weight="700">散乱运动与热</text>
+  <text x="400" y="412" text-anchor="middle" fill="#5c6b63" font-family="PingFang SC, sans-serif" font-size="18">整齐前进的能量在碰撞中变得散乱</text>
+</svg>

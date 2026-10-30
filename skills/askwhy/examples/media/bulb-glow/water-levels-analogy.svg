@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-labelledby="title desc">
+  <title id="title">高低两个水池之间的压力差</title>
+  <desc id="desc">高水位水池通过连通管流向低水位水池，水位差对应电势差。</desc>
+  <rect width="800" height="450" rx="28" fill="#f4fbf7"/>
+  <text x="50" y="64" fill="#285d4b" font-family="PingFang SC, sans-serif" font-size="28" font-weight="750">高低两个水池之间的压力差</text>
+  <path d="M150 168v160h210v-160" fill="none" stroke="#8ea69c" stroke-width="6"/>
+  <path d="M150 235h210v93H150z" fill="#9fd8f4"/>
+  <path d="M500 250v78h170v-78" fill="none" stroke="#8ea69c" stroke-width="6"/>
+  <path d="M500 304h170v24H500z" fill="#9fd8f4"/>
+  <path d="M360 320h140" stroke="#4e9dda" stroke-width="10"/>
+  <path d="m500 311 14 9-14 9" fill="#4e9dda"/>
+  <line x1="150" y1="235" x2="290" y2="235" stroke="#4e9dda" stroke-width="3" stroke-dasharray="8 6"/>
+  <line x1="150" y1="304" x2="500" y2="304" stroke="#7055d9" stroke-width="2" stroke-dasharray="8 7"/>
+  <text x="255" y="222" text-anchor="middle" fill="#357cae" font-family="PingFang SC, sans-serif" font-size="18" font-weight="700">高水位</text>
+  <text x="585" y="293" text-anchor="middle" fill="#357cae" font-family="PingFang SC, sans-serif" font-size="18" font-weight="700">低水位</text>
+  <text x="400" y="382" text-anchor="middle" fill="#5c6b63" font-family="PingFang SC, sans-serif" font-size="18">水位差像电压，接通的管子像导体</text>
+  <text x="400" y="420" text-anchor="middle" fill="#7055d9" font-family="PingFang SC, sans-serif" font-size="17">电压是单位电荷可转换的能量差</text>
+</svg>

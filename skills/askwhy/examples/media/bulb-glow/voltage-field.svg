@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-labelledby="title desc">
+  <title id="title">电压、电场和电势能</title>
+  <desc id="desc">电源维持两点之间的电势差，产生电场；电场对电荷做功。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fbfaff"/>
+      <stop offset="1" stop-color="#efebff"/>
+    </linearGradient>
+    <marker id="field" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 10 5 0 10Z" fill="#7055d9"/>
+    </marker>
+  </defs>
+  <rect width="800" height="450" rx="28" fill="url(#bg)"/>
+  <text x="52" y="66" fill="#26213a" font-family="PingFang SC, sans-serif" font-size="28" font-weight="750">电压不是电子数量，而是电势能差</text>
+  <text x="52" y="94" fill="#77718b" font-family="PingFang SC, sans-serif" font-size="14">两端电势不同，空间中便出现电场；电场对电荷做功。</text>
+
+  <g transform="translate(72 133)">
+    <rect width="410" height="225" rx="22" fill="#fff" stroke="#e2dcf2"/>
+    <rect x="45" y="42" width="16" height="138" rx="8" fill="#f0a24b"/>
+    <rect x="349" y="42" width="16" height="138" rx="8" fill="#5ba8f5"/>
+    <text x="53" y="26" text-anchor="middle" fill="#d78532" font-family="PingFang SC, sans-serif" font-size="18" font-weight="800">+</text>
+    <text x="357" y="26" text-anchor="middle" fill="#398bd9" font-family="PingFang SC, sans-serif" font-size="18" font-weight="800">−</text>
+    <g stroke="#7055d9" stroke-width="2" marker-end="url(#field)">
+      <path d="M79 72h244"/><path d="M79 111h244"/><path d="M79 150h244"/>
+    </g>
+    <text x="205" y="195" text-anchor="middle" fill="#7055d9" font-family="PingFang SC, sans-serif" font-size="14">电场 E</text>
+    <path d="M53 208h8m-4-4v8M349 208h8m-4-4v8" stroke="#aaa2bb" stroke-width="2"/>
+    <text x="201" y="220" text-anchor="middle" fill="#77718b" font-family="PingFang SC, sans-serif" font-size="11">V = ΔU / q</text>
+  </g>
+
+  <g transform="translate(513 133)">
+    <rect width="215" height="225" rx="22" fill="#252039"/>
+    <text x="22" y="38" fill="#fff" font-family="PingFang SC, sans-serif" font-size="15" font-weight="750">电荷移动</text>
+    <path d="M48 150h118" stroke="#ffffff25" stroke-width="8" stroke-linecap="round"/>
+    <circle cx="77" cy="150" r="15" fill="#3e8ef7"/>
+    <text x="77" y="182" text-anchor="middle" fill="#fff" font-family="PingFang SC, sans-serif" font-size="11">q</text>
+    <path d="M101 150h58" stroke="#f0a24b" stroke-width="3" marker-end="url(#field)"/>
+    <text x="22" y="210" fill="#ffffffb8" font-family="PingFang SC, sans-serif" font-size="11">电场做功 qΔV</text>
+  </g>
+</svg>

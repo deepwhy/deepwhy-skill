@@ -1,0 +1,515 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://askwhy.local/schemas/content.schema.json",
+  "title": "AskWhy causal-chain content",
+  "description": "A compact causal chain from a phenomenon to a foundational cause.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "meta",
+    "center",
+    "nodes"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "8.0"
+    },
+    "meta": {
+      "$ref": "#/$defs/meta"
+    },
+    "center": {
+      "$ref": "#/$defs/center"
+    },
+    "nodes": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 8,
+      "items": {
+        "$ref": "#/$defs/node"
+      }
+    }
+  },
+  "$defs": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$"
+    },
+    "text": {
+      "type": "string",
+      "minLength": 1
+    },
+    "tags": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 3,
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/$defs/text"
+      }
+    },
+    "meta": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "topic",
+        "question",
+        "slug",
+        "summary",
+        "category",
+        "estimatedMinutes",
+        "language",
+        "asOf",
+        "audience",
+        "learningLevel",
+        "evidenceGaps"
+      ],
+      "properties": {
+        "topic": {
+          "$ref": "#/$defs/text"
+        },
+        "question": {
+          "$ref": "#/$defs/text"
+        },
+        "slug": {
+          "$ref": "#/$defs/id"
+        },
+        "summary": {
+          "$ref": "#/$defs/text"
+        },
+        "category": {
+          "$ref": "#/$defs/text"
+        },
+        "estimatedMinutes": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 120
+        },
+        "language": {
+          "$ref": "#/$defs/text"
+        },
+        "asOf": {
+          "$ref": "#/$defs/date"
+        },
+        "audience": {
+          "$ref": "#/$defs/text"
+        },
+        "learningLevel": {
+          "enum": [
+            "primary",
+            "middle",
+            "high"
+          ]
+        },
+        "evidenceGaps": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/text"
+          }
+        }
+      }
+    },
+    "center": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "question",
+        "summary",
+        "insight",
+        "tags",
+        "overviewVisual",
+        "analogy"
+      ],
+      "properties": {
+        "id": {
+          "const": "root"
+        },
+        "question": {
+          "$ref": "#/$defs/text"
+        },
+        "summary": {
+          "$ref": "#/$defs/text"
+        },
+        "insight": {
+          "$ref": "#/$defs/text"
+        },
+        "tags": {
+          "$ref": "#/$defs/tags"
+        },
+        "overviewVisual": {
+          "$ref": "#/$defs/imageVisual"
+        },
+        "analogy": {
+          "$ref": "#/$defs/analogy"
+        }
+      }
+    },
+    "analogyMapping": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "familiar",
+        "concept"
+      ],
+      "properties": {
+        "familiar": {
+          "$ref": "#/$defs/text"
+        },
+        "concept": {
+          "$ref": "#/$defs/text"
+        }
+      }
+    },
+    "analogy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "title",
+        "scene",
+        "mappings",
+        "limit"
+      ],
+      "properties": {
+        "title": {
+          "$ref": "#/$defs/text"
+        },
+        "scene": {
+          "$ref": "#/$defs/text"
+        },
+        "mappings": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 4,
+          "items": {
+            "$ref": "#/$defs/analogyMapping"
+          }
+        },
+        "limit": {
+          "$ref": "#/$defs/text"
+        },
+        "visual": {
+          "$ref": "#/$defs/visual"
+        }
+      }
+    },
+    "experiment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "title",
+        "steps"
+      ],
+      "properties": {
+        "title": {
+          "$ref": "#/$defs/text"
+        },
+        "steps": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 5,
+          "items": {
+            "$ref": "#/$defs/text"
+          }
+        }
+      }
+    },
+    "transcriptCue": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "start",
+        "end",
+        "text"
+      ],
+      "properties": {
+        "start": {
+          "type": "number",
+          "minimum": 0
+        },
+        "end": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "text": {
+          "$ref": "#/$defs/text"
+        }
+      }
+    },
+    "imageVisual": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kind",
+        "src",
+        "alt",
+        "caption"
+      ],
+      "properties": {
+        "kind": {
+          "const": "image"
+        },
+        "src": {
+          "$ref": "#/$defs/text"
+        },
+        "alt": {
+          "$ref": "#/$defs/text"
+        },
+        "caption": {
+          "$ref": "#/$defs/text"
+        }
+      }
+    },
+    "manimVisual": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kind",
+        "sceneSource",
+        "sceneClass",
+        "videoSrc",
+        "posterSrc",
+        "durationSeconds",
+        "alt",
+        "caption",
+        "transcript",
+        "fallbackSvg"
+      ],
+      "properties": {
+        "kind": {
+          "const": "manim"
+        },
+        "sceneSource": {
+          "$ref": "#/$defs/text"
+        },
+        "sceneClass": {
+          "type": "string",
+          "pattern": "^[A-Za-z_][A-Za-z0-9_]*$"
+        },
+        "videoSrc": {
+          "$ref": "#/$defs/text"
+        },
+        "posterSrc": {
+          "$ref": "#/$defs/text"
+        },
+        "durationSeconds": {
+          "type": "number",
+          "minimum": 1,
+          "maximum": 30
+        },
+        "alt": {
+          "$ref": "#/$defs/text"
+        },
+        "caption": {
+          "$ref": "#/$defs/text"
+        },
+        "transcript": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/transcriptCue"
+          }
+        },
+        "fallbackSvg": {
+          "$ref": "#/$defs/text"
+        }
+      }
+    },
+    "visual": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/imageVisual"
+        },
+        {
+          "$ref": "#/$defs/manimVisual"
+        }
+      ]
+    },
+    "videoLink": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "title",
+        "url",
+        "embedUrl",
+        "platform"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "title": {
+          "$ref": "#/$defs/text"
+        },
+        "url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "embedUrl": {
+          "type": "string",
+          "format": "uri"
+        },
+        "platform": {
+          "enum": [
+            "bilibili",
+            "youtube"
+          ]
+        },
+        "author": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/text"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "thumbnailUrl": {
+          "oneOf": [
+            {
+              "type": "string",
+              "format": "uri"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "durationSeconds": {
+          "oneOf": [
+            {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 7200
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "publishedAt": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/date"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "queryDate": {
+          "$ref": "#/$defs/date"
+        },
+        "relevanceScore": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "selectionRationale": {
+          "$ref": "#/$defs/text"
+        }
+      }
+    },
+    "node": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "parentId",
+        "type",
+        "question",
+        "label",
+        "answer",
+        "summary",
+        "nextQuestion",
+        "knowledge",
+        "facts",
+        "tags",
+        "analogy"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "parentId": {
+          "$ref": "#/$defs/id"
+        },
+        "type": {
+          "enum": [
+            "phenomenon",
+            "mechanism",
+            "principle",
+            "evidence",
+            "foundation",
+            "boundary"
+          ]
+        },
+        "question": {
+          "$ref": "#/$defs/text"
+        },
+        "label": {
+          "$ref": "#/$defs/text"
+        },
+        "answer": {
+          "$ref": "#/$defs/text"
+        },
+        "summary": {
+          "$ref": "#/$defs/text"
+        },
+        "nextQuestion": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/text"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "knowledge": {
+          "$ref": "#/$defs/text"
+        },
+        "facts": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 4,
+          "items": {
+            "$ref": "#/$defs/text"
+          }
+        },
+        "tags": {
+          "$ref": "#/$defs/tags"
+        },
+        "analogy": {
+          "$ref": "#/$defs/analogy"
+        },
+        "experiment": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/$defs/experiment"
+            }
+          ]
+        },
+        "visual": {
+          "$ref": "#/$defs/visual"
+        },
+        "videoLinks": {
+          "type": "array",
+          "maxItems": 2,
+          "items": {
+            "$ref": "#/$defs/videoLink"
+          }
+        }
+      }
+    },
+    "date": {
+      "type": "string",
+      "format": "date",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+    }
+  }
+}

@@ -1,0 +1,424 @@
+{
+  "schemaVersion": "8.0",
+  "meta": {
+    "topic": "苹果为什么会落地",
+    "question": "苹果为什么会落地？",
+    "slug": "apple-falls",
+    "summary": "从苹果失去支撑开始，逐层追问重力、质量与时空几何，直到现代引力理论的边界。",
+    "category": "物理 · 天文学",
+    "estimatedMinutes": 9,
+    "language": "zh-CN",
+    "asOf": "2026-10-27",
+    "audience": "对自然现象好奇、知道基础力和运动概念的入门学习者",
+    "evidenceGaps": [
+      "本页采用牛顿引力与广义相对论两个层级的教学化解释，不展开张量场方程推导。",
+      "量子引力尚无完成且经实验确认的统一理论，因此最后一层明确标为边界。"
+    ],
+    "learningLevel": "middle"
+  },
+  "center": {
+    "id": "root",
+    "question": "苹果为什么会落地？",
+    "summary": "苹果离开树枝后，下方没有支撑力，地球引力使它持续向地面加速。接下来要追问的不是“苹果为什么会掉”，而是这种吸引作用本身从哪里来。",
+    "insight": "先解释最近的一层：失去支撑后净力向下。再顺着重力、质量相互作用、时空几何逐层深入，最终到达当前物理理论仍未完成的边界。",
+    "tags": [
+      "重力",
+      "苹果",
+      "因果链"
+    ],
+    "overviewVisual": {
+      "kind": "image",
+      "src": "media/apple-falls/overview.svg",
+      "alt": "苹果落地因果总览：失去支撑，质量相互吸引，质量能量塑造时空，自由落体沿测地线运动",
+      "caption": "从苹果失去支撑出发，顺着重力、质量相互作用和时空几何一路到达理论边界。"
+    },
+    "analogy": {
+      "title": "巨人和小孩坐在滑板椅上拉绳子",
+      "scene": "巨人和小孩坐在带轮子的椅子上，同时拉住同一根绳往自己这边拉；两人都会移动，但轻的小孩更容易被拉动。",
+      "mappings": [
+        {
+          "familiar": "巨人和小孩",
+          "concept": "地球和苹果"
+        },
+        {
+          "familiar": "同一根绳",
+          "concept": "双方之间的引力"
+        },
+        {
+          "familiar": "两人都被拉向中间",
+          "concept": "相互作用同时作用于双方"
+        },
+        {
+          "familiar": "小孩移动得更明显",
+          "concept": "质量较小的苹果获得更明显的加速度"
+        }
+      ],
+      "limit": "绳子靠可见的接触传递拉力；引力不需要绳子，而苹果落地还涉及支撑力消失后的合力变化。",
+      "visual": {
+        "kind": "image",
+        "src": "media/apple-falls/chairs-rope-analogy.svg",
+        "alt": "巨人和小孩坐在滑板椅上拉动同一根绳子，双方都向中间移动",
+        "caption": "同一根绳让双方同时受到作用，但质量较小的一方加速更明显。"
+      }
+    }
+  },
+  "nodes": [
+    {
+      "id": "unsupported-fall",
+      "parentId": "root",
+      "type": "phenomenon",
+      "question": "苹果离开树枝后，为什么会马上向下加速？",
+      "label": "失去支撑后的净力",
+      "answer": "树枝不再提供向上的支持力，地球引力没有被平衡，苹果便沿合力方向加速。",
+      "summary": "最直接的原因不是“苹果有向下运动的欲望”，而是受力状态改变：离开树枝后，支持力消失，重力仍在。",
+      "nextQuestion": "这个把苹果拉向地面的重力，为什么会出现？",
+      "knowledge": "苹果挂在树枝上时，重力向下，树枝对苹果的支持力向上；两个力平衡，苹果保持静止。苹果脱离树枝后，支持力不再作用，重力仍然存在，于是合力向下，苹果产生向下的加速度。近地面忽略空气阻力时，加速度约为 9.8 m/s²。",
+      "facts": [
+        "物体是否加速取决于合力，而不是是否受到某一个力。",
+        "树对苹果的支持力只能在接触时存在，离开树枝后便消失。",
+        "地球表面附近的自由落体加速度约为 9.8 m/s²，并随位置略有变化。"
+      ],
+      "tags": [
+        "苹果",
+        "自由落体",
+        "重力"
+      ],
+      "analogy": {
+        "title": "桌布被抽走后杯子才下落",
+        "scene": "杯子被桌面托住时不会下落；桌布一撤，支撑消失，杯子才顺着重力方向运动。",
+        "mappings": [
+          {
+            "familiar": "托住杯子的桌面",
+            "concept": "树枝对苹果的支持力"
+          },
+          {
+            "familiar": "撤掉桌布",
+            "concept": "苹果离开树枝"
+          },
+          {
+            "familiar": "支撑消失后只剩向下的作用",
+            "concept": "重力没有被支持力平衡"
+          },
+          {
+            "familiar": "杯子开始下落",
+            "concept": "苹果产生向下加速度"
+          }
+        ],
+        "limit": "真实桌子还有摩擦和空气；这里只聚焦支持力消失后合力方向改变这一层因果。",
+        "visual": {
+          "kind": "image",
+          "src": "media/apple-falls/tablecloth-analogy.svg",
+          "alt": "桌布从杯子下方抽走，杯子失去支撑后开始下落",
+          "caption": "重力一直都在，改变运动的是支持力消失后形成的向下合力。"
+        }
+      },
+      "experiment": null,
+      "videoLinks": [
+        {
+          "id": "unsupported-fall-video-1",
+          "title": "初中物理八年级下册 重力与质量的辨析及计算",
+          "url": "https://www.bilibili.com/video/BV1ax411E7K9",
+          "embedUrl": "https://player.bilibili.com/player.html?bvid=BV1ax411E7K9&page=1&autoplay=0",
+          "platform": "bilibili",
+          "author": "乐乐课堂-天天练APP",
+          "thumbnailUrl": "https://i0.hdslb.com/bfs/archive/42261fb1ff14aaff8f67e9ef18b689b85537ab66.jpg",
+          "durationSeconds": 186,
+          "publishedAt": "2017-11-02",
+          "queryDate": "2026-10-26",
+          "relevanceScore": 90.9,
+          "selectionRationale": "辨析重力与质量，帮助建立苹果离开支撑后仍受重力的第一层解释。"
+        }
+      ]
+    },
+    {
+      "id": "gravity-interaction",
+      "parentId": "unsupported-fall",
+      "type": "mechanism",
+      "question": "这个把苹果拉向地面的重力，为什么会出现？",
+      "label": "质量之间的相互吸引",
+      "answer": "地球和苹果都有质量，二者之间存在万有引力；地球巨大的质量使苹果获得明显的向下加速度。",
+      "summary": "牛顿把地面落体与天体运动统一起来：引力大小取决于双方质量和距离，地球质量远大于苹果，因此苹果的加速度主要由地球决定。",
+      "nextQuestion": "为什么有质量的物体会让另一个物体产生加速度？",
+      "knowledge": "牛顿万有引力定律用 F = GMm/r² 描述两个质量之间的吸引。苹果也吸引地球，但地球质量极大，同样的相互作用给地球造成的加速度几乎无法察觉。牛顿理论给出了精确的计算规则和跨尺度预测能力，却没有解释“为什么质量会产生这种作用”这一更深问题。",
+      "facts": [
+        "牛顿万有引力定律把引力与双方质量和距离联系起来。",
+        "相互作用的力大小相同，但质量不同的物体获得的加速度不同。",
+        "牛顿理论统一解释了地面落体与天体轨道，但没有说明引力的更深来源。"
+      ],
+      "tags": [
+        "牛顿",
+        "万有引力",
+        "质量"
+      ],
+      "analogy": {
+        "title": "两个滑板玩家拉同一根绳子",
+        "scene": "大人和小孩穿着滑板鞋拉同一根绳，双方都被绳拉向中间；质量较小的一方更容易改变速度。",
+        "mappings": [
+          {
+            "familiar": "两人共同拉的绳子",
+            "concept": "相互引力"
+          },
+          {
+            "familiar": "质量大的大人",
+            "concept": "地球"
+          },
+          {
+            "familiar": "质量小的小孩",
+            "concept": "苹果"
+          },
+          {
+            "familiar": "双方受力相同但小孩更容易移动",
+            "concept": "作用力相同而加速度取决于质量"
+          }
+        ],
+        "limit": "绳子的拉力靠接触传递；引力不需要绳子，牛顿模型也没有解释引力为何存在。",
+        "visual": {
+          "kind": "image",
+          "src": "media/apple-falls/chairs-rope-analogy.svg",
+          "alt": "巨人和小孩拉动同一根绳子，质量较小的小孩更容易改变速度",
+          "caption": "双方受到同样大小的相互作用，但加速度取决于各自质量。"
+        }
+      },
+      "experiment": null,
+      "videoLinks": [
+        {
+          "id": "gravity-interaction-video-1",
+          "title": "牛顿万有引力公式，是怎么一步步推导出来的？",
+          "url": "https://www.bilibili.com/video/BV1doM46tES1",
+          "embedUrl": "https://player.bilibili.com/player.html?bvid=BV1doM46tES1&page=1&autoplay=0",
+          "platform": "bilibili",
+          "author": "物理思考者",
+          "thumbnailUrl": "https://i2.hdslb.com/bfs/archive/14b48147ec51ce64032b1e63fde09a62d5ca685f.jpg",
+          "durationSeconds": 348,
+          "publishedAt": "2026-07-07",
+          "queryDate": "2026-10-26",
+          "relevanceScore": 73.5,
+          "selectionRationale": "从圆周运动和开普勒定律推导万有引力，直接连接落体与轨道现象。"
+        }
+      ]
+    },
+    {
+      "id": "spacetime-geometry",
+      "parentId": "gravity-interaction",
+      "type": "principle",
+      "question": "为什么有质量的物体会让另一个物体产生加速度？",
+      "label": "从力到时空几何",
+      "answer": "广义相对论认为，质量与能量改变时空几何；苹果在弯曲时空中沿测地线运动，看起来就是被地球加速吸引。",
+      "summary": "这一层不是增加另一个“拉力”，而是改变对引力的描述：自由落体可以看成弯曲时空中的惯性运动。",
+      "nextQuestion": "苹果为什么会沿着弯曲时空中的测地线运动？",
+      "knowledge": "在广义相对论中，物质和能量决定时空曲率，自由落体物体沿时空中的测地线运动。牛顿的“引力”在弱场、低速条件下是极其准确的近似；广义相对论则解释了水星近日点进动、引力透镜和精密计时等现象。把时空弯曲画成二维漏斗只是类比，并非真实四维几何。",
+      "facts": [
+        "广义相对论把引力与时空几何联系起来。",
+        "自由落体物体在只有引力作用时沿测地线运动。",
+        "牛顿引力在弱场和低速条件下仍是很好的近似。"
+      ],
+      "tags": [
+        "广义相对论",
+        "时空",
+        "引力"
+      ],
+      "analogy": {
+        "title": "地图上的弯曲公路",
+        "scene": "在地图上，一条看起来最直的前进路线会被弯曲地形改道；物体没有偏离规则，只是道路本身弯了。",
+        "mappings": [
+          {
+            "familiar": "地图",
+            "concept": "时空"
+          },
+          {
+            "familiar": "弯曲公路",
+            "concept": "时空几何"
+          },
+          {
+            "familiar": "沿路前进",
+            "concept": "自由落体沿测地线运动"
+          },
+          {
+            "familiar": "山体塑造道路走向",
+            "concept": "质量与能量影响时空曲率"
+          }
+        ],
+        "limit": "地图上的道路弯曲是二维画面；时空弯曲是四维几何，不能用一块被压弯的橡胶布字面代替。",
+        "visual": {
+          "kind": "image",
+          "src": "media/apple-falls/bent-road-analogy.svg",
+          "alt": "地图上的道路被弯曲地形改道，行进者沿道路自然前进",
+          "caption": "路线弯曲不等于有人在推着转弯，可能只是空间中的可行路径本身弯了。"
+        }
+      },
+      "experiment": null,
+      "videoLinks": [
+        {
+          "id": "spacetime-geometry-video-1",
+          "title": "【李永乐老师】漫谈相对论（六）什么是时空弯曲？爱因斯坦如何解释引力？",
+          "url": "https://www.youtube.com/watch?v=BeCv70hb33k",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/BeCv70hb33k",
+          "platform": "youtube",
+          "author": "李永乐老师",
+          "thumbnailUrl": "https://i.ytimg.com/vi/BeCv70hb33k/hq720.jpg",
+          "durationSeconds": 723,
+          "publishedAt": null,
+          "queryDate": "2026-10-26",
+          "relevanceScore": 98.2,
+          "selectionRationale": "系统解释时空弯曲与引力，适合承接牛顿引力之后的更深一层。"
+        }
+      ]
+    },
+    {
+      "id": "geodesic",
+      "parentId": "spacetime-geometry",
+      "type": "principle",
+      "question": "苹果为什么会沿着弯曲时空中的测地线运动？",
+      "label": "自由落体就是惯性运动",
+      "answer": "在没有其他非引力作用时，自由落体没有感受到局部加速度；它的世界线就是弯曲时空中尽可能“直”的测地线。",
+      "summary": "测地线是弯曲几何中的最短或最长路径概念。自由落体的“下落”从四维时空看是一种惯性运动。",
+      "nextQuestion": "时空弯曲又由什么决定？",
+      "knowledge": "在广义相对论中，自由落体不是被一种看不见的力不断推离直线，而是在弯曲四维时空中沿着测地线运动。测地线是弯曲几何里的“尽可能直”的世界线；若没有其他非引力作用，物体就沿这样的路径运动。",
+      "facts": [
+        "测地线把平直时空中的直线概念推广到弯曲时空。",
+        "自由落体物体的世界线在广义相对论中是测地线。",
+        "局部自由落体参考系中，引力效应可以被局部消除，这正是等效原理的体现。"
+      ],
+      "tags": [
+        "测地线",
+        "自由落体",
+        "等效原理"
+      ],
+      "analogy": {
+        "title": "拉紧的绳在钉子之间自然取直",
+        "scene": "把一根绳拉紧在受限空间里，它会贴出一条尽可能短的路径；没有人一路推着它转弯。",
+        "mappings": [
+          {
+            "familiar": "绳自然取直的倾向",
+            "concept": "惯性运动"
+          },
+          {
+            "familiar": "钉子划出的空间限制",
+            "concept": "时空几何"
+          },
+          {
+            "familiar": "绳贴出的最短路径",
+            "concept": "测地线"
+          },
+          {
+            "familiar": "不必持续推绳前进",
+            "concept": "自由落体没有局部非引力加速度"
+          }
+        ],
+        "limit": "绳会受张力，测地线不是被绳子拉着；这个场景只帮助理解“在弯曲几何中走最直路线”。",
+        "visual": {
+          "kind": "image",
+          "src": "media/apple-falls/string-pegs-analogy.svg",
+          "alt": "拉紧的绳子绕过钉子约束，贴出尽可能短的路径",
+          "caption": "钉子限定几何，绳自然选择一条最直的可行路线。"
+        }
+      },
+      "experiment": null,
+      "videoLinks": []
+    },
+    {
+      "id": "field-equation",
+      "parentId": "geodesic",
+      "type": "foundation",
+      "question": "时空弯曲又由什么决定？",
+      "label": "爱因斯坦场方程",
+      "answer": "爱因斯坦场方程把时空曲率与物质、能量和动量分布联系起来；具体分布决定具体的几何。",
+      "summary": "场方程是广义相对论的核心结构。它把“质量如何弯曲时空”从直觉描述提升为可计算的关系。",
+      "nextQuestion": "这套解释在哪里遇到边界？",
+      "knowledge": "爱因斯坦场方程把时空的曲率与能量—动量张量联系起来。它不是一个单独的数字公式，而是一组张量方程：物质和能量的分布决定几何，几何又决定自由落体如何运动。弱场近似下，它可以回到牛顿引力。",
+      "facts": [
+        "爱因斯坦场方程联系时空曲率与能量、动量分布。",
+        "牛顿引力可作为广义相对论在弱场、低速条件下的近似。",
+        "求解场方程需要明确物质分布与边界条件。"
+      ],
+      "tags": [
+        "场方程",
+        "能量动量",
+        "时空曲率"
+      ],
+      "analogy": {
+        "title": "保龄球压在床垫上形成凹坑",
+        "scene": "保龄球压弯床垫，附近弹珠沿凹陷滚向它；凹坑的形状由球的质量和床垫如何变形共同决定。",
+        "mappings": [
+          {
+            "familiar": "压住床垫的保龄球",
+            "concept": "质量能量分布"
+          },
+          {
+            "familiar": "床垫形成的凹坑",
+            "concept": "时空曲率"
+          },
+          {
+            "familiar": "弹珠沿凹坑滚向球",
+            "concept": "自由落体轨迹"
+          },
+          {
+            "familiar": "球和床垫如何互相影响",
+            "concept": "爱因斯坦场方程"
+          }
+        ],
+        "limit": "床垫有外力支撑且只是二维弹性面；场方程描述四维时空，质量弯曲的不是一张实体布。",
+        "visual": {
+          "kind": "image",
+          "src": "media/apple-falls/mattress-bowling-analogy.svg",
+          "alt": "保龄球压弯床垫，附近弹珠沿凹坑滚向保龄球",
+          "caption": "质量分布塑造凹坑，弹珠沿凹坑运动，对应物质能量塑造时空曲率。"
+        }
+      },
+      "experiment": null,
+      "videoLinks": []
+    },
+    {
+      "id": "quantum-gravity",
+      "parentId": "field-equation",
+      "type": "boundary",
+      "question": "这套解释在哪里遇到边界？",
+      "label": "尚未完成的量子引力",
+      "answer": "在黑洞奇点和普朗克尺度，广义相对论与量子场论不能同时提供完整描述；目前还没有实验确认的量子引力理论。",
+      "summary": "这里不是再给一个“更底层答案”，而是诚实标明当前物理理论的边界，以及继续追问所需的新理论。",
+      "nextQuestion": null,
+      "knowledge": "广义相对论在宏观尺度上通过了大量检验，但它与量子场论在黑洞奇点、普朗克尺度等极端条件下难以给出一致且完整的描述。量子引力仍是活跃研究领域，目前没有经实验确认的最终理论，因此这里应以明确边界收束。",
+      "facts": [
+        "广义相对论与量子场论在极端引力条件下缺少一致的统一描述。",
+        "黑洞奇点和普朗克尺度通常被视为现有理论失效的区域。",
+        "弦论、圈量子引力等是竞争性研究方向，但尚无实验确认的完整量子引力理论。"
+      ],
+      "tags": [
+        "量子引力",
+        "黑洞",
+        "理论边界"
+      ],
+      "analogy": {
+        "title": "一张地图在同一处印着两条路",
+        "scene": "一张地图在某个边缘同时标出两条互不相容的道路，走到那里才发现现有地图无法告诉他们该走哪条。",
+        "mappings": [
+          {
+            "familiar": "覆盖不同区域的地图",
+            "concept": "现有物理理论"
+          },
+          {
+            "familiar": "两套不能同时套用的道路规则",
+            "concept": "广义相对论与量子场论"
+          },
+          {
+            "familiar": "地图重叠冲突的边缘",
+            "concept": "黑洞奇点与普朗克尺度"
+          },
+          {
+            "familiar": "边缘之外尚待绘制的新道路",
+            "concept": "尚未确认的量子引力理论"
+          }
+        ],
+        "limit": "现实不是一张印错的地图；这里表示两个成熟理论缺少统一的完整描述，而不是自然本身自相矛盾。",
+        "visual": {
+          "kind": "image",
+          "src": "media/apple-falls/overlapping-map-analogy.svg",
+          "alt": "地图在同一处画出两条互不相容的道路，分别代表广义相对论和量子场论",
+          "caption": "地图冲突表示理论覆盖范围不能无缝衔接，而不是自然本身矛盾。"
+        }
+      },
+      "experiment": null,
+      "videoLinks": []
+    }
+  ]
+}

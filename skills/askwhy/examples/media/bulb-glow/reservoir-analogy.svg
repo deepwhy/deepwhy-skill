@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-labelledby="title desc">
+  <title id="title">水库里的水向坝底释放能量</title>
+  <desc id="desc">高处蓄水向下释放能量并带动机器，水位和水量决定可做功的总量。</desc>
+  <rect width="800" height="450" rx="28" fill="#f4fbf7"/>
+  <text x="50" y="64" fill="#285d4b" font-family="PingFang SC, sans-serif" font-size="28" font-weight="750">水库里的水向坝底释放能量</text>
+  <path d="M130 150h540v250H130z" fill="#d8f3fb"/>
+  <path d="M130 210h540v190H130z" fill="#9fd8f4"/>
+  <path d="M610 130h50v270h-50z" fill="#b8addd"/>
+  <path d="M610 230h50" stroke="#fff" stroke-width="6"/>
+  <circle cx="660" cy="230" r="34" fill="#fff" stroke="#7055d9" stroke-width="5"/>
+  <path d="M660 230l20-16M660 230l-5 26" stroke="#7055d9" stroke-width="4" stroke-linecap="round"/>
+  <path d="M610 230h-70" stroke="#4e9dda" stroke-width="5"/>
+  <text x="358" y="182" text-anchor="middle" fill="#357cae" font-family="PingFang SC, sans-serif" font-size="20" font-weight="700">高处蓄水</text>
+  <text x="680" y="286" text-anchor="middle" fill="#7055d9" font-family="PingFang SC, sans-serif" font-size="17" font-weight="700">带动机械</text>
+  <text x="400" y="425" text-anchor="middle" fill="#5c6b63" font-family="PingFang SC, sans-serif" font-size="18">水量 × 落差决定可释放的能量，水不会无限供应</text>
+</svg>

@@ -1,0 +1,7 @@
+interface:
+  display_name: "AskWhy"
+  short_description: "Trace a phenomenon through a familiar, level-specific why-chain"
+  brand_color: "#7055D9"
+  default_prompt: "Use $askwhy to collect a required 小学/初中/高中 choice and then a 只生成知识页/知识页 + 讲解视频 choice with the page-only option selected by default, before building the selected visual causal why-chain: <question>"
+policy:
+  allow_implicit_invocation: false

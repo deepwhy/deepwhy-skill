@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-labelledby="title desc">
+  <title id="title">拨动琴弦会让空气振动</title>
+  <desc id="desc">手指拨动琴弦，弦振动并向周围空气发出声波；拨动越强，声音也越强。</desc>
+  <rect width="800" height="450" rx="28" fill="#f4fbf7"/>
+  <text x="50" y="64" fill="#285d4b" font-family="PingFang SC, sans-serif" font-size="28" font-weight="750">拨动琴弦会让空气振动</text>
+  <line x1="92" y1="130" x2="92" y2="330" stroke="#8ea69c" stroke-width="10"/>
+  <line x1="560" y1="130" x2="560" y2="330" stroke="#8ea69c" stroke-width="10"/>
+  <path d="M92 230c95-96 190 96 285 0s180 0 183 0" fill="none" stroke="#e98545" stroke-width="5"/>
+  <path d="M92 230c95 70 190-70 285 0s180 0 183 0" fill="none" stroke="#7055d9" stroke-width="3" opacity=".7"/>
+  <circle cx="274" cy="214" r="14" fill="#f0a24b"/>
+  <path d="M616 230a44 44 0 0 1 0 0M630 204q48 26 0 52M646 182q72 48 0 96M664 158q104 72 0 144" fill="none" stroke="#4e9dda" stroke-width="3" opacity=".7"/>
+  <text x="353" y="358" text-anchor="middle" fill="#7055d9" font-family="PingFang SC, sans-serif" font-size="18" font-weight="700">振动向四周传播</text>
+  <text x="706" y="238" fill="#357cae" font-family="PingFang SC, sans-serif" font-size="18" font-weight="700">声音</text>
+  <text x="400" y="404" text-anchor="middle" fill="#5c6b63" font-family="PingFang SC, sans-serif" font-size="18">拨得越急越有力，声音的强弱与音高也会变化</text>
+</svg>

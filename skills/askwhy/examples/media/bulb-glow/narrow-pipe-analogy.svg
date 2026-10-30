@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-labelledby="title desc">
+  <title id="title">水流挤过狭窄管段后发热</title>
+  <desc id="desc">蓝色水流穿过窄而粗糙的管段，碰撞增加后管壁变热并发红。</desc>
+  <rect width="800" height="450" rx="28" fill="#f4fbf7"/>
+  <text x="50" y="64" fill="#285d4b" font-family="PingFang SC, sans-serif" font-size="28" font-weight="750">水流挤过狭窄管段后发热</text>
+  <path d="M70 230h190c55 0 55-72 110-72h70c55 0 55 72 110 72h180" fill="none" stroke="#b7d8e8" stroke-width="44" stroke-linecap="round"/>
+  <path d="M355 158h105" stroke="#e98545" stroke-width="25" stroke-linecap="round"/>
+  <g fill="#4e9dda">
+    <circle cx="150" cy="230" r="10"/><circle cx="230" cy="230" r="10"/><circle cx="305" cy="230" r="10"/>
+  </g>
+  <path d="M115 288h160" stroke="#4e9dda" stroke-width="3"/>
+  <path d="m275 279 12 9-12 9" fill="#4e9dda"/>
+  <text x="178" y="322" fill="#357cae" font-family="PingFang SC, sans-serif" font-size="18" font-weight="700">有方向的水流</text>
+  <path d="M377 190q18-30 36 0t36 0t36 0" fill="none" stroke="#e98545" stroke-width="4"/>
+  <text x="408" y="126" text-anchor="middle" fill="#d96e2e" font-family="PingFang SC, sans-serif" font-size="18" font-weight="700">摩擦与碰撞</text>
+  <path d="M442 230c22-20 44-20 66 0s44 20 66 0" fill="none" stroke="#f0a24b" stroke-width="4"/>
+  <text x="635" y="208" fill="#d96e2e" font-family="PingFang SC, sans-serif" font-size="18" font-weight="700">管壁升温</text>
+  <circle cx="635" cy="248" r="24" fill="#ffd37a" opacity=".38"/>
+  <text x="400" y="400" text-anchor="middle" fill="#5c6b63" font-family="PingFang SC, sans-serif" font-size="18">流动能量在阻力与碰撞中变成热</text>
+</svg>

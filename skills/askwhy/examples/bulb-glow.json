@@ -1,0 +1,735 @@
+{
+  "schemaVersion": "8.0",
+  "meta": {
+    "topic": "电灯为什么会发光",
+    "question": "电灯为什么会发光？",
+    "slug": "bulb-glow",
+    "summary": "沿着白炽灯的一束光，逐层追问为什么：热从哪里来，电子为什么移动，电压又从哪里来。",
+    "category": "物理 · 电学",
+    "estimatedMinutes": 10,
+    "language": "zh-CN",
+    "asOf": "2026-10-27",
+    "audience": "知道灯泡会亮，但不清楚电、热和光如何连接的普通学习者",
+    "evidenceGaps": [
+      "本页讨论依靠灯丝高温发光的白炽灯，不展开 LED 的电子—空穴复合。",
+      "白炽灯会同时发出红外线和可见光；本页聚焦“电能如何变成可见光”的主因果链。",
+      "热力学和量子化学能继续解释自由能为何降低，但已超出这条日常因果链的简明范围。"
+    ],
+    "learningLevel": "middle"
+  },
+  "center": {
+    "id": "root",
+    "question": "电灯为什么会发光？",
+    "summary": "按下开关后，电能并没有直接变成光。白炽灯先把灯丝加热，炽热的灯丝再发出热辐射，其中一部分落在人眼可见的波段。",
+    "insight": "先看见“灯丝发热”这一中间现象，再沿热量、电子运动和电压继续向下追问，才能得到一条连续因果链，而不是几个互不相连的知识点。",
+    "tags": [
+      "白炽灯",
+      "热辐射",
+      "因果链"
+    ],
+    "overviewVisual": {
+      "kind": "image",
+      "src": "media/bulb-glow/overview.svg",
+      "alt": "白炽灯因果总览：电池维持电压，电场推动电子，电子碰撞让灯丝发热，热辐射中包含可见光",
+      "caption": "一张图串起整条因果链：化学能 → 电压 → 电子漂移 → 发热 → 热辐射 → 可见光。"
+    },
+    "analogy": {
+      "title": "把整条电路想成一条环形水路",
+      "scene": "水泵把水推上高处，形成压力差；水沿粗细不同、内壁粗糙的管子绕一圈，最后回到水泵。",
+      "mappings": [
+        {
+          "familiar": "水泵",
+          "concept": "电源"
+        },
+        {
+          "familiar": "两端的水压差",
+          "concept": "电压"
+        },
+        {
+          "familiar": "沿管流动的水",
+          "concept": "电流"
+        },
+        {
+          "familiar": "又窄又粗糙的管段",
+          "concept": "灯丝"
+        }
+      ],
+      "limit": "水管里是水在整体移动；电路靠电场推动电荷，单个电子并不会从电池瞬间跑到灯泡。",
+      "visual": {
+        "kind": "manim",
+        "sceneSource": "media/bulb-glow/water-circuit-analogy.py",
+        "sceneClass": "WaterCircuitAnalogy",
+        "videoSrc": "media/bulb-glow/water-circuit-analogy-output/water-circuit-analogy.webm",
+        "posterSrc": "media/bulb-glow/water-circuit-analogy-output/water-circuit-analogy.webp",
+        "durationSeconds": 10.1,
+        "alt": "水路类比：水泵维持压差，水沿闭合管道流动，经过窄管段时发热",
+        "caption": "水泵、水压差和狭窄管道分别帮助理解电源、电压和灯丝发热；水本身不是电荷。",
+        "transcript": [
+          {
+            "start": 0.0,
+            "end": 1.5,
+            "text": "先把电路想成一条闭合水路。"
+          },
+          {
+            "start": 1.5,
+            "end": 3.2,
+            "text": "水泵持续维持两端压差，让水沿管子循环。"
+          },
+          {
+            "start": 3.2,
+            "end": 5.2,
+            "text": "水流经过又窄又粗糙的管段时，阻力让管壁升温。"
+          },
+          {
+            "start": 5.2,
+            "end": 8.0,
+            "text": "类比只借用水泵、压差和流动关系，水本身并不是电荷。"
+          }
+        ],
+        "fallbackSvg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 450'><rect width='800' height='450' rx='28' fill='#f4fbf7'/><rect x='130' y='128' width='540' height='210' rx='42' fill='none' stroke='#b7d8e8' stroke-width='24'/><text x='400' y='80' text-anchor='middle' fill='#285d4b' font-size='27' font-family='sans-serif'>水路类比：泵维持压差，窄管发热</text><text x='400' y='410' text-anchor='middle' fill='#5c6b63' font-size='18' font-family='sans-serif'>水本身不是电荷，类比只借用流动关系</text></svg>"
+      }
+    }
+  },
+  "nodes": [
+    {
+      "id": "incandescence",
+      "parentId": "root",
+      "type": "phenomenon",
+      "question": "灯泡接通电源后，为什么灯丝会热到发光？",
+      "label": "先发热，再发光",
+      "answer": "电流在灯丝中耗散能量，使灯丝升温；温度足够高时，热辐射中可见光的比例才变得明显。",
+      "summary": "白炽灯的关键中间现象是高温。电能首先变成灯丝的内能，灯丝温度升高后才出现足够强的可见热辐射。",
+      "nextQuestion": "为什么热的灯丝会发出可见光？",
+      "knowledge": "白炽灯把钨丝加热到白炽状态，利用高温物体的热辐射照明。电能并不会在导线中直接变成一束光；它先提高灯丝温度，再由灯丝向外辐射能量。温度越高，辐射总功率越大，辐射谱也越向短波方向移动，因此可见光所占比例会提高。",
+      "facts": [
+        "白炽灯通过加热灯丝到白炽状态而发光，并非让电流直接发射可见光。",
+        "灯丝温度越高，热辐射越强，且辐射谱峰值向更短波长移动。",
+        "白炽灯的大部分输入能量会变成热，只有一部分成为可见光，因此照明效率有限。"
+      ],
+      "tags": [
+        "白炽灯",
+        "灯丝",
+        "热辐射"
+      ],
+      "analogy": {
+        "title": "水流挤过狭窄管段后发热",
+        "scene": "水流被迫通过一段又窄又粗糙的管子，摩擦和碰撞把有方向的流动变成管壁的热。",
+        "mappings": [
+          {
+            "familiar": "水流携带的能量",
+            "concept": "电能"
+          },
+          {
+            "familiar": "窄管的阻力",
+            "concept": "灯丝电阻"
+          },
+          {
+            "familiar": "管壁升温",
+            "concept": "灯丝温度升高"
+          },
+          {
+            "familiar": "灼热管道发红发亮",
+            "concept": "炽热灯丝发出可见光"
+          }
+        ],
+        "limit": "普通水管受热也不会发出足够的光；白炽灯靠数千开尔文的热辐射发光，并非摩擦产生火花。",
+        "visual": {
+          "kind": "image",
+          "src": "media/bulb-glow/narrow-pipe-analogy.svg",
+          "alt": "水流穿过狭窄管段，摩擦与碰撞让管壁升温",
+          "caption": "窄管提高阻力，水流的有序能量转成管壁的热。"
+        }
+      },
+      "visual": {
+        "kind": "image",
+        "src": "media/bulb-glow/incandescence.svg",
+        "alt": "白炽灯灯丝发光，并标出电能、焦耳热、热辐射和可见光的转换关系",
+        "caption": "灯丝先被电流加热，热辐射中只有一部分落在人眼可见的波段。"
+      },
+      "experiment": {
+        "title": "调光观察颜色变化",
+        "steps": [
+          "在安全条件下使用可调光白炽灯，从较暗档位逐步调亮。",
+          "观察灯丝颜色如何由暗红、橙红变化到更接近白色。",
+          "不要直接注视强光；只比较颜色趋势，不把视觉判断当作精确温度测量。"
+        ]
+      },
+      "videoLinks": [
+        {
+          "id": "incandescence-video-1",
+          "title": "热辐射光源（白炽灯和卤钨灯），开关频繁寿命短，不允许频闪。",
+          "url": "https://www.bilibili.com/video/BV1F94y1f7VJ",
+          "embedUrl": "https://player.bilibili.com/player.html?bvid=BV1F94y1f7VJ&page=1&autoplay=0",
+          "platform": "bilibili",
+          "author": "123职业学院",
+          "thumbnailUrl": "https://i1.hdslb.com/bfs/archive/65794231045c69825391cf13bb28693d8388881d.jpg",
+          "durationSeconds": 68,
+          "publishedAt": "2022-03-26",
+          "queryDate": "2026-10-26",
+          "relevanceScore": 61.0,
+          "selectionRationale": "直接说明白炽灯属于热辐射光源，适合建立“先发热、再发光”的第一层因果。"
+        }
+      ]
+    },
+    {
+      "id": "thermal-radiation",
+      "parentId": "incandescence",
+      "type": "mechanism",
+      "question": "为什么热的灯丝会发出可见光？",
+      "label": "热物体的电磁辐射",
+      "answer": "灯丝中的带电粒子随热运动不断加速，向外发出热辐射；温度升高后，可见波段的辐射迅速增强。",
+      "summary": "热辐射不是灯丝表面“冒出”的一种特殊东西，而是带电粒子热运动产生的电磁波。温度决定辐射谱，人眼只看见其中一段。",
+      "nextQuestion": "灯丝的热又是从哪里来的？",
+      "knowledge": "任何温度高于绝对零度的物体都会发出热辐射。温度升高时，粒子的无规则运动更剧烈，辐射总功率按斯特藩—玻尔兹曼定律快速增长，峰值波长按维恩位移定律向短波移动。白炽灯灯丝大约工作到数千开尔文，辐射谱才明显进入可见光区；我们看到的颜色是可见波段内不同波长共同形成的。",
+      "facts": [
+        "所有有温度的物体都会发出热辐射。",
+        "温度越高，热辐射总功率越大，峰值波长越短。",
+        "人眼可见光只覆盖约 380–750 纳米的狭窄波段，因此看到的是热辐射谱的一部分。"
+      ],
+      "tags": [
+        "热辐射",
+        "可见光",
+        "黑体辐射"
+      ],
+      "analogy": {
+        "title": "拨动琴弦会让空气振动",
+        "scene": "拨动琴弦，振动向周围空气传播成声音；拨得越急越有力，声音的强弱和音高也会变化。",
+        "mappings": [
+          {
+            "familiar": "不停振动的琴弦",
+            "concept": "做热运动的带电粒子"
+          },
+          {
+            "familiar": "向四周传播的声音",
+            "concept": "向外发射的电磁波"
+          },
+          {
+            "familiar": "拨弦的剧烈程度",
+            "concept": "物体温度"
+          },
+          {
+            "familiar": "不同音高和强弱混成的音色",
+            "concept": "不同波长组成的辐射谱"
+          }
+        ],
+        "limit": "声音需要介质传播，热辐射可以在真空中传播；声音和电磁波也不是同一种波。",
+        "visual": {
+          "kind": "image",
+          "src": "media/bulb-glow/plucked-string-analogy.svg",
+          "alt": "琴弦振动并向周围发出声波",
+          "caption": "振动越剧烈，向外传播的强弱和频率分布也会变化。"
+        }
+      },
+      "visual": {
+        "kind": "image",
+        "src": "media/bulb-glow/thermal-radiation.svg",
+        "alt": "不同温度下的热辐射谱，温度升高时峰值向短波方向移动",
+        "caption": "温度升高不仅增强总辐射，也把辐射峰推向更短的波长。"
+      },
+      "experiment": null,
+      "videoLinks": [
+        {
+          "id": "thermal-radiation-video-1",
+          "title": "【高二物理】【必修三】22.1 热辐射、黑体及黑体辐射-锤姐物理",
+          "url": "https://www.bilibili.com/video/BV1ze4y1t7hm",
+          "embedUrl": "https://player.bilibili.com/player.html?bvid=BV1ze4y1t7hm&page=1&autoplay=0",
+          "platform": "bilibili",
+          "author": "张佳铭老师-锤姐物理",
+          "thumbnailUrl": "https://i1.hdslb.com/bfs/archive/a9846b4f894ec888c6cbda3a113d1c5b10128625.jpg",
+          "durationSeconds": 866,
+          "publishedAt": "2022-10-01",
+          "queryDate": "2026-10-26",
+          "relevanceScore": 64.3,
+          "selectionRationale": "系统讲解热辐射与黑体辐射，适合深入理解温度如何决定辐射谱。"
+        },
+        {
+          "id": "thermal-radiation-video-2",
+          "title": "三分钟了解黑体辐射",
+          "url": "https://www.youtube.com/watch?v=Na8DULBe9xs",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/Na8DULBe9xs",
+          "platform": "youtube",
+          "author": "物理雷老师",
+          "thumbnailUrl": "https://i.ytimg.com/vi/Na8DULBe9xs/hq720.jpg",
+          "durationSeconds": 176,
+          "publishedAt": null,
+          "queryDate": "2026-10-26",
+          "relevanceScore": 45.9,
+          "selectionRationale": "三分钟概览黑体辐射，适合先建立直观印象后再看完整课程。"
+        }
+      ]
+    },
+    {
+      "id": "joule-heating",
+      "parentId": "thermal-radiation",
+      "type": "mechanism",
+      "question": "灯丝的热又是从哪里来的？",
+      "label": "电子碰撞与焦耳热",
+      "answer": "电场加速电子，电子不断与金属晶格碰撞，把定向运动获得的能量转成晶格的无序热振动。",
+      "summary": "灯丝不是被火焰加热，而是电流做功。电子的定向能量在碰撞中变成大量原子的振动能量，宏观上表现为温度升高。",
+      "nextQuestion": "灯丝里的电子为什么会定向移动？",
+      "knowledge": "金属中的自由电子本来就在不停做无规则热运动。接通电路后，电场在电子上做功，使它们的运动叠加出一个很慢的定向漂移。电子在漂移过程中不断碰撞晶格，把从电场获得的能量交给原子振动；大量碰撞使灯丝内能上升。这个不可逆的能量转化就是焦耳热，单位时间产生的热功率可写成 P = I²R。",
+      "facts": [
+        "电流是电荷的定向运动，但导体中的电子仍同时保留高速的无规则热运动。",
+        "电子与晶格碰撞会把电能转化为材料的内能。",
+        "电阻发热功率满足 P = I²R，因此电流或电阻增大时发热更快。"
+      ],
+      "tags": [
+        "焦耳热",
+        "电子碰撞",
+        "电阻"
+      ],
+      "analogy": {
+        "title": "人群被推着挤过拥挤走廊",
+        "scene": "一群人被后面持续推着穿过拥挤走廊，不断撞到立柱，整齐前进的能量逐渐变成四周的推挤和热。",
+        "mappings": [
+          {
+            "familiar": "后面持续推人的力",
+            "concept": "电场对电子的推力"
+          },
+          {
+            "familiar": "向前移动的人群",
+            "concept": "自由电子"
+          },
+          {
+            "familiar": "走廊里的立柱",
+            "concept": "金属晶格"
+          },
+          {
+            "familiar": "碰撞后人群散乱、周围变热",
+            "concept": "电子漂移能量转为晶格热振动"
+          }
+        ],
+        "limit": "行人会主动避让；电子和晶格遵循量子规律，不能被当成有意识、会绕路的小球。",
+        "visual": {
+          "kind": "image",
+          "src": "media/bulb-glow/crowded-corridor-analogy.svg",
+          "alt": "人群通过拥挤走廊时不断撞到立柱，整齐前进变成散乱运动",
+          "caption": "反复碰撞把向前的运动打散，并在环境中表现为热。"
+        }
+      },
+      "visual": {
+        "kind": "manim",
+        "sceneSource": "media/bulb-glow/electron-heat.py",
+        "sceneClass": "ElectronLatticeHeat",
+        "videoSrc": "media/bulb-glow/electron-heat/electron-lattice-heat.webm",
+        "posterSrc": "media/bulb-glow/electron-heat/electron-lattice-heat.webp",
+        "durationSeconds": 8.66,
+        "alt": "电子在电场中移动并与晶格原子碰撞，把能量转成热振动",
+        "caption": "电子与晶格碰撞，将定向运动能量转化为无序热振动。",
+        "transcript": [
+          {
+            "start": 0.0,
+            "end": 1.5,
+            "text": "电子在电场中获得定向运动。"
+          },
+          {
+            "start": 1.5,
+            "end": 3.3,
+            "text": "电子接近金属晶格中的原子。"
+          },
+          {
+            "start": 3.3,
+            "end": 5.2,
+            "text": "碰撞把电子的定向能量交给晶格。"
+          },
+          {
+            "start": 5.2,
+            "end": 7.2,
+            "text": "原子的无规则振动增强，宏观上表现为温度升高。"
+          }
+        ],
+        "fallbackSvg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 800 450\" role=\"img\"><title>电子与晶格碰撞产生热</title><rect width=\"800\" height=\"450\" rx=\"28\" fill=\"#f8f6ff\"/><text x=\"52\" y=\"68\" fill=\"#28233d\" font-family=\"PingFang SC, sans-serif\" font-size=\"28\" font-weight=\"750\">电子碰撞把定向能量交给晶格</text><path d=\"M100 250H700\" stroke=\"#ff9c47\" stroke-width=\"9\" stroke-linecap=\"round\"/><g fill=\"#b8addd\"><circle cx=\"260\" cy=\"250\" r=\"22\"/><circle cx=\"400\" cy=\"250\" r=\"22\"/><circle cx=\"540\" cy=\"250\" r=\"22\"/></g><circle cx=\"170\" cy=\"250\" r=\"13\" fill=\"#3e8ef7\"/><path d=\"m300 291 12 9-12 9\" fill=\"none\" stroke=\"#7055d9\" stroke-width=\"3\" stroke-linecap=\"round\"/><text x=\"230\" y=\"328\" fill=\"#7055d9\" font-family=\"PingFang SC, sans-serif\" font-size=\"16\">电子在电场中漂移</text><text x=\"400\" y=\"82\" text-anchor=\"middle\" fill=\"#d45543\" font-family=\"PingFang SC, sans-serif\" font-size=\"16\">碰撞后晶格振动增强</text><text x=\"570\" y=\"356\" text-anchor=\"middle\" fill=\"#9b6931\" font-family=\"PingFang SC, sans-serif\" font-size=\"16\">宏观上表现为温度升高</text></svg>"
+      },
+      "experiment": null,
+      "videoLinks": [
+        {
+          "id": "joule-heating-video-1",
+          "title": "电子为什么能让电阻发热？",
+          "url": "https://www.bilibili.com/video/BV16uBdYZEL7",
+          "embedUrl": "https://player.bilibili.com/player.html?bvid=BV16uBdYZEL7&page=1&autoplay=0",
+          "platform": "bilibili",
+          "author": "李皆宁",
+          "thumbnailUrl": "https://i0.hdslb.com/bfs/archive/95e3a74108b81ad38376ff73729ef787da83b01f.jpg",
+          "durationSeconds": 193,
+          "publishedAt": "2024-11-27",
+          "queryDate": "2026-10-26",
+          "relevanceScore": 48.8,
+          "selectionRationale": "直接回答电子为什么让电阻发热，与灯丝焦耳热这一层完全对应。"
+        }
+      ]
+    },
+    {
+      "id": "electron-drift",
+      "parentId": "joule-heating",
+      "type": "mechanism",
+      "question": "灯丝里的电子为什么会定向移动？",
+      "label": "从随机运动到电子漂移",
+      "answer": "灯丝两端存在电场，电场持续推动自由电子，使杂乱热运动上叠加出方向一致的缓慢漂移。",
+      "summary": "电子不是被电源瞬间“灌满”灯丝，而是在原有随机运动中增加一个很小的定向速度。",
+      "nextQuestion": "为什么电压能够在导线中建立电场并推动电子？",
+      "knowledge": "金属导线中有大量可以移动的自由电子。没有电场时，电子的运动方向随机，平均位移几乎为零；接通电源后，电场使所有电子在随机热运动上叠加一个很慢、方向一致的漂移。真正传递能量和信号的是电场变化的传播，而不是某一个电子以光速从电源跑到灯泡。",
+      "facts": [
+        "金属中的自由电子本来就以较高速度做无规则热运动。",
+        "外加电场使随机运动叠加出很小的定向漂移，形成电流。",
+        "电子的平均漂移速度通常远小于光速，但电场变化可以在导线中快速传播。"
+      ],
+      "tags": [
+        "电流",
+        "电子漂移",
+        "电场"
+      ],
+      "analogy": {
+        "title": "雨滴被稳定的风吹出斜线",
+        "scene": "雨滴本来朝各个方向下落，忽然遇到一阵稳定的风，每滴雨原本杂乱的位置变化上就多了一点同向偏移。",
+        "mappings": [
+          {
+            "familiar": "持续吹动的风",
+            "concept": "电场"
+          },
+          {
+            "familiar": "雨滴无序的随机运动",
+            "concept": "电子无规则热运动"
+          },
+          {
+            "familiar": "所有雨滴共同增加的斜向偏移",
+            "concept": "电子漂移"
+          },
+          {
+            "familiar": "风的信息很快传开，雨滴本身却移动得慢",
+            "concept": "信号传播速度与电子漂移速度不同"
+          }
+        ],
+        "limit": "风靠空气推动雨滴；电场直接作用于电荷，电子漂移通常很慢，不能把通电理解成电子瞬间跑到灯泡。",
+        "visual": {
+          "kind": "image",
+          "src": "media/bulb-glow/rain-wind-analogy.svg",
+          "alt": "杂乱下落的雨滴被稳定的风吹出一个共同偏移",
+          "caption": "随机运动上叠加的小偏移，对应电子在热运动上叠加的漂移。"
+        }
+      },
+      "visual": {
+        "kind": "manim",
+        "sceneSource": "media/bulb-glow/electron-drift.py",
+        "sceneClass": "ElectronDrift",
+        "videoSrc": "media/bulb-glow/electron-drift/electron-drift.webm",
+        "posterSrc": "media/bulb-glow/electron-drift/electron-drift.webp",
+        "durationSeconds": 9.27,
+        "alt": "电子在无电场时随机运动，有电场后叠加定向漂移",
+        "caption": "随机热运动叠加电场驱动的缓慢漂移，形成电流。",
+        "transcript": [
+          {
+            "start": 0,
+            "end": 1.7,
+            "text": "没有电场时，电子主要做方向随机的热运动。"
+          },
+          {
+            "start": 1.7,
+            "end": 3.3,
+            "text": "随机运动的平均位移接近零，不形成宏观电流。"
+          },
+          {
+            "start": 3.3,
+            "end": 5.1,
+            "text": "电场出现后，电子获得一个很小的定向漂移。"
+          },
+          {
+            "start": 5.1,
+            "end": 7.7,
+            "text": "随机热运动叠加定向漂移，便形成电流。"
+          }
+        ],
+        "fallbackSvg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 800 450\" role=\"img\" aria-labelledby=\"title desc\">\n  <title id=\"title\">电子热运动与定向漂移</title>\n  <desc id=\"desc\">没有电场时电子运动方向随机；加入电场后，杂乱运动上叠加出整体向前的漂移。</desc>\n  <defs>\n    <linearGradient id=\"bg\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\">\n      <stop offset=\"0\" stop-color=\"#fbfaff\"/>\n      <stop offset=\"1\" stop-color=\"#eee9ff\"/>\n    </linearGradient>\n    <marker id=\"violet-arrow\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\">\n      <path d=\"M0 0 10 5 0 10Z\" fill=\"#7055d9\"/>\n    </marker>\n    <marker id=\"blue-arrow\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\">\n      <path d=\"M0 0 10 5 0 10Z\" fill=\"#3e8ef7\"/>\n    </marker>\n  </defs>\n  <rect width=\"800\" height=\"450\" rx=\"28\" fill=\"url(#bg)\"/>\n  <text x=\"52\" y=\"66\" fill=\"#26213a\" font-family=\"PingFang SC, sans-serif\" font-size=\"28\" font-weight=\"750\">电子漂移：随机运动上叠加整体方向</text>\n  <text x=\"52\" y=\"94\" fill=\"#77718b\" font-family=\"PingFang SC, sans-serif\" font-size=\"14\">电子不是从电源“发射”出来，而是在原有热运动上获得很小的平均速度。</text>\n\n  <g transform=\"translate(54 128)\">\n    <rect width=\"326\" height=\"240\" rx=\"22\" fill=\"#fff\" stroke=\"#e2dcf2\"/>\n    <text x=\"24\" y=\"35\" fill=\"#3a3450\" font-family=\"PingFang SC, sans-serif\" font-size=\"17\" font-weight=\"750\">没有电场</text>\n    <path d=\"M54 162c30-70 57 52 88-18s53 62 83-15 43 45 66-7\" fill=\"none\" stroke=\"#8e7adf\" stroke-width=\"3\" stroke-linecap=\"round\"/>\n    <circle cx=\"54\" cy=\"162\" r=\"10\" fill=\"#3e8ef7\"/>\n    <text x=\"24\" y=\"207\" fill=\"#77718b\" font-family=\"PingFang SC, sans-serif\" font-size=\"13\">方向不断改变，平均位移接近 0</text>\n  </g>\n\n  <g transform=\"translate(420 128)\">\n    <rect width=\"326\" height=\"240\" rx=\"22\" fill=\"#fff\" stroke=\"#e2dcf2\"/>\n    <text x=\"24\" y=\"35\" fill=\"#3a3450\" font-family=\"PingFang SC, sans-serif\" font-size=\"17\" font-weight=\"750\">有电场</text>\n    <path d=\"M54 162c30-55 57 42 88-12s53 49 83-10 43 35 66-4\" fill=\"none\" stroke=\"#b9a9e7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/>\n    <path d=\"M54 162c66 0 132 0 237-6\" fill=\"none\" stroke=\"#3e8ef7\" stroke-width=\"4\" stroke-linecap=\"round\" marker-end=\"url(#blue-arrow)\"/>\n    <path d=\"M52 91h230\" stroke=\"#7055d9\" stroke-width=\"2\" marker-end=\"url(#violet-arrow)\"/>\n    <text x=\"146\" y=\"82\" fill=\"#7055d9\" font-family=\"PingFang SC, sans-serif\" font-size=\"12\">电场 E</text>\n    <text x=\"24\" y=\"207\" fill=\"#77718b\" font-family=\"PingFang SC, sans-serif\" font-size=\"13\">随机热运动 + 缓慢漂移 = 电流</text>\n  </g>\n\n  <rect x=\"54\" y=\"391\" width=\"692\" height=\"30\" rx=\"15\" fill=\"#ffffffc4\" stroke=\"#e4def2\"/>\n  <text x=\"400\" y=\"411\" text-anchor=\"middle\" fill=\"#5d566e\" font-family=\"PingFang SC, sans-serif\" font-size=\"12\">\n    电子的平均漂移速度很小，但电场变化能够迅速沿导线传播。\n  </text>\n</svg>\n"
+      },
+      "experiment": null,
+      "videoLinks": [
+        {
+          "id": "electron-drift-video-1",
+          "title": "#好题分享 验电器电流和电荷定向移动的方向",
+          "url": "https://www.bilibili.com/video/BV1Tyaf6FEcp",
+          "embedUrl": "https://player.bilibili.com/player.html?bvid=BV1Tyaf6FEcp&page=1&autoplay=0",
+          "platform": "bilibili",
+          "author": "讲物理的张老师",
+          "thumbnailUrl": "https://i2.hdslb.com/bfs/archive/be87c486ca361e429a62a90f3fd0fd8bccc9f101.jpg",
+          "durationSeconds": 229,
+          "publishedAt": "2026-09-30",
+          "queryDate": "2026-10-26",
+          "relevanceScore": 51.4,
+          "selectionRationale": "通过验电器与电流方向问题，辅助理解电荷定向移动和电流方向。"
+        }
+      ]
+    },
+    {
+      "id": "voltage",
+      "parentId": "electron-drift",
+      "type": "principle",
+      "question": "为什么电压能够在导线中建立电场并推动电子？",
+      "label": "电势差就是能量差",
+      "answer": "电压是单位电荷的电势能差；两端电势不同形成电场，电场对电荷做功，使电荷向低电势方向运动。",
+      "summary": "电压不是“电子的数量”，而是每单位电荷可转换的能量差。这个差异在空间中表现为电场。",
+      "nextQuestion": "灯丝两端的电压又是从哪里来的？",
+      "knowledge": "电压是两点之间的电势差，表示单位电荷从一点移动到另一点时电势能的变化。电势差在空间中对应电场；电场对电荷做功 qΔV。导线接通后，电源维持两端电势差，电场便在整条闭合回路中驱动电荷。",
+      "facts": [
+        "电压描述单位电荷的电势能差，不是电子数量。",
+        "电势沿电场方向降低，电荷在电场中可获得或失去电势能。",
+        "仅有一条导线还不够，持续电流需要闭合回路与能够维持电势差的电源。"
+      ],
+      "tags": [
+        "电压",
+        "电势差",
+        "电场"
+      ],
+      "analogy": {
+        "title": "高低两个水池之间的压力差",
+        "scene": "两个水池用细管连通，水位差让水有从高往低流动的倾向；只有管路接通，水才会真正持续流动。",
+        "mappings": [
+          {
+            "familiar": "水位差",
+            "concept": "电势差"
+          },
+          {
+            "familiar": "高处的水具有的势能",
+            "concept": "电荷的电势能"
+          },
+          {
+            "familiar": "接通的细管",
+            "concept": "闭合导体"
+          },
+          {
+            "familiar": "水从高处流向低处",
+            "concept": "正电荷向低电势运动"
+          }
+        ],
+        "limit": "水位差依靠重力，电压不一定要求电荷先聚成一大池；电压描述的是单位电荷可转换的能量差。",
+        "visual": {
+          "kind": "image",
+          "src": "media/bulb-glow/water-levels-analogy.svg",
+          "alt": "高水位水池通过连通管流向低水位水池",
+          "caption": "水位差像电压，接通的管子像导体。"
+        }
+      },
+      "visual": {
+        "kind": "manim",
+        "sceneSource": "media/bulb-glow/voltage-field.py",
+        "sceneClass": "VoltageField",
+        "videoSrc": "media/bulb-glow/voltage-field/voltage-field.webm",
+        "posterSrc": "media/bulb-glow/voltage-field/voltage-field.webp",
+        "durationSeconds": 7.4,
+        "alt": "电势差建立电场，电场推动电荷并做功",
+        "caption": "电压是电势能差，电场把电势能转换为电荷的动能和内能。",
+        "transcript": [
+          {
+            "start": 0,
+            "end": 1.6,
+            "text": "电源维持两端的电势差。"
+          },
+          {
+            "start": 1.6,
+            "end": 3.2,
+            "text": "电势差在空间中表现为电场。"
+          },
+          {
+            "start": 3.2,
+            "end": 5.0,
+            "text": "电场对电荷施加作用并做功。"
+          },
+          {
+            "start": 5.0,
+            "end": 7.2,
+            "text": "电荷获得或失去电势能，能量发生转换。"
+          }
+        ],
+        "fallbackSvg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 800 450\" role=\"img\" aria-labelledby=\"title desc\">\n  <title id=\"title\">电压、电场和电势能</title>\n  <desc id=\"desc\">电源维持两点之间的电势差，产生电场；电场对电荷做功。</desc>\n  <defs>\n    <linearGradient id=\"bg\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\">\n      <stop offset=\"0\" stop-color=\"#fbfaff\"/>\n      <stop offset=\"1\" stop-color=\"#efebff\"/>\n    </linearGradient>\n    <marker id=\"field\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\">\n      <path d=\"M0 0 10 5 0 10Z\" fill=\"#7055d9\"/>\n    </marker>\n  </defs>\n  <rect width=\"800\" height=\"450\" rx=\"28\" fill=\"url(#bg)\"/>\n  <text x=\"52\" y=\"66\" fill=\"#26213a\" font-family=\"PingFang SC, sans-serif\" font-size=\"28\" font-weight=\"750\">电压不是电子数量，而是电势能差</text>\n  <text x=\"52\" y=\"94\" fill=\"#77718b\" font-family=\"PingFang SC, sans-serif\" font-size=\"14\">两端电势不同，空间中便出现电场；电场对电荷做功。</text>\n\n  <g transform=\"translate(72 133)\">\n    <rect width=\"410\" height=\"225\" rx=\"22\" fill=\"#fff\" stroke=\"#e2dcf2\"/>\n    <rect x=\"45\" y=\"42\" width=\"16\" height=\"138\" rx=\"8\" fill=\"#f0a24b\"/>\n    <rect x=\"349\" y=\"42\" width=\"16\" height=\"138\" rx=\"8\" fill=\"#5ba8f5\"/>\n    <text x=\"53\" y=\"26\" text-anchor=\"middle\" fill=\"#d78532\" font-family=\"PingFang SC, sans-serif\" font-size=\"18\" font-weight=\"800\">+</text>\n    <text x=\"357\" y=\"26\" text-anchor=\"middle\" fill=\"#398bd9\" font-family=\"PingFang SC, sans-serif\" font-size=\"18\" font-weight=\"800\">−</text>\n    <g stroke=\"#7055d9\" stroke-width=\"2\" marker-end=\"url(#field)\">\n      <path d=\"M79 72h244\"/><path d=\"M79 111h244\"/><path d=\"M79 150h244\"/>\n    </g>\n    <text x=\"205\" y=\"195\" text-anchor=\"middle\" fill=\"#7055d9\" font-family=\"PingFang SC, sans-serif\" font-size=\"14\">电场 E</text>\n    <path d=\"M53 208h8m-4-4v8M349 208h8m-4-4v8\" stroke=\"#aaa2bb\" stroke-width=\"2\"/>\n    <text x=\"201\" y=\"220\" text-anchor=\"middle\" fill=\"#77718b\" font-family=\"PingFang SC, sans-serif\" font-size=\"11\">V = ΔU / q</text>\n  </g>\n\n  <g transform=\"translate(513 133)\">\n    <rect width=\"215\" height=\"225\" rx=\"22\" fill=\"#252039\"/>\n    <text x=\"22\" y=\"38\" fill=\"#fff\" font-family=\"PingFang SC, sans-serif\" font-size=\"15\" font-weight=\"750\">电荷移动</text>\n    <path d=\"M48 150h118\" stroke=\"#ffffff25\" stroke-width=\"8\" stroke-linecap=\"round\"/>\n    <circle cx=\"77\" cy=\"150\" r=\"15\" fill=\"#3e8ef7\"/>\n    <text x=\"77\" y=\"182\" text-anchor=\"middle\" fill=\"#fff\" font-family=\"PingFang SC, sans-serif\" font-size=\"11\">q</text>\n    <path d=\"M101 150h58\" stroke=\"#f0a24b\" stroke-width=\"3\" marker-end=\"url(#field)\"/>\n    <text x=\"22\" y=\"210\" fill=\"#ffffffb8\" font-family=\"PingFang SC, sans-serif\" font-size=\"11\">电场做功 qΔV</text>\n  </g>\n</svg>\n"
+      },
+      "experiment": null,
+      "videoLinks": [
+        {
+          "id": "voltage-video-1",
+          "title": "初三物理：电学中的电势和电压（下）",
+          "url": "https://www.bilibili.com/video/BV1oQ4y1r7Ri",
+          "embedUrl": "https://player.bilibili.com/player.html?bvid=BV1oQ4y1r7Ri&page=1&autoplay=0",
+          "platform": "bilibili",
+          "author": "物理哟",
+          "thumbnailUrl": "https://i1.hdslb.com/bfs/archive/a4cfbca96b28c62e53e2d66d63eb7f38973abfad.jpg",
+          "durationSeconds": 569,
+          "publishedAt": "2021-09-24",
+          "queryDate": "2026-10-26",
+          "relevanceScore": 39.5,
+          "selectionRationale": "系统解释电势和电压，与本节点“电势能差驱动电荷”的核心问题对应。"
+        }
+      ]
+    },
+    {
+      "id": "battery",
+      "parentId": "voltage",
+      "type": "foundation",
+      "question": "灯丝两端的电压又是从哪里来的？",
+      "label": "电源分离电荷",
+      "answer": "电池内部化学反应把电子从一端转移到另一端，电荷积累形成电势差，进而建立驱动电流的电场。",
+      "summary": "电源像一个持续搬运电荷的泵。没有完整的闭合电路时，电荷积累产生的电场会很快抵消化学驱动力。",
+      "nextQuestion": "为什么电池里的化学反应能持续把电荷分开？",
+      "knowledge": "电池利用电极界面的氧化还原反应转移电子。一个电极更容易失去电子，另一个电极更容易得到电子；电子经由外电路流动，离子则在电解质内部迁移以维持电中性。化学反应持续补充被外电路消耗的电荷分离，从而维持电极间的电势差。",
+      "facts": [
+        "原电池由两个不同电极、电解质和外部电路组成。",
+        "氧化反应释放电子，还原反应接收电子，外电路承担电子传输。",
+        "电池的电动势来自电化学反应的驱动力，而不是导线本身储存了电子。"
+      ],
+      "tags": [
+        "电池",
+        "化学反应",
+        "电势差"
+      ],
+      "analogy": {
+        "title": "水泵把水重新送回高处",
+        "scene": "水泵不能凭空造水，它消耗能量把低处的水搬回高处，从而持续维持两端的水位差。",
+        "mappings": [
+          {
+            "familiar": "持续运转的水泵",
+            "concept": "电池"
+          },
+          {
+            "familiar": "把水搬回高处",
+            "concept": "化学反应分离电荷"
+          },
+          {
+            "familiar": "被维持的水位差",
+            "concept": "正负电极间的电势差"
+          },
+          {
+            "familiar": "水泵消耗的能量",
+            "concept": "电池中的化学自由能"
+          }
+        ],
+        "limit": "水泵搬的是水；电池转移电子并让离子在内部迁移，二者相似的是维持“落差”，不是搬运同一种东西。",
+        "visual": {
+          "kind": "image",
+          "src": "media/bulb-glow/water-pump-analogy.svg",
+          "alt": "水泵把低处的水搬回高处，持续维持水位差",
+          "caption": "泵消耗能量维持落差；电池消耗化学自由能维持电势差。"
+        }
+      },
+      "visual": {
+        "kind": "manim",
+        "sceneSource": "media/bulb-glow/battery-voltage.py",
+        "sceneClass": "BatteryVoltage",
+        "videoSrc": "media/bulb-glow/battery-voltage/battery-voltage.webm",
+        "posterSrc": "media/bulb-glow/battery-voltage/battery-voltage.webp",
+        "durationSeconds": 10.0,
+        "alt": "电池内部反应分离电荷，电子走外电路，离子在内部迁移",
+        "caption": "氧化还原反应持续分离电荷，维持电池两端的电势差。",
+        "transcript": [
+          {
+            "start": 0,
+            "end": 1.6,
+            "text": "电池内部有两个不同的电极。"
+          },
+          {
+            "start": 1.6,
+            "end": 3.5,
+            "text": "氧化还原反应转移电子，形成电荷分离。"
+          },
+          {
+            "start": 3.5,
+            "end": 5.7,
+            "text": "电子经过外电路运动，离子在电解液中迁移。"
+          },
+          {
+            "start": 5.7,
+            "end": 8.1,
+            "text": "持续的电荷分离维持电池两端的电压。"
+          }
+        ],
+        "fallbackSvg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 800 450\" role=\"img\" aria-labelledby=\"title desc\">\n  <title id=\"title\">电池如何建立电压</title>\n  <desc id=\"desc\">电池内部氧化还原反应转移电子，外部电路让电子流动，离子在电解液中迁移。</desc>\n  <defs>\n    <linearGradient id=\"bg\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\">\n      <stop offset=\"0\" stop-color=\"#fbfaff\"/>\n      <stop offset=\"1\" stop-color=\"#efeaff\"/>\n    </linearGradient>\n    <marker id=\"electron\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\">\n      <path d=\"M0 0 10 5 0 10Z\" fill=\"#3e8ef7\"/>\n    </marker>\n    <marker id=\"ion\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\">\n      <path d=\"M0 0 10 5 0 10Z\" fill=\"#2f8b6d\"/>\n    </marker>\n  </defs>\n  <rect width=\"800\" height=\"450\" rx=\"28\" fill=\"url(#bg)\"/>\n  <text x=\"52\" y=\"66\" fill=\"#26213a\" font-family=\"PingFang SC, sans-serif\" font-size=\"28\" font-weight=\"750\">电池像电荷泵：反应维持两端电势差</text>\n  <text x=\"52\" y=\"94\" fill=\"#77718b\" font-family=\"PingFang SC, sans-serif\" font-size=\"14\">电子走外电路，离子走电解液，两条路径共同维持电中性。</text>\n\n  <g transform=\"translate(95 132)\">\n    <rect width=\"610\" height=\"250\" rx=\"24\" fill=\"#fff\" stroke=\"#e2dcf2\"/>\n    <rect x=\"80\" y=\"65\" width=\"22\" height=\"150\" rx=\"9\" fill=\"#f0a24b\"/>\n    <rect x=\"508\" y=\"65\" width=\"22\" height=\"150\" rx=\"9\" fill=\"#5ba8f5\"/>\n    <text x=\"91\" y=\"48\" text-anchor=\"middle\" fill=\"#c77a2c\" font-family=\"PingFang SC, sans-serif\" font-size=\"13\" font-weight=\"750\">负极 · 氧化</text>\n    <text x=\"519\" y=\"48\" text-anchor=\"middle\" fill=\"#398bd9\" font-family=\"PingFang SC, sans-serif\" font-size=\"13\" font-weight=\"750\">正极 · 还原</text>\n    <rect x=\"102\" y=\"111\" width=\"406\" height=\"68\" rx=\"34\" fill=\"#f0fbf6\"/>\n    <text x=\"305\" y=\"151\" text-anchor=\"middle\" fill=\"#2f8b6d\" font-family=\"PingFang SC, sans-serif\" font-size=\"13\">电解液中的离子迁移</text>\n    <path d=\"M165 145h250\" stroke=\"#2f8b6d\" stroke-width=\"2.5\" marker-end=\"url(#ion)\"/>\n    <path d=\"M91 65V26h438V65\" fill=\"none\" stroke=\"#3e8ef7\" stroke-width=\"3\" marker-end=\"url(#electron)\"/>\n    <circle cx=\"180\" cy=\"26\" r=\"8\" fill=\"#3e8ef7\"/>\n    <circle cx=\"254\" cy=\"26\" r=\"8\" fill=\"#3e8ef7\"/>\n    <circle cx=\"328\" cy=\"26\" r=\"8\" fill=\"#3e8ef7\"/>\n    <circle cx=\"402\" cy=\"26\" r=\"8\" fill=\"#3e8ef7\"/>\n    <text x=\"309\" y=\"16\" text-anchor=\"middle\" fill=\"#398bd9\" font-family=\"PingFang SC, sans-serif\" font-size=\"11\">外电路：电子流动</text>\n    <text x=\"305\" y=\"218\" text-anchor=\"middle\" fill=\"#6c657b\" font-family=\"PingFang SC, sans-serif\" font-size=\"12\">反应持续补充被外电路消耗的电荷分离</text>\n  </g>\n</svg>\n"
+      },
+      "experiment": null,
+      "videoLinks": [
+        {
+          "id": "battery-video-1",
+          "title": "电池的电压是怎么形成的？",
+          "url": "https://www.bilibili.com/video/BV1wZbFeKEJQ",
+          "embedUrl": "https://player.bilibili.com/player.html?bvid=BV1wZbFeKEJQ&page=1&autoplay=0",
+          "platform": "bilibili",
+          "author": "锂的时代2015",
+          "thumbnailUrl": "https://i1.hdslb.com/bfs/archive/a22d11ad2664e1aa4b70b7d39fd63c455cd1e611.jpg",
+          "durationSeconds": 72,
+          "publishedAt": "2024-09-20",
+          "queryDate": "2026-10-26",
+          "relevanceScore": 51.7,
+          "selectionRationale": "用 72 秒直接回答电池电压如何形成，和本节点的因果关系高度一致。"
+        }
+      ]
+    },
+    {
+      "id": "electrochemical-energy",
+      "parentId": "battery",
+      "type": "boundary",
+      "question": "为什么电池里的化学反应能持续把电荷分开？",
+      "label": "化学自由能驱动电荷转移",
+      "answer": "反应物与产物的化学自由能不同，体系通过电子转移和离子迁移降低自由能，并把差值作为电功输出。",
+      "summary": "电池维持电压的根源是热力学驱动力。更底层还要用统计力学和量子化学解释反应速率、能垒与材料中的电子结构。",
+      "nextQuestion": null,
+      "knowledge": "电化学反应能够向外做电功，是因为反应物与产物的吉布斯自由能不同。对于可逆电化学过程，ΔG = -nFE：自由能降低越多，电池能够提供的电动势越大。反应进行到平衡或反应物耗尽时，宏观电压会下降。更细的速率与材料差异需要量子化学和统计力学解释。",
+      "facts": [
+        "恒温恒压下的自发反应通常伴随吉布斯自由能降低。",
+        "电化学自由能变化与电池电动势通过 ΔG = -nFE 联系。",
+        "实际电池会受反应物耗尽、内阻、副反应和温度影响。"
+      ],
+      "tags": [
+        "化学能",
+        "自由能",
+        "电化学"
+      ],
+      "analogy": {
+        "title": "水库里的水向坝底释放能量",
+        "scene": "水库里的水处在高处，流向低处时能做功；水量和落差越大，可释放的能量越多，但水库不会无限供水。",
+        "mappings": [
+          {
+            "familiar": "可下降的蓄水",
+            "concept": "吉布斯自由能差"
+          },
+          {
+            "familiar": "水流带动机器做功",
+            "concept": "电池输出电功"
+          },
+          {
+            "familiar": "水位落差",
+            "concept": "电池电动势"
+          },
+          {
+            "familiar": "水放完或落差消失",
+            "concept": "反应物耗尽或反应接近平衡"
+          }
+        ],
+        "limit": "水库是经典的能量系统；电化学自由能还受温度、浓度、反应路径和量子层面的材料结构影响。",
+        "visual": {
+          "kind": "image",
+          "src": "media/bulb-glow/reservoir-analogy.svg",
+          "alt": "高处水库向低处放水并带动机械",
+          "caption": "水量和落差决定可释放能量，反应物和自由能差决定电池可输出的电功。"
+        }
+      },
+      "visual": {
+        "kind": "image",
+        "src": "media/bulb-glow/electrochemical-energy.svg",
+        "alt": "反应物与产物的吉布斯自由能差驱动电子转移并输出电功",
+        "caption": "自由能下降是电池持续输出电功的热力学根源，关系可写成 ΔG = −nFE。"
+      },
+      "experiment": null,
+      "videoLinks": [
+        {
+          "id": "electrochemical-energy-video-1",
+          "title": "物理化学-可逆电池的书写规则，可逆电池的设计，由电池表达式写出电池反应，由电池反应设计可逆电池，盐桥",
+          "url": "https://www.bilibili.com/video/BV1Jc411X7YR",
+          "embedUrl": "https://player.bilibili.com/player.html?bvid=BV1Jc411X7YR&page=1&autoplay=0",
+          "platform": "bilibili",
+          "author": "殇雪千雨",
+          "thumbnailUrl": "https://i2.hdslb.com/bfs/archive/8692cfd40e8f50679a2b2fc73e325bde9592157e.jpg",
+          "durationSeconds": 1392,
+          "publishedAt": "2023-11-12",
+          "queryDate": "2026-10-26",
+          "relevanceScore": 29.3,
+          "selectionRationale": "系统讲解可逆电池、反应与电动势，适合作为这一热力学边界的深入课程。"
+        }
+      ]
+    }
+  ]
+}

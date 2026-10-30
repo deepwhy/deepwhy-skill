@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-labelledby="title desc">
+  <title id="title">温度如何改变热辐射谱</title>
+  <desc id="desc">温度升高时热辐射增强，峰值向可见光所在的短波方向移动。</desc>
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fbfaff"/>
+      <stop offset="1" stop-color="#f0ecff"/>
+    </linearGradient>
+    <linearGradient id="visible" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ff536a"/>
+      <stop offset=".2" stop-color="#ff9a44"/>
+      <stop offset=".4" stop-color="#ffe35d"/>
+      <stop offset=".6" stop-color="#58cf83"/>
+      <stop offset=".8" stop-color="#4b9fff"/>
+      <stop offset="1" stop-color="#8a6cf1"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" rx="28" fill="url(#bg2)"/>
+  <text x="52" y="66" fill="#26213a" font-family="PingFang SC, sans-serif" font-size="28" font-weight="750">温度越高，热辐射峰越向短波移动</text>
+  <text x="52" y="94" fill="#77718b" font-family="PingFang SC, sans-serif" font-size="14">白炽灯的关键不是“有热”，而是热到可见波段足够强。</text>
+
+  <g transform="translate(62 126)">
+    <rect width="676" height="268" rx="22" fill="#fff" stroke="#e2dcf2"/>
+    <path d="M64 220H616M64 220V36" stroke="#bab2ca" stroke-width="1.5"/>
+    <path d="M64 192C180 184 245 108 314 88 382 68 435 103 500 134 544 154 582 170 616 178" fill="none" stroke="#8e7adf" stroke-width="3"/>
+    <path d="M64 211C180 205 225 168 278 132 328 98 370 53 419 51 469 49 520 98 565 137 588 157 604 171 616 180" fill="none" stroke="#f0a24b" stroke-width="3"/>
+    <path d="M64 218C170 216 218 200 260 175 311 145 345 111 380 77 407 51 433 38 458 36 490 34 526 62 560 103 585 133 602 165 616 178" fill="none" stroke="#e56b58" stroke-width="3"/>
+    <rect x="386" y="36" width="118" height="184" fill="url(#visible)" opacity=".13"/>
+    <text x="445" y="30" text-anchor="middle" fill="#6a6280" font-family="PingFang SC, sans-serif" font-size="12">可见光</text>
+    <text x="616" y="244" text-anchor="end" fill="#837b92" font-family="PingFang SC, sans-serif" font-size="12">波长 →</text>
+    <text x="476" y="195" fill="#8e7adf" font-family="PingFang SC, sans-serif" font-size="12">温度较低</text>
+    <text x="468" y="131" fill="#d2873e" font-family="PingFang SC, sans-serif" font-size="12">温度升高</text>
+    <text x="458" y="67" fill="#d65a4b" font-family="PingFang SC, sans-serif" font-size="12">更高温</text>
+  </g>
+  <g transform="translate(62 405)">
+    <rect width="676" height="26" rx="13" fill="#ffffffb8" stroke="#e5dff3"/>
+    <text x="338" y="18" text-anchor="middle" fill="#5e576d" font-family="PingFang SC, sans-serif" font-size="12">
+      热辐射覆盖许多波长；只有进入可见波段的能量才会被我们看成光。
+    </text>
+  </g>
+</svg>

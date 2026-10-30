@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 420" role="img" aria-labelledby="title desc">
+  <title id="title">白炽灯如何把电能变成可见光</title>
+  <desc id="desc">电池维持电压，电场推动电子，电子碰撞让灯丝发热，炽热灯丝的热辐射中包含可见光。</desc>
+  <defs>
+    <radialGradient id="glow">
+      <stop offset="0" stop-color="#ffd37a" stop-opacity=".95"/>
+      <stop offset=".45" stop-color="#ff9d4d" stop-opacity=".42"/>
+      <stop offset="1" stop-color="#ff8a3d" stop-opacity="0"/>
+    </radialGradient>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 10 5 0 10Z" fill="#7055d9"/>
+    </marker>
+  </defs>
+
+  <g transform="translate(20 44)">
+    <rect width="236" height="274" rx="24" fill="#fff" stroke="#ded6f3" stroke-width="2"/>
+    <rect x="32" y="38" width="72" height="94" rx="16" fill="#7055d9"/>
+    <rect x="104" y="56" width="15" height="58" rx="6" fill="#b8addd"/>
+    <path d="M120 85h54" stroke="#7055d9" stroke-width="4" marker-end="url(#arrow)"/>
+    <text x="28" y="167" fill="#5b42c1" font-family="PingFang SC, sans-serif" font-size="24" font-weight="800">电池维持电压</text>
+    <text x="28" y="201" fill="#5c556d" font-family="PingFang SC, sans-serif" font-size="18">化学反应搬移电荷</text>
+    <text x="28" y="229" fill="#77718b" font-family="PingFang SC, sans-serif" font-size="18">两端形成电势差</text>
+  </g>
+
+  <path d="M264 182h24" stroke="#7055d9" stroke-width="4" marker-end="url(#arrow)"/>
+
+  <g transform="translate(296 44)">
+    <rect width="236" height="274" rx="24" fill="#fff" stroke="#ded6f3" stroke-width="2"/>
+    <circle cx="48" cy="66" r="15" fill="#3e8ef7"/>
+    <circle cx="108" cy="106" r="15" fill="#3e8ef7"/>
+    <circle cx="172" cy="60" r="15" fill="#3e8ef7"/>
+    <path d="M32 142h166" stroke="#3e8ef7" stroke-width="4" marker-end="url(#arrow)"/>
+    <text x="28" y="194" fill="#357cae" font-family="PingFang SC, sans-serif" font-size="24" font-weight="800">电场推动电子</text>
+    <text x="28" y="226" fill="#5c556d" font-family="PingFang SC, sans-serif" font-size="18">随机热运动上</text>
+    <text x="28" y="252" fill="#5c556d" font-family="PingFang SC, sans-serif" font-size="18">叠加共同漂移</text>
+  </g>
+
+  <path d="M540 182h24" stroke="#7055d9" stroke-width="4" marker-end="url(#arrow)"/>
+
+  <g transform="translate(572 44)">
+    <rect width="236" height="274" rx="24" fill="#fff8f1" stroke="#f1d6bf" stroke-width="2"/>
+    <path d="M30 90h70" stroke="#d8d0eb" stroke-width="14" stroke-linecap="round"/>
+    <circle cx="38" cy="90" r="11" fill="#3e8ef7"/>
+    <circle cx="160" cy="90" r="14" fill="#e98545"/>
+    <path d="M172 90h36" stroke="#f0a24b" stroke-width="4" marker-end="url(#arrow)"/>
+    <text x="28" y="194" fill="#d96e2e" font-family="PingFang SC, sans-serif" font-size="24" font-weight="800">碰撞产生焦耳热</text>
+    <text x="28" y="226" fill="#5c556d" font-family="PingFang SC, sans-serif" font-size="18">电子把定向能量</text>
+    <text x="28" y="252" fill="#5c556d" font-family="PingFang SC, sans-serif" font-size="18">交给晶格振动</text>
+  </g>
+
+  <path d="M816 182h24" stroke="#7055d9" stroke-width="4" marker-end="url(#arrow)"/>
+
+  <g transform="translate(848 44)">
+    <rect width="232" height="274" rx="24" fill="#252039"/>
+    <circle cx="74" cy="92" r="64" fill="url(#glow)"/>
+    <path d="M44 96c10-20 20 20 30 0s20 20 30 0 20 20 30 0" fill="none" stroke="#ffb454" stroke-width="7" stroke-linecap="round"/>
+    <text x="26" y="194" fill="#fff" font-family="PingFang SC, sans-serif" font-size="24" font-weight="800">热辐射成光</text>
+    <text x="26" y="226" fill="#ffffffb8" font-family="PingFang SC, sans-serif" font-size="18">炽热灯丝发出</text>
+    <text x="26" y="252" fill="#ffffffb8" font-family="PingFang SC, sans-serif" font-size="18">一小段可见光</text>
+  </g>
+
+  <text x="550" y="373" text-anchor="middle" fill="#5c556d" font-family="PingFang SC, sans-serif" font-size="18">
+    化学能 → 电势差 → 电子漂移 → 焦耳热 → 热辐射 → 可见光
+  </text>
+</svg>

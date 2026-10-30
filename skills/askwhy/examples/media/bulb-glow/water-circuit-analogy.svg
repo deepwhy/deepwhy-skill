@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-labelledby="title desc">
+  <title id="title">把电路想成环形水路</title>
+  <desc id="desc">水泵维持水路压差，水沿闭合管道循环，经过窄而粗糙的管段时使管壁升温。</desc>
+  <rect width="800" height="450" rx="28" fill="#f4fbf7"/>
+  <text x="50" y="64" fill="#285d4b" font-family="PingFang SC, sans-serif" font-size="27" font-weight="750">熟悉的水路：泵维持压差，水沿管循环</text>
+  <rect x="130" y="128" width="540" height="210" rx="42" fill="none" stroke="#b7d8e8" stroke-width="24"/>
+  <circle cx="160" cy="233" r="39" fill="#eee9ff" stroke="#7055d9" stroke-width="5"/>
+  <path d="M160 211v42M150 229l10-14 10 14" fill="none" stroke="#7055d9" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="70" y="288" fill="#7055d9" font-family="PingFang SC, sans-serif" font-size="20" font-weight="700">水泵</text>
+  <line x1="474" y1="128" x2="570" y2="128" stroke="#e98545" stroke-width="30"/>
+  <text x="522" y="181" text-anchor="middle" fill="#d96e2e" font-family="PingFang SC, sans-serif" font-size="18" font-weight="700">窄而粗糙的管段</text>
+  <g fill="#4e9dda">
+    <circle cx="250" cy="128" r="7"/><circle cx="320" cy="128" r="7"/><circle cx="390" cy="128" r="7"/>
+    <circle cx="670" cy="220" r="7"/><circle cx="570" cy="338" r="7"/><circle cx="300" cy="338" r="7"/>
+  </g>
+  <path d="M250 85h235" stroke="#4e9dda" stroke-width="3"/>
+  <path d="m477 76 12 9-12 9" fill="#4e9dda"/>
+  <text x="368" y="76" text-anchor="middle" fill="#357cae" font-family="PingFang SC, sans-serif" font-size="18">水沿闭合管路前进</text>
+  <text x="150" y="382" fill="#7055d9" font-family="PingFang SC, sans-serif" font-size="18" font-weight="700">压力高</text>
+  <text x="646" y="382" text-anchor="end" fill="#357cae" font-family="PingFang SC, sans-serif" font-size="18" font-weight="700">压力低</text>
+  <text x="400" y="425" text-anchor="middle" fill="#7a5b3f" font-family="PingFang SC, sans-serif" font-size="17">泵推动水流 → 管段阻力让管壁升温</text>
+</svg>

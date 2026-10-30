@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-labelledby="title desc">
+  <title id="title">雨滴被稳定的风吹出斜线</title>
+  <desc id="desc">雨滴本来杂乱下落，稳定的风给所有雨滴叠加一个同向偏移。</desc>
+  <rect width="800" height="450" rx="28" fill="#f4fbf7"/>
+  <text x="50" y="64" fill="#285d4b" font-family="PingFang SC, sans-serif" font-size="28" font-weight="750">雨滴被稳定的风吹出斜线</text>
+  <path d="M90 130h620" stroke="#7055d9" stroke-width="4" stroke-dasharray="12 10"/>
+  <path d="m700 121 14 9-14 9" fill="#7055d9"/>
+  <text x="400" y="112" text-anchor="middle" fill="#7055d9" font-family="PingFang SC, sans-serif" font-size="18" font-weight="700">稳定的风</text>
+  <g stroke="#4e9dda" stroke-width="5" stroke-linecap="round">
+    <path d="M180 170l40 70"/><path d="M285 150l36 78"/><path d="M390 190l38 68"/>
+    <path d="M500 160l42 76"/><path d="M610 180l36 72"/>
+  </g>
+  <g fill="#4e9dda">
+    <circle cx="220" cy="240" r="8"/><circle cx="321" cy="228" r="8"/><circle cx="428" cy="258" r="8"/>
+    <circle cx="542" cy="236" r="8"/><circle cx="646" cy="252" r="8"/>
+  </g>
+  <g stroke="#a59bad" stroke-width="2" opacity=".7">
+    <path d="M220 160l-24 50M220 160l18 38M220 160l47 28"/>
+    <path d="M542 170l-35 48M542 170l2 44M542 170l50 32"/>
+  </g>
+  <text x="174" y="336" text-anchor="middle" fill="#77718b" font-family="PingFang SC, sans-serif" font-size="17">原本方向杂乱</text>
+  <text x="624" y="342" text-anchor="middle" fill="#357cae" font-family="PingFang SC, sans-serif" font-size="17" font-weight="700">叠加共同偏移</text>
+  <text x="400" y="410" text-anchor="middle" fill="#5c6b63" font-family="PingFang SC, sans-serif" font-size="18">随机运动上叠出一个小而稳定的漂移</text>
+</svg>

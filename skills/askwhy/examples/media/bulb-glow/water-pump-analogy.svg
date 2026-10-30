@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-labelledby="title desc">
+  <title id="title">水泵把水重新送回高处</title>
+  <desc id="desc">水泵消耗能量，把低处水搬回高处，持续维持两端水位差。</desc>
+  <rect width="800" height="450" rx="28" fill="#f4fbf7"/>
+  <text x="50" y="64" fill="#285d4b" font-family="PingFang SC, sans-serif" font-size="28" font-weight="750">水泵把水重新送回高处</text>
+  <path d="M150 188v190h500V188" fill="none" stroke="#8ea69c" stroke-width="12"/>
+  <path d="M150 320h500v58H150z" fill="#9fd8f4"/>
+  <circle cx="400" cy="358" r="52" fill="#eee9ff" stroke="#7055d9" stroke-width="6"/>
+  <path d="M400 330v56M385 348l15-18 15 18" fill="none" stroke="#7055d9" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="400" y="442" text-anchor="middle" fill="#7055d9" font-family="PingFang SC, sans-serif" font-size="18" font-weight="700">水泵消耗能量，把水搬回高处</text>
+  <g fill="#4e9dda">
+    <circle cx="510" cy="284" r="9"/><circle cx="540" cy="250" r="9"/><circle cx="570" cy="216" r="9"/>
+  </g>
+  <path d="M500 302c35-16 62-48 70-86" fill="none" stroke="#4e9dda" stroke-width="4"/>
+  <text x="286" y="218" text-anchor="middle" fill="#357cae" font-family="PingFang SC, sans-serif" font-size="18" font-weight="700">持续维持水位差</text>
+</svg>

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-labelledby="title desc">
+  <title id="title">巨人和小孩坐在滑板椅上拉绳子</title>
+  <desc id="desc">巨人和小孩坐在带轮椅上拉同一根绳，双方都向中间移动，小孩的加速度更明显。</desc>
+  <rect width="800" height="450" rx="28" fill="#f4fbf7"/>
+  <text x="50" y="64" fill="#285d4b" font-family="PingFang SC, sans-serif" font-size="28" font-weight="750">巨人和小孩坐在滑板椅上拉绳子</text>
+  <circle cx="178" cy="220" r="52" fill="#7055d9"/>
+  <circle cx="178" cy="158" r="29" fill="#7055d9"/>
+  <circle cx="322" cy="270" r="28" fill="#f0a24b"/>
+  <circle cx="322" cy="230" r="17" fill="#f0a24b"/>
+  <path d="M210 205c48-8 66-8 94-5" fill="none" stroke="#7a5b3f" stroke-width="5"/>
+  <path d="M178 290h94M322 314h83" stroke="#77718b" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="200" cy="310" r="10" fill="#4e9dda"/>
+  <circle cx="252" cy="310" r="10" fill="#4e9dda"/>
+  <circle cx="337" cy="334" r="8" fill="#4e9dda"/>
+  <circle cx="377" cy="334" r="8" fill="#4e9dda"/>
+  <path d="M125 220h-50M365 270h50" stroke="#7055d9" stroke-width="3"/>
+  <path d="m75 211-14 9 14 9M415 261l14 9-14 9" fill="#7055d9"/>
+  <text x="178" y="402" text-anchor="middle" fill="#7055d9" font-family="PingFang SC, sans-serif" font-size="18" font-weight="700">质量大，加速度小</text>
+  <text x="322" y="402" text-anchor="middle" fill="#d96e2e" font-family="PingFang SC, sans-serif" font-size="18" font-weight="700">质量小，更容易加速</text>
+  <text x="250" y="135" text-anchor="middle" fill="#7a5b3f" font-family="PingFang SC, sans-serif" font-size="18" font-weight="700">同一根绳</text>
+  <text x="400" y="425" text-anchor="middle" fill="#5c6b63" font-family="PingFang SC, sans-serif" font-size="17">双方受力相同，但质量不同导致加速度不同</text>
+</svg>

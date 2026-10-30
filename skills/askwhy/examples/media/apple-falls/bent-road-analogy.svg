@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-labelledby="title desc">
+  <title id="title">地图上的弯曲公路</title>
+  <desc id="desc">地图中的道路被弯曲地形改道，行进者仍沿最自然路线前进，但路线本身弯了。</desc>
+  <rect width="800" height="450" rx="28" fill="#f4fbf7"/>
+  <text x="50" y="64" fill="#285d4b" font-family="PingFang SC, sans-serif" font-size="28" font-weight="750">地图上的弯曲公路</text>
+  <path d="M80 340c130-160 252-170 364-95s178 38 276-72" fill="none" stroke="#b8addd" stroke-width="42" stroke-linecap="round"/>
+  <path d="M80 340c130-160 252-170 364-95s178 38 276-72" fill="none" stroke="#fff" stroke-width="3" stroke-dasharray="12 10"/>
+  <path d="M106 318c132-126 225-130 330-70s166 45 250-30" fill="none" stroke="#7055d9" stroke-width="4"/>
+  <path d="m686 218 18-11-7 20" fill="#7055d9"/>
+  <circle cx="106" cy="318" r="10" fill="#f0a24b"/>
+  <text x="130" y="356" fill="#d96e2e" font-family="PingFang SC, sans-serif" font-size="18" font-weight="700">起点</text>
+  <text x="650" y="252" fill="#7055d9" font-family="PingFang SC, sans-serif" font-size="18" font-weight="700">沿路前进</text>
+  <text x="400" y="112" text-anchor="middle" fill="#77718b" font-family="PingFang SC, sans-serif" font-size="18">地形让“尽可能直”的路线看起来弯曲</text>
+  <text x="400" y="416" text-anchor="middle" fill="#5c6b63" font-family="PingFang SC, sans-serif" font-size="18">地图像时空，山体塑形像质量与能量影响曲率</text>
+</svg>

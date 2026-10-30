@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-labelledby="title desc">
+  <title id="title">拉紧的绳在钉子之间自然取直</title>
+  <desc id="desc">绳子绕过钉子约束，在受限空间中贴出尽可能短的路径，没有人推着它转弯。</desc>
+  <rect width="800" height="450" rx="28" fill="#f4fbf7"/>
+  <text x="50" y="64" fill="#285d4b" font-family="PingFang SC, sans-serif" font-size="28" font-weight="750">拉紧的绳在钉子之间自然取直</text>
+  <g fill="#b8addd">
+    <circle cx="270" cy="180" r="22"/><circle cx="420" cy="280" r="22"/><circle cx="580" cy="170" r="22"/>
+  </g>
+  <path d="M110 300l160-120 150 100 160-110 120 75" fill="none" stroke="#7055d9" stroke-width="7" stroke-linecap="round"/>
+  <circle cx="110" cy="300" r="9" fill="#f0a24b"/>
+  <circle cx="700" cy="245" r="9" fill="#f0a24b"/>
+  <text x="395" y="347" text-anchor="middle" fill="#5c6b63" font-family="PingFang SC, sans-serif" font-size="18">钉子限定了几何空间</text>
+  <text x="400" y="112" text-anchor="middle" fill="#7055d9" font-family="PingFang SC, sans-serif" font-size="18" font-weight="700">绳自然贴出最直的可行路径</text>
+  <text x="400" y="412" text-anchor="middle" fill="#5c6b63" font-family="PingFang SC, sans-serif" font-size="18">沿测地线运动像在弯曲空间里走最直路线</text>
+</svg>

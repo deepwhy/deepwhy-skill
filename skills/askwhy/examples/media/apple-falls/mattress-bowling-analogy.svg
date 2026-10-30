@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-labelledby="title desc">
+  <title id="title">保龄球压在床垫上形成凹坑</title>
+  <desc id="desc">保龄球压弯床垫，附近弹珠沿凹坑滚向球；凹坑形状反映质量分布与几何关系。</desc>
+  <rect width="800" height="450" rx="28" fill="#f4fbf7"/>
+  <text x="50" y="64" fill="#285d4b" font-family="PingFang SC, sans-serif" font-size="28" font-weight="750">保龄球压在床垫上形成凹坑</text>
+  <path d="M100 190q110 10 140 90q30 80 160 80t160-80q30-80 140-90" fill="none" stroke="#b8addd" stroke-width="20" stroke-linecap="round"/>
+  <circle cx="400" cy="275" r="70" fill="#7055d9"/>
+  <circle cx="377" cy="250" r="8" fill="#d8d0eb"/><circle cx="423" cy="250" r="8" fill="#d8d0eb"/><circle cx="400" cy="286" r="8" fill="#d8d0eb"/>
+  <circle cx="250" cy="250" r="14" fill="#f0a24b"/>
+  <path d="M265 265q50 22 72 8" fill="none" stroke="#e98545" stroke-width="4"/>
+  <path d="m329 270 16 3-10 12" fill="#e98545"/>
+  <text x="400" y="390" text-anchor="middle" fill="#5c6b63" font-family="PingFang SC, sans-serif" font-size="18">床垫凹坑对应时空曲率，弹珠路径对应自由落体</text>
+  <text x="400" y="424" text-anchor="middle" fill="#7055d9" font-family="PingFang SC, sans-serif" font-size="17">床垫只是二维示意，不是实体时空布</text>
+</svg>

@@ -1,0 +1,2473 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8f7fc">
+  <meta name="description" content="从一个问题出发，沿着一组有来源的追问探索知识。">
+  <title>苹果为什么会落地 · AskWhy</title>
+  <style>
+    :root {
+      --ink: #232039;
+      --ink-soft: #46415d;
+      --muted: #77728b;
+      --violet: #7055d9;
+      --violet-dark: #5b42c1;
+      --violet-soft: #eee9ff;
+      --violet-pale: #f7f4ff;
+      --line: #e7e2f1;
+      --line-strong: #d9d2e9;
+      --paper: #fff;
+      --paper-soft: #fbfafe;
+      --canvas: #f6f4fa;
+      --green: #2f8b6d;
+      --green-soft: #e5f5ee;
+      --amber: #b7792d;
+      --amber-soft: #fff2df;
+      --shadow: 0 18px 50px rgba(49, 37, 91, .07);
+      --shadow-soft: 0 8px 24px rgba(49, 37, 91, .06);
+      --radius-xl: 28px;
+      --radius-lg: 20px;
+      --radius-md: 14px;
+      --font: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+        "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background: var(--canvas);
+    }
+
+    body {
+      margin: 0;
+      min-width: 320px;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 8% 2%, rgba(188, 169, 255, .2), transparent 24rem),
+        radial-gradient(circle at 94% 22%, rgba(208, 246, 230, .24), transparent 22rem),
+        var(--canvas);
+      font-family: var(--font);
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    :focus-visible {
+      outline: 3px solid rgba(112, 85, 217, .34);
+      outline-offset: 3px;
+    }
+
+    .platform-sprite {
+      position: absolute;
+      width: 0;
+      height: 0;
+      overflow: hidden;
+    }
+
+    .skip-link {
+      position: fixed;
+      z-index: 100;
+      top: 10px;
+      left: 10px;
+      padding: 10px 14px;
+      border-radius: 10px;
+      color: #fff;
+      background: var(--ink);
+      transform: translateY(-150%);
+      transition: transform .18s ease;
+    }
+
+    .skip-link:focus {
+      transform: translateY(0);
+    }
+
+    .site-shell {
+      width: min(1440px, 100%);
+      margin: 0 auto;
+      padding: 22px 32px 38px;
+    }
+
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      margin-bottom: 18px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 11px;
+      border-radius: 14px;
+    }
+
+    .brand-mark {
+      display: grid;
+      width: 42px;
+      height: 42px;
+      place-items: center;
+      border-radius: 15px;
+      color: #fff;
+      background: linear-gradient(145deg, #8b73ed 0%, #5d43c4 100%);
+      box-shadow: 0 9px 22px rgba(96, 70, 193, .24);
+    }
+
+    .brand-mark svg {
+      width: 26px;
+      height: 26px;
+      overflow: visible;
+    }
+
+    .brand-name {
+      display: block;
+      font-size: 21px;
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: -.55px;
+    }
+
+    .brand-tagline {
+      display: block;
+      margin-top: 5px;
+      color: var(--muted);
+      font-size: 11px;
+      letter-spacing: .35px;
+    }
+
+    .top-actions {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+    }
+
+    .action-button {
+      display: inline-flex;
+      min-height: 42px;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 9px 14px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      color: var(--ink-soft);
+      background: rgba(255, 255, 255, .86);
+      box-shadow: 0 5px 16px rgba(49, 37, 91, .04);
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+    }
+
+    .action-button:hover {
+      border-color: var(--line-strong);
+      box-shadow: var(--shadow-soft);
+      transform: translateY(-1px);
+    }
+
+    .action-button.primary {
+      border-color: var(--violet);
+      color: #fff;
+      background: var(--violet);
+      box-shadow: 0 9px 22px rgba(112, 85, 217, .2);
+    }
+
+    .action-button svg {
+      width: 16px;
+      height: 16px;
+      flex: 0 0 auto;
+    }
+
+    .hero {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(520px, 680px);
+      align-items: center;
+      margin-bottom: 22px;
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      background:
+        radial-gradient(circle at 88% 8%, rgba(188, 169, 255, .18), transparent 22rem),
+        #fff;
+      box-shadow: 0 24px 60px rgba(49, 37, 91, .075);
+      overflow: hidden;
+    }
+
+    .hero-copy {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      min-width: 0;
+      flex-direction: column;
+      justify-content: center;
+      padding: 28px 24px 26px 32px;
+    }
+
+    .hero-category {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--violet-dark);
+      font-size: 11.5px;
+      font-weight: 760;
+    }
+
+    .hero-category::before {
+      width: 28px;
+      height: 2px;
+      border-radius: 99px;
+      background: currentColor;
+      content: "";
+    }
+
+    .hero h1 {
+      max-width: 760px;
+      margin: 10px 0;
+      font-size: clamp(32px, 3.7vw, 50px);
+      font-weight: 820;
+      line-height: 1.11;
+      letter-spacing: -1.7px;
+      text-wrap: balance;
+    }
+
+    .hero-summary {
+      max-width: 680px;
+      margin: 0;
+      color: var(--ink-soft);
+      font-size: 13.5px;
+      line-height: 1.68;
+    }
+
+    .meta-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .meta-pill {
+      display: inline-flex;
+      min-height: 29px;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 10px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: #686279;
+      background: rgba(255, 255, 255, .74);
+      font-size: 11px;
+      white-space: nowrap;
+    }
+
+    .meta-pill.accent {
+      border-color: #ddd5f6;
+      color: var(--violet-dark);
+      background: var(--violet-pale);
+    }
+
+    .hero-overview {
+      position: relative;
+      width: 100%;
+      margin: 0;
+      padding: 14px 20px;
+      background: transparent;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .hero-overview img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border: 0;
+      border-radius: 0;
+      aspect-ratio: 2.62;
+      object-fit: contain;
+      background: transparent;
+    }
+
+    .explorer-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.7fr) minmax(330px, .88fr);
+      align-items: start;
+      gap: 20px;
+    }
+
+    .panel {
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      background: rgba(255, 255, 255, .94);
+      box-shadow: var(--shadow);
+    }
+
+    .map-panel {
+      min-width: 0;
+      overflow: hidden;
+    }
+
+    .panel-heading {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 22px 24px 16px;
+    }
+
+    .panel-heading h2 {
+      margin: 0;
+      font-size: 17px;
+      font-weight: 800;
+      letter-spacing: -.25px;
+    }
+
+    .panel-heading p {
+      margin: 5px 0 0;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .mode-label {
+      flex: 0 0 auto;
+      padding: 6px 9px;
+      border: 1px solid var(--line);
+      border-radius: 9px;
+      color: var(--muted);
+      background: var(--paper-soft);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .25px;
+      white-space: nowrap;
+    }
+
+    .map-stage {
+      padding: 0 18px;
+    }
+
+    .question-map {
+      --map-height: 570px;
+      position: relative;
+      height: var(--map-height);
+      overflow: hidden;
+      border: 1px solid #eeebf5;
+      border-radius: 21px;
+      background:
+        radial-gradient(ellipse at 50% 50%, rgba(255, 255, 255, .98) 0 18%, rgba(251, 250, 255, .96) 55%, rgba(244, 240, 252, .92) 100%);
+      isolation: isolate;
+    }
+
+    .question-map::before {
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background-image: radial-gradient(rgba(174, 160, 217, .34) .8px, transparent .8px);
+      background-size: 22px 22px;
+      content: "";
+      mask-image: radial-gradient(ellipse at center, #000 0 44%, transparent 86%);
+    }
+
+    .chain-map {
+      height: auto;
+      min-height: 0;
+      overflow: visible;
+      padding: 22px;
+      background:
+        radial-gradient(ellipse at 20% 0%, rgba(255, 255, 255, .98), transparent 46%),
+        linear-gradient(160deg, rgba(250, 248, 255, .98), rgba(244, 240, 252, .93));
+    }
+
+    .chain-root {
+      position: relative;
+      z-index: 1;
+      width: min(540px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 18px 20px;
+      border-radius: 18px;
+      color: #fff;
+      background:
+        radial-gradient(circle at 12% 0%, rgba(255, 255, 255, .2), transparent 40%),
+        linear-gradient(145deg, #795ddd 0%, #5c42c2 100%);
+      box-shadow: 0 16px 34px rgba(92, 66, 194, .24);
+    }
+
+    .chain-root-kicker {
+      display: block;
+      margin-bottom: 6px;
+      color: rgba(255, 255, 255, .72);
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 1.2px;
+    }
+
+    .chain-root strong {
+      display: block;
+      font-size: 18px;
+      line-height: 1.42;
+      letter-spacing: -.2px;
+    }
+
+    .chain-root p {
+      margin: 7px 0 0;
+      color: rgba(255, 255, 255, .77);
+      font-size: 10.5px;
+      line-height: 1.6;
+    }
+
+    .why-chain {
+      position: relative;
+      display: grid;
+      max-width: 760px;
+      gap: 16px;
+      margin: 22px auto 0;
+      padding-left: 38px;
+    }
+
+    .why-chain::before {
+      position: absolute;
+      top: 0;
+      bottom: 24px;
+      left: 15px;
+      width: 1px;
+      background: linear-gradient(var(--violet), #d7cfee 82%, transparent);
+      content: "";
+    }
+
+    .why-step {
+      position: relative;
+      display: block;
+      width: 100%;
+      padding: 14px 15px;
+      border: 1px solid #e2dcf1;
+      border-radius: 15px;
+      color: var(--ink);
+      background: rgba(255, 255, 255, .96);
+      box-shadow: 0 8px 22px rgba(54, 39, 103, .06);
+      text-align: left;
+      cursor: pointer;
+      transition:
+        transform .18s ease,
+        border-color .18s ease,
+        box-shadow .18s ease,
+        background .18s ease;
+    }
+
+    .why-step::before {
+      position: absolute;
+      top: 20px;
+      left: -31px;
+      display: grid;
+      width: 16px;
+      height: 16px;
+      place-items: center;
+      border: 3px solid #faf9fd;
+      border-radius: 50%;
+      background: #b9a9e7;
+      box-shadow: 0 0 0 1px #d4c9ec;
+      content: "";
+    }
+
+    .why-step:not(:last-child)::after {
+      position: absolute;
+      bottom: -16px;
+      left: -28px;
+      width: 12px;
+      color: #a794e4;
+      content: "↓";
+      font-size: 10px;
+      font-weight: 800;
+      line-height: 16px;
+      text-align: center;
+    }
+
+    .why-step:hover {
+      border-color: #cfc3f0;
+      box-shadow: 0 12px 28px rgba(54, 39, 103, .1);
+      transform: translateY(-1px);
+    }
+
+    .why-step.is-active {
+      border: 1.5px solid var(--violet);
+      background: #fff;
+      box-shadow:
+        0 0 0 4px rgba(112, 85, 217, .08),
+        0 13px 30px rgba(54, 39, 103, .11);
+    }
+
+    .why-step.is-active::before {
+      background: var(--violet);
+    }
+
+    .why-step-head {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      flex-wrap: wrap;
+      margin-bottom: 7px;
+    }
+
+    .why-step-index {
+      color: var(--violet-dark);
+      font-size: 9px;
+      font-weight: 850;
+      letter-spacing: .5px;
+    }
+
+    .why-step-type,
+    .why-step-label {
+      padding: 3px 6px;
+      border-radius: 999px;
+      color: #6d6385;
+      background: #f2eff8;
+      font-size: 8.5px;
+      font-weight: 700;
+    }
+
+    .why-step-label {
+      color: #6850bd;
+      background: var(--violet-soft);
+    }
+
+    .why-step strong {
+      display: block;
+      font-size: 13px;
+      font-weight: 800;
+      line-height: 1.55;
+    }
+
+    .why-step-answer {
+      display: -webkit-box;
+      overflow: hidden;
+      margin-top: 6px;
+      color: #686278;
+      font-size: 10.5px;
+      line-height: 1.65;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+    }
+
+    .why-step.has-visual {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 108px;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .why-step-copy {
+      min-width: 0;
+    }
+
+    .why-step-visual {
+      position: relative;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      border: 1px solid rgba(112, 85, 217, .12);
+      border-radius: 10px;
+      background: #f7f4ff;
+    }
+
+    .why-step-visual img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .visual-kind-badge {
+      position: absolute;
+      right: 5px;
+      bottom: 5px;
+      padding: 2px 5px;
+      border-radius: 999px;
+      color: #fff;
+      background: rgba(43, 35, 72, .74);
+      font-size: 7px;
+      font-weight: 800;
+      letter-spacing: .35px;
+    }
+
+    .detail-visual {
+      margin: 0;
+    }
+
+    .visual-frame {
+      position: relative;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      border: 1px solid #e5def2;
+      border-radius: 13px;
+      background: #f7f4ff;
+    }
+
+    .visual-frame > img,
+    .visual-frame > video,
+    .visual-frame > svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .visual-frame video {
+      background: #f7f4ff;
+    }
+
+    .manim-caption {
+      position: absolute;
+      right: 10px;
+      bottom: 10px;
+      left: 10px;
+      padding: 6px 8px;
+      border-radius: 8px;
+      color: #fff;
+      background: rgba(30, 24, 50, .76);
+      font-size: 9.5px;
+      line-height: 1.45;
+      text-align: center;
+      pointer-events: none;
+    }
+
+    .manim-poster-overlay {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      padding: 0;
+      border: 0;
+      place-items: center;
+      background: transparent;
+      cursor: pointer;
+    }
+
+    .manim-poster-overlay img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .manim-poster-play {
+      position: relative;
+      z-index: 1;
+      padding: 8px 13px;
+      border-radius: 999px;
+      color: var(--ink);
+      background: rgba(255, 255, 255, .94);
+      box-shadow: 0 7px 18px rgba(34, 25, 60, .16);
+      font-size: 10px;
+      font-weight: 800;
+    }
+
+    .visual-caption {
+      margin: 8px 1px 0;
+      color: #716b80;
+      font-size: 10px;
+      line-height: 1.6;
+    }
+
+    .visual-toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      margin-top: 7px;
+    }
+
+    .visual-kind-label {
+      color: var(--muted);
+      font-size: 8.5px;
+      font-weight: 700;
+      letter-spacing: .3px;
+    }
+
+    .manim-replay {
+      padding: 5px 8px;
+      border: 1px solid #ddd5ef;
+      border-radius: 8px;
+      color: var(--violet-dark);
+      background: #fff;
+      font-size: 9px;
+      font-weight: 750;
+      cursor: pointer;
+    }
+
+    .manim-replay:hover {
+      background: var(--violet-pale);
+    }
+
+    .visual-transcript {
+      margin-top: 7px;
+      color: var(--muted);
+      font-size: 9.5px;
+      line-height: 1.55;
+    }
+
+    .visual-transcript summary {
+      color: var(--violet-dark);
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .visual-transcript ol {
+      padding: 7px 0 0 18px;
+      margin: 0;
+    }
+
+    .detail-answer {
+      padding: 12px 13px;
+      border: 1px solid #e3daf9;
+      border-radius: 12px;
+      color: #443a5d;
+      background: linear-gradient(145deg, #f8f5ff, #fff);
+      font-size: 12px;
+      font-weight: 650;
+      line-height: 1.72;
+    }
+
+    .analogy-card {
+      padding: 15px;
+      border: 1px solid #cee8dd;
+      border-radius: 14px;
+      background:
+        radial-gradient(circle at 100% 0%, rgba(126, 201, 170, .2), transparent 9rem),
+        linear-gradient(145deg, #f4fbf7, #fff);
+    }
+
+    .analogy-visual {
+      margin: 0 0 13px;
+      padding: 8px;
+      border: 1px solid #d9ebe3;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, .86);
+    }
+
+    .analogy-visual .visual-frame {
+      border-radius: 9px;
+    }
+
+    .analogy-visual .visual-caption,
+    .analogy-visual .visual-toolbar {
+      padding-inline: 4px;
+    }
+
+    .analogy-title {
+      margin: 0 0 7px;
+      color: #285d4b;
+      font-size: 14px;
+      font-weight: 850;
+      line-height: 1.45;
+      text-wrap: balance;
+    }
+
+    .analogy-scene {
+      margin: 0;
+      color: #52675f;
+      font-size: 11px;
+      line-height: 1.7;
+    }
+
+    .analogy-mappings {
+      display: grid;
+      gap: 7px;
+      margin: 13px 0;
+    }
+
+    .analogy-mapping {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+      align-items: center;
+      gap: 8px;
+      padding: 8px 9px;
+      border: 1px solid #e1efe9;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, .82);
+      font-size: 10px;
+      line-height: 1.5;
+    }
+
+    .analogy-mapping strong {
+      color: #2f6954;
+      overflow-wrap: anywhere;
+    }
+
+    .analogy-arrow {
+      color: #8ca99e;
+      font-weight: 850;
+    }
+
+    .analogy-concept {
+      color: #4d5660;
+      overflow-wrap: anywhere;
+    }
+
+    .analogy-limit {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      gap: 8px;
+      margin: 0;
+      padding-top: 10px;
+      border-top: 1px dashed #c9e1d7;
+      color: #6a766f;
+      font-size: 9.5px;
+      line-height: 1.65;
+    }
+
+    .analogy-limit strong {
+      color: #396c59;
+      white-space: nowrap;
+    }
+
+    .chain-nav {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px;
+      padding-top: 4px;
+    }
+
+    .chain-nav-button {
+      display: block;
+      min-width: 0;
+      padding: 10px 11px;
+      border: 1px solid var(--line);
+      border-radius: 11px;
+      color: var(--ink-soft);
+      background: var(--paper-soft);
+      text-align: left;
+      cursor: pointer;
+    }
+
+    .chain-nav-button.next {
+      text-align: right;
+    }
+
+    .chain-nav-button:hover {
+      border-color: #d7cdf4;
+      background: var(--violet-pale);
+    }
+
+    .chain-nav.is-single .chain-nav-button:not([hidden]) {
+      grid-column: 1 / -1;
+      text-align: left;
+    }
+
+    .chain-nav + .detail-section {
+      margin-top: 22px;
+    }
+
+    .chain-nav-button small {
+      display: block;
+      color: var(--muted);
+      font-size: 8.5px;
+      font-weight: 700;
+      letter-spacing: .35px;
+    }
+
+    .chain-nav-button strong {
+      display: block;
+      overflow: hidden;
+      margin-top: 3px;
+      font-size: 10px;
+      line-height: 1.45;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .map-legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      padding: 13px 3px 0;
+      color: var(--muted);
+      font-size: 10px;
+    }
+
+    .legend-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .legend-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--violet);
+    }
+
+    .legend-dot.evidence {
+      background: var(--green);
+    }
+
+    .legend-dot.history {
+      background: var(--amber);
+    }
+
+    .detail-panel {
+      position: sticky;
+      top: 18px;
+      max-height: calc(100vh - 36px);
+      overflow: auto;
+      overscroll-behavior: contain;
+      scrollbar-width: thin;
+      scrollbar-color: #d9d2e8 transparent;
+    }
+
+    .detail-head {
+      padding: 23px 23px 20px;
+      border-bottom: 1px solid var(--line);
+      background:
+        radial-gradient(circle at 90% 0%, rgba(188, 169, 255, .2), transparent 15rem),
+        linear-gradient(145deg, #f8f5ff, #fff 72%);
+    }
+
+    .detail-kicker {
+      color: var(--violet-dark);
+      font-size: 10px;
+      font-weight: 850;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .detail-title {
+      margin: 8px 0 10px;
+      font-size: 23px;
+      font-weight: 800;
+      line-height: 1.34;
+      letter-spacing: -.5px;
+      text-wrap: balance;
+    }
+
+    .detail-summary {
+      margin: 0;
+      color: #645f73;
+      font-size: 12px;
+      line-height: 1.75;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 13px;
+    }
+
+    .tag {
+      padding: 5px 8px;
+      border-radius: 7px;
+      color: #6750bd;
+      background: var(--violet-soft);
+      font-size: 10px;
+      font-weight: 700;
+    }
+
+    .tag:nth-child(2n) {
+      color: #416e5e;
+      background: var(--green-soft);
+    }
+
+    .tag:nth-child(3n) {
+      color: #886229;
+      background: var(--amber-soft);
+    }
+
+    .detail-body {
+      padding: 19px 23px 23px;
+    }
+
+    .detail-section {
+      padding: 0 0 18px;
+      margin: 0 0 18px;
+      border-bottom: 1px solid #efecf4;
+    }
+
+    .detail-section:last-child {
+      padding-bottom: 0;
+      margin-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin: 0 0 10px;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .section-mark {
+      display: grid;
+      width: 25px;
+      height: 25px;
+      place-items: center;
+      border-radius: 8px;
+      color: var(--violet-dark);
+      background: var(--violet-soft);
+      font-size: 9px;
+      font-weight: 850;
+      letter-spacing: -.2px;
+    }
+
+    .section-observation .section-mark {
+      color: var(--green);
+      background: var(--green-soft);
+    }
+
+    .section-video .section-mark {
+      color: var(--amber);
+      background: var(--amber-soft);
+    }
+
+    .detail-copy {
+      margin: 0;
+      color: #625d70;
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    .fact-list,
+    .experiment-steps,
+    .evidence-list {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    .fact-list {
+      display: grid;
+      gap: 8px;
+    }
+
+    .fact-list li {
+      position: relative;
+      padding-left: 14px;
+      color: #625d70;
+      font-size: 11.5px;
+      line-height: 1.68;
+    }
+
+    .fact-list li::before {
+      position: absolute;
+      top: .62em;
+      left: 0;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: #a794e4;
+      content: "";
+    }
+
+    .experiment-card {
+      padding: 13px;
+      border: 1px solid #dceee6;
+      border-radius: 13px;
+      background: #f7fcf9;
+    }
+
+    .experiment-title {
+      margin: 0 0 9px;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .experiment-steps {
+      display: grid;
+      gap: 7px;
+      counter-reset: step;
+    }
+
+    .experiment-steps li {
+      position: relative;
+      padding-left: 25px;
+      color: #587067;
+      font-size: 11px;
+      line-height: 1.58;
+      counter-increment: step;
+    }
+
+    .experiment-steps li::before {
+      position: absolute;
+      top: 1px;
+      left: 0;
+      display: grid;
+      width: 17px;
+      height: 17px;
+      place-items: center;
+      border-radius: 50%;
+      color: #fff;
+      background: var(--green);
+      content: counter(step);
+      font-size: 8px;
+      font-weight: 800;
+    }
+
+    .video-list {
+      display: grid;
+      gap: 10px;
+    }
+
+    .video-player {
+      overflow: hidden;
+      border: 1px solid #e8e2f2;
+      border-radius: 14px;
+      background: #fff;
+      box-shadow: 0 8px 24px rgba(39, 28, 77, .07);
+    }
+
+    .video-frame {
+      position: relative;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      background: #171322;
+    }
+
+    .video-frame iframe {
+      display: block;
+      width: 100%;
+      height: 100%;
+      border: 0;
+      background: #171322;
+    }
+
+    .video-embed-fallback {
+      display: grid;
+      height: 100%;
+      place-content: center;
+      justify-items: center;
+      gap: 8px;
+      padding: 22px;
+      color: #fff;
+      background:
+        radial-gradient(circle at 70% 20%, rgba(255, 0, 51, .2), transparent 45%),
+        #171322;
+      text-align: center;
+    }
+
+    .video-embed-fallback .platform-logo svg {
+      width: 46px;
+      height: 34px;
+    }
+
+    .video-embed-message {
+      max-width: 300px;
+      margin: 0;
+      color: rgba(255, 255, 255, .82);
+      font-size: 10.5px;
+      line-height: 1.6;
+    }
+
+    .video-embed-open {
+      display: inline-flex;
+      margin-top: 3px;
+      padding: 7px 11px;
+      border-radius: 999px;
+      color: #171322;
+      background: #fff;
+      font-size: 10px;
+      font-weight: 800;
+    }
+
+    .video-player-bar {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr) auto;
+      gap: 9px;
+      align-items: center;
+      padding: 10px 11px;
+    }
+
+    .platform-logo {
+      display: inline-grid;
+      flex: 0 0 auto;
+      place-items: center;
+    }
+
+    .platform-logo svg {
+      display: block;
+      width: 32px;
+      height: 24px;
+    }
+
+    .platform-logo.compact svg {
+      width: 25px;
+      height: 19px;
+    }
+
+    .video-player-copy {
+      min-width: 0;
+    }
+
+    .video-player-title {
+      display: block;
+      overflow: hidden;
+      color: var(--ink-soft);
+      font-size: 11px;
+      font-weight: 750;
+      line-height: 1.45;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .video-player-meta,
+    .video-player-why {
+      display: block;
+      color: var(--muted);
+      font-size: 9.5px;
+      line-height: 1.5;
+    }
+
+    .video-player-meta {
+      margin-top: 2px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .video-player-why {
+      margin-top: 4px;
+      color: #817a90;
+    }
+
+    .video-open {
+      align-self: start;
+      padding: 4px 0 2px;
+      color: var(--violet-dark);
+      font-size: 9.5px;
+      font-weight: 750;
+      white-space: nowrap;
+    }
+
+    .video-open:hover {
+      color: var(--violet);
+    }
+
+    .video-alternatives {
+      display: grid;
+      gap: 6px;
+      margin-top: 8px;
+    }
+
+    .video-choice {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      gap: 8px;
+      align-items: center;
+      width: 100%;
+      padding: 8px 9px;
+      border: 1px solid #ece7f4;
+      border-radius: 10px;
+      color: var(--ink-soft);
+      background: var(--paper-soft);
+      text-align: left;
+      cursor: pointer;
+      transition: border-color .18s ease, background .18s ease;
+    }
+
+    .video-choice:hover {
+      border-color: #d8cff4;
+      background: var(--violet-pale);
+    }
+
+    .video-choice[aria-pressed="true"] {
+      border-color: var(--violet);
+      background: var(--violet-pale);
+      box-shadow: 0 0 0 2px rgba(112, 85, 217, .07);
+    }
+
+    .video-choice-title {
+      display: block;
+      overflow: hidden;
+      font-size: 10.5px;
+      font-weight: 700;
+      line-height: 1.45;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .resource-title {
+      display: block;
+      color: var(--ink-soft);
+      font-size: 11px;
+      font-weight: 750;
+      line-height: 1.45;
+    }
+
+    .resource-meta {
+      display: block;
+      margin-top: 3px;
+      overflow: hidden;
+      color: var(--muted);
+      font-size: 9.5px;
+      line-height: 1.45;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .resource-why {
+      display: block;
+      margin-top: 4px;
+      color: #817a90;
+      font-size: 9.5px;
+      line-height: 1.5;
+    }
+
+    .evidence-gaps {
+      padding: 11px 12px;
+      border: 1px solid #f0e2cc;
+      border-radius: 12px;
+      background: #fffaf2;
+    }
+
+    .evidence-list {
+      display: grid;
+      gap: 6px;
+    }
+
+    .evidence-list li {
+      position: relative;
+      padding-left: 12px;
+      color: #7b6542;
+      font-size: 10.5px;
+      line-height: 1.58;
+    }
+
+    .evidence-list li::before {
+      position: absolute;
+      top: .66em;
+      left: 0;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--amber);
+      content: "";
+    }
+
+    .footer {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 22px;
+      margin-top: 22px;
+      padding: 0 5px;
+      color: var(--muted);
+      font-size: 10.5px;
+      line-height: 1.65;
+    }
+
+    .footer strong {
+      color: var(--violet-dark);
+    }
+
+    .footer-note {
+      max-width: 620px;
+      text-align: right;
+    }
+
+    .toast {
+      position: fixed;
+      z-index: 50;
+      bottom: 24px;
+      left: 50%;
+      max-width: min(420px, calc(100vw - 30px));
+      padding: 11px 15px;
+      border-radius: 12px;
+      color: #fff;
+      background: #28233d;
+      box-shadow: 0 12px 30px rgba(28, 21, 49, .24);
+      font-size: 11.5px;
+      line-height: 1.45;
+      opacity: 0;
+      pointer-events: none;
+      transform: translate(-50%, 14px);
+      transition: opacity .2s ease, transform .2s ease;
+    }
+
+    .toast.is-visible {
+      opacity: 1;
+      transform: translate(-50%, 0);
+    }
+
+    [hidden] {
+      display: none !important;
+    }
+
+    @media (max-width: 1080px) {
+      .site-shell {
+        padding-inline: 22px;
+      }
+
+      .hero {
+        grid-template-columns: minmax(0, 1fr) minmax(440px, 540px);
+      }
+
+      .hero-copy {
+        padding: 24px 18px 22px 24px;
+      }
+
+      .hero-overview {
+        padding: 12px 16px;
+      }
+
+      .explorer-layout {
+        grid-template-columns: minmax(0, 1.5fr) minmax(310px, .86fr);
+      }
+
+      .map-stage {
+        padding-inline: 14px;
+      }
+
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-copy {
+        padding-bottom: 12px;
+      }
+
+      .hero-overview {
+        width: 100%;
+        padding: 14px;
+      }
+
+      .hero-overview img {
+        max-width: 420px;
+        margin-inline: auto;
+      }
+
+      .explorer-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .detail-panel {
+        position: relative;
+        top: auto;
+        max-height: none;
+      }
+    }
+
+    @media (max-width: 760px) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .site-shell {
+        padding: 16px 12px 28px;
+      }
+
+      .topbar {
+        margin-bottom: 16px;
+      }
+
+      .brand-mark {
+        width: 38px;
+        height: 38px;
+        border-radius: 13px;
+      }
+
+      .brand-name {
+        font-size: 19px;
+      }
+
+      .brand-tagline {
+        font-size: 9.5px;
+      }
+
+      .action-button {
+        width: 40px;
+        min-height: 40px;
+        padding: 9px;
+      }
+
+      .action-label {
+        display: none;
+      }
+
+      .hero {
+        margin-bottom: 22px;
+        border-radius: 22px;
+      }
+
+      .hero h1 {
+        margin: 8px 0;
+        font-size: clamp(24px, 7.2vw, 30px);
+        letter-spacing: -1.05px;
+      }
+
+      .hero-summary {
+        font-size: 13px;
+      }
+
+      .hero-copy {
+        padding: 18px 18px 16px;
+      }
+
+      .meta-pills {
+        margin-top: 12px;
+      }
+
+      .meta-pill {
+        min-height: 27px;
+        padding: 4px 8px;
+        font-size: 9.5px;
+      }
+
+      .hero-overview {
+        width: 100%;
+        padding: 10px;
+        border-top: 1px solid var(--line);
+        border-left: 0;
+      }
+
+      .panel {
+        border-radius: 22px;
+      }
+
+      .panel-heading {
+        padding: 18px 16px 12px;
+      }
+
+      .mode-label {
+        display: none;
+      }
+
+      .map-stage {
+        padding: 0 10px;
+      }
+
+      .question-map {
+        display: flex;
+        height: auto;
+        min-height: 0;
+        flex-direction: column;
+        gap: 10px;
+        padding: 16px 12px 16px 42px;
+        overflow: visible;
+        background:
+          linear-gradient(90deg, rgba(246, 243, 255, .82), rgba(255, 255, 255, .94) 40%),
+          var(--paper-soft);
+      }
+
+      .question-map::before {
+        background-size: 18px 18px;
+        mask-image: linear-gradient(90deg, transparent, #000 35%, transparent);
+      }
+
+      .chain-map {
+        display: block;
+        padding: 14px 10px 16px;
+        background:
+          linear-gradient(90deg, rgba(246, 243, 255, .82), rgba(255, 255, 255, .94) 40%),
+          var(--paper-soft);
+      }
+
+      .chain-root {
+        width: 100%;
+        padding: 15px 16px;
+      }
+
+      .chain-root strong {
+        font-size: 16px;
+      }
+
+      .why-chain {
+        gap: 13px;
+        margin-top: 18px;
+        padding-left: 29px;
+      }
+
+      .why-chain::before {
+        left: 10px;
+      }
+
+      .why-step {
+        padding: 12px 12px;
+      }
+
+      .why-step.has-visual {
+        grid-template-columns: minmax(0, 1fr) 82px;
+        gap: 8px;
+      }
+
+      .why-step::before {
+        left: -25px;
+      }
+
+      .why-step strong {
+        font-size: 12px;
+      }
+
+      .why-step-answer {
+        font-size: 10px;
+      }
+
+      .chain-nav {
+        grid-template-columns: 1fr;
+      }
+
+      .chain-nav-button.next {
+        text-align: left;
+      }
+
+      .map-legend {
+        padding: 11px 5px 0;
+      }
+
+      .detail-head {
+        padding: 20px 17px 17px;
+      }
+
+      .detail-title {
+        font-size: 21px;
+      }
+
+      .detail-body {
+        padding: 17px;
+      }
+
+      .footer {
+        flex-direction: column;
+        gap: 7px;
+        padding-inline: 4px;
+      }
+
+      .footer-note {
+        max-width: none;
+        text-align: left;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <svg class="platform-sprite" aria-hidden="true" focusable="false">
+    <symbol id="platform-logo-bilibili" viewBox="0 0 40 28">
+      <path d="M10 7.5 6.5 3.8M30 7.5l3.5-3.7" fill="none" stroke="#00AEEF" stroke-width="2.4" stroke-linecap="round"/>
+      <rect x="2" y="6" width="36" height="20" rx="6" fill="#00AEEF"/>
+      <path d="M13.5 13.2v5.2M26.5 13.2v5.2" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="platform-logo-youtube" viewBox="0 0 40 28">
+      <rect x="2" y="4.5" width="36" height="20" rx="7" fill="#FF0033"/>
+      <path d="m16.5 10.5 9 4.5-9 4.5z" fill="#fff"/>
+    </symbol>
+  </svg>
+  <a class="skip-link" href="#question-map-panel">跳到问题地图</a>
+  <div class="site-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="AskWhy 问题探索">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" fill="none">
+            <path d="M9.6 10.2c.5-3 2.8-4.8 6.2-4.8 3.6 0 6 1.9 6 4.8 0 2.8-1.9 4.1-4.6 5.6-1.8 1-2.4 1.8-2.4 3.3" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+            <circle cx="14.8" cy="24.9" r="1.65" fill="currentColor"/>
+            <path d="M25.9 6.1l1.1-2.3M27.7 11.2l2.3-.5M3.2 17.3l2.2.9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <span>
+          <span class="brand-name">AskWhy</span>
+          <span class="brand-tagline">从一个问题，走向它的答案</span>
+        </span>
+      </a>
+      <div class="top-actions" aria-label="页面操作">
+        <button class="action-button" id="share-link" type="button">
+          <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
+            <path d="M7.2 11.1l5.6-3.3M7.2 8.9l5.6 3.3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <circle cx="5" cy="10" r="2.2" stroke="currentColor" stroke-width="1.5"/>
+            <circle cx="15" cy="5.8" r="2.2" stroke="currentColor" stroke-width="1.5"/>
+            <circle cx="15" cy="14.2" r="2.2" stroke="currentColor" stroke-width="1.5"/>
+          </svg>
+          <span class="action-label">分享链接</span>
+        </button>
+        <button class="action-button primary" id="copy-question" type="button">
+          <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
+            <rect x="6.3" y="6.3" width="9.2" height="9.2" rx="2" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M4.5 12.4h-.2A1.8 1.8 0 012.5 10.6V4.5c0-1 .8-1.8 1.8-1.8h6.1c1 0 1.8.8 1.8 1.8v.2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+          <span class="action-label">复制问题</span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="hero-question">
+        <div class="hero-copy">
+          <div class="hero-category" id="hero-category"></div>
+          <h1 id="hero-question"></h1>
+          <p class="hero-summary" id="hero-summary"></p>
+          <div class="meta-pills" id="meta-pills" aria-label="页面信息"></div>
+        </div>
+        <figure class="hero-overview" id="hero-overview">
+          <img id="hero-overview-image" alt="">
+          <figcaption class="visually-hidden" id="hero-overview-caption"></figcaption>
+        </figure>
+      </section>
+
+      <section class="explorer-layout" id="question-map-panel" aria-label="问题探索区">
+        <section class="panel map-panel" aria-labelledby="map-title">
+          <header class="panel-heading">
+            <div>
+              <h2 id="map-title">沿着因果链继续追问</h2>
+              <p>每一层只解释上一层留下来的问题，直到抵达可辩护的底层</p>
+            </div>
+            <span class="mode-label" id="layout-label">因果追问链</span>
+          </header>
+          <div class="map-stage">
+            <div class="question-map chain-map" id="question-map" data-layout="chain">
+              <div class="chain-root" id="question-root">
+                <span class="chain-root-kicker">起点问题</span>
+                <strong id="chain-root-question"></strong>
+                <p id="chain-root-summary"></p>
+              </div>
+              <div class="why-chain" id="why-chain" aria-label="逐层追问链"></div>
+            </div>
+            <div class="map-legend" aria-label="问题图例">
+              <span class="legend-item"><i class="legend-dot"></i>逐层因果</span>
+              <span class="legend-item"><i class="legend-dot evidence"></i>每层都有完整详情</span>
+              <span class="legend-item"><i class="legend-dot history"></i>直达基础或边界</span>
+            </div>
+          </div>
+        </section>
+
+        <aside class="panel detail-panel" id="detail-panel" aria-labelledby="detail-title" aria-live="polite">
+          <header class="detail-head">
+            <div class="detail-kicker" id="detail-kicker"></div>
+            <h2 class="detail-title" id="detail-title"></h2>
+            <p class="detail-summary" id="detail-summary"></p>
+            <div class="tag-list" id="detail-tags"></div>
+          </header>
+          <div class="detail-body">
+            <section class="detail-section" id="visual-section" hidden>
+              <h3 class="section-heading"><span class="section-mark">VIS</span>看见机制</h3>
+              <figure class="detail-visual" id="detail-visual"></figure>
+            </section>
+            <section class="detail-section" id="answer-section">
+              <h3 class="section-heading"><span class="section-mark">ANS</span>这一层的回答</h3>
+              <div class="detail-answer" id="detail-answer"></div>
+            </section>
+            <section class="detail-section" id="analogy-section">
+              <h3 class="section-heading"><span class="section-mark">LIKE</span>换个熟悉说法</h3>
+              <div class="analogy-card">
+                <figure class="analogy-visual" id="analogy-visual" hidden></figure>
+                <h4 class="analogy-title" id="analogy-title"></h4>
+                <p class="analogy-scene" id="analogy-scene"></p>
+                <div class="analogy-mappings" id="analogy-mappings" aria-label="类比与概念的对应关系"></div>
+                <p class="analogy-limit">
+                  <strong>类比边界</strong>
+                  <span id="analogy-limit"></span>
+                </p>
+              </div>
+            </section>
+            <nav class="chain-nav" aria-label="因果链导航">
+              <button class="chain-nav-button" id="previous-question" type="button" hidden>
+                <small>上一层</small>
+                <strong></strong>
+              </button>
+              <button class="chain-nav-button next" id="next-question" type="button" hidden>
+                <small>继续追问</small>
+                <strong></strong>
+              </button>
+            </nav>
+            <section class="detail-section" id="knowledge-section">
+              <h3 class="section-heading"><span class="section-mark">WHY</span><span id="knowledge-heading">核心知识</span></h3>
+              <p class="detail-copy" id="detail-knowledge"></p>
+            </section>
+            <section class="detail-section" id="facts-section">
+              <h3 class="section-heading"><span class="section-mark">FACT</span>关键事实</h3>
+              <ul class="fact-list" id="detail-facts"></ul>
+            </section>
+            <section class="detail-section section-observation" id="experiment-section" hidden>
+              <h3 class="section-heading"><span class="section-mark">OBS</span>动手观察</h3>
+              <div class="experiment-card">
+                <h4 class="experiment-title" id="experiment-title"></h4>
+                <ol class="experiment-steps" id="experiment-steps"></ol>
+              </div>
+            </section>
+            <section class="detail-section section-video" id="videos-section" hidden>
+              <h3 class="section-heading"><span class="section-mark">PLAY</span>视频讲解</h3>
+              <div class="video-list" id="detail-videos"></div>
+            </section>
+            <section class="detail-section">
+              <h3 class="section-heading"><span class="section-mark">NOTE</span>证据边界</h3>
+              <div class="evidence-gaps">
+                <ul class="evidence-list" id="evidence-gaps"></ul>
+              </div>
+            </section>
+          </div>
+        </aside>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span><strong>AskWhy</strong> · 让下一问成为进入知识的入口</span>
+      <span class="footer-note">页面用于知识导览；事实、外链与视频在发布前均应核验。</span>
+    </footer>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script type="application/json" id="askwhy-data">{"schemaVersion":"8.0","meta":{"topic":"苹果为什么会落地","question":"苹果为什么会落地？","slug":"apple-falls","summary":"从苹果失去支撑开始，逐层追问重力、质量与时空几何，直到现代引力理论的边界。","category":"物理 · 天文学","estimatedMinutes":9,"language":"zh-CN","asOf":"2026-10-27","audience":"对自然现象好奇、知道基础力和运动概念的入门学习者","evidenceGaps":["本页采用牛顿引力与广义相对论两个层级的教学化解释，不展开张量场方程推导。","量子引力尚无完成且经实验确认的统一理论，因此最后一层明确标为边界。"],"learningLevel":"middle"},"center":{"id":"root","question":"苹果为什么会落地？","summary":"苹果离开树枝后，下方没有支撑力，地球引力使它持续向地面加速。接下来要追问的不是“苹果为什么会掉”，而是这种吸引作用本身从哪里来。","insight":"先解释最近的一层：失去支撑后净力向下。再顺着重力、质量相互作用、时空几何逐层深入，最终到达当前物理理论仍未完成的边界。","tags":["重力","苹果","因果链"],"overviewVisual":{"kind":"image","src":"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMTAwIDQyMCIgcm9sZT0iaW1nIiBhcmlhLWxhYmVsbGVkYnk9InRpdGxlIGRlc2MiPgogIDx0aXRsZSBpZD0idGl0bGUiPuiLueaenOiQveWcsOiDjOWQjueahOWboOaenOWxgue6pzwvdGl0bGU+CiAgPGRlc2MgaWQ9ImRlc2MiPuiLueaenOWkseWOu+aUr+aSkeWQjuWQkeS4i+i/kOWKqO+8jOWPjOaWuei0qOmHj+ebuOS6kuWQuOW8le+8jOi0qOmHj+iDvemHj+WhkemAoOaXtuepuu+8jOiHqueUseiQveS9k+ayv+a1i+WcsOe6v+i/kOWKqOOAgjwvZGVzYz4KICA8ZGVmcz4KICAgIDxyYWRpYWxHcmFkaWVudCBpZD0iZWFydGgiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiM2MTliZDciLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjMzM1ZjlkIi8+CiAgICA8L3JhZGlhbEdyYWRpZW50PgogICAgPG1hcmtlciBpZD0iYXJyb3ciIHZpZXdCb3g9IjAgMCAxMCAxMCIgcmVmWD0iOCIgcmVmWT0iNSIgbWFya2VyV2lkdGg9IjciIG1hcmtlckhlaWdodD0iNyIgb3JpZW50PSJhdXRvIj4KICAgICAgPHBhdGggZD0iTTAgMCAxMCA1IDAgMTBaIiBmaWxsPSIjNzA1NWQ5Ii8+CiAgICA8L21hcmtlcj4KICA8L2RlZnM+CgogIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDIwIDQ0KSI+CiAgICA8cmVjdCB3aWR0aD0iMjM2IiBoZWlnaHQ9IjI3NCIgcng9IjI0IiBmaWxsPSIjZmZmIiBzdHJva2U9IiNkZWQ2ZjMiIHN0cm9rZS13aWR0aD0iMiIvPgogICAgPHBhdGggZD0iTTQ4IDU4YzE1LTEzIDM4LTkgNDIgMTEgMTkgMiAyMyAyOCA1IDM3LTEwIDIwLTM5IDE3LTQ2IDEtMjAtMi0yMy0yOS0xLTQ5eiIgZmlsbD0iI2U4NWM1YyIvPgogICAgPHBhdGggZD0iTTc5IDU4YzAtMTQgOC0yMyAyMS0yNyIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjN2E1YjNmIiBzdHJva2Utd2lkdGg9IjQiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgogICAgPHBhdGggZD0iTTk5IDQzYzE0LTEwIDI4LTcgMzUgMi0xMSA4LTI1IDgtMzUtMnoiIGZpbGw9IiM1OWE0NmYiLz4KICAgIDx0ZXh0IHg9IjI4IiB5PSIxNzYiIGZpbGw9IiM1YjQyYzEiIGZvbnQtZmFtaWx5PSJQaW5nRmFuZyBTQywgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyNCIgZm9udC13ZWlnaHQ9IjgwMCI+5aSx5Y675pSv5pKRPC90ZXh0PgogICAgPHRleHQgeD0iMjgiIHk9IjIwOCIgZmlsbD0iIzVjNTU2ZCIgZm9udC1mYW1pbHk9IlBpbmdGYW5nIFNDLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjE4Ij7mlK/mjIHlipvmtojlpLE8L3RleHQ+CiAgICA8dGV4dCB4PSIyOCIgeT0iMjM0IiBmaWxsPSIjNWM1NTZkIiBmb250LWZhbWlseT0iUGluZ0ZhbmcgU0MsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTgiPuWQiOWKm+i9rOS4uuWQkeS4izwvdGV4dD4KICA8L2c+CgogIDxwYXRoIGQ9Ik0yNjQgMTgyaDI0IiBzdHJva2U9IiM3MDU1ZDkiIHN0cm9rZS13aWR0aD0iNCIgbWFya2VyLWVuZD0idXJsKCNhcnJvdykiLz4KCiAgPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjk2IDQ0KSI+CiAgICA8cmVjdCB3aWR0aD0iMjM2IiBoZWlnaHQ9IjI3NCIgcng9IjI0IiBmaWxsPSIjZmZmIiBzdHJva2U9IiNkZWQ2ZjMiIHN0cm9rZS13aWR0aD0iMiIvPgogICAgPGNpcmNsZSBjeD0iNjYiIGN5PSI4MiIgcj0iMzgiIGZpbGw9IiM3MDU1ZDkiLz4KICAgIDxjaXJjbGUgY3g9IjE1NCIgY3k9IjgyIiByPSIyMyIgZmlsbD0iI2YwYTI0YiIvPgogICAgPHBhdGggZD0iTTcwIDgyaDYxIiBzdHJva2U9IiM3YTViM2YiIHN0cm9rZS13aWR0aD0iNCIvPgogICAgPHRleHQgeD0iMjgiIHk9IjE3NiIgZmlsbD0iIzViNDJjMSIgZm9udC1mYW1pbHk9IlBpbmdGYW5nIFNDLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjI0IiBmb250LXdlaWdodD0iODAwIj7otKjph4/nm7jkupLlkLjlvJU8L3RleHQ+CiAgICA8dGV4dCB4PSIyOCIgeT0iMjA4IiBmaWxsPSIjNWM1NTZkIiBmb250LWZhbWlseT0iUGluZ0ZhbmcgU0MsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTgiPuWPjOaWueWQjOaXtuWPl+WKmzwvdGV4dD4KICAgIDx0ZXh0IHg9IjI4IiB5PSIyMzQiIGZpbGw9IiM1YzU1NmQiIGZvbnQtZmFtaWx5PSJQaW5nRmFuZyBTQywgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxOCI+5bCP6LSo6YeP5Yqg6YCf5pu05piO5pi+PC90ZXh0PgogIDwvZz4KCiAgPHBhdGggZD0iTTU0MCAxODJoMjQiIHN0cm9rZT0iIzcwNTVkOSIgc3Ryb2tlLXdpZHRoPSI0IiBtYXJrZXItZW5kPSJ1cmwoI2Fycm93KSIvPgoKICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSg1NzIgNDQpIj4KICAgIDxyZWN0IHdpZHRoPSIyMzYiIGhlaWdodD0iMjc0IiByeD0iMjQiIGZpbGw9IiNmZmYiIHN0cm9rZT0iI2RlZDZmMyIgc3Ryb2tlLXdpZHRoPSIyIi8+CiAgICA8cGF0aCBkPSJNMzQgOTJjNDQtNjYgMTE0LTY2IDE2OCAwIiBmaWxsPSJub25lIiBzdHJva2U9IiNiOGFkZGQiIHN0cm9rZS13aWR0aD0iOCIvPgogICAgPGNpcmNsZSBjeD0iMTE4IiBjeT0iODkiIHI9IjE2IiBmaWxsPSIjZjBhMjRiIi8+CiAgICA8dGV4dCB4PSIyOCIgeT0iMTc2IiBmaWxsPSIjNWI0MmMxIiBmb250LWZhbWlseT0iUGluZ0ZhbmcgU0MsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMjQiIGZvbnQtd2VpZ2h0PSI4MDAiPuaXtuepuuiiq+W8r+absjwvdGV4dD4KICAgIDx0ZXh0IHg9IjI4IiB5PSIyMDgiIGZpbGw9IiM1YzU1NmQiIGZvbnQtZmFtaWx5PSJQaW5nRmFuZyBTQywgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxOCI+6LSo6YeP5LiO6IO96YePPC90ZXh0PgogICAgPHRleHQgeD0iMjgiIHk9IjIzNCIgZmlsbD0iIzVjNTU2ZCIgZm9udC1mYW1pbHk9IlBpbmdGYW5nIFNDLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjE4Ij7loZHpgKDlsYDpg6jlh6DkvZU8L3RleHQ+CiAgPC9nPgoKICA8cGF0aCBkPSJNODE2IDE4MmgyNCIgc3Ryb2tlPSIjNzA1NWQ5IiBzdHJva2Utd2lkdGg9IjQiIG1hcmtlci1lbmQ9InVybCgjYXJyb3cpIi8+CgogIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDg0OCA0NCkiPgogICAgPHJlY3Qgd2lkdGg9IjIzMiIgaGVpZ2h0PSIyNzQiIHJ4PSIyNCIgZmlsbD0iIzI1MjAzOSIvPgogICAgPHBhdGggZD0iTTI4IDEwMmM0Mi01OCAxMTItNTggMTY2IDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2NmYzVlYSIgc3Ryb2tlLXdpZHRoPSIyIi8+CiAgICA8cGF0aCBkPSJNMjAgMTIyYzUwLTcwIDEzMi03MCAxODIgMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjY2ZjNWVhIiBzdHJva2Utd2lkdGg9IjIiLz4KICAgIDxwYXRoIGQ9Ik04NCA0MmMtMjUgMzQtMzEgNzItMjQgMTE2IiBmaWxsPSJub25lIiBzdHJva2U9IiNlODVjNWMiIHN0cm9rZS13aWR0aD0iNSIgc3Ryb2tlLWRhc2hhcnJheT0iOSA3Ii8+CiAgICA8Y2lyY2xlIGN4PSI4NCIgY3k9IjQwIiByPSIxMyIgZmlsbD0iI2U4NWM1YyIvPgogICAgPGNpcmNsZSBjeD0iNjgiIGN5PSIxNjYiIHI9IjQyIiBmaWxsPSJ1cmwoI2VhcnRoKSIvPgogICAgPHRleHQgeD0iMjYiIHk9IjIzMCIgZmlsbD0iI2ZmZiIgZm9udC1mYW1pbHk9IlBpbmdGYW5nIFNDLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjI0IiBmb250LXdlaWdodD0iODAwIj7msr/mtYvlnLDnur/ov5Dliqg8L3RleHQ+CiAgICA8dGV4dCB4PSIyNiIgeT0iMjYwIiBmaWxsPSIjZmZmZmZmYjgiIGZvbnQtZmFtaWx5PSJQaW5nRmFuZyBTQywgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxOCI+6Ieq55Sx6JC95L2T5YOP6LWwPC90ZXh0PgogICAgPHRleHQgeD0iMjYiIHk9IjI4NiIgZmlsbD0iI2ZmZmZmZmI4IiBmb250LWZhbWlseT0iUGluZ0ZhbmcgU0MsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTgiPuW8r+absuepuumXtOS4reeahOebtOe6vzwvdGV4dD4KICA8L2c+CgogIDx0ZXh0IHg9IjU1MCIgeT0iMzczIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjNWM1NTZkIiBmb250LWZhbWlseT0iUGluZ0ZhbmcgU0MsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTgiPgogICAg5aSx5Y675pSv5pKRIOKGkiDotKjph4/nm7jkupLlkLjlvJUg4oaSIOaXtuepuuW8r+absiDihpIg6Ieq55Sx6JC95L2T5rK/5rWL5Zyw57q/CiAgPC90ZXh0Pgo8L3N2Zz4K","alt":"苹果落地因果总览：失去支撑，质量相互吸引，质量能量塑造时空，自由落体沿测地线运动","caption":"从苹果失去支撑出发，顺着重力、质量相互作用和时空几何一路到达理论边界。"},"analogy":{"title":"巨人和小孩坐在滑板椅上拉绳子","scene":"巨人和小孩坐在带轮子的椅子上，同时拉住同一根绳往自己这边拉；两人都会移动，但轻的小孩更容易被拉动。","mappings":[{"familiar":"巨人和小孩","concept":"地球和苹果"},{"familiar":"同一根绳","concept":"双方之间的引力"},{"familiar":"两人都被拉向中间","concept":"相互作用同时作用于双方"},{"familiar":"小孩移动得更明显","concept":"质量较小的苹果获得更明显的加速度"}],"limit":"绳子靠可见的接触传递拉力；引力不需要绳子，而苹果落地还涉及支撑力消失后的合力变化。","visual":{"kind":"image","src":"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4MDAgNDUwIiByb2xlPSJpbWciIGFyaWEtbGFiZWxsZWRieT0idGl0bGUgZGVzYyI+CiAgPHRpdGxlIGlkPSJ0aXRsZSI+5beo5Lq65ZKM5bCP5a2p5Z2Q5Zyo5ruR5p2/5qSF5LiK5ouJ57uz5a2QPC90aXRsZT4KICA8ZGVzYyBpZD0iZGVzYyI+5beo5Lq65ZKM5bCP5a2p5Z2Q5Zyo5bim6L2u5qSF5LiK5ouJ5ZCM5LiA5qC557uz77yM5Y+M5pa56YO95ZCR5Lit6Ze056e75Yqo77yM5bCP5a2p55qE5Yqg6YCf5bqm5pu05piO5pi+44CCPC9kZXNjPgogIDxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iNDUwIiByeD0iMjgiIGZpbGw9IiNmNGZiZjciLz4KICA8dGV4dCB4PSI1MCIgeT0iNjQiIGZpbGw9IiMyODVkNGIiIGZvbnQtZmFtaWx5PSJQaW5nRmFuZyBTQywgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyOCIgZm9udC13ZWlnaHQ9Ijc1MCI+5beo5Lq65ZKM5bCP5a2p5Z2Q5Zyo5ruR5p2/5qSF5LiK5ouJ57uz5a2QPC90ZXh0PgogIDxjaXJjbGUgY3g9IjE3OCIgY3k9IjIyMCIgcj0iNTIiIGZpbGw9IiM3MDU1ZDkiLz4KICA8Y2lyY2xlIGN4PSIxNzgiIGN5PSIxNTgiIHI9IjI5IiBmaWxsPSIjNzA1NWQ5Ii8+CiAgPGNpcmNsZSBjeD0iMzIyIiBjeT0iMjcwIiByPSIyOCIgZmlsbD0iI2YwYTI0YiIvPgogIDxjaXJjbGUgY3g9IjMyMiIgY3k9IjIzMCIgcj0iMTciIGZpbGw9IiNmMGEyNGIiLz4KICA8cGF0aCBkPSJNMjEwIDIwNWM0OC04IDY2LTggOTQtNSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjN2E1YjNmIiBzdHJva2Utd2lkdGg9IjUiLz4KICA8cGF0aCBkPSJNMTc4IDI5MGg5NE0zMjIgMzE0aDgzIiBzdHJva2U9IiM3NzcxOGIiIHN0cm9rZS13aWR0aD0iMTAiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgogIDxjaXJjbGUgY3g9IjIwMCIgY3k9IjMxMCIgcj0iMTAiIGZpbGw9IiM0ZTlkZGEiLz4KICA8Y2lyY2xlIGN4PSIyNTIiIGN5PSIzMTAiIHI9IjEwIiBmaWxsPSIjNGU5ZGRhIi8+CiAgPGNpcmNsZSBjeD0iMzM3IiBjeT0iMzM0IiByPSI4IiBmaWxsPSIjNGU5ZGRhIi8+CiAgPGNpcmNsZSBjeD0iMzc3IiBjeT0iMzM0IiByPSI4IiBmaWxsPSIjNGU5ZGRhIi8+CiAgPHBhdGggZD0iTTEyNSAyMjBoLTUwTTM2NSAyNzBoNTAiIHN0cm9rZT0iIzcwNTVkOSIgc3Ryb2tlLXdpZHRoPSIzIi8+CiAgPHBhdGggZD0ibTc1IDIxMS0xNCA5IDE0IDlNNDE1IDI2MWwxNCA5LTE0IDkiIGZpbGw9IiM3MDU1ZDkiLz4KICA8dGV4dCB4PSIxNzgiIHk9IjQwMiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzcwNTVkOSIgZm9udC1mYW1pbHk9IlBpbmdGYW5nIFNDLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjE4IiBmb250LXdlaWdodD0iNzAwIj7otKjph4/lpKfvvIzliqDpgJ/luqblsI88L3RleHQ+CiAgPHRleHQgeD0iMzIyIiB5PSI0MDIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiNkOTZlMmUiIGZvbnQtZmFtaWx5PSJQaW5nRmFuZyBTQywgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxOCIgZm9udC13ZWlnaHQ9IjcwMCI+6LSo6YeP5bCP77yM5pu05a655piT5Yqg6YCfPC90ZXh0PgogIDx0ZXh0IHg9IjI1MCIgeT0iMTM1IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjN2E1YjNmIiBmb250LWZhbWlseT0iUGluZ0ZhbmcgU0MsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTgiIGZvbnQtd2VpZ2h0PSI3MDAiPuWQjOS4gOaguee7szwvdGV4dD4KICA8dGV4dCB4PSI0MDAiIHk9IjQyNSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzVjNmI2MyIgZm9udC1mYW1pbHk9IlBpbmdGYW5nIFNDLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjE3Ij7lj4zmlrnlj5flipvnm7jlkIzvvIzkvYbotKjph4/kuI3lkIzlr7zoh7TliqDpgJ/luqbkuI3lkIw8L3RleHQ+Cjwvc3ZnPgo=","alt":"巨人和小孩坐在滑板椅上拉动同一根绳子，双方都向中间移动","caption":"同一根绳让双方同时受到作用，但质量较小的一方加速更明显。"}}},"nodes":[{"id":"unsupported-fall","parentId":"root","type":"phenomenon","question":"苹果离开树枝后，为什么会马上向下加速？","label":"失去支撑后的净力","answer":"树枝不再提供向上的支持力，地球引力没有被平衡，苹果便沿合力方向加速。","summary":"最直接的原因不是“苹果有向下运动的欲望”，而是受力状态改变：离开树枝后，支持力消失，重力仍在。","nextQuestion":"这个把苹果拉向地面的重力，为什么会出现？","knowledge":"苹果挂在树枝上时，重力向下，树枝对苹果的支持力向上；两个力平衡，苹果保持静止。苹果脱离树枝后，支持力不再作用，重力仍然存在，于是合力向下，苹果产生向下的加速度。近地面忽略空气阻力时，加速度约为 9.8 m/s²。","facts":["物体是否加速取决于合力，而不是是否受到某一个力。","树对苹果的支持力只能在接触时存在，离开树枝后便消失。","地球表面附近的自由落体加速度约为 9.8 m/s²，并随位置略有变化。"],"tags":["苹果","自由落体","重力"],"analogy":{"title":"桌布被抽走后杯子才下落","scene":"杯子被桌面托住时不会下落；桌布一撤，支撑消失，杯子才顺着重力方向运动。","mappings":[{"familiar":"托住杯子的桌面","concept":"树枝对苹果的支持力"},{"familiar":"撤掉桌布","concept":"苹果离开树枝"},{"familiar":"支撑消失后只剩向下的作用","concept":"重力没有被支持力平衡"},{"familiar":"杯子开始下落","concept":"苹果产生向下加速度"}],"limit":"真实桌子还有摩擦和空气；这里只聚焦支持力消失后合力方向改变这一层因果。","visual":{"kind":"image","src":"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4MDAgNDUwIiByb2xlPSJpbWciIGFyaWEtbGFiZWxsZWRieT0idGl0bGUgZGVzYyI+CiAgPHRpdGxlIGlkPSJ0aXRsZSI+5qGM5biD6KKr5oq96LWw5ZCO5p2v5a2Q5omN5LiL6JC9PC90aXRsZT4KICA8ZGVzYyBpZD0iZGVzYyI+5p2v5a2Q6KKr5qGM6Z2i5pSv5pKR5pe26Z2Z5q2i77yM5qGM5biD5oq96LWw5bm25aSx5Y675pSv5pKR5ZCO5byA5aeL5LiL6JC944CCPC9kZXNjPgogIDxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iNDUwIiByeD0iMjgiIGZpbGw9IiNmNGZiZjciLz4KICA8dGV4dCB4PSI1MCIgeT0iNjQiIGZpbGw9IiMyODVkNGIiIGZvbnQtZmFtaWx5PSJQaW5nRmFuZyBTQywgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyOCIgZm9udC13ZWlnaHQ9Ijc1MCI+5qGM5biD6KKr5oq96LWw5ZCO5p2v5a2Q5omN5LiL6JC9PC90ZXh0PgogIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDExMiAxMjIpIj4KICAgIDxyZWN0IHg9IjAiIHk9IjEyMCIgd2lkdGg9IjIzMCIgaGVpZ2h0PSIyMiIgcng9IjgiIGZpbGw9IiNiOGFkZGQiLz4KICAgIDxwYXRoIGQ9Ik0xMDAgMjhoNTJsLTcgODJIMTA3eiIgZmlsbD0iI2ZmZiIgc3Ryb2tlPSIjNzA1NWQ5IiBzdHJva2Utd2lkdGg9IjUiLz4KICAgIDxwYXRoIGQ9Ik0wIDEwMGgyMzAiIHN0cm9rZT0iI2U5ODU0NSIgc3Ryb2tlLXdpZHRoPSI3IiBzdHJva2UtZGFzaGFycmF5PSIxNCA4Ii8+CiAgICA8dGV4dCB4PSIxMjYiIHk9IjIxMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzVjNmI2MyIgZm9udC1mYW1pbHk9IlBpbmdGYW5nIFNDLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjE4Ij7moYzpnaLmlK/mkpHmna/lrZA8L3RleHQ+CiAgPC9nPgogIDxwYXRoIGQ9Ik0zODAgMjI1aDYwIiBzdHJva2U9IiM3NzcxOGIiIHN0cm9rZS13aWR0aD0iNCIvPgogIDxwYXRoIGQ9Im00NDAgMjE2IDE0IDktMTQgOSIgZmlsbD0iIzc3NzE4YiIvPgogIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDQ4NSAxMTIpIj4KICAgIDxwYXRoIGQ9Ik0wIDExOGgyMzAiIHN0cm9rZT0iI2I4YWRkZCIgc3Ryb2tlLXdpZHRoPSI4Ii8+CiAgICA8cGF0aCBkPSJNOTYgMTBoNTJsLTcgODJIMTAzeiIgZmlsbD0iI2ZmZiIgc3Ryb2tlPSIjNzA1NWQ5IiBzdHJva2Utd2lkdGg9IjUiLz4KICAgIDxjaXJjbGUgY3g9IjEyMiIgY3k9IjMwIiByPSI5MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjNzc3MThiIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1kYXNoYXJyYXk9IjcgNyIvPgogICAgPHBhdGggZD0iTTEyMiAxMDR2NThNMTA4IDE1MGwxNCAxNiAxNC0xNiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZTk4NTQ1IiBzdHJva2Utd2lkdGg9IjQiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgogICAgPHRleHQgeD0iMTIyIiB5PSIyMTMiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiNkOTZlMmUiIGZvbnQtZmFtaWx5PSJQaW5nRmFuZyBTQywgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxOCIgZm9udC13ZWlnaHQ9IjcwMCI+5pSv5pKR5raI5aSx5ZCO5ZCR5LiL5Yqg6YCfPC90ZXh0PgogIDwvZz4KICA8dGV4dCB4PSI0MDAiIHk9IjQyMiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzVjNmI2MyIgZm9udC1mYW1pbHk9IlBpbmdGYW5nIFNDLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjE4Ij7lj5jljJbmnaXoh6rmlK/mjIHlipvmtojlpLHvvIzkuI3mmK/mna/lrZDnqoHnhLbkuqfnlJ/kuobigJzlkJHkuIvnmoTmrLLmnJvigJ08L3RleHQ+Cjwvc3ZnPgo=","alt":"桌布从杯子下方抽走，杯子失去支撑后开始下落","caption":"重力一直都在，改变运动的是支持力消失后形成的向下合力。"}},"experiment":null,"videoLinks":[{"id":"unsupported-fall-video-1","title":"初中物理八年级下册 重力与质量的辨析及计算","url":"https://www.bilibili.com/video/BV1ax411E7K9","embedUrl":"https://player.bilibili.com/player.html?bvid=BV1ax411E7K9&page=1&autoplay=0","platform":"bilibili","author":"乐乐课堂-天天练APP","thumbnailUrl":"https://i0.hdslb.com/bfs/archive/42261fb1ff14aaff8f67e9ef18b689b85537ab66.jpg","durationSeconds":186,"publishedAt":"2017-11-02","queryDate":"2026-10-26","relevanceScore":90.9,"selectionRationale":"辨析重力与质量，帮助建立苹果离开支撑后仍受重力的第一层解释。"}]},{"id":"gravity-interaction","parentId":"unsupported-fall","type":"mechanism","question":"这个把苹果拉向地面的重力，为什么会出现？","label":"质量之间的相互吸引","answer":"地球和苹果都有质量，二者之间存在万有引力；地球巨大的质量使苹果获得明显的向下加速度。","summary":"牛顿把地面落体与天体运动统一起来：引力大小取决于双方质量和距离，地球质量远大于苹果，因此苹果的加速度主要由地球决定。","nextQuestion":"为什么有质量的物体会让另一个物体产生加速度？","knowledge":"牛顿万有引力定律用 F = GMm/r² 描述两个质量之间的吸引。苹果也吸引地球，但地球质量极大，同样的相互作用给地球造成的加速度几乎无法察觉。牛顿理论给出了精确的计算规则和跨尺度预测能力，却没有解释“为什么质量会产生这种作用”这一更深问题。","facts":["牛顿万有引力定律把引力与双方质量和距离联系起来。","相互作用的力大小相同，但质量不同的物体获得的加速度不同。","牛顿理论统一解释了地面落体与天体轨道，但没有说明引力的更深来源。"],"tags":["牛顿","万有引力","质量"],"analogy":{"title":"两个滑板玩家拉同一根绳子","scene":"大人和小孩穿着滑板鞋拉同一根绳，双方都被绳拉向中间；质量较小的一方更容易改变速度。","mappings":[{"familiar":"两人共同拉的绳子","concept":"相互引力"},{"familiar":"质量大的大人","concept":"地球"},{"familiar":"质量小的小孩","concept":"苹果"},{"familiar":"双方受力相同但小孩更容易移动","concept":"作用力相同而加速度取决于质量"}],"limit":"绳子的拉力靠接触传递；引力不需要绳子，牛顿模型也没有解释引力为何存在。","visual":{"kind":"image","src":"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4MDAgNDUwIiByb2xlPSJpbWciIGFyaWEtbGFiZWxsZWRieT0idGl0bGUgZGVzYyI+CiAgPHRpdGxlIGlkPSJ0aXRsZSI+5beo5Lq65ZKM5bCP5a2p5Z2Q5Zyo5ruR5p2/5qSF5LiK5ouJ57uz5a2QPC90aXRsZT4KICA8ZGVzYyBpZD0iZGVzYyI+5beo5Lq65ZKM5bCP5a2p5Z2Q5Zyo5bim6L2u5qSF5LiK5ouJ5ZCM5LiA5qC557uz77yM5Y+M5pa56YO95ZCR5Lit6Ze056e75Yqo77yM5bCP5a2p55qE5Yqg6YCf5bqm5pu05piO5pi+44CCPC9kZXNjPgogIDxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iNDUwIiByeD0iMjgiIGZpbGw9IiNmNGZiZjciLz4KICA8dGV4dCB4PSI1MCIgeT0iNjQiIGZpbGw9IiMyODVkNGIiIGZvbnQtZmFtaWx5PSJQaW5nRmFuZyBTQywgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyOCIgZm9udC13ZWlnaHQ9Ijc1MCI+5beo5Lq65ZKM5bCP5a2p5Z2Q5Zyo5ruR5p2/5qSF5LiK5ouJ57uz5a2QPC90ZXh0PgogIDxjaXJjbGUgY3g9IjE3OCIgY3k9IjIyMCIgcj0iNTIiIGZpbGw9IiM3MDU1ZDkiLz4KICA8Y2lyY2xlIGN4PSIxNzgiIGN5PSIxNTgiIHI9IjI5IiBmaWxsPSIjNzA1NWQ5Ii8+CiAgPGNpcmNsZSBjeD0iMzIyIiBjeT0iMjcwIiByPSIyOCIgZmlsbD0iI2YwYTI0YiIvPgogIDxjaXJjbGUgY3g9IjMyMiIgY3k9IjIzMCIgcj0iMTciIGZpbGw9IiNmMGEyNGIiLz4KICA8cGF0aCBkPSJNMjEwIDIwNWM0OC04IDY2LTggOTQtNSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjN2E1YjNmIiBzdHJva2Utd2lkdGg9IjUiLz4KICA8cGF0aCBkPSJNMTc4IDI5MGg5NE0zMjIgMzE0aDgzIiBzdHJva2U9IiM3NzcxOGIiIHN0cm9rZS13aWR0aD0iMTAiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgogIDxjaXJjbGUgY3g9IjIwMCIgY3k9IjMxMCIgcj0iMTAiIGZpbGw9IiM0ZTlkZGEiLz4KICA8Y2lyY2xlIGN4PSIyNTIiIGN5PSIzMTAiIHI9IjEwIiBmaWxsPSIjNGU5ZGRhIi8+CiAgPGNpcmNsZSBjeD0iMzM3IiBjeT0iMzM0IiByPSI4IiBmaWxsPSIjNGU5ZGRhIi8+CiAgPGNpcmNsZSBjeD0iMzc3IiBjeT0iMzM0IiByPSI4IiBmaWxsPSIjNGU5ZGRhIi8+CiAgPHBhdGggZD0iTTEyNSAyMjBoLTUwTTM2NSAyNzBoNTAiIHN0cm9rZT0iIzcwNTVkOSIgc3Ryb2tlLXdpZHRoPSIzIi8+CiAgPHBhdGggZD0ibTc1IDIxMS0xNCA5IDE0IDlNNDE1IDI2MWwxNCA5LTE0IDkiIGZpbGw9IiM3MDU1ZDkiLz4KICA8dGV4dCB4PSIxNzgiIHk9IjQwMiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzcwNTVkOSIgZm9udC1mYW1pbHk9IlBpbmdGYW5nIFNDLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjE4IiBmb250LXdlaWdodD0iNzAwIj7otKjph4/lpKfvvIzliqDpgJ/luqblsI88L3RleHQ+CiAgPHRleHQgeD0iMzIyIiB5PSI0MDIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiNkOTZlMmUiIGZvbnQtZmFtaWx5PSJQaW5nRmFuZyBTQywgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxOCIgZm9udC13ZWlnaHQ9IjcwMCI+6LSo6YeP5bCP77yM5pu05a655piT5Yqg6YCfPC90ZXh0PgogIDx0ZXh0IHg9IjI1MCIgeT0iMTM1IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjN2E1YjNmIiBmb250LWZhbWlseT0iUGluZ0ZhbmcgU0MsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTgiIGZvbnQtd2VpZ2h0PSI3MDAiPuWQjOS4gOaguee7szwvdGV4dD4KICA8dGV4dCB4PSI0MDAiIHk9IjQyNSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzVjNmI2MyIgZm9udC1mYW1pbHk9IlBpbmdGYW5nIFNDLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjE3Ij7lj4zmlrnlj5flipvnm7jlkIzvvIzkvYbotKjph4/kuI3lkIzlr7zoh7TliqDpgJ/luqbkuI3lkIw8L3RleHQ+Cjwvc3ZnPgo=","alt":"巨人和小孩拉动同一根绳子，质量较小的小孩更容易改变速度","caption":"双方受到同样大小的相互作用，但加速度取决于各自质量。"}},"experiment":null,"videoLinks":[{"id":"gravity-interaction-video-1","title":"牛顿万有引力公式，是怎么一步步推导出来的？","url":"https://www.bilibili.com/video/BV1doM46tES1","embedUrl":"https://player.bilibili.com/player.html?bvid=BV1doM46tES1&page=1&autoplay=0","platform":"bilibili","author":"物理思考者","thumbnailUrl":"https://i2.hdslb.com/bfs/archive/14b48147ec51ce64032b1e63fde09a62d5ca685f.jpg","durationSeconds":348,"publishedAt":"2026-07-07","queryDate":"2026-10-26","relevanceScore":73.5,"selectionRationale":"从圆周运动和开普勒定律推导万有引力，直接连接落体与轨道现象。"}]},{"id":"spacetime-geometry","parentId":"gravity-interaction","type":"principle","question":"为什么有质量的物体会让另一个物体产生加速度？","label":"从力到时空几何","answer":"广义相对论认为，质量与能量改变时空几何；苹果在弯曲时空中沿测地线运动，看起来就是被地球加速吸引。","summary":"这一层不是增加另一个“拉力”，而是改变对引力的描述：自由落体可以看成弯曲时空中的惯性运动。","nextQuestion":"苹果为什么会沿着弯曲时空中的测地线运动？","knowledge":"在广义相对论中，物质和能量决定时空曲率，自由落体物体沿时空中的测地线运动。牛顿的“引力”在弱场、低速条件下是极其准确的近似；广义相对论则解释了水星近日点进动、引力透镜和精密计时等现象。把时空弯曲画成二维漏斗只是类比，并非真实四维几何。","facts":["广义相对论把引力与时空几何联系起来。","自由落体物体在只有引力作用时沿测地线运动。","牛顿引力在弱场和低速条件下仍是很好的近似。"],"tags":["广义相对论","时空","引力"],"analogy":{"title":"地图上的弯曲公路","scene":"在地图上，一条看起来最直的前进路线会被弯曲地形改道；物体没有偏离规则，只是道路本身弯了。","mappings":[{"familiar":"地图","concept":"时空"},{"familiar":"弯曲公路","concept":"时空几何"},{"familiar":"沿路前进","concept":"自由落体沿测地线运动"},{"familiar":"山体塑造道路走向","concept":"质量与能量影响时空曲率"}],"limit":"地图上的道路弯曲是二维画面；时空弯曲是四维几何，不能用一块被压弯的橡胶布字面代替。","visual":{"kind":"image","src":"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4MDAgNDUwIiByb2xlPSJpbWciIGFyaWEtbGFiZWxsZWRieT0idGl0bGUgZGVzYyI+CiAgPHRpdGxlIGlkPSJ0aXRsZSI+5Zyw5Zu+5LiK55qE5byv5puy5YWs6LevPC90aXRsZT4KICA8ZGVzYyBpZD0iZGVzYyI+5Zyw5Zu+5Lit55qE6YGT6Lev6KKr5byv5puy5Zyw5b2i5pS56YGT77yM6KGM6L+b6ICF5LuN5rK/5pyA6Ieq54S26Lev57q/5YmN6L+b77yM5L2G6Lev57q/5pys6Lqr5byv5LqG44CCPC9kZXNjPgogIDxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iNDUwIiByeD0iMjgiIGZpbGw9IiNmNGZiZjciLz4KICA8dGV4dCB4PSI1MCIgeT0iNjQiIGZpbGw9IiMyODVkNGIiIGZvbnQtZmFtaWx5PSJQaW5nRmFuZyBTQywgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyOCIgZm9udC13ZWlnaHQ9Ijc1MCI+5Zyw5Zu+5LiK55qE5byv5puy5YWs6LevPC90ZXh0PgogIDxwYXRoIGQ9Ik04MCAzNDBjMTMwLTE2MCAyNTItMTcwIDM2NC05NXMxNzggMzggMjc2LTcyIiBmaWxsPSJub25lIiBzdHJva2U9IiNiOGFkZGQiIHN0cm9rZS13aWR0aD0iNDIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgogIDxwYXRoIGQ9Ik04MCAzNDBjMTMwLTE2MCAyNTItMTcwIDM2NC05NXMxNzggMzggMjc2LTcyIiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWRhc2hhcnJheT0iMTIgMTAiLz4KICA8cGF0aCBkPSJNMTA2IDMxOGMxMzItMTI2IDIyNS0xMzAgMzMwLTcwczE2NiA0NSAyNTAtMzAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzcwNTVkOSIgc3Ryb2tlLXdpZHRoPSI0Ii8+CiAgPHBhdGggZD0ibTY4NiAyMTggMTgtMTEtNyAyMCIgZmlsbD0iIzcwNTVkOSIvPgogIDxjaXJjbGUgY3g9IjEwNiIgY3k9IjMxOCIgcj0iMTAiIGZpbGw9IiNmMGEyNGIiLz4KICA8dGV4dCB4PSIxMzAiIHk9IjM1NiIgZmlsbD0iI2Q5NmUyZSIgZm9udC1mYW1pbHk9IlBpbmdGYW5nIFNDLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjE4IiBmb250LXdlaWdodD0iNzAwIj7otbfngrk8L3RleHQ+CiAgPHRleHQgeD0iNjUwIiB5PSIyNTIiIGZpbGw9IiM3MDU1ZDkiIGZvbnQtZmFtaWx5PSJQaW5nRmFuZyBTQywgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxOCIgZm9udC13ZWlnaHQ9IjcwMCI+5rK/6Lev5YmN6L+bPC90ZXh0PgogIDx0ZXh0IHg9IjQwMCIgeT0iMTEyIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjNzc3MThiIiBmb250LWZhbWlseT0iUGluZ0ZhbmcgU0MsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTgiPuWcsOW9ouiuqeKAnOWwveWPr+iDveebtOKAneeahOi3r+e6v+eci+i1t+adpeW8r+absjwvdGV4dD4KICA8dGV4dCB4PSI0MDAiIHk9IjQxNiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzVjNmI2MyIgZm9udC1mYW1pbHk9IlBpbmdGYW5nIFNDLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjE4Ij7lnLDlm77lg4/ml7bnqbrvvIzlsbHkvZPloZHlvaLlg4/otKjph4/kuI7og73ph4/lvbHlk43mm7Lnjoc8L3RleHQ+Cjwvc3ZnPgo=","alt":"地图上的道路被弯曲地形改道，行进者沿道路自然前进","caption":"路线弯曲不等于有人在推着转弯，可能只是空间中的可行路径本身弯了。"}},"experiment":null,"videoLinks":[{"id":"spacetime-geometry-video-1","title":"【李永乐老师】漫谈相对论（六）什么是时空弯曲？爱因斯坦如何解释引力？","url":"https://www.youtube.com/watch?v=BeCv70hb33k","embedUrl":"https://www.youtube-nocookie.com/embed/BeCv70hb33k","platform":"youtube","author":"李永乐老师","thumbnailUrl":"https://i.ytimg.com/vi/BeCv70hb33k/hq720.jpg","durationSeconds":723,"publishedAt":null,"queryDate":"2026-10-26","relevanceScore":98.2,"selectionRationale":"系统解释时空弯曲与引力，适合承接牛顿引力之后的更深一层。"}]},{"id":"geodesic","parentId":"spacetime-geometry","type":"principle","question":"苹果为什么会沿着弯曲时空中的测地线运动？","label":"自由落体就是惯性运动","answer":"在没有其他非引力作用时，自由落体没有感受到局部加速度；它的世界线就是弯曲时空中尽可能“直”的测地线。","summary":"测地线是弯曲几何中的最短或最长路径概念。自由落体的“下落”从四维时空看是一种惯性运动。","nextQuestion":"时空弯曲又由什么决定？","knowledge":"在广义相对论中，自由落体不是被一种看不见的力不断推离直线，而是在弯曲四维时空中沿着测地线运动。测地线是弯曲几何里的“尽可能直”的世界线；若没有其他非引力作用，物体就沿这样的路径运动。","facts":["测地线把平直时空中的直线概念推广到弯曲时空。","自由落体物体的世界线在广义相对论中是测地线。","局部自由落体参考系中，引力效应可以被局部消除，这正是等效原理的体现。"],"tags":["测地线","自由落体","等效原理"],"analogy":{"title":"拉紧的绳在钉子之间自然取直","scene":"把一根绳拉紧在受限空间里，它会贴出一条尽可能短的路径；没有人一路推着它转弯。","mappings":[{"familiar":"绳自然取直的倾向","concept":"惯性运动"},{"familiar":"钉子划出的空间限制","concept":"时空几何"},{"familiar":"绳贴出的最短路径","concept":"测地线"},{"familiar":"不必持续推绳前进","concept":"自由落体没有局部非引力加速度"}],"limit":"绳会受张力，测地线不是被绳子拉着；这个场景只帮助理解“在弯曲几何中走最直路线”。","visual":{"kind":"image","src":"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4MDAgNDUwIiByb2xlPSJpbWciIGFyaWEtbGFiZWxsZWRieT0idGl0bGUgZGVzYyI+CiAgPHRpdGxlIGlkPSJ0aXRsZSI+5ouJ57Sn55qE57uz5Zyo6ZKJ5a2Q5LmL6Ze06Ieq54S25Y+W55u0PC90aXRsZT4KICA8ZGVzYyBpZD0iZGVzYyI+57uz5a2Q57uV6L+H6ZKJ5a2Q57qm5p2f77yM5Zyo5Y+X6ZmQ56m66Ze05Lit6LS05Ye65bC95Y+v6IO955+t55qE6Lev5b6E77yM5rKh5pyJ5Lq65o6o552A5a6D6L2s5byv44CCPC9kZXNjPgogIDxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iNDUwIiByeD0iMjgiIGZpbGw9IiNmNGZiZjciLz4KICA8dGV4dCB4PSI1MCIgeT0iNjQiIGZpbGw9IiMyODVkNGIiIGZvbnQtZmFtaWx5PSJQaW5nRmFuZyBTQywgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyOCIgZm9udC13ZWlnaHQ9Ijc1MCI+5ouJ57Sn55qE57uz5Zyo6ZKJ5a2Q5LmL6Ze06Ieq54S25Y+W55u0PC90ZXh0PgogIDxnIGZpbGw9IiNiOGFkZGQiPgogICAgPGNpcmNsZSBjeD0iMjcwIiBjeT0iMTgwIiByPSIyMiIvPjxjaXJjbGUgY3g9IjQyMCIgY3k9IjI4MCIgcj0iMjIiLz48Y2lyY2xlIGN4PSI1ODAiIGN5PSIxNzAiIHI9IjIyIi8+CiAgPC9nPgogIDxwYXRoIGQ9Ik0xMTAgMzAwbDE2MC0xMjAgMTUwIDEwMCAxNjAtMTEwIDEyMCA3NSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjNzA1NWQ5IiBzdHJva2Utd2lkdGg9IjciIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgogIDxjaXJjbGUgY3g9IjExMCIgY3k9IjMwMCIgcj0iOSIgZmlsbD0iI2YwYTI0YiIvPgogIDxjaXJjbGUgY3g9IjcwMCIgY3k9IjI0NSIgcj0iOSIgZmlsbD0iI2YwYTI0YiIvPgogIDx0ZXh0IHg9IjM5NSIgeT0iMzQ3IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjNWM2YjYzIiBmb250LWZhbWlseT0iUGluZ0ZhbmcgU0MsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTgiPumSieWtkOmZkOWumuS6huWHoOS9leepuumXtDwvdGV4dD4KICA8dGV4dCB4PSI0MDAiIHk9IjExMiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzcwNTVkOSIgZm9udC1mYW1pbHk9IlBpbmdGYW5nIFNDLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjE4IiBmb250LXdlaWdodD0iNzAwIj7nu7Poh6rnhLbotLTlh7rmnIDnm7TnmoTlj6/ooYzot6/lvoQ8L3RleHQ+CiAgPHRleHQgeD0iNDAwIiB5PSI0MTIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiM1YzZiNjMiIGZvbnQtZmFtaWx5PSJQaW5nRmFuZyBTQywgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxOCI+5rK/5rWL5Zyw57q/6L+Q5Yqo5YOP5Zyo5byv5puy56m66Ze06YeM6LWw5pyA55u06Lev57q/PC90ZXh0Pgo8L3N2Zz4K","alt":"拉紧的绳子绕过钉子约束，贴出尽可能短的路径","caption":"钉子限定几何，绳自然选择一条最直的可行路线。"}},"experiment":null,"videoLinks":[]},{"id":"field-equation","parentId":"geodesic","type":"foundation","question":"时空弯曲又由什么决定？","label":"爱因斯坦场方程","answer":"爱因斯坦场方程把时空曲率与物质、能量和动量分布联系起来；具体分布决定具体的几何。","summary":"场方程是广义相对论的核心结构。它把“质量如何弯曲时空”从直觉描述提升为可计算的关系。","nextQuestion":"这套解释在哪里遇到边界？","knowledge":"爱因斯坦场方程把时空的曲率与能量—动量张量联系起来。它不是一个单独的数字公式，而是一组张量方程：物质和能量的分布决定几何，几何又决定自由落体如何运动。弱场近似下，它可以回到牛顿引力。","facts":["爱因斯坦场方程联系时空曲率与能量、动量分布。","牛顿引力可作为广义相对论在弱场、低速条件下的近似。","求解场方程需要明确物质分布与边界条件。"],"tags":["场方程","能量动量","时空曲率"],"analogy":{"title":"保龄球压在床垫上形成凹坑","scene":"保龄球压弯床垫，附近弹珠沿凹陷滚向它；凹坑的形状由球的质量和床垫如何变形共同决定。","mappings":[{"familiar":"压住床垫的保龄球","concept":"质量能量分布"},{"familiar":"床垫形成的凹坑","concept":"时空曲率"},{"familiar":"弹珠沿凹坑滚向球","concept":"自由落体轨迹"},{"familiar":"球和床垫如何互相影响","concept":"爱因斯坦场方程"}],"limit":"床垫有外力支撑且只是二维弹性面；场方程描述四维时空，质量弯曲的不是一张实体布。","visual":{"kind":"image","src":"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4MDAgNDUwIiByb2xlPSJpbWciIGFyaWEtbGFiZWxsZWRieT0idGl0bGUgZGVzYyI+CiAgPHRpdGxlIGlkPSJ0aXRsZSI+5L+d6b6E55CD5Y6L5Zyo5bqK5Z6r5LiK5b2i5oiQ5Ye55Z2RPC90aXRsZT4KICA8ZGVzYyBpZD0iZGVzYyI+5L+d6b6E55CD5Y6L5byv5bqK5Z6r77yM6ZmE6L+R5by554+g5rK/5Ye55Z2R5rua5ZCR55CD77yb5Ye55Z2R5b2i54q25Y+N5pig6LSo6YeP5YiG5biD5LiO5Yeg5L2V5YWz57O744CCPC9kZXNjPgogIDxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iNDUwIiByeD0iMjgiIGZpbGw9IiNmNGZiZjciLz4KICA8dGV4dCB4PSI1MCIgeT0iNjQiIGZpbGw9IiMyODVkNGIiIGZvbnQtZmFtaWx5PSJQaW5nRmFuZyBTQywgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyOCIgZm9udC13ZWlnaHQ9Ijc1MCI+5L+d6b6E55CD5Y6L5Zyo5bqK5Z6r5LiK5b2i5oiQ5Ye55Z2RPC90ZXh0PgogIDxwYXRoIGQ9Ik0xMDAgMTkwcTExMCAxMCAxNDAgOTBxMzAgODAgMTYwIDgwdDE2MC04MHEzMC04MCAxNDAtOTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2I4YWRkZCIgc3Ryb2tlLXdpZHRoPSIyMCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CiAgPGNpcmNsZSBjeD0iNDAwIiBjeT0iMjc1IiByPSI3MCIgZmlsbD0iIzcwNTVkOSIvPgogIDxjaXJjbGUgY3g9IjM3NyIgY3k9IjI1MCIgcj0iOCIgZmlsbD0iI2Q4ZDBlYiIvPjxjaXJjbGUgY3g9IjQyMyIgY3k9IjI1MCIgcj0iOCIgZmlsbD0iI2Q4ZDBlYiIvPjxjaXJjbGUgY3g9IjQwMCIgY3k9IjI4NiIgcj0iOCIgZmlsbD0iI2Q4ZDBlYiIvPgogIDxjaXJjbGUgY3g9IjI1MCIgY3k9IjI1MCIgcj0iMTQiIGZpbGw9IiNmMGEyNGIiLz4KICA8cGF0aCBkPSJNMjY1IDI2NXE1MCAyMiA3MiA4IiBmaWxsPSJub25lIiBzdHJva2U9IiNlOTg1NDUiIHN0cm9rZS13aWR0aD0iNCIvPgogIDxwYXRoIGQ9Im0zMjkgMjcwIDE2IDMtMTAgMTIiIGZpbGw9IiNlOTg1NDUiLz4KICA8dGV4dCB4PSI0MDAiIHk9IjM5MCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzVjNmI2MyIgZm9udC1mYW1pbHk9IlBpbmdGYW5nIFNDLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjE4Ij7luorlnqvlh7nlnZHlr7nlupTml7bnqbrmm7LnjofvvIzlvLnnj6Dot6/lvoTlr7nlupToh6rnlLHokL3kvZM8L3RleHQ+CiAgPHRleHQgeD0iNDAwIiB5PSI0MjQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiM3MDU1ZDkiIGZvbnQtZmFtaWx5PSJQaW5nRmFuZyBTQywgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNyI+5bqK5Z6r5Y+q5piv5LqM57u056S65oSP77yM5LiN5piv5a6e5L2T5pe256m65biDPC90ZXh0Pgo8L3N2Zz4K","alt":"保龄球压弯床垫，附近弹珠沿凹坑滚向保龄球","caption":"质量分布塑造凹坑，弹珠沿凹坑运动，对应物质能量塑造时空曲率。"}},"experiment":null,"videoLinks":[]},{"id":"quantum-gravity","parentId":"field-equation","type":"boundary","question":"这套解释在哪里遇到边界？","label":"尚未完成的量子引力","answer":"在黑洞奇点和普朗克尺度，广义相对论与量子场论不能同时提供完整描述；目前还没有实验确认的量子引力理论。","summary":"这里不是再给一个“更底层答案”，而是诚实标明当前物理理论的边界，以及继续追问所需的新理论。","nextQuestion":null,"knowledge":"广义相对论在宏观尺度上通过了大量检验，但它与量子场论在黑洞奇点、普朗克尺度等极端条件下难以给出一致且完整的描述。量子引力仍是活跃研究领域，目前没有经实验确认的最终理论，因此这里应以明确边界收束。","facts":["广义相对论与量子场论在极端引力条件下缺少一致的统一描述。","黑洞奇点和普朗克尺度通常被视为现有理论失效的区域。","弦论、圈量子引力等是竞争性研究方向，但尚无实验确认的完整量子引力理论。"],"tags":["量子引力","黑洞","理论边界"],"analogy":{"title":"一张地图在同一处印着两条路","scene":"一张地图在某个边缘同时标出两条互不相容的道路，走到那里才发现现有地图无法告诉他们该走哪条。","mappings":[{"familiar":"覆盖不同区域的地图","concept":"现有物理理论"},{"familiar":"两套不能同时套用的道路规则","concept":"广义相对论与量子场论"},{"familiar":"地图重叠冲突的边缘","concept":"黑洞奇点与普朗克尺度"},{"familiar":"边缘之外尚待绘制的新道路","concept":"尚未确认的量子引力理论"}],"limit":"现实不是一张印错的地图；这里表示两个成熟理论缺少统一的完整描述，而不是自然本身自相矛盾。","visual":{"kind":"image","src":"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4MDAgNDUwIiByb2xlPSJpbWciIGFyaWEtbGFiZWxsZWRieT0idGl0bGUgZGVzYyI+CiAgPHRpdGxlIGlkPSJ0aXRsZSI+5LiA5byg5Zyw5Zu+5Zyo5ZCM5LiA5aSE5Y2w552A5Lik5p2h6LevPC90aXRsZT4KICA8ZGVzYyBpZD0iZGVzYyI+5Zyw5Zu+6L6557yY5Ye6546w5Lik5p2h5LqS5LiN55u45a6555qE6YGT6Lev77yM5Luj6KGo546w5pyJ5Lik5aWX55CG6K665peg5rOV5Zyo5p6B56uv5p2h5Lu25LiL57uf5LiA5o+P6L+w44CCPC9kZXNjPgogIDxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iNDUwIiByeD0iMjgiIGZpbGw9IiNmNGZiZjciLz4KICA8dGV4dCB4PSI1MCIgeT0iNjQiIGZpbGw9IiMyODVkNGIiIGZvbnQtZmFtaWx5PSJQaW5nRmFuZyBTQywgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyOCIgZm9udC13ZWlnaHQ9Ijc1MCI+5LiA5byg5Zyw5Zu+5Zyo5ZCM5LiA5aSE5Y2w552A5Lik5p2h6LevPC90ZXh0PgogIDxyZWN0IHg9IjEzMCIgeT0iMTEyIiB3aWR0aD0iNTQwIiBoZWlnaHQ9IjI2MCIgcng9IjIyIiBmaWxsPSIjZmZmIiBzdHJva2U9IiNiOGFkZGQiIHN0cm9rZS13aWR0aD0iNCIvPgogIDxwYXRoIGQ9Ik0xNzAgMzIwYzgwLTIwIDEzMC04MCAyMTAtMTEwIiBmaWxsPSJub25lIiBzdHJva2U9IiM3MDU1ZDkiIHN0cm9rZS13aWR0aD0iMTIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgogIDxwYXRoIGQ9Ik00NTUgMTU1YzU4IDUyIDc0IDExNiA1MCAxOTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzRlOWRkYSIgc3Ryb2tlLXdpZHRoPSI5IiBzdHJva2UtZGFzaGFycmF5PSIxNiAxMCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CiAgPHBhdGggZD0iTTQ1NSAxNTVjLTgwIDQ4LTExNSAxMDgtMTE5IDE5MiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZTk4NTQ1IiBzdHJva2Utd2lkdGg9IjkiIHN0cm9rZS1kYXNoYXJyYXk9IjUgMTAiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgogIDxjaXJjbGUgY3g9IjQ1NSIgY3k9IjE1NSIgcj0iMTgiIGZpbGw9IiNmMGEyNGIiLz4KICA8dGV4dCB4PSI0NTUiIHk9IjEzMiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iI2Q5NmUyZSIgZm9udC1mYW1pbHk9IlBpbmdGYW5nIFNDLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjE4IiBmb250LXdlaWdodD0iNzAwIj7mnoHnq6/lsLrluqY8L3RleHQ+CiAgPHRleHQgeD0iMjQwIiB5PSIzNTAiIGZpbGw9IiM3MDU1ZDkiIGZvbnQtZmFtaWx5PSJQaW5nRmFuZyBTQywgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxOCIgZm9udC13ZWlnaHQ9IjcwMCI+5bm/5LmJ55u45a+56K66PC90ZXh0PgogIDx0ZXh0IHg9IjU4NSIgeT0iMzUwIiBmaWxsPSIjMzU3Y2FlIiBmb250LWZhbWlseT0iUGluZ0ZhbmcgU0MsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTgiIGZvbnQtd2VpZ2h0PSI3MDAiPumHj+WtkOWcuuiuujwvdGV4dD4KICA8dGV4dCB4PSI0MDAiIHk9IjQxNCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzVjNmI2MyIgZm9udC1mYW1pbHk9IlBpbmdGYW5nIFNDLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjE4Ij7lnLDlm77lhrLnqoHooajnpLrnvLrlsJHnu5/kuIDmj4/ov7DvvIzkuI3mmK/oh6rnhLbmnKzouqvnn5vnm748L3RleHQ+Cjwvc3ZnPgo=","alt":"地图在同一处画出两条互不相容的道路，分别代表广义相对论和量子场论","caption":"地图冲突表示理论覆盖范围不能无缝衔接，而不是自然本身矛盾。"}},"experiment":null,"videoLinks":[]}]}</script>
+  <script>
+    (() => {
+      "use strict";
+
+      const data = JSON.parse(document.getElementById("askwhy-data").textContent);
+      const center = { ...data.center, facts: [], experiment: null, videoLinks: [] };
+      const nodes = [center, ...data.nodes];
+      const nodeById = new Map(nodes.map(node => [node.id, node]));
+      const detailPanel = document.getElementById("detail-panel");
+      const desktopQuery = window.matchMedia("(min-width: 761px)");
+      const LEARNING_LEVEL_LABELS = {
+        primary: "小学",
+        middle: "初中",
+        high: "高中"
+      };
+      const NODE_TYPE_LABELS = {
+        phenomenon: "现象",
+        mechanism: "机制",
+        principle: "原理",
+        evidence: "证据",
+        foundation: "基础",
+        boundary: "边界"
+      };
+      let selectedId = "root";
+      let toastTimer = 0;
+
+      const setText = (id, value) => {
+        document.getElementById(id).textContent = value;
+      };
+
+      const create = (tag, className, text) => {
+        const element = document.createElement(tag);
+        if (className) element.className = className;
+        if (text !== undefined) element.textContent = text;
+        return element;
+      };
+
+      function hashId() {
+        const match = window.location.hash.match(/^#question-([a-z0-9-]+)$/);
+        return match && nodeById.has(match[1]) ? match[1] : null;
+      }
+
+      function questionHash(id) {
+        return `#question-${id}`;
+      }
+
+      function populateHero() {
+        document.documentElement.lang = data.meta.language || "zh-CN";
+        setText("hero-question", data.meta.question);
+        setText("hero-summary", center.summary || data.meta.summary);
+        const overview = center.overviewVisual;
+        const overviewFigure = document.getElementById("hero-overview");
+        const overviewImage = document.getElementById("hero-overview-image");
+        overviewFigure.hidden = !overview;
+        if (overview) {
+          overviewImage.src = overview.src;
+          overviewImage.alt = overview.alt;
+          setText("hero-overview-caption", overview.caption);
+        }
+        const learningLevelLabel =
+          LEARNING_LEVEL_LABELS[data.meta.learningLevel] || data.meta.learningLevel;
+        setText(
+          "hero-category",
+          [data.meta.category, learningLevelLabel ? `${learningLevelLabel}版` : null]
+            .filter(Boolean)
+            .join(" · ")
+        );
+        const pills = [
+          ["预计探索 " + data.meta.estimatedMinutes + " 分钟", true],
+          [data.nodes.length + " 层追问", false],
+          ["从现象抵达根基", false]
+        ].filter(Boolean);
+        const container = document.getElementById("meta-pills");
+        container.replaceChildren();
+        pills.forEach(([label, accent]) => {
+          container.append(create("span", "meta-pill" + (accent ? " accent" : ""), label));
+        });
+      }
+
+      function buildChain() {
+        setText("chain-root-question", center.question);
+        setText("chain-root-summary", center.summary);
+        const chain = document.getElementById("why-chain");
+        chain.replaceChildren();
+        nodes.slice(1).forEach((node, index) => {
+          const button = create(
+            "button",
+            "why-step"
+          );
+          button.type = "button";
+          button.id = `question-${node.id}`;
+          button.dataset.nodeId = node.id;
+          button.setAttribute("aria-controls", "detail-panel");
+          button.setAttribute("aria-pressed", "false");
+
+          const head = create("span", "why-step-head");
+          head.append(
+            create("span", "why-step-index", `WHY ${String(index + 1).padStart(2, "0")}`),
+            create(
+              "span",
+              "why-step-type",
+              NODE_TYPE_LABELS[node.type] || node.type
+            ),
+            create("span", "why-step-label", node.label)
+          );
+          const copy = create("span", "why-step-copy");
+          copy.append(
+            head,
+            create("strong", "", node.question),
+            create("span", "why-step-answer", node.answer)
+          );
+          button.append(copy);
+          if (node.visual) {
+            button.classList.add("has-visual");
+            const preview = create("span", "why-step-visual");
+            const image = document.createElement("img");
+            image.src = visualPreviewSource(node.visual);
+            image.alt = "";
+            preview.append(
+              image,
+              create(
+                "span",
+                "visual-kind-badge",
+                node.visual.kind === "manim" ? "ANIM" : "FIG"
+              )
+            );
+            button.append(preview);
+          }
+          button.addEventListener("click", () => selectNode(node.id, { updateUrl: true }));
+          chain.append(button);
+        });
+      }
+
+      function renderTags(container, tags) {
+        container.replaceChildren();
+        tags.forEach(tag => container.append(create("span", "tag", tag)));
+      }
+
+      function renderAnalogy(analogy) {
+        const section = document.getElementById("analogy-section");
+        const mappings = document.getElementById("analogy-mappings");
+        section.hidden = !analogy;
+        mappings.replaceChildren();
+        if (!analogy) return;
+
+        renderFigureVisual(
+          document.getElementById("analogy-visual"),
+          analogy.visual || null,
+          {
+            compact: true,
+            imageLabel: "类比示意图",
+            manimLabel: "类比动画"
+          }
+        );
+        setText("analogy-title", analogy.title);
+        setText("analogy-scene", analogy.scene);
+        setText("analogy-limit", analogy.limit);
+        analogy.mappings.forEach(mapping => {
+          const row = create("div", "analogy-mapping");
+          row.append(
+            create("strong", "", mapping.familiar),
+            create("span", "analogy-arrow", "→"),
+            create("span", "analogy-concept", mapping.concept)
+          );
+          mappings.append(row);
+        });
+      }
+
+      const PLATFORM_LABELS = {
+        bilibili: "Bilibili",
+        youtube: "YouTube"
+      };
+
+      function platformLogo(platform, compact = false) {
+        const wrapper = create(
+          "span",
+          "platform-logo" + (compact ? " compact" : "")
+        );
+        wrapper.dataset.platform = platform;
+        wrapper.setAttribute("role", "img");
+        wrapper.setAttribute("aria-label", PLATFORM_LABELS[platform] || platform);
+        const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+        svg.setAttribute("viewBox", "0 0 40 28");
+        svg.setAttribute("aria-hidden", "true");
+        const use = document.createElementNS("http://www.w3.org/2000/svg", "use");
+        use.setAttribute("href", `#platform-logo-${platform}`);
+        svg.append(use);
+        wrapper.append(svg);
+        return wrapper;
+      }
+
+      function formatDuration(seconds) {
+        if (!Number.isInteger(seconds)) return null;
+        const minutes = Math.floor(seconds / 60);
+        return `${minutes}:${String(seconds % 60).padStart(2, "0")}`;
+      }
+
+      function renderVideos(videos) {
+        const section = document.getElementById("videos-section");
+        const list = document.getElementById("detail-videos");
+        list.replaceChildren();
+        section.hidden = videos.length === 0;
+        if (videos.length === 0) return;
+
+        const player = create("div", "video-player");
+        const frame = create("div", "video-frame");
+        const iframe = document.createElement("iframe");
+        iframe.className = "video-iframe";
+        iframe.loading = "lazy";
+        iframe.referrerPolicy = "strict-origin-when-cross-origin";
+        iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+        iframe.allowFullscreen = true;
+        const embedFallback = create("div", "video-embed-fallback");
+        embedFallback.hidden = true;
+        frame.append(iframe, embedFallback);
+
+        const bar = create("div", "video-player-bar");
+        const logoMount = create("span", "video-logo-mount");
+        const copy = create("span", "video-player-copy");
+        const title = create("span", "video-player-title");
+        const metadata = create("span", "video-player-meta");
+        const rationale = create("span", "video-player-why");
+        const open = create("a", "video-open", "打开视频 ↗");
+        open.target = "_blank";
+        open.rel = "noopener noreferrer";
+        copy.append(title, metadata, rationale);
+        bar.append(logoMount, copy, open);
+        player.append(frame, bar);
+
+        const buttons = videos.map((video, index) => {
+          const button = create("button", "video-choice");
+          button.type = "button";
+          button.dataset.platform = video.platform;
+          button.append(platformLogo(video.platform, true));
+          const buttonCopy = create("span");
+          buttonCopy.append(create("span", "video-choice-title", video.title));
+          const duration = formatDuration(video.durationSeconds);
+          buttonCopy.append(
+            create(
+              "span",
+              "resource-meta",
+              [PLATFORM_LABELS[video.platform] || video.platform, duration]
+                .filter(Boolean)
+                .join(" · ")
+            )
+          );
+          button.append(buttonCopy);
+          button.addEventListener("click", () => activate(index));
+          return button;
+        });
+
+        function activate(index) {
+          const video = videos[index];
+          const label = PLATFORM_LABELS[video.platform] || video.platform;
+          const localYoutube =
+            video.platform === "youtube" && window.location.protocol === "file:";
+          if (localYoutube) {
+            iframe.removeAttribute("src");
+            iframe.hidden = true;
+            embedFallback.replaceChildren(
+              platformLogo("youtube"),
+              create(
+                "p",
+                "video-embed-message",
+                "YouTube 播放器要求 HTTP 页面来源。直接打开本地 HTML 时无法内嵌；通过静态服务器打开页面即可播放，也可先前往 YouTube。"
+              )
+            );
+            const fallbackLink = create("a", "video-embed-open", "前往 YouTube ↗");
+            fallbackLink.href = video.url;
+            fallbackLink.target = "_blank";
+            fallbackLink.rel = "noopener noreferrer";
+            embedFallback.append(fallbackLink);
+            embedFallback.hidden = false;
+          } else {
+            embedFallback.hidden = true;
+            iframe.hidden = false;
+            iframe.src = video.embedUrl;
+            iframe.title = `${label} 视频：${video.title}`;
+          }
+          logoMount.replaceChildren(platformLogo(video.platform));
+          title.textContent = video.title;
+          const duration = formatDuration(video.durationSeconds);
+          metadata.textContent = [
+            video.author,
+            duration,
+            `${label} · 页面内播放`
+          ].filter(Boolean).join(" · ");
+          rationale.textContent = video.selectionRationale || "";
+          rationale.hidden = !video.selectionRationale;
+          open.href = video.url;
+          open.title = `在 ${label} 打开原视频`;
+          buttons.forEach((button, buttonIndex) => {
+            button.setAttribute("aria-pressed", String(buttonIndex === index));
+          });
+        }
+
+        list.append(player);
+        if (videos.length > 1) {
+          const alternatives = create("div", "video-alternatives");
+          buttons.forEach(button => alternatives.append(button));
+          list.append(alternatives);
+        }
+        activate(0);
+      }
+
+      function visualPreviewSource(visual) {
+        return visual.kind === "manim" ? visual.posterSrc : visual.src;
+      }
+
+      function renderFigureVisual(figure, visual, options = {}) {
+        figure.querySelectorAll("video").forEach(video => video.pause());
+        figure.replaceChildren();
+        figure.hidden = !visual;
+        if (!visual) return;
+
+        const {
+          compact = false,
+          captionOverride = null,
+          imageLabel = "静态机制图",
+          manimLabel = "MANIM 动画"
+        } = options;
+        const frame = create("div", "visual-frame");
+        if (visual.kind === "image") {
+          const image = document.createElement("img");
+          image.src = visual.src;
+          image.alt = visual.alt;
+          frame.append(image);
+          const toolbar = create("div", "visual-toolbar");
+          toolbar.append(create("span", "visual-kind-label", imageLabel));
+          figure.append(
+            frame,
+            create("figcaption", "visual-caption", captionOverride || visual.caption),
+            toolbar
+          );
+          return;
+        }
+
+        const video = document.createElement("video");
+        video.muted = true;
+        video.loop = true;
+        video.playsInline = true;
+        video.preload = "metadata";
+        video.controls = true;
+        video.setAttribute("aria-label", visual.alt);
+        const source = document.createElement("source");
+        source.src = visual.videoSrc;
+        source.type = "video/webm";
+        video.append(source);
+        const caption = create("div", "manim-caption", "");
+        const posterOverlay = create("button", "manim-poster-overlay");
+        posterOverlay.type = "button";
+        const posterImage = document.createElement("img");
+        posterImage.src = visual.posterSrc;
+        posterImage.alt = "";
+        posterOverlay.append(
+          posterImage,
+          create("span", "manim-poster-play", "播放动画")
+        );
+        posterOverlay.addEventListener("click", () => {
+          video.play().catch(() => {});
+        });
+        frame.append(video, posterOverlay, caption);
+
+        const fallback = document.createElement("img");
+        fallback.className = "visual-fallback";
+        fallback.hidden = true;
+        fallback.alt = visual.alt;
+        fallback.src = `data:image/svg+xml;charset=utf-8,${encodeURIComponent(visual.fallbackSvg)}`;
+        frame.append(fallback);
+
+        const toolbar = create("div", "visual-toolbar");
+        toolbar.append(
+          create(
+            "span",
+            "visual-kind-label",
+            `${manimLabel} · ${Number(visual.durationSeconds).toFixed(1)} 秒`
+          )
+        );
+        const replay = create("button", "manim-replay", "重播");
+        replay.type = "button";
+        replay.addEventListener("click", () => {
+          posterOverlay.hidden = false;
+          video.currentTime = 0;
+          video.play().catch(() => {});
+        });
+        toolbar.append(replay);
+
+        const transcript = document.createElement("details");
+        transcript.className = "visual-transcript";
+        transcript.append(create("summary", "", "文字说明"));
+        const cues = document.createElement("ol");
+        visual.transcript.forEach(cue => cues.append(create("li", "", cue.text)));
+        transcript.append(cues);
+
+        video.addEventListener("timeupdate", () => {
+          const cue = visual.transcript.find(
+            item => video.currentTime >= item.start && video.currentTime < item.end
+          );
+          caption.textContent = cue ? cue.text : "";
+          caption.hidden = !cue;
+          if (video.currentTime >= 0.1) {
+            posterOverlay.hidden = true;
+          }
+        });
+        video.addEventListener("error", () => {
+          video.hidden = true;
+          posterOverlay.hidden = true;
+          caption.hidden = true;
+          fallback.hidden = false;
+        });
+
+        figure.append(
+          frame,
+          create("figcaption", "visual-caption", captionOverride || visual.caption),
+          toolbar,
+          transcript
+        );
+        const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        replay.textContent = reducedMotion ? "播放动画" : "重播";
+        if (!reducedMotion) {
+          video.play().catch(() => {});
+        }
+      }
+
+      function renderVisual(visual, captionOverride = null) {
+        const section = document.getElementById("visual-section");
+        const figure = document.getElementById("detail-visual");
+        section.hidden = !visual;
+        renderFigureVisual(
+          figure,
+          visual,
+          captionOverride ? { captionOverride } : {}
+        );
+      }
+
+      function renderExperiment(experiment) {
+        const section = document.getElementById("experiment-section");
+        section.hidden = !experiment;
+        if (!experiment) return;
+        setText("experiment-title", experiment.title);
+        const list = document.getElementById("experiment-steps");
+        list.replaceChildren();
+        experiment.steps.forEach(step => list.append(create("li", "", step)));
+      }
+
+      function renderEvidenceGaps() {
+        const list = document.getElementById("evidence-gaps");
+        list.replaceChildren();
+        const gaps = data.meta.evidenceGaps.length
+          ? data.meta.evidenceGaps
+          : ["当前内容未声明额外证据边界；外链仍需在发布前核验。"];
+        gaps.forEach(gap => list.append(create("li", "", gap)));
+      }
+
+      function renderActiveButton() {
+        document.querySelectorAll(".why-step").forEach(button => {
+          const active = button.dataset.nodeId === selectedId;
+          button.classList.toggle("is-active", active);
+          button.setAttribute("aria-pressed", String(active));
+        });
+      }
+
+      function renderChainNav(node, index) {
+        const previous = document.getElementById("previous-question");
+        const next = document.getElementById("next-question");
+        const previousNode = index > 0 ? nodes[index - 1] : null;
+        const nextNode = index < nodes.length - 1 ? nodes[index + 1] : null;
+        const nav = previous.closest(".chain-nav");
+
+        previous.hidden = !previousNode;
+        if (previousNode) {
+          previous.querySelector("strong").textContent = previousNode.question;
+          previous.dataset.nodeId = previousNode.id;
+        }
+
+        next.hidden = !nextNode;
+        if (nextNode) {
+          next.querySelector("strong").textContent = nextNode.question;
+          next.dataset.nodeId = nextNode.id;
+        }
+        nav.classList.toggle("is-single", !previousNode || !nextNode);
+      }
+
+      function renderDetail() {
+        const node = nodeById.get(selectedId) || center;
+        const index = nodes.findIndex(item => item.id === node.id);
+        setText(
+          "detail-kicker",
+          node.id === "root"
+            ? "中心问题 · 从现象出发"
+            : `第 ${String(index).padStart(2, "0")} 层 / ${String(data.nodes.length).padStart(2, "0")} · ${NODE_TYPE_LABELS[node.type] || node.type} · ${node.label}`
+        );
+        setText("detail-title", node.question);
+        setText("detail-summary", node.summary);
+        renderTags(document.getElementById("detail-tags"), node.tags);
+        renderVisual(node.visual || null, node.visualCaption || null);
+        const answerSection = document.getElementById("answer-section");
+        answerSection.hidden = node.id === "root";
+        setText("detail-answer", node.answer || "");
+        renderAnalogy(node.analogy || null);
+        setText("knowledge-heading", node.id === "root" ? "中心洞察" : "核心知识");
+        const knowledge = node.id === "root" ? node.insight : node.knowledge;
+        document.getElementById("knowledge-section").hidden = !knowledge;
+        setText("detail-knowledge", knowledge || "");
+
+        const facts = node.facts || [];
+        const factsSection = document.getElementById("facts-section");
+        factsSection.hidden = facts.length === 0;
+        const factsList = document.getElementById("detail-facts");
+        factsList.replaceChildren();
+        facts.forEach(fact => factsList.append(create("li", "", fact)));
+
+        renderExperiment(node.experiment);
+        renderVideos(node.videoLinks || []);
+        renderChainNav(node, index);
+        renderActiveButton();
+      }
+
+      function selectNode(id, options = {}) {
+        if (!nodeById.has(id)) return;
+        selectedId = id;
+        renderDetail();
+        if (options.updateUrl) {
+          const nextHash = questionHash(id);
+          if (window.location.hash !== nextHash) {
+            window.history.pushState({ questionId: id }, "", nextHash);
+          }
+        }
+        if (options.updateUrl && !desktopQuery.matches) {
+          window.requestAnimationFrame(() => {
+            detailPanel.scrollIntoView({ block: "start" });
+          });
+        }
+      }
+
+      async function copyText(text) {
+        try {
+          await navigator.clipboard.writeText(text);
+          return true;
+        } catch (error) {
+          const area = document.createElement("textarea");
+          area.value = text;
+          area.setAttribute("readonly", "");
+          area.style.position = "fixed";
+          area.style.opacity = "0";
+          document.body.append(area);
+          area.select();
+          let copied = false;
+          try {
+            copied = document.execCommand("copy");
+          } catch (fallbackError) {
+            copied = false;
+          }
+          area.remove();
+          return copied;
+        }
+      }
+
+      function showToast(message) {
+        const toast = document.getElementById("toast");
+        window.clearTimeout(toastTimer);
+        toast.textContent = message;
+        toast.classList.add("is-visible");
+        toastTimer = window.setTimeout(() => toast.classList.remove("is-visible"), 2300);
+      }
+
+      document.getElementById("previous-question").addEventListener("click", event => {
+        const nodeId = event.currentTarget.dataset.nodeId;
+        if (nodeId) selectNode(nodeId, { updateUrl: true });
+      });
+
+      document.getElementById("next-question").addEventListener("click", event => {
+        const nodeId = event.currentTarget.dataset.nodeId;
+        if (nodeId) selectNode(nodeId, { updateUrl: true });
+      });
+
+      document.getElementById("copy-question").addEventListener("click", async () => {
+        const question = (nodeById.get(selectedId) || center).question;
+        const copied = await copyText(question);
+        showToast(copied ? `已复制：${question}` : question);
+      });
+
+      document.getElementById("share-link").addEventListener("click", async () => {
+        if (window.location.hash !== questionHash(selectedId)) {
+          const url = new URL(window.location.href);
+          url.hash = questionHash(selectedId);
+          window.history.replaceState(
+            { questionId: selectedId },
+            "",
+            `${url.pathname}${url.search}${url.hash}`
+          );
+        }
+        const url = window.location.href;
+        if (navigator.share && window.location.protocol !== "file:") {
+          try {
+            await navigator.share({
+              title: document.title,
+              text: data.center.question,
+              url
+            });
+            return;
+          } catch (error) {
+            if (error && error.name === "AbortError") return;
+          }
+        }
+        const copied = await copyText(url);
+        showToast(copied ? "当前问题的分享链接已复制" : "可从浏览器地址栏复制当前链接");
+      });
+
+      window.addEventListener("popstate", () => {
+        selectNode(hashId() || "root");
+      });
+
+      window.addEventListener("hashchange", () => {
+        selectNode(hashId() || "root");
+      });
+
+      populateHero();
+      buildChain();
+      renderEvidenceGaps();
+      selectedId = hashId() || "root";
+      renderDetail();
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-labelledby="title desc">
+  <title id="title">桌布被抽走后杯子才下落</title>
+  <desc id="desc">杯子被桌面支撑时静止，桌布抽走并失去支撑后开始下落。</desc>
+  <rect width="800" height="450" rx="28" fill="#f4fbf7"/>
+  <text x="50" y="64" fill="#285d4b" font-family="PingFang SC, sans-serif" font-size="28" font-weight="750">桌布被抽走后杯子才下落</text>
+  <g transform="translate(112 122)">
+    <rect x="0" y="120" width="230" height="22" rx="8" fill="#b8addd"/>
+    <path d="M100 28h52l-7 82H107z" fill="#fff" stroke="#7055d9" stroke-width="5"/>
+    <path d="M0 100h230" stroke="#e98545" stroke-width="7" stroke-dasharray="14 8"/>
+    <text x="126" y="210" text-anchor="middle" fill="#5c6b63" font-family="PingFang SC, sans-serif" font-size="18">桌面支撑杯子</text>
+  </g>
+  <path d="M380 225h60" stroke="#77718b" stroke-width="4"/>
+  <path d="m440 216 14 9-14 9" fill="#77718b"/>
+  <g transform="translate(485 112)">
+    <path d="M0 118h230" stroke="#b8addd" stroke-width="8"/>
+    <path d="M96 10h52l-7 82H103z" fill="#fff" stroke="#7055d9" stroke-width="5"/>
+    <circle cx="122" cy="30" r="90" fill="none" stroke="#77718b" stroke-width="2" stroke-dasharray="7 7"/>
+    <path d="M122 104v58M108 150l14 16 14-16" fill="none" stroke="#e98545" stroke-width="4" stroke-linecap="round"/>
+    <text x="122" y="213" text-anchor="middle" fill="#d96e2e" font-family="PingFang SC, sans-serif" font-size="18" font-weight="700">支撑消失后向下加速</text>
+  </g>
+  <text x="400" y="422" text-anchor="middle" fill="#5c6b63" font-family="PingFang SC, sans-serif" font-size="18">变化来自支持力消失，不是杯子突然产生了“向下的欲望”</text>
+</svg>
